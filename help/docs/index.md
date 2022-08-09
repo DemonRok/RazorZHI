@@ -1,0 +1,31 @@
+![razor](images/razor.png)
+
+# Razor Community Edition
+
+[![Build & Deploy Dev Preview](https://github.com/markdwags/Razor/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/markdwags/Razor/actions/workflows/build.yml)
+[![Chat on Discord status](https://img.shields.io/discord/458277173208547350.svg?logo=discord)](https://discord.gg/zrdyYcc)
+
+Razor is a free tool designed to help with simple tasks while playing Ultima Online.
+
+This site was written for the **Razor Community Edition**.
+
+The goal of this project was to revive and continue development and maintenance of the abandoned Razor project, focusing on *quality of life* improvements while attempting to keep the spirit and vision the original developers had for Razor by not driving down the path of advanced automation that's found in other UO assistants.
+
+For more information about this version of Razor, read the [history](#history), review the [release notes](./releasenotes.md) and [download](./download.md) Razor.
+
+# Help
+
+If you're unable to find a solution using the information here or you'd like to submit a feature request or bug report, use the following resources.
+
+* Submit a feature/bug/issue on our [official Razor GitHub Repo](https://github.com/markdwags/Razor/issues).
+* Join us in `#razor` on Discord (we use the the official [ClassicUO](https://www.classicuo.eu/) Discord server)
+
+[![Chat on Discord status](https://img.shields.io/discord/458277173208547350.svg?logo=discord)](https://discord.gg/zrdyYcc)
+
+For more information about the Razor Scripting Engine, go [here](https://www.razorce.com/guide/).
+
+# Other
+
+All work is released under the GPLv3 license. This project does not distribute any copyrighted game assets. In order to run this application you'll need to legally obtain a copy of the Ultima Online Classic Client.
+
+See the [LICENSE](https://github.com/markdwags/Razor/blob/master/LICENSE.md) file for details.

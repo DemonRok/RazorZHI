@@ -1,0 +1,109 @@
+site_name: UO Razor - Ultima Online Assistant
+site_description: UO Razor is a free tool designed to help with simple tasks while playing Ultima Online
+site_author: Project maintained by Quick
+site_url: https://www.razorce.com
+copyright: Copyright 2022 - Quick
+repo_url: https://github.com/markdwags/Razor
+repo_name: Razor
+edit_uri: "tree/master/help/docs"
+nav:
+- UO Razor Home: index.md
+- Download: download.md
+- Install:
+    - Windows: install/windows.md
+    - Linux: install/linux.md
+- Release Notes: releasenotes.md
+- Help Guide:
+    - Help Overview: help/index.md    
+    - General: help/general.md
+    - Options: help/options.md    
+    - Display/Counters: help/displaycounters.md
+    - Arm/Dress: help/armdress.md
+    - Skills: help/skills.md
+    - Agents: help/agents.md
+    - Filters: help/filters.md
+    - Hot Keys: help/hotkeys.md
+    - Macros: help/macros.md
+    - Scripts: help/scripts.md
+    - Friends: help/friends.md    
+    - Screen Shots: help/screenshots.md
+    - Advanced: help/advanced.md
+- Scripting Guide:
+    - Scripting Overview: guide/index.md
+    - Commands: guide/commands.md
+    - Comments: guide/comments.md
+    - Condition & Loops: guide/conditionloops.md
+    - Expressions: guide/expressions.md
+    - Keywords: guide/keywords.md
+    - Layers: guide/layers.md
+    - Variables: guide/variables.md
+- More Information:
+    - FAQ: faq.md
+    - History: history.md
+    - UOAssist API: uoaapi.md
+
+theme: 
+    name: material    
+    custom_dir: overrides
+    language: en    
+    logo: images/razor.png
+    features:
+        - navigation.top
+        - navigation.instant
+        - navigation.tracking
+        - navigation.indexes
+        - search.suggest
+        - search.highlight
+        - search.share
+    icon:
+        repo: fontawesome/brands/git-alt
+    palette:
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: red
+          accent: blue
+          toggle:
+            icon: material/weather-sunny
+            name: Switch to light mode            
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: red
+          toggle:
+            icon: material/weather-night
+            name: Switch to dark mode
+    font:
+        #text: Mulish
+        #text: Alata
+        #text: Noto Sans JP
+        #text: Lato
+        #text: Ubuntu
+        text: Titillium Web
+        code: Fira Code
+    logo: images/razor.png
+
+markdown_extensions:
+  - admonition
+  - toc:
+      baselevel: 3    
+      permalink: true    
+  - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx.inline
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+
+plugins:
+  - search
+  - git-revision-date
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/markdwags/Razor
+  analytics:
+    provider: google
+    property: G-9ER2MNGL02  
