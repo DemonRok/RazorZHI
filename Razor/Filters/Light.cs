@@ -18,7 +18,7 @@
 
 #endregion
 
-namespace Assistant.Filters
+/*namespace Assistant.Filters
 {
     public class LightFilter : Filter
     {
@@ -82,4 +82,4 @@ namespace Assistant.Filters
             }
         }
     }
-}
+}*/

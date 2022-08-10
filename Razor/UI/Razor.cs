@@ -365,11 +365,11 @@ namespace Assistant
 
             logSkillChanges.SafeAction(s => { s.Checked = Config.GetBool("LogSkillChanges"); });
 
-            lightLevelBar.SafeAction(s => { s.Value = s.Maximum - Config.GetInt("LightLevel"); });
+            //lightLevelBar.SafeAction(s => { s.Value = s.Maximum - Config.GetInt("LightLevel"); });
 
-            double percent = Math.Round((lightLevelBar.Value / (double) lightLevelBar.Maximum) * 100.0);
+            //double percent = Math.Round((lightLevelBar.Value / (double) lightLevelBar.Maximum) * 100.0);
 
-            lightLevel.SafeAction(s => { s.Text = $"Light: {percent}%"; });
+            //lightLevel.SafeAction(s => { s.Text = $"Light: {percent}%"; });
 
             captureMibs.SafeAction(s => { s.Checked = Config.GetBool("CaptureMibs"); });
 
@@ -399,7 +399,7 @@ namespace Assistant
 
             autoAcceptParty.SafeAction(s => { s.Checked = Config.GetBool("AutoAcceptParty"); });
 
-            minMaxLightLevel.SafeAction(s => { s.Checked = Config.GetBool("MinMaxLightLevelEnabled"); });
+            //minMaxLightLevel.SafeAction(s => { s.Checked = Config.GetBool("MinMaxLightLevelEnabled"); });
 
             showTextTargetIndicator.SafeAction(s => { s.Checked = Config.GetBool("ShowTextTargetIndicator"); });
 
@@ -4705,7 +4705,7 @@ namespace Assistant
             Client.Instance.SetSmartCPU(false);
         }
 
-        private void lightLevelBar_Scroll(object sender, EventArgs e)
+        /*private void lightLevelBar_Scroll(object sender, EventArgs e)
         {
             if (Client.Instance.AllowBit(FeatureBit.LightFilter) && World.Player != null)
             {
@@ -4723,7 +4723,7 @@ namespace Assistant
 
                 Config.SetProperty("LightLevel", (int) selectedLightLevel);
             }
-        }
+        }*/
 
         private BoatWindow _boatWindowForm = null;
 
@@ -5228,7 +5228,7 @@ namespace Assistant
             Config.SetProperty("AutoAcceptParty", autoAcceptParty.Checked);
         }
 
-        private void setMaxLightLevel_Click(object sender, EventArgs e)
+        /*private void setMaxLightLevel_Click(object sender, EventArgs e)
         {
             int lightLevel = lightLevelBar.Maximum - lightLevelBar.Value;
 
@@ -5263,7 +5263,7 @@ namespace Assistant
         private void minMaxLightLevel_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("MinMaxLightLevelEnabled", minMaxLightLevel.Checked);
-        }
+        }*/
 
         private void showStaticWalls_CheckedChanged(object sender, EventArgs e)
         {

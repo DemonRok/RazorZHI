@@ -185,13 +185,13 @@ namespace Assistant
         private CheckBox showHealthOH;
         private CheckBox chkPartyOverhead;
         private TabPage subOptionsMiscTab;
-        private Button setMinLightLevel;
-        private Button setMaxLightLevel;
+        //private Button setMinLightLevel;
+        //private Button setMaxLightLevel;
         private ComboBox seasonList;
         private Label lblSeason;
-        private Label lightLevel;
-        private TrackBar lightLevelBar;
-        private CheckBox minMaxLightLevel;
+        //private Label lightLevel;
+        //private TrackBar lightLevelBar;
+        //private CheckBox minMaxLightLevel;
         private CheckBox blockPartyInvites;
         private CheckBox blockTradeRequests;
         private CheckBox blockOpenCorpsesTwice;
@@ -470,13 +470,13 @@ namespace Assistant
             this.chkStealth = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.gameSize = new System.Windows.Forms.CheckBox();
-            this.setMinLightLevel = new System.Windows.Forms.Button();
-            this.setMaxLightLevel = new System.Windows.Forms.Button();
+            //this.setMinLightLevel = new System.Windows.Forms.Button();
+            //this.setMaxLightLevel = new System.Windows.Forms.Button();
             this.seasonList = new System.Windows.Forms.ComboBox();
             this.lblSeason = new System.Windows.Forms.Label();
-            this.lightLevel = new System.Windows.Forms.Label();
-            this.lightLevelBar = new System.Windows.Forms.TrackBar();
-            this.minMaxLightLevel = new System.Windows.Forms.CheckBox();
+            //this.lightLevel = new System.Windows.Forms.Label();
+            //this.lightLevelBar = new System.Windows.Forms.TrackBar();
+            //this.minMaxLightLevel = new System.Windows.Forms.CheckBox();
             this.blockPartyInvites = new System.Windows.Forms.CheckBox();
             this.blockTradeRequests = new System.Windows.Forms.CheckBox();
             this.blockOpenCorpsesTwice = new System.Windows.Forms.CheckBox();
@@ -801,7 +801,7 @@ namespace Assistant
             this.subOptionsTargetTab.SuspendLayout();
             this.groupSmartTarget.SuspendLayout();
             this.subOptionsMiscTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lightLevelBar)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.lightLevelBar)).BeginInit();
             this.displayTab.SuspendLayout();
             this.displayCountersTabCtrl.SuspendLayout();
             this.subDisplayTab.SuspendLayout();
@@ -1759,13 +1759,13 @@ namespace Assistant
             this.subOptionsMiscTab.Controls.Add(this.chkStealth);
             this.subOptionsMiscTab.Controls.Add(this.label18);
             this.subOptionsMiscTab.Controls.Add(this.gameSize);
-            this.subOptionsMiscTab.Controls.Add(this.setMinLightLevel);
-            this.subOptionsMiscTab.Controls.Add(this.setMaxLightLevel);
+            //this.subOptionsMiscTab.Controls.Add(this.setMinLightLevel);
+            //this.subOptionsMiscTab.Controls.Add(this.setMaxLightLevel);
             this.subOptionsMiscTab.Controls.Add(this.seasonList);
             this.subOptionsMiscTab.Controls.Add(this.lblSeason);
-            this.subOptionsMiscTab.Controls.Add(this.lightLevel);
-            this.subOptionsMiscTab.Controls.Add(this.lightLevelBar);
-            this.subOptionsMiscTab.Controls.Add(this.minMaxLightLevel);
+            //this.subOptionsMiscTab.Controls.Add(this.lightLevel);
+            //this.subOptionsMiscTab.Controls.Add(this.lightLevelBar);
+            //this.subOptionsMiscTab.Controls.Add(this.minMaxLightLevel);
             this.subOptionsMiscTab.Controls.Add(this.blockPartyInvites);
             this.subOptionsMiscTab.Controls.Add(this.blockTradeRequests);
             this.subOptionsMiscTab.Controls.Add(this.blockOpenCorpsesTwice);
@@ -1955,7 +1955,7 @@ namespace Assistant
             // 
             // setMinLightLevel
             // 
-            this.setMinLightLevel.Location = new System.Drawing.Point(117, 247);
+            /*this.setMinLightLevel.Location = new System.Drawing.Point(117, 247);
             this.setMinLightLevel.Name = "setMinLightLevel";
             this.setMinLightLevel.Size = new System.Drawing.Size(58, 25);
             this.setMinLightLevel.TabIndex = 105;
@@ -1969,7 +1969,7 @@ namespace Assistant
             this.setMaxLightLevel.Size = new System.Drawing.Size(58, 25);
             this.setMaxLightLevel.TabIndex = 104;
             this.setMaxLightLevel.Text = "Set Max";
-            this.setMaxLightLevel.Click += new System.EventHandler(this.setMaxLightLevel_Click);
+            this.setMaxLightLevel.Click += new System.EventHandler(this.setMaxLightLevel_Click);*/
             // 
             // seasonList
             // 
@@ -1999,7 +1999,7 @@ namespace Assistant
             // 
             // lightLevel
             // 
-            this.lightLevel.AutoSize = true;
+            /*this.lightLevel.AutoSize = true;
             this.lightLevel.Location = new System.Drawing.Point(6, 223);
             this.lightLevel.Name = "lightLevel";
             this.lightLevel.Size = new System.Drawing.Size(67, 15);
@@ -2025,7 +2025,7 @@ namespace Assistant
             this.minMaxLightLevel.Size = new System.Drawing.Size(114, 20);
             this.minMaxLightLevel.TabIndex = 106;
             this.minMaxLightLevel.Text = "Enable Min/Max";
-            this.minMaxLightLevel.CheckedChanged += new System.EventHandler(this.minMaxLightLevel_CheckedChanged);
+            this.minMaxLightLevel.CheckedChanged += new System.EventHandler(this.minMaxLightLevel_CheckedChanged);*/
             // 
             // blockPartyInvites
             // 
@@ -5411,7 +5411,7 @@ namespace Assistant
             this.groupSmartTarget.PerformLayout();
             this.subOptionsMiscTab.ResumeLayout(false);
             this.subOptionsMiscTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lightLevelBar)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.lightLevelBar)).EndInit();
             this.displayTab.ResumeLayout(false);
             this.displayCountersTabCtrl.ResumeLayout(false);
             this.subDisplayTab.ResumeLayout(false);
