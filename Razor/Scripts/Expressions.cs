@@ -21,7 +21,7 @@
 using System;
 using System.Collections.Generic;
 using Assistant.Core;
-using Assistant.Scripts.Engine;
+using Assistant.Scripts.EngineZHI;
 using Assistant.Scripts.Helpers;
 using Ultima;
 

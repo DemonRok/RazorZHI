@@ -18,7 +18,7 @@
 
 #endregion
 
-using Assistant.Scripts.Engine;
+using Assistant.Scripts.EngineZHI;
 
 namespace Assistant.Scripts
 {

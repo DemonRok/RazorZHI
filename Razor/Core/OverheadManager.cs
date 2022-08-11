@@ -160,7 +160,7 @@ namespace Assistant.Core
 
             HueEntry h = new HueEntry(GetHue(selectedItem.SubItems[1].Text));
 
-            if (h.ShowDialog(Engine.MainWindow) == DialogResult.OK)
+            if (h.ShowDialog(EngineZHI.MainWindow) == DialogResult.OK)
             {
                 int hueIdx = h.Hue;
 

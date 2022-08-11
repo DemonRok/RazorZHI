@@ -75,7 +75,7 @@ namespace Assistant.Core
 
             public void AddHotKeys()
             {
-                if (Engine.MainWindow == null)
+                if (EngineZHI.MainWindow == null)
                 {
                     HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Add Target To: {GroupName}", AddFriendToGroup);
                     HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Toggle Group: {GroupName}", ToggleFriendGroup);
@@ -86,7 +86,7 @@ namespace Assistant.Core
                 }
                 else
                 {
-                    Engine.MainWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.SafeAction(s =>
                     {
                         HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Add Target To: {GroupName}", AddFriendToGroup);
                         HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Toggle Group: {GroupName}", ToggleFriendGroup);
@@ -100,7 +100,7 @@ namespace Assistant.Core
 
             public void RemoveHotKeys()
             {
-                if (Engine.MainWindow == null)
+                if (EngineZHI.MainWindow == null)
                 {
                     HotKey.Remove($"Add Target To: {GroupName}");
                     HotKey.Remove($"Toggle Group: {GroupName}");
@@ -109,7 +109,7 @@ namespace Assistant.Core
                 }
                 else
                 {
-                    Engine.MainWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.SafeAction(s =>
                     {
                         HotKey.Remove($"Add Target To: {GroupName}");
                         HotKey.Remove($"Toggle Group: {GroupName}");
@@ -148,7 +148,7 @@ namespace Assistant.Core
 
             public void OnAddFriendTarget(bool location, Serial serial, Point3D loc, ushort gfx)
             {
-                Engine.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
 
                 if (!location && serial.IsMobile && serial != World.Player.Serial)
                 {

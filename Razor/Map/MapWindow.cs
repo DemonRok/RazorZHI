@@ -133,11 +133,11 @@ namespace Assistant.MapUO
 
         public static void ToggleMap()
         {
-            if (World.Player != null && Engine.MainWindow != null)
+            if (World.Player != null && EngineZHI.MainWindow != null)
             {
-                if (Engine.MainWindow.MapWindow == null)
+                if (EngineZHI.MainWindow.MapWindow == null)
                 {
-                    Engine.MainWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.SafeAction(s =>
                     {
                         s.MapWindow = new Assistant.MapUO.MapWindow();
                         s.MapWindow.Show();
@@ -146,9 +146,9 @@ namespace Assistant.MapUO
                 }
                 else
                 {
-                    if (Engine.MainWindow.MapWindow.Visible)
+                    if (EngineZHI.MainWindow.MapWindow.Visible)
                     {
-                        Engine.MainWindow.SafeAction(s =>
+                        EngineZHI.MainWindow.SafeAction(s =>
                         {
                             s.MapWindow.Hide();
                             s.BringToFront();
@@ -157,10 +157,10 @@ namespace Assistant.MapUO
                     }
                     else
                     {
-                        Engine.MainWindow.MapWindow.Show();
-                        Engine.MainWindow.MapWindow.BringToFront();
-                        Engine.MainWindow.MapWindow.TopMost = true;
-                        Client.Instance.SetMapWndHandle(Engine.MainWindow.MapWindow);
+                        EngineZHI.MainWindow.MapWindow.Show();
+                        EngineZHI.MainWindow.MapWindow.BringToFront();
+                        EngineZHI.MainWindow.MapWindow.TopMost = true;
+                        Client.Instance.SetMapWndHandle(EngineZHI.MainWindow.MapWindow);
                     }
                 }
             }
@@ -302,8 +302,8 @@ namespace Assistant.MapUO
                     return;
                 }
 
-                if (Engine.MainWindow == null || Engine.MainWindow.MapWindow == null ||
-                    !Engine.MainWindow.MapWindow.Visible)
+                if (EngineZHI.MainWindow == null || EngineZHI.MainWindow.MapWindow == null ||
+                    !EngineZHI.MainWindow.MapWindow.Visible)
                     return; // don't bother when the map window isnt visible
 
                 if (World.Player != null && PacketHandlers.Party.Count > 0)
@@ -364,9 +364,9 @@ namespace Assistant.MapUO
 
         private void MapWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Engine.Running)
+            if (EngineZHI.Running)
             {
-                Engine.MainWindow.MapWindow.SafeAction(s =>
+                EngineZHI.MainWindow.MapWindow.SafeAction(s =>
                 {
                     e.Cancel = true;
                     s.Hide();

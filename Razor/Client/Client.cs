@@ -218,7 +218,7 @@ namespace Assistant
             {
                 m_LastPlayerName = p.Name;
 
-                Engine.MainWindow.UpdateTitle();
+                EngineZHI.MainWindow.UpdateTitle();
             }
 
             sb.Replace(@"{shard}", World.ShardName);

@@ -108,7 +108,7 @@ namespace Assistant.HotKeys
 
         private static void ToggleDamage()
         {
-            Engine.MainWindow.ToggleDamageTracker(!DamageTracker.Running);
+            EngineZHI.MainWindow.ToggleDamageTracker(!DamageTracker.Running);
         }
 
         private enum PetCommands

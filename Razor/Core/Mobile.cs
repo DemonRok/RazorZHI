@@ -471,8 +471,8 @@ namespace Assistant
 
         public override void OnPositionChanging(Point3D oldPos)
         {
-            if (this != World.Player && Engine.MainWindow.MapWindow != null)
-                Engine.MainWindow.SafeAction(s => s.MapWindow.CheckLocalUpdate(this));
+            if (this != World.Player && EngineZHI.MainWindow.MapWindow != null)
+                EngineZHI.MainWindow.SafeAction(s => s.MapWindow.CheckLocalUpdate(this));
 
             base.OnPositionChanging(oldPos);
         }

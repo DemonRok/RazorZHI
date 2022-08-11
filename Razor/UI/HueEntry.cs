@@ -206,7 +206,7 @@ namespace Assistant
             hueNum.Text = hue.ToString();
             Callback = null;
 
-            //Engine.MainWindow.SafeAction(s => s.ShowMe());
+            //EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
             if (Client.IsOSI) // With CUO, this cancels the window not saving the result
                 this.Hide();
 

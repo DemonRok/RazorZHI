@@ -66,16 +66,16 @@ namespace Assistant
                 LastMobileDeathName = "Unknown";
 
             string imageTimestampTag = Config.GetBool("CapTimeStamp")
-                ? $"{playerName} ({World.ShardName}) - {Engine.MistedDateTime:M/dd/yy - HH:mm:ss}"
+                ? $"{playerName} ({World.ShardName}) - {EngineZHI.MistedDateTime:M/dd/yy - HH:mm:ss}"
                 : "";
 
             playerName = !string.IsNullOrEmpty(LastMobileDeathName)
-                ? $"{playerName}_{LastMobileDeathName}_{Engine.MistedDateTime:M-d_HH.mm}"
-                : $"{playerName}_{Engine.MistedDateTime:M-d_HH.mm}";
+                ? $"{playerName}_{LastMobileDeathName}_{EngineZHI.MistedDateTime:M-d_HH.mm}"
+                : $"{playerName}_{EngineZHI.MistedDateTime:M-d_HH.mm}";
 
             try
             {
-                Engine.EnsureDirectory(path);
+                EngineZHI.EnsureDirectory(path);
             }
             catch
             {
@@ -113,7 +113,7 @@ namespace Assistant
 
             LastMobileDeathName = string.Empty;
 
-            Engine.MainWindow.SafeAction(s => s.ReloadScreenShotsList());
+            EngineZHI.MainWindow.SafeAction(s => s.ReloadScreenShotsList());
         }
 
         private static ImageFormat GetFormat(string fmt)
@@ -142,7 +142,7 @@ namespace Assistant
         public static void DisplayTo(ListBox list)
         {
             string path = Config.GetString("CapPath");
-            Engine.EnsureDirectory(path);
+            EngineZHI.EnsureDirectory(path);
 
             //list.BeginUpdate();
             list.Items.Clear();

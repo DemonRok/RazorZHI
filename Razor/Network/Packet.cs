@@ -217,7 +217,7 @@ namespace Assistant
                             break;
                     }
 
-                    sw.WriteLine("{0:HH:mm:ss.ffff}: {1}{2}0x{3:X2} (Length: {4})", Engine.MistedDateTime,
+                    sw.WriteLine("{0:HH:mm:ss.ffff}: {1}{2}0x{3:X2} (Length: {4})", EngineZHI.MistedDateTime,
                         pathStr, blocked ? " [BLOCKED] " : " ", buff[0], len);
                     
                     Utility.FormatBuffer(sw, buff, len);

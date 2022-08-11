@@ -371,7 +371,7 @@ namespace Assistant.UI
 
         public void LockScriptUI(bool enabled)
         {
-            Engine.RazorScriptEditorWindow.SafeAction(s =>
+            EngineZHI.RazorScriptEditorWindow.SafeAction(s =>
             {
                 scriptEditor.Enabled = !enabled;
                 scriptRecord.Enabled = !enabled;

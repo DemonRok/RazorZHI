@@ -858,7 +858,7 @@ namespace Assistant
 
                 new MessageDialog("Error loading CliLoc", true,
                         "There was an exception while attempting to load '{0}':\n{1}", fileName, e)
-                    .ShowDialog(Engine.ActiveWindow);
+                    .ShowDialog(EngineZHI.ActiveWindow);
             }
 
             if (m_CliLoc == null || m_CliLoc.Entries == null || m_CliLoc.Entries.Count < 10)
@@ -872,7 +872,7 @@ namespace Assistant
                 }
                 else
                 {
-                    MessageBox.Show(Engine.ActiveWindow, Language.GetString(LocString.NoCliLocMsg),
+                    MessageBox.Show(EngineZHI.ActiveWindow, Language.GetString(LocString.NoCliLocMsg),
                         Language.GetString(LocString.NoCliLoc), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }

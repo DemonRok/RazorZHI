@@ -32,7 +32,7 @@ using Assistant.UI;
 
 namespace Assistant
 {
-    public partial class Engine
+    public partial class EngineZHI
     {
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
@@ -42,7 +42,7 @@ namespace Assistant
                 m_Running = false;
 
                 new MessageDialog("Unhandled Exception", !e.IsTerminating, e.ExceptionObject.ToString()).ShowDialog(
-                    Engine.ActiveWindow);
+                    EngineZHI.ActiveWindow);
             }
 
             LogCrash(e.ExceptionObject as Exception);
@@ -56,7 +56,7 @@ namespace Assistant
             using (StreamWriter txt = new StreamWriter("Crash.log", true))
             {
                 txt.AutoFlush = true;
-                txt.WriteLine("Exception @ {0}", Engine.MistedDateTime.ToString("MM-dd-yy HH:mm:ss.ffff"));
+                txt.WriteLine("Exception @ {0}", EngineZHI.MistedDateTime.ToString("MM-dd-yy HH:mm:ss.ffff"));
                 txt.WriteLine(exception.ToString());
                 txt.WriteLine("");
                 txt.WriteLine("");
@@ -294,9 +294,9 @@ namespace Assistant
 
             Language.LoadCliLoc();
 
-            /* Initialize engine */
+            /* Initialize EngineZHI */
             SplashScreen.Message = LocString.Initializing;
-            Initialize(typeof(Engine).Assembly);
+            Initialize(typeof(EngineZHI).Assembly);
 
             /* Load Profile */
             SplashScreen.Message = LocString.LoadingLastProfile;
@@ -422,7 +422,7 @@ namespace Assistant
         private static string _rootPath = null;
 
         public static string RootPath =>
-            _rootPath ?? (_rootPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(Engine)).Location));
+            _rootPath ?? (_rootPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(EngineZHI)).Location));
 
         /*public static string GetDirectory( string relPath )
         {

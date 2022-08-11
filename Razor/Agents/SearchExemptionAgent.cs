@@ -177,7 +177,7 @@ namespace Assistant.Agents
 
         private void OnTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            Engine.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
             if (!location && serial.IsItem)
             {
                 m_Items.Add(serial);
@@ -199,7 +199,7 @@ namespace Assistant.Agents
 
         private void OnTargetType(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            Engine.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
 
             if (!serial.IsItem)
             {
@@ -213,7 +213,7 @@ namespace Assistant.Agents
 
         private void OnTargetRemove(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            Engine.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
             if (!location && serial.IsItem)
             {
                 for (int i = 0; i < m_Items.Count; i++)

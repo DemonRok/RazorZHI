@@ -384,7 +384,7 @@ namespace Assistant
             }
             catch
             {
-                MessageBox.Show(Engine.ActiveWindow, Language.Format(LocString.ProfileCorrupt, file),
+                MessageBox.Show(EngineZHI.ActiveWindow, Language.Format(LocString.ProfileCorrupt, file),
                     "Profile Load Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return false;
             }
@@ -428,7 +428,7 @@ namespace Assistant
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(Engine.ActiveWindow, Language.Format(LocString.ProfileLoadEx, e.ToString()),
+                    MessageBox.Show(EngineZHI.ActiveWindow, Language.Format(LocString.ProfileLoadEx, e.ToString()),
                         "Profile Load Exception", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -520,7 +520,7 @@ namespace Assistant
             }
 
             //if ( !Language.Load( GetString( "Language" ) ) )
-            //	MessageBox.Show( Engine.ActiveWindow, "Warning: Could not load language from profile, using current language instead.", "Language Error", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            //	MessageBox.Show( EngineZHI.ActiveWindow, "Warning: Could not load language from profile, using current language instead.", "Language Error", MessageBoxButtons.OK, MessageBoxIcon.Warning );
 
             return true;
         }
@@ -557,7 +557,7 @@ namespace Assistant
                 }
                 catch
                 {
-                    //MessageBox.Show( Engine.ActiveWindow, Language.Format( LocString.ProfileInUse, m_Name ), "Profile In Use", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                    //MessageBox.Show( EngineZHI.ActiveWindow, Language.Format( LocString.ProfileInUse, m_Name ), "Profile In Use", MessageBoxButtons.OK, MessageBoxIcon.Warning );
                     //m_Warned = true;
                     return; // refuse to overwrite profiles that we don't own.
                 }
@@ -715,7 +715,7 @@ namespace Assistant
 
         static Config()
         {
-            var path = Path.Combine(Engine.RootPath, "settings.csv");
+            var path = Path.Combine(EngineZHI.RootPath, "settings.csv");
 
             // Set defaults
             m_AppSettings["UODataDir"] = @"D:\Games\UO";
@@ -877,14 +877,14 @@ namespace Assistant
                     }
                 }
 
-                Engine.MainWindow.InitConfig();
+                EngineZHI.MainWindow.InitConfig();
             }
             else
             {
                 m_Chars[player.Serial] = (m_Current != null ? m_Current.Name : "default");
             }
 
-            Engine.MainWindow.SafeAction(s => s.SelectProfile(m_Current != null ? m_Current.Name : "default"));
+            EngineZHI.MainWindow.SafeAction(s => s.SelectProfile(m_Current != null ? m_Current.Name : "default"));
         }
 
         public static void SetProfileFor(PlayerData player)
@@ -965,9 +965,9 @@ namespace Assistant
 
         private static void SaveAppSettings()
         {
-            var path = Path.Combine(Engine.RootPath, "settings.csv");
+            var path = Path.Combine(EngineZHI.RootPath, "settings.csv");
 
-            Engine.EnsureDirectory(Engine.RootPath);
+            EngineZHI.EnsureDirectory(EngineZHI.RootPath);
 
             if (!File.Exists(path))
             {
@@ -1055,7 +1055,7 @@ namespace Assistant
 
         public static void RecursiveCopy(string oldDir, string newDir, bool overWrite = false)
         {
-            Engine.EnsureDirectory(newDir);
+            EngineZHI.EnsureDirectory(newDir);
 
             if (!Directory.Exists(oldDir))
                 return;
@@ -1108,7 +1108,7 @@ namespace Assistant
 
             name = name.Length > 0 ? Path.Combine(appDir, name) : appDir;
 
-            Engine.EnsureDirectory(name);
+            EngineZHI.EnsureDirectory(name);
 
             return name;
         }
@@ -1120,14 +1120,14 @@ namespace Assistant
 
         public static string GetInstallDirectory(string name)
         {
-            string dir = Engine.RootPath;
+            string dir = EngineZHI.RootPath;
 
             if (name.Length > 0)
             {
                 dir = Path.Combine(dir, name);
             }
 
-            Engine.EnsureDirectory(dir);
+            EngineZHI.EnsureDirectory(dir);
 
             return dir;
         }

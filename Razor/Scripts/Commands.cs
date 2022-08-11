@@ -25,7 +25,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Assistant.Core;
 using Assistant.HotKeys;
-using Assistant.Scripts.Engine;
+using Assistant.Scripts.EngineZHI;
 using Assistant.Scripts.Helpers;
 using Ultima;
 

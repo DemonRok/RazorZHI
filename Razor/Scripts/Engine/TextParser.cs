@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Assistant.Scripts.Engine
+namespace Assistant.Scripts.EngineZHI
 {
     internal class TextParser
     {

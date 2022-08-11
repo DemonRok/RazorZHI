@@ -379,14 +379,14 @@ namespace Assistant.Agents
 
             m_SubList.EndUpdate();
 
-            if (!Client.Instance.AllowBit(FeatureBit.BuyAgent) && Engine.MainWindow != null)
+            if (!Client.Instance.AllowBit(FeatureBit.BuyAgent) && EngineZHI.MainWindow != null)
             {
                 for (int i = 0; i < buttons.Length; i++)
                 {
-                    Engine.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
+                    EngineZHI.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
                 }
 
-                Engine.MainWindow.SafeAction(s => s.LockControl(subList));
+                EngineZHI.MainWindow.SafeAction(s => s.LockControl(subList));
             }
         }
 
@@ -454,7 +454,7 @@ namespace Assistant.Agents
 
             if (!_fromGump)
             {
-                Engine.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
             }
         }
 
@@ -478,7 +478,7 @@ namespace Assistant.Agents
                 }
                 else
                 {
-                    Engine.MainWindow.SafeAction(s => s.ShowMe());
+                    EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
                 }
 
                 return true;
@@ -493,7 +493,7 @@ namespace Assistant.Agents
             }
             else
             {
-                Engine.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             return false;
@@ -534,7 +534,7 @@ namespace Assistant.Agents
                 }
                 else
                 {
-                    Engine.MainWindow.SafeAction(s => s.ShowMe());
+                    EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
                 }
 
                 return true;
@@ -549,7 +549,7 @@ namespace Assistant.Agents
             }
             else
             {
-                Engine.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             return false;

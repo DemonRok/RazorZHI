@@ -21,7 +21,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using Assistant.Scripts.Engine;
+using Assistant.Scripts.EngineZHI;
 
 namespace Assistant.Scripts
 {
@@ -83,7 +83,7 @@ namespace Assistant.Scripts
 
                 // Save and reload the vars
                 if (foundVar)
-                    Assistant.Engine.MainWindow.SaveScriptVariables();
+                    Assistant.EngineZHI.MainWindow.SaveScriptVariables();
 
                 TargetWasSet = true;
             }

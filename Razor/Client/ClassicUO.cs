@@ -34,7 +34,7 @@ using Assistant.Scripts;
 
 namespace Assistant
 {
-    public partial class Engine
+    public partial class EngineZHI
     {
         public static unsafe void Install(PluginHeader* plugin)
         {
@@ -99,9 +99,9 @@ namespace Assistant
 
             Language.LoadCliLoc();
 
-            /* Initialize engine */
+            /* Initialize EngineZHI */
             SplashScreen.Message = LocString.Initializing;
-            Initialize(typeof(Engine).Assembly);
+            Initialize(typeof(EngineZHI).Assembly);
 
             /* Load Profile */
             SplashScreen.Message = LocString.LoadingLastProfile;
@@ -242,7 +242,7 @@ namespace Assistant
 
         public unsafe override bool InstallHooks(IntPtr pluginPtr)
         {
-            Engine.MainWindow.SafeAction((s) => { Engine.MainWindow.MainForm_EndLoad(); });
+            EngineZHI.MainWindow.SafeAction((s) => { EngineZHI.MainWindow.MainForm_EndLoad(); });
             return true;
         }
 
@@ -392,7 +392,7 @@ namespace Assistant
         {
             PacketHandlers.Party.Clear();
             //TODO reset window title
-            Engine.MainWindow.UpdateTitle();
+            EngineZHI.MainWindow.UpdateTitle();
             UOAssist.PostLogout();
 
             World.Player = null;
@@ -408,9 +408,9 @@ namespace Assistant
             WaypointManager.StopTimer();
             BuffsTimer.Stop();
             StealthSteps.Unhide();
-            Engine.MainWindow.OnLogout();
-            if (Engine.MainWindow.MapWindow != null)
-                Engine.MainWindow.MapWindow.Close();
+            EngineZHI.MainWindow.OnLogout();
+            if (EngineZHI.MainWindow.MapWindow != null)
+                EngineZHI.MainWindow.MapWindow.Close();
             PacketHandlers.Party.Clear();
             PacketHandlers.IgnoreGumps.Clear();
             Agents.BuyAgent.OnDisconnected();
@@ -431,7 +431,7 @@ namespace Assistant
             Console.WriteLine("Closing Razor instance");
             Console.BackgroundColor = last;
             Console.ForegroundColor = lastFore;
-            Engine.Close();
+            EngineZHI.Close();
         }
 
         private void OnInitialize()
@@ -611,16 +611,16 @@ namespace Assistant
 
         public void OnFocusGained()
         {
-            if (Engine.MainWindow == null)
+            if (EngineZHI.MainWindow == null)
                 return;
 
             if (Config.GetBool("AlwaysOnTop"))
             {
-                if (!Engine.MainWindow.TopMost)
+                if (!EngineZHI.MainWindow.TopMost)
                 {
                     Platform.SetForegroundWindow(GetWindowHandle());
 
-                    Engine.MainWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.SafeAction(s =>
                     {
                         s.TopMost = true;
                         s.BringToFront();
@@ -629,11 +629,11 @@ namespace Assistant
             }
 
             // always use smartness for the map window
-            if (Engine.MainWindow.MapWindow != null && Engine.MainWindow.MapWindow.Visible)
+            if (EngineZHI.MainWindow.MapWindow != null && EngineZHI.MainWindow.MapWindow.Visible)
             {
-                if (!Engine.MainWindow.MapWindow.TopMost)
+                if (!EngineZHI.MainWindow.MapWindow.TopMost)
                 {
-                    Engine.MainWindow.MapWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.MapWindow.SafeAction(s =>
                     {
                         s.TopMost = true;
                         s.BringToFront();
@@ -644,15 +644,15 @@ namespace Assistant
 
         public void OnFocusLost()
         {
-            if (Engine.MainWindow == null)
+            if (EngineZHI.MainWindow == null)
                 return;
 
-            bool razorfocus = Form.ActiveForm == Engine.MainWindow || Form.ActiveForm == Engine.MainWindow.MapWindow;
+            bool razorfocus = Form.ActiveForm == EngineZHI.MainWindow || Form.ActiveForm == EngineZHI.MainWindow.MapWindow;
             if (Config.GetBool("AlwaysOnTop"))
             {
-                if (Engine.MainWindow.TopMost && !razorfocus)
+                if (EngineZHI.MainWindow.TopMost && !razorfocus)
                 {
-                    Engine.MainWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.SafeAction(s =>
                     {
                         s.TopMost = false;
                         s.SendToBack();
@@ -661,11 +661,11 @@ namespace Assistant
             }
 
             // always use smartness for the map window
-            if (Engine.MainWindow.MapWindow != null && Engine.MainWindow.MapWindow.Visible && !razorfocus)
+            if (EngineZHI.MainWindow.MapWindow != null && EngineZHI.MainWindow.MapWindow.Visible && !razorfocus)
             {
-                if (Engine.MainWindow.MapWindow.TopMost)
+                if (EngineZHI.MainWindow.MapWindow.TopMost)
                 {
-                    Engine.MainWindow.MapWindow.SafeAction(s =>
+                    EngineZHI.MainWindow.MapWindow.SafeAction(s =>
                     {
                         s.TopMost = false;
                         s.SendToBack();
