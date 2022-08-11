@@ -326,7 +326,7 @@ namespace Assistant
 
             negotiate.SafeAction(s => { s.Checked = Config.GetBool("Negotiate"); });
 
-            logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
+            //logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
 
             healthFmt.SafeAction(s =>
             {
@@ -2229,7 +2229,7 @@ namespace Assistant
              }
         }*/
 
-        private void logPackets_CheckedChanged(object sender, System.EventArgs e)
+        /*private void logPackets_CheckedChanged(object sender, System.EventArgs e)
         {
             if (logPackets.Checked)
             {
@@ -2243,7 +2243,7 @@ namespace Assistant
             {
                 Packet.Logging = false;
             }
-        }
+        }*/
 
         private void showNotoHue_CheckedChanged(object sender, System.EventArgs e)
         {

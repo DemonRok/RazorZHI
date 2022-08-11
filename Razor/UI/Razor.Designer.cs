@@ -101,7 +101,7 @@ namespace Assistant
         private Button openRazorDataDir;
         private ComboBox msglvl;
         private Label label17;
-        private CheckBox logPackets;
+        //private CheckBox logPackets;
         private TextBox statusBox;
         private TextBox features;
         private CheckBox negotiate;
@@ -772,7 +772,7 @@ namespace Assistant
             this.openRazorDataDir = new System.Windows.Forms.Button();
             this.msglvl = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.logPackets = new System.Windows.Forms.CheckBox();
+            //this.logPackets = new System.Windows.Forms.CheckBox();
             this.statusBox = new System.Windows.Forms.TextBox();
             this.features = new System.Windows.Forms.TextBox();
             this.aboutTab = new System.Windows.Forms.TabPage();
@@ -5078,7 +5078,7 @@ namespace Assistant
             this.advancedTab.Controls.Add(this.openRazorDataDir);
             this.advancedTab.Controls.Add(this.msglvl);
             this.advancedTab.Controls.Add(this.label17);
-            this.advancedTab.Controls.Add(this.logPackets);
+            //this.advancedTab.Controls.Add(this.logPackets);
             this.advancedTab.Controls.Add(this.statusBox);
             this.advancedTab.Controls.Add(this.features);
             this.advancedTab.Location = new System.Drawing.Point(4, 44);
@@ -5204,12 +5204,12 @@ namespace Assistant
             // 
             // logPackets
             // 
-            this.logPackets.Location = new System.Drawing.Point(241, 47);
+            /*this.logPackets.Location = new System.Drawing.Point(241, 47);
             this.logPackets.Name = "logPackets";
             this.logPackets.Size = new System.Drawing.Size(146, 23);
             this.logPackets.TabIndex = 67;
             this.logPackets.Text = "Enable packet logging";
-            this.logPackets.CheckedChanged += new System.EventHandler(this.logPackets_CheckedChanged);
+            this.logPackets.CheckedChanged += new System.EventHandler(this.logPackets_CheckedChanged);*/
             // 
             // statusBox
             // 
