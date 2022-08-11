@@ -80,10 +80,11 @@
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>Loader.def</ModuleDefinitionFile>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <TargetMachine>MachineX86</TargetMachine>
+      <ProgramDatabaseFile />
     </Link>
     <PreBuildEvent>
       <Command>

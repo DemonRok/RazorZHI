@@ -136,6 +136,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>Platform.def</ModuleDefinitionFile>
       <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile />
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
