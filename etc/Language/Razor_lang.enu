@@ -19,7 +19,7 @@ WelcomeForm::showAtStart=Show this when Razor starts
 WelcomeForm::quit=&Quit
 WelcomeForm::okay=&Launch UO
 
-MainForm::Text=Razor v{0}
+MainForm::Text=RazorZHI v{0}
 MainForm::generalTab=General
 MainForm::btnMap=UOPS
 MainForm::systray=System Tray
