@@ -104,15 +104,15 @@ namespace Assistant
         //private CheckBox logPackets;
         private TextBox statusBox;
         private TextBox features;
-        private CheckBox negotiate;
+        //private CheckBox negotiate;
         private Label aboutSubInfo;
         private Label lblCredits1;
         private Label label20;
-        private Button disableSmartCPU;
+        //private Button disableSmartCPU;
         private CheckBox logSkillChanges;
         private TreeView _hotkeyTreeViewCache = new TreeView();
         private LinkLabel linkHelp;
-        private CheckBox enableUOAAPI;
+        //private CheckBox enableUOAAPI;
         private TabControl tabControl2;
         private TabPage subMacrosTab;
         private TabPage subMacrosOptionsTab;
@@ -766,9 +766,9 @@ namespace Assistant
             this.openBackupFolder = new System.Windows.Forms.Button();
             this.setBackupFolder = new System.Windows.Forms.Button();
             this.createBackup = new System.Windows.Forms.Button();
-            this.enableUOAAPI = new System.Windows.Forms.CheckBox();
-            this.disableSmartCPU = new System.Windows.Forms.Button();
-            this.negotiate = new System.Windows.Forms.CheckBox();
+            //this.enableUOAAPI = new System.Windows.Forms.CheckBox();
+            //this.disableSmartCPU = new System.Windows.Forms.Button();
+            //this.negotiate = new System.Windows.Forms.CheckBox();
             this.openRazorDataDir = new System.Windows.Forms.Button();
             this.msglvl = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -5072,9 +5072,9 @@ namespace Assistant
             // 
             this.advancedTab.BackColor = System.Drawing.SystemColors.Control;
             this.advancedTab.Controls.Add(this.groupBox16);
-            this.advancedTab.Controls.Add(this.enableUOAAPI);
-            this.advancedTab.Controls.Add(this.disableSmartCPU);
-            this.advancedTab.Controls.Add(this.negotiate);
+            //this.advancedTab.Controls.Add(this.enableUOAAPI);
+            //this.advancedTab.Controls.Add(this.disableSmartCPU);
+            //this.advancedTab.Controls.Add(this.negotiate);
             this.advancedTab.Controls.Add(this.openRazorDataDir);
             this.advancedTab.Controls.Add(this.msglvl);
             this.advancedTab.Controls.Add(this.label17);
@@ -5141,7 +5141,7 @@ namespace Assistant
             // 
             // enableUOAAPI
             // 
-            this.enableUOAAPI.Checked = true;
+            /*this.enableUOAAPI.Checked = true;
             this.enableUOAAPI.CheckState = System.Windows.Forms.CheckState.Checked;
             this.enableUOAAPI.Location = new System.Drawing.Point(241, 102);
             this.enableUOAAPI.Name = "enableUOAAPI";
@@ -5158,16 +5158,16 @@ namespace Assistant
             this.disableSmartCPU.TabIndex = 74;
             this.disableSmartCPU.Text = "Disable SmartCPU";
             this.disableSmartCPU.UseVisualStyleBackColor = true;
-            this.disableSmartCPU.Click += new System.EventHandler(this.disableSmartCPU_Click);
+            this.disableSmartCPU.Click += new System.EventHandler(this.disableSmartCPU_Click);*/
             // 
             // negotiate
             // 
-            this.negotiate.Location = new System.Drawing.Point(241, 76);
+            /*this.negotiate.Location = new System.Drawing.Point(241, 76);
             this.negotiate.Name = "negotiate";
             this.negotiate.Size = new System.Drawing.Size(197, 20);
             this.negotiate.TabIndex = 72;
             this.negotiate.Text = "Negotiate features with server";
-            this.negotiate.CheckedChanged += new System.EventHandler(this.negotiate_CheckedChanged);
+            this.negotiate.CheckedChanged += new System.EventHandler(this.negotiate_CheckedChanged);*/
             // 
             // openRazorDataDir
             // 

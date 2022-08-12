@@ -324,7 +324,7 @@ namespace Assistant
 
             blockHealPoison.SafeAction(s => { s.Checked = Config.GetBool("BlockHealPoison"); });
 
-            negotiate.SafeAction(s => { s.Checked = Config.GetBool("Negotiate"); });
+            //negotiate.SafeAction(s => { s.Checked = Config.GetBool("Negotiate"); });
 
             //logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
 
@@ -425,7 +425,7 @@ namespace Assistant
 
             showInRazorTitleBar.SafeAction(s => { s.Checked = Config.GetBool("ShowInRazorTitleBar"); });
 
-            enableUOAAPI.SafeAction(s => { s.Checked = Config.GetBool("EnableUOAAPI"); });
+            //enableUOAAPI.SafeAction(s => { s.Checked = Config.GetBool("EnableUOAAPI"); });
 
             lastBackup.SafeAction(s => { s.Text = $"Last Backup: {Config.GetAppSetting<string>("BackupTime")}"; });
 
@@ -4195,8 +4195,8 @@ namespace Assistant
         {
             if (!m_Initializing)
             {
-                Config.SetProperty("Negotiate", negotiate.Checked);
-                Client.Instance.SetNegotiate(negotiate.Checked);
+                //Config.SetProperty("Negotiate", negotiate.Checked);
+                //Client.Instance.SetNegotiate(negotiate.Checked);
             }
         }
 
@@ -5499,7 +5499,7 @@ namespace Assistant
 
         private void enableUOAAPI_CheckedChanged(object sender, EventArgs e)
         {
-            Config.SetProperty("EnableUOAAPI", enableUOAAPI.Checked);
+            //Config.SetProperty("EnableUOAAPI", enableUOAAPI.Checked);
         }
 
         private void setBackupFolder_Click(object sender, EventArgs e)
