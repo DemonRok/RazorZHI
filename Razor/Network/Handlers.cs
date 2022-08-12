@@ -1041,8 +1041,8 @@ namespace Assistant
         private static void CompleteLogin(PacketReader p, PacketHandlerEventArgs args)
         {
             // Set the default min light level if they have limits set
-            if (World.Player != null)
-                EnforceLightLevels(-1);
+            //if (World.Player != null)
+                //EnforceLightLevels(-1);
         }
 
         private static void MobileMoving(Packet p, PacketHandlerEventArgs args)
@@ -2731,8 +2731,8 @@ namespace Assistant
 
                 World.Player.LocalLightLevel = p.ReadSByte();
 
-                if (EnforceLightLevels(World.Player.LocalLightLevel))
-                    args.Block = true;
+                //if (EnforceLightLevels(World.Player.LocalLightLevel))
+                    //args.Block = true;
             }
         }
 
@@ -2742,12 +2742,12 @@ namespace Assistant
             {
                 World.Player.GlobalLightLevel = p.ReadByte();
 
-                if (EnforceLightLevels(World.Player.GlobalLightLevel))
-                    args.Block = true;
+                //if (EnforceLightLevels(World.Player.GlobalLightLevel))
+                    //args.Block = true;
             }
         }
 
-        private static bool EnforceLightLevels(int lightLevel)
+        /*private static bool EnforceLightLevels(int lightLevel)
         {
             if (Config.GetBool("MinMaxLightLevelEnabled"))
             {
@@ -2779,7 +2779,7 @@ namespace Assistant
             }
 
             return false;
-        }
+        }*/
 
         private static void ServerSetWarMode(PacketReader p, PacketHandlerEventArgs args)
         {
