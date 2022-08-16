@@ -470,13 +470,8 @@ namespace Assistant
             this.chkStealth = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.gameSize = new System.Windows.Forms.CheckBox();
-            //this.setMinLightLevel = new System.Windows.Forms.Button();
-            //this.setMaxLightLevel = new System.Windows.Forms.Button();
             this.seasonList = new System.Windows.Forms.ComboBox();
             this.lblSeason = new System.Windows.Forms.Label();
-            //this.lightLevel = new System.Windows.Forms.Label();
-            //this.lightLevelBar = new System.Windows.Forms.TrackBar();
-            //this.minMaxLightLevel = new System.Windows.Forms.CheckBox();
             this.blockPartyInvites = new System.Windows.Forms.CheckBox();
             this.blockTradeRequests = new System.Windows.Forms.CheckBox();
             this.blockOpenCorpsesTwice = new System.Windows.Forms.CheckBox();
@@ -661,6 +656,8 @@ namespace Assistant
             this.hotkeyTree = new System.Windows.Forms.TreeView();
             this.dohotkey = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.hkCommand = new System.Windows.Forms.TextBox();
+            this.hkCmdLabel = new System.Windows.Forms.Label();
             this.chkAlt = new System.Windows.Forms.CheckBox();
             this.chkPass = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -766,13 +763,9 @@ namespace Assistant
             this.openBackupFolder = new System.Windows.Forms.Button();
             this.setBackupFolder = new System.Windows.Forms.Button();
             this.createBackup = new System.Windows.Forms.Button();
-            //this.enableUOAAPI = new System.Windows.Forms.CheckBox();
-            //this.disableSmartCPU = new System.Windows.Forms.Button();
-            //this.negotiate = new System.Windows.Forms.CheckBox();
             this.openRazorDataDir = new System.Windows.Forms.Button();
             this.msglvl = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            //this.logPackets = new System.Windows.Forms.CheckBox();
             this.statusBox = new System.Windows.Forms.TextBox();
             this.features = new System.Windows.Forms.TextBox();
             this.aboutTab = new System.Windows.Forms.TabPage();
@@ -786,8 +779,6 @@ namespace Assistant
             this.linkMain = new System.Windows.Forms.LinkLabel();
             this.label21 = new System.Windows.Forms.Label();
             this.aboutVer = new System.Windows.Forms.Label();
-            this.hkCmdLabel = new System.Windows.Forms.Label();
-            this.hkCommand = new System.Windows.Forms.TextBox();
             this.tabs.SuspendLayout();
             this.generalTab.SuspendLayout();
             this.subGeneralTab.SuspendLayout();
@@ -801,7 +792,6 @@ namespace Assistant
             this.subOptionsTargetTab.SuspendLayout();
             this.groupSmartTarget.SuspendLayout();
             this.subOptionsMiscTab.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.lightLevelBar)).BeginInit();
             this.displayTab.SuspendLayout();
             this.displayCountersTabCtrl.SuspendLayout();
             this.subDisplayTab.SuspendLayout();
@@ -1759,13 +1749,8 @@ namespace Assistant
             this.subOptionsMiscTab.Controls.Add(this.chkStealth);
             this.subOptionsMiscTab.Controls.Add(this.label18);
             this.subOptionsMiscTab.Controls.Add(this.gameSize);
-            //this.subOptionsMiscTab.Controls.Add(this.setMinLightLevel);
-            //this.subOptionsMiscTab.Controls.Add(this.setMaxLightLevel);
             this.subOptionsMiscTab.Controls.Add(this.seasonList);
             this.subOptionsMiscTab.Controls.Add(this.lblSeason);
-            //this.subOptionsMiscTab.Controls.Add(this.lightLevel);
-            //this.subOptionsMiscTab.Controls.Add(this.lightLevelBar);
-            //this.subOptionsMiscTab.Controls.Add(this.minMaxLightLevel);
             this.subOptionsMiscTab.Controls.Add(this.blockPartyInvites);
             this.subOptionsMiscTab.Controls.Add(this.blockTradeRequests);
             this.subOptionsMiscTab.Controls.Add(this.blockOpenCorpsesTwice);
@@ -1953,24 +1938,6 @@ namespace Assistant
             this.gameSize.Text = "Force Game Size:";
             this.gameSize.CheckedChanged += new System.EventHandler(this.gameSize_CheckedChanged);
             // 
-            // setMinLightLevel
-            // 
-            /*this.setMinLightLevel.Location = new System.Drawing.Point(117, 247);
-            this.setMinLightLevel.Name = "setMinLightLevel";
-            this.setMinLightLevel.Size = new System.Drawing.Size(58, 25);
-            this.setMinLightLevel.TabIndex = 105;
-            this.setMinLightLevel.Text = "Set Min";
-            this.setMinLightLevel.Click += new System.EventHandler(this.setMinLightLevel_Click);
-            // 
-            // setMaxLightLevel
-            // 
-            this.setMaxLightLevel.Location = new System.Drawing.Point(181, 247);
-            this.setMaxLightLevel.Name = "setMaxLightLevel";
-            this.setMaxLightLevel.Size = new System.Drawing.Size(58, 25);
-            this.setMaxLightLevel.TabIndex = 104;
-            this.setMaxLightLevel.Text = "Set Max";
-            this.setMaxLightLevel.Click += new System.EventHandler(this.setMaxLightLevel_Click);*/
-            // 
             // seasonList
             // 
             this.seasonList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1996,36 +1963,6 @@ namespace Assistant
             this.lblSeason.Size = new System.Drawing.Size(47, 15);
             this.lblSeason.TabIndex = 101;
             this.lblSeason.Text = "Season:";
-            // 
-            // lightLevel
-            // 
-            /*this.lightLevel.AutoSize = true;
-            this.lightLevel.Location = new System.Drawing.Point(6, 223);
-            this.lightLevel.Name = "lightLevel";
-            this.lightLevel.Size = new System.Drawing.Size(67, 15);
-            this.lightLevel.TabIndex = 100;
-            this.lightLevel.Text = "Light Level:";
-            // 
-            // lightLevelBar
-            // 
-            this.lightLevelBar.AutoSize = false;
-            this.lightLevelBar.Location = new System.Drawing.Point(79, 223);
-            this.lightLevelBar.Maximum = 31;
-            this.lightLevelBar.Name = "lightLevelBar";
-            this.lightLevelBar.Size = new System.Drawing.Size(161, 21);
-            this.lightLevelBar.TabIndex = 99;
-            this.lightLevelBar.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.lightLevelBar.Value = 15;
-            this.lightLevelBar.Scroll += new System.EventHandler(this.lightLevelBar_Scroll);
-            // 
-            // minMaxLightLevel
-            // 
-            this.minMaxLightLevel.Location = new System.Drawing.Point(9, 250);
-            this.minMaxLightLevel.Name = "minMaxLightLevel";
-            this.minMaxLightLevel.Size = new System.Drawing.Size(114, 20);
-            this.minMaxLightLevel.TabIndex = 106;
-            this.minMaxLightLevel.Text = "Enable Min/Max";
-            this.minMaxLightLevel.CheckedChanged += new System.EventHandler(this.minMaxLightLevel_CheckedChanged);*/
             // 
             // blockPartyInvites
             // 
@@ -3971,6 +3908,21 @@ namespace Assistant
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Hot Key";
             // 
+            // hkCommand
+            // 
+            this.hkCommand.Location = new System.Drawing.Point(73, 73);
+            this.hkCommand.Name = "hkCommand";
+            this.hkCommand.Size = new System.Drawing.Size(96, 23);
+            this.hkCommand.TabIndex = 11;
+            // 
+            // hkCmdLabel
+            // 
+            this.hkCmdLabel.Location = new System.Drawing.Point(8, 76);
+            this.hkCmdLabel.Name = "hkCmdLabel";
+            this.hkCmdLabel.Size = new System.Drawing.Size(68, 20);
+            this.hkCmdLabel.TabIndex = 10;
+            this.hkCmdLabel.Text = "Command";
+            // 
             // chkAlt
             // 
             this.chkAlt.Location = new System.Drawing.Point(58, 20);
@@ -5072,13 +5024,9 @@ namespace Assistant
             // 
             this.advancedTab.BackColor = System.Drawing.SystemColors.Control;
             this.advancedTab.Controls.Add(this.groupBox16);
-            //this.advancedTab.Controls.Add(this.enableUOAAPI);
-            //this.advancedTab.Controls.Add(this.disableSmartCPU);
-            //this.advancedTab.Controls.Add(this.negotiate);
             this.advancedTab.Controls.Add(this.openRazorDataDir);
             this.advancedTab.Controls.Add(this.msglvl);
             this.advancedTab.Controls.Add(this.label17);
-            //this.advancedTab.Controls.Add(this.logPackets);
             this.advancedTab.Controls.Add(this.statusBox);
             this.advancedTab.Controls.Add(this.features);
             this.advancedTab.Location = new System.Drawing.Point(4, 44);
@@ -5139,36 +5087,6 @@ namespace Assistant
             this.createBackup.UseVisualStyleBackColor = true;
             this.createBackup.Click += new System.EventHandler(this.createBackup_Click);
             // 
-            // enableUOAAPI
-            // 
-            /*this.enableUOAAPI.Checked = true;
-            this.enableUOAAPI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enableUOAAPI.Location = new System.Drawing.Point(241, 102);
-            this.enableUOAAPI.Name = "enableUOAAPI";
-            this.enableUOAAPI.Size = new System.Drawing.Size(146, 23);
-            this.enableUOAAPI.TabIndex = 75;
-            this.enableUOAAPI.Text = "Enable UOA API";
-            this.enableUOAAPI.CheckedChanged += new System.EventHandler(this.enableUOAAPI_CheckedChanged);
-            // 
-            // disableSmartCPU
-            // 
-            this.disableSmartCPU.Location = new System.Drawing.Point(392, 156);
-            this.disableSmartCPU.Name = "disableSmartCPU";
-            this.disableSmartCPU.Size = new System.Drawing.Size(119, 22);
-            this.disableSmartCPU.TabIndex = 74;
-            this.disableSmartCPU.Text = "Disable SmartCPU";
-            this.disableSmartCPU.UseVisualStyleBackColor = true;
-            this.disableSmartCPU.Click += new System.EventHandler(this.disableSmartCPU_Click);*/
-            // 
-            // negotiate
-            // 
-            /*this.negotiate.Location = new System.Drawing.Point(241, 76);
-            this.negotiate.Name = "negotiate";
-            this.negotiate.Size = new System.Drawing.Size(197, 20);
-            this.negotiate.TabIndex = 72;
-            this.negotiate.Text = "Negotiate features with server";
-            this.negotiate.CheckedChanged += new System.EventHandler(this.negotiate_CheckedChanged);*/
-            // 
             // openRazorDataDir
             // 
             this.openRazorDataDir.Location = new System.Drawing.Point(241, 8);
@@ -5201,15 +5119,6 @@ namespace Assistant
             this.label17.TabIndex = 68;
             this.label17.Text = "Razor messages:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // logPackets
-            // 
-            /*this.logPackets.Location = new System.Drawing.Point(241, 47);
-            this.logPackets.Name = "logPackets";
-            this.logPackets.Size = new System.Drawing.Size(146, 23);
-            this.logPackets.TabIndex = 67;
-            this.logPackets.Text = "Enable packet logging";
-            this.logPackets.CheckedChanged += new System.EventHandler(this.logPackets_CheckedChanged);*/
             // 
             // statusBox
             // 
@@ -5325,7 +5234,7 @@ namespace Assistant
             this.aboutSubInfo.Name = "aboutSubInfo";
             this.aboutSubInfo.Size = new System.Drawing.Size(506, 19);
             this.aboutSubInfo.TabIndex = 17;
-            this.aboutSubInfo.Text = "Community Edition";
+            this.aboutSubInfo.Text = "Moded and modded for ZHI by DemonRok";
             this.aboutSubInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkMain
@@ -5359,21 +5268,6 @@ namespace Assistant
             this.aboutVer.TabIndex = 14;
             this.aboutVer.Text = "Razor v{0}";
             this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // hkCmdLabel
-            // 
-            this.hkCmdLabel.Location = new System.Drawing.Point(8, 76);
-            this.hkCmdLabel.Name = "hkCmdLabel";
-            this.hkCmdLabel.Size = new System.Drawing.Size(68, 20);
-            this.hkCmdLabel.TabIndex = 10;
-            this.hkCmdLabel.Text = "Command";
-            // 
-            // hkCommand
-            // 
-            this.hkCommand.Location = new System.Drawing.Point(73, 73);
-            this.hkCommand.Name = "hkCommand";
-            this.hkCommand.Size = new System.Drawing.Size(96, 23);
-            this.hkCommand.TabIndex = 11;
             // 
             // MainForm
             // 
@@ -5411,7 +5305,6 @@ namespace Assistant
             this.groupSmartTarget.PerformLayout();
             this.subOptionsMiscTab.ResumeLayout(false);
             this.subOptionsMiscTab.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.lightLevelBar)).EndInit();
             this.displayTab.ResumeLayout(false);
             this.displayCountersTabCtrl.ResumeLayout(false);
             this.subDisplayTab.ResumeLayout(false);
