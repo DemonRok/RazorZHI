@@ -5325,7 +5325,7 @@ namespace Assistant
             this.aboutSubInfo.Name = "aboutSubInfo";
             this.aboutSubInfo.Size = new System.Drawing.Size(506, 19);
             this.aboutSubInfo.TabIndex = 17;
-            this.aboutSubInfo.Text = "Community Edition";
+            this.aboutSubInfo.Text = "Moded and modded for ZHI by DemonRok";
             this.aboutSubInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkMain
