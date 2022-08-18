@@ -1304,7 +1304,7 @@ namespace Assistant
                 return;
             }
 
-            string remove = (string) profiles.Items[profiles.SelectedIndex];
+            string remove = (string)profiles.Items[profiles.SelectedIndex];
 
             if (remove == "default")
             {
@@ -1315,9 +1315,12 @@ namespace Assistant
 
             string file = Path.Combine(Config.GetUserDirectory("Profiles"), $"{remove}.xml");
             if (File.Exists(file))
+            {
                 File.Delete(file);
+            }
 
             profiles.Items.Remove(remove);
+            
             if (!Config.LoadProfile("default"))
             {
                 Config.CurrentProfile.MakeDefault();
