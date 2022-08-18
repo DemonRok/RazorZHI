@@ -145,15 +145,14 @@ namespace Assistant
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
             this.SuspendLayout();
             // 
             // SplashScreen
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(435, 331);
             this.ControlBox = false;
@@ -167,6 +166,7 @@ namespace Assistant
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.SplashScreen_Load);
             this.ResumeLayout(false);
+
         }
 
         #endregion
