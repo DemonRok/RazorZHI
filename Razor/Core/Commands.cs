@@ -42,7 +42,7 @@ namespace Assistant
             Command.Register("Ping", Ping);
             Command.Register("Help", Command.ListCommands);
             Command.Register("Echo", Echo);
-            Command.Register("Macro", MacroCmd);
+            //Command.Register("Macro", MacroCmd);
             Command.Register("Script", ScriptCmd);
             Command.Register("Hue", GetItemHue);
             Command.Register("Item", GetItemHue);
