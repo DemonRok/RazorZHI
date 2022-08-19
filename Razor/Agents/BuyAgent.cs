@@ -90,14 +90,14 @@ namespace Assistant.Agents
 
             Agents = new List<BuyAgent>();
 
-            for (int i = 1; i <= maxAgents; i++)
+            /*for (int i = 1; i <= maxAgents; i++)
             {
                 BuyAgent b = new BuyAgent(i);
                 m_Instances.Add(b);
                 Agent.Add(b);
 
                 Agents.Add(b);
-            }
+            }*/
         }
 
         private ListBox m_SubList;
