@@ -446,6 +446,10 @@ namespace Assistant.Boat
             }
         }
 
+        private void boatSpeedFast_Click(object sender, EventArgs e)
+        {
+            SendBoatCommand("Fast", false);
+        }
         private void boatT2a_Click(object sender, EventArgs e)
         {
             if (_inT2A)

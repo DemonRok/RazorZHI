@@ -40,6 +40,7 @@ namespace Assistant.Boat
             this.boatWest = new System.Windows.Forms.PictureBox();
             this.boatNorthwest = new System.Windows.Forms.PictureBox();
             this.boatAnchor = new System.Windows.Forms.PictureBox();
+            this.boatSpeedFast = new System.Windows.Forms.PictureBox();
             this.boatT2a = new System.Windows.Forms.PictureBox();
             this.boatSpeedNormal = new System.Windows.Forms.RadioButton();
             this.boatSpeedSlow = new System.Windows.Forms.RadioButton();
@@ -73,6 +74,7 @@ namespace Assistant.Boat
             ((System.ComponentModel.ISupportInitialize)(this.boatWest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatNorthwest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatAnchor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boatSpeedFast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatT2a)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatTurnRight)).BeginInit();
@@ -102,10 +104,11 @@ namespace Assistant.Boat
             this.boatNortheast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.boatNortheast.TabIndex = 1;
             this.boatNortheast.TabStop = false;
-            this.boatNortheast.MouseClick += new MouseEventHandler(this.boatNortheast_Click);
+            this.boatNortheast.MouseClick += new System.Windows.Forms.MouseEventHandler(this.boatNortheast_Click);
             // 
             // boatEast
             // 
+            this.boatEast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.boatEast.Image = ((System.Drawing.Image)(resources.GetObject("boatEast.Image")));
             this.boatEast.Location = new System.Drawing.Point(113, 74);
             this.boatEast.Name = "boatEast";
@@ -124,10 +127,11 @@ namespace Assistant.Boat
             this.boatSoutheast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.boatSoutheast.TabIndex = 3;
             this.boatSoutheast.TabStop = false;
-            this.boatSoutheast.MouseClick += new MouseEventHandler(this.boatSoutheast_Click);
+            this.boatSoutheast.MouseClick += new System.Windows.Forms.MouseEventHandler(this.boatSoutheast_Click);
             // 
             // boatSouth
             // 
+            this.boatSouth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.boatSouth.Image = ((System.Drawing.Image)(resources.GetObject("boatSouth.Image")));
             this.boatSouth.Location = new System.Drawing.Point(80, 108);
             this.boatSouth.Name = "boatSouth";
@@ -146,10 +150,11 @@ namespace Assistant.Boat
             this.boatSouthwest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.boatSouthwest.TabIndex = 5;
             this.boatSouthwest.TabStop = false;
-            this.boatSouthwest.MouseClick += new MouseEventHandler(this.boatSouthwest_Click);
+            this.boatSouthwest.MouseClick += new System.Windows.Forms.MouseEventHandler(this.boatSouthwest_Click);
             // 
             // boatWest
             // 
+            this.boatWest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.boatWest.Image = ((System.Drawing.Image)(resources.GetObject("boatWest.Image")));
             this.boatWest.Location = new System.Drawing.Point(47, 74);
             this.boatWest.Name = "boatWest";
@@ -168,7 +173,7 @@ namespace Assistant.Boat
             this.boatNorthwest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.boatNorthwest.TabIndex = 7;
             this.boatNorthwest.TabStop = false;
-            this.boatNorthwest.MouseClick += new MouseEventHandler(this.boatNorthwest_Click);
+            this.boatNorthwest.MouseClick += new System.Windows.Forms.MouseEventHandler(this.boatNorthwest_Click);
             // 
             // boatAnchor
             // 
@@ -180,6 +185,17 @@ namespace Assistant.Boat
             this.boatAnchor.TabIndex = 8;
             this.boatAnchor.TabStop = false;
             this.boatAnchor.Click += new System.EventHandler(this.boatAnchor_Click);
+            // 
+            // boatSpeedFast
+            // 
+            this.boatSpeedFast.Image = ((System.Drawing.Image)(resources.GetObject("boatSpeedFast.Image")));
+            this.boatSpeedFast.Location = new System.Drawing.Point(15, 40);
+            this.boatSpeedFast.Name = "boatSpeedFast";
+            this.boatSpeedFast.Size = new System.Drawing.Size(28, 28);
+            this.boatSpeedFast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.boatSpeedFast.TabIndex = 35;
+            this.boatSpeedFast.TabStop = false;
+            this.boatSpeedFast.Click += new System.EventHandler(this.boatSpeedFast_Click);
             // 
             // boatT2a
             // 
@@ -245,7 +261,7 @@ namespace Assistant.Boat
             // boatTurnRight
             // 
             this.boatTurnRight.Image = ((System.Drawing.Image)(resources.GetObject("boatTurnRight.Image")));
-            this.boatTurnRight.Location = new System.Drawing.Point(146, 74);
+            this.boatTurnRight.Location = new System.Drawing.Point(145, 79);
             this.boatTurnRight.Name = "boatTurnRight";
             this.boatTurnRight.Size = new System.Drawing.Size(26, 19);
             this.boatTurnRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -256,7 +272,7 @@ namespace Assistant.Boat
             // boatTurnLeft
             // 
             this.boatTurnLeft.Image = ((System.Drawing.Image)(resources.GetObject("boatTurnLeft.Image")));
-            this.boatTurnLeft.Location = new System.Drawing.Point(15, 74);
+            this.boatTurnLeft.Location = new System.Drawing.Point(15, 79);
             this.boatTurnLeft.Name = "boatTurnLeft";
             this.boatTurnLeft.Size = new System.Drawing.Size(26, 19);
             this.boatTurnLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -438,7 +454,7 @@ namespace Assistant.Boat
             this.alwaysOnTop.ForeColor = System.Drawing.Color.DarkGray;
             this.alwaysOnTop.Location = new System.Drawing.Point(11, 270);
             this.alwaysOnTop.Name = "alwaysOnTop";
-            this.alwaysOnTop.Size = new System.Drawing.Size(101, 17);
+            this.alwaysOnTop.Size = new System.Drawing.Size(102, 17);
             this.alwaysOnTop.TabIndex = 31;
             this.alwaysOnTop.Text = "Always On Top";
             this.alwaysOnTop.UseVisualStyleBackColor = true;
@@ -462,7 +478,7 @@ namespace Assistant.Boat
             this.boatWindowsBorder.ForeColor = System.Drawing.Color.DarkGray;
             this.boatWindowsBorder.Location = new System.Drawing.Point(114, 270);
             this.boatWindowsBorder.Name = "boatWindowsBorder";
-            this.boatWindowsBorder.Size = new System.Drawing.Size(61, 17);
+            this.boatWindowsBorder.Size = new System.Drawing.Size(60, 17);
             this.boatWindowsBorder.TabIndex = 33;
             this.boatWindowsBorder.Text = "Border";
             this.boatWindowsBorder.UseVisualStyleBackColor = true;
@@ -507,6 +523,7 @@ namespace Assistant.Boat
             this.Controls.Add(this.boatSpeedOne);
             this.Controls.Add(this.boatSpeedSlow);
             this.Controls.Add(this.boatSpeedNormal);
+            this.Controls.Add(this.boatSpeedFast);
             this.Controls.Add(this.boatT2a);
             this.Controls.Add(this.boatAnchor);
             this.Controls.Add(this.boatNorthwest);
@@ -537,6 +554,7 @@ namespace Assistant.Boat
             ((System.ComponentModel.ISupportInitialize)(this.boatWest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatNorthwest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatAnchor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boatSpeedFast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatT2a)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatTurnRight)).EndInit();
@@ -559,6 +577,7 @@ namespace Assistant.Boat
         private System.Windows.Forms.PictureBox boatWest;
         private System.Windows.Forms.PictureBox boatNorthwest;
         private System.Windows.Forms.PictureBox boatAnchor;
+        private System.Windows.Forms.PictureBox boatSpeedFast;
         private System.Windows.Forms.PictureBox boatT2a;
         private System.Windows.Forms.RadioButton boatSpeedNormal;
         private System.Windows.Forms.RadioButton boatSpeedSlow;
