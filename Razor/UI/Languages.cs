@@ -606,7 +606,7 @@ namespace Assistant
         private static Ultima.StringList m_CliLoc = null;
         private static bool m_Loaded = false;
         private static string m_Current;
-        private static string m_CliLocName = "ENU";
+        private static string m_CliLocName = "ITA";
 
         public static bool Loaded
         {
