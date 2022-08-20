@@ -26,11 +26,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("Razor")]
+[assembly: AssemblyTitle("RazorZHI")]
 [assembly: AssemblyDescription("Ultima Online Assistant Tool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("https://github.com/markdwags/Razor")]
-[assembly: AssemblyProduct("Razor")]
+[assembly: AssemblyProduct("RazorZHI")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

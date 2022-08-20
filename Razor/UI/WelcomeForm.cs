@@ -657,7 +657,7 @@ namespace Assistant
             if (Config.GetAppSetting<bool>("ImportProfilesAndMacros"))
             {
                 string appDataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    "Razor");
+                    "RazorZHI");
 
                 if (Directory.Exists(appDataDir))
                 {

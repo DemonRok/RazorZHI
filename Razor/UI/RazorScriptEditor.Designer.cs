@@ -253,7 +253,7 @@ namespace Assistant.UI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "RazorScriptEditor";
-            this.Text = "Razor Script Editor (RSE)";
+            this.Text = "RazorZHI Script Editor (RSE)";
             this.Load += new System.EventHandler(this.RazorScriptEditor_Load);
             this.VisibleChanged += new System.EventHandler(this.RazorScriptEditor_VisibleChanged);
             this.scriptToolStrip.ResumeLayout(false);

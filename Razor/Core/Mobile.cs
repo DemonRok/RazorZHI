@@ -584,7 +584,7 @@ namespace Assistant
 
         internal void OverheadMessage(int hue, string text)
         {
-            OverheadMessageFrom(hue, "Razor", text);
+            OverheadMessageFrom(hue, "RazorZHI", text);
         }
 
         internal void OverheadMessage(LocString str)

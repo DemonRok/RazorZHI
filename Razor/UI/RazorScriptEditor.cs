@@ -74,7 +74,7 @@ namespace Assistant.UI
         {
             if (ScriptManager.SelectedScript != null)
             {
-                Text = _savedCurrentScript ? $"[{ScriptManager.SelectedScript.Name}] - Razor Script Editor" : $"[*{ScriptManager.SelectedScript.Name}] - Razor Script Editor";
+                Text = _savedCurrentScript ? $"[{ScriptManager.SelectedScript.Name}] - RazorZHI Script Editor" : $"[*{ScriptManager.SelectedScript.Name}] - Razor Script Editor";
             }
         }
 

@@ -822,7 +822,7 @@ namespace Assistant
             {
                 StringBuilder sb = new StringBuilder();
 
-                sb.AppendFormat("Razor enountered errors on the following lines while loading the file '{0}'\r\n",
+                sb.AppendFormat("RazorZHI enountered errors on the following lines while loading the file '{0}'\r\n",
                     filename);
                 for (int i = 0; i < errors.Count; i++)
                     sb.AppendFormat("Line {0}\r\n", errors[i]);

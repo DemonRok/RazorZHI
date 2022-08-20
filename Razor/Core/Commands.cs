@@ -188,7 +188,7 @@ namespace Assistant
         private static void CreateGump(string[] param)
         {
             StringBuilder message = new StringBuilder();
-            message.AppendLine("Razor");
+            message.AppendLine("RazorZHI");
             message.AppendLine();
             message.AppendLine("Another message");
 

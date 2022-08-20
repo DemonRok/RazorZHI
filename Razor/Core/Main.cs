@@ -359,7 +359,7 @@ namespace Assistant
 
         public static void RunUI()
         {
-            Thread.CurrentThread.Name = "Razor UI Thread";
+            Thread.CurrentThread.Name = "RazorZHI UI Thread";
 
             m_MainWnd = new MainForm();
             m_MainWnd.Show();

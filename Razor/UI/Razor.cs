@@ -3816,7 +3816,7 @@ namespace Assistant
             string str = Language.GetControlText(this.Name);
             if (string.IsNullOrEmpty(str))
             {
-                str = "Razor v{0}";
+                str = "RazorZHI v{0}";
             }
 
             str = string.Format(str, EngineZHI.Version);
@@ -3860,10 +3860,10 @@ namespace Assistant
                     }
                     else
                     {
-                        m_NotifyIcon.Text = $"Razor - {World.Player.Name} ({World.ShardName})";
+                        m_NotifyIcon.Text = $"RazorZHI - {World.Player.Name} ({World.ShardName})";
                     }
                 else
-                    m_NotifyIcon.Text = "Razor";
+                    m_NotifyIcon.Text = "RazorZHI";
             }
         }
 
@@ -4599,7 +4599,7 @@ namespace Assistant
                             Path.Combine(backupDir, "Profiles")), true);
                 }
 
-                MessageBox.Show(this, $"Backup created: {backupDir}", "Razor Backup", MessageBoxButtons.OK,
+                MessageBox.Show(this, $"Backup created: {backupDir}", "RazorZHI Backup", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
                 Config.SetAppSetting("BackupTime", DateTime.Now.ToString());
@@ -5491,7 +5491,7 @@ namespace Assistant
             sb.AppendLine("{profile} - Selected profile name");
             sb.AppendLine("{account} - Account name");
 
-            MessageBox.Show(this, sb.ToString(), "Razor Title Bar Variables", MessageBoxButtons.OK,
+            MessageBox.Show(this, sb.ToString(), "RazorZHI Title Bar Variables", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
 
@@ -7477,7 +7477,7 @@ namespace Assistant
                 }
                 else
                 {
-                    append = $"Razor v{EngineZHI.Version}";
+                    append = $"RazorZHI v{EngineZHI.Version}";
                 }
 
                 Text = saved ? $"[{_selectedScript.Name}] - {append}" : $"[*{_selectedScript.Name}] - {append}";

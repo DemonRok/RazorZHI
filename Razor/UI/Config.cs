@@ -220,7 +220,7 @@ namespace Assistant
             AddProperty("ShowDamageTakenOverhead", false);
 
             AddProperty("ShowInRazorTitleBar", false);
-            AddProperty("RazorTitleBarText", "{name} on {account} ({profile} - {shard}) - Razor v{version}");
+            AddProperty("RazorTitleBarText", "{name} on {account} ({profile} - {shard}) - RazorZHI v{version}");
 
             AddProperty("EnableUOAAPI", false);
 

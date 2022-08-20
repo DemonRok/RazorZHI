@@ -52,7 +52,7 @@ namespace Assistant
 
         public static string PacketsLogFile
         {
-            get { return Path.Combine(Config.GetInstallDirectory(), "Razor_Packets.log"); }
+            get { return Path.Combine(Config.GetInstallDirectory(), "RazorZHI_Packets.log"); }
         }
 
         private static void BeginLog()

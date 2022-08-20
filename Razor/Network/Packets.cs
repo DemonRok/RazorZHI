@@ -1793,7 +1793,7 @@ namespace Assistant
         internal AssistVersion()
             : base(0xBE)
         {
-            var assistVersion = $"Razor {(typeof(AssistVersion).Assembly.GetName().Version)}";
+            var assistVersion = $"RazorZHI {(typeof(AssistVersion).Assembly.GetName().Version)}";
 
             EnsureCapacity(3 + assistVersion.Length);
 

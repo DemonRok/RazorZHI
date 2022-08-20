@@ -856,7 +856,7 @@ namespace Assistant
             // m_NotifyIcon
             // 
             this.m_NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("m_NotifyIcon.Icon")));
-            this.m_NotifyIcon.Text = "Razor";
+            this.m_NotifyIcon.Text = "RazorZHI";
             this.m_NotifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
             // 
             // tabs
@@ -1443,7 +1443,7 @@ namespace Assistant
             this.lblMsgHue.Name = "lblMsgHue";
             this.lblMsgHue.Size = new System.Drawing.Size(206, 18);
             this.lblMsgHue.TabIndex = 57;
-            this.lblMsgHue.Text = "Razor Message Hue:";
+            this.lblMsgHue.Text = "RazorZHI Message Hue:";
             // 
             // lblExHue
             // 
@@ -2157,7 +2157,7 @@ namespace Assistant
             this.groupBox11.Size = new System.Drawing.Size(490, 71);
             this.groupBox11.TabIndex = 51;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Razor Title Bar";
+            this.groupBox11.Text = "RazorZHI Title Bar";
             // 
             // razorTitleBarKey
             // 
@@ -5199,7 +5199,7 @@ namespace Assistant
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 18);
             this.label17.TabIndex = 68;
-            this.label17.Text = "Razor messages:";
+            this.label17.Text = "RazorZHI messages:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // logPackets
@@ -5357,7 +5357,7 @@ namespace Assistant
             this.aboutVer.Name = "aboutVer";
             this.aboutVer.Size = new System.Drawing.Size(506, 35);
             this.aboutVer.TabIndex = 14;
-            this.aboutVer.Text = "Razor v{0}";
+            this.aboutVer.Text = "RazorZHI v{0}";
             this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // hkCmdLabel
@@ -5386,7 +5386,7 @@ namespace Assistant
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Razor v{0}";
+            this.Text = "RazorZHI v{0}";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.MainForm_Closing);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);

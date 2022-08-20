@@ -526,7 +526,7 @@ namespace Assistant.Boat
             this.Name = "BoatWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Razor Boat Control";
+            this.Text = "RazorZHI Boat Control";
             this.Load += new System.EventHandler(this.BoatWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.boatNorth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boatNortheast)).EndInit();
