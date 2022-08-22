@@ -432,7 +432,19 @@ namespace Assistant.Boat
             }
         }
 
-        private void boatAnchor_Click(object sender, EventArgs e)
+        private void boatAnchorRaise_Click(object sender, EventArgs e)
+        {
+            SendBoatCommand("Raise Anchor", false);
+            _ancherUp = true;
+        }
+
+        private void boatAnchorDrop_Click(object sender, EventArgs e)
+        {
+            SendBoatCommand("Drop Anchor", false);
+           _ancherUp = false;
+        }
+
+        /*private void boatAnchor_Click(object sender, EventArgs e)
         {
             if (_ancherUp)
             {
@@ -444,7 +456,7 @@ namespace Assistant.Boat
                 SendBoatCommand("Raise Anchor", false);
                 _ancherUp = true;
             }
-        }
+        }*/
 
         private void boatSpeedFast_Click(object sender, EventArgs e)
         {
