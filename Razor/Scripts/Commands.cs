@@ -40,8 +40,8 @@ namespace Assistant.Scripts
             Interpreter.RegisterCommandHandler("cast", Cast); //BookcastAction, etc
 
             // Dress
-            Interpreter.RegisterCommandHandler("dress", DressCommand); //DressAction
-            Interpreter.RegisterCommandHandler("undress", UnDressCommand); //UndressAction
+            //Interpreter.RegisterCommandHandler("dress", DressCommand); //DressAction
+            //Interpreter.RegisterCommandHandler("undress", UnDressCommand); //UndressAction
 
             // Using stuff
             Interpreter.RegisterCommandHandler("dclicktype", DClickType); // DoubleClickTypeAction
@@ -94,7 +94,7 @@ namespace Assistant.Scripts
             Interpreter.RegisterCommandHandler("skill", UseSkill); //SkillAction
             Interpreter.RegisterCommandHandler("useskill", UseSkill); //SkillAction
             Interpreter.RegisterCommandHandler("walk", Walk); //Move/WalkAction
-            Interpreter.RegisterCommandHandler("potion", Potion);
+            //Interpreter.RegisterCommandHandler("potion", Potion);
 
             // Script related
             Interpreter.RegisterCommandHandler("script", PlayScript);
@@ -107,7 +107,7 @@ namespace Assistant.Scripts
 
             Interpreter.RegisterCommandHandler("clearhands", ClearHands);
 
-            Interpreter.RegisterCommandHandler("virtue", Virtue);
+            //Interpreter.RegisterCommandHandler("virtue", Virtue);
 
             Interpreter.RegisterCommandHandler("random", Random);
 

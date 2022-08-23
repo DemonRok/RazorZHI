@@ -641,10 +641,10 @@ namespace Assistant.Scripts
             {
                 "alliance", "clearall", "cleardragdrop", "clearhands", "emote", "guild", "attack", "interrupt", "virtue", "yell",
                 "cast", "dclick", "dclicktype",
-                "dress", "drop", "droprelloc", "gumpresponse", "gumpclose", "hotkey", "lasttarget", "lift", "lifttype",
+                "drop", "droprelloc", "gumpresponse", "gumpclose", "hotkey", "lasttarget", "lift", "lifttype",
                 "menu", "menuresponse", "organizer", "overhead", "potion", "promptresponse", "restock", "say",
                 "whisper", "yell", "emote", "script", "scavenger", "sell", "setability", "setlasttarget", "setvar",
-                "skill", "sysmsg", "target", "targettype", "targetrelloc", "undress", "useonce", "walk", "wait",
+                "skill", "sysmsg", "target", "targettype", "targetrelloc", "useonce", "walk", "wait",
                 "pause", "waitforgump", "waitformenu", "waitforprompt", "waitfortarget", "waitforsysmsg", "clearsysmsg", "clearjournal",
                 "waitforsysmsg", "random"
             };
@@ -688,9 +688,9 @@ namespace Assistant.Scripts
                 "dclicktype 'dagger'\n\t\twaitfortarget\n\t\ttargettype 'robe'");
             descriptionCommands.Add("dclicktype", tooltip);
 
-            tooltip = new ToolTipDescriptions("dress", new[] { "dress ('name of dress list')" }, "N/A",
+            /*tooltip = new ToolTipDescriptions("dress", new[] { "dress ('name of dress list')" }, "N/A",
                 "This command will execute a spec dress list you have defined in Razor.", "dress 'My Sunday Best'");
-            descriptionCommands.Add("dress", tooltip);
+            descriptionCommands.Add("dress", tooltip);*/
 
             tooltip = new ToolTipDescriptions("drop", new[] { "drop (serial) (x/y/z/layername)" }, "N/A",
                 "This command will drop the item you are holding either at your feet,\n\t\ton a specific layer or at a specific X / Y / Z location.",
@@ -846,11 +846,11 @@ namespace Assistant.Scripts
                 "cast 'fire field'\n\twaitfortarget\n\ttargetrelloc 1 1");
             descriptionCommands.Add("targetrelloc", tooltip);
 
-            tooltip = new ToolTipDescriptions("undress",
+            /*tooltip = new ToolTipDescriptions("undress",
                 new[] { "undress ['name of dress list']' or undress 'LayerName'" }, "N/A",
                 "This command will either undress you completely if no dress list is provided.\n\tIf you provide a dress list, only those specific items will be undressed. Lastly, you can define a layer name to undress.",
                 "undress\n\tundress 'My Sunday Best'\n\tundress 'Shirt'\n\tundrsss 'Pants'");
-            descriptionCommands.Add("undress", tooltip);
+            descriptionCommands.Add("undress", tooltip);*/
 
             tooltip = new ToolTipDescriptions("useonce", new[] { "useonce ['add'/'addcontainer']" }, "N/A",
                 "This command will execute the UseOnce agent. If the add parameter is included, you can add items to your UseOnce list.\n\tIf the addcontainer parameter is included, you can add all items in a container to your UseOnce list.",

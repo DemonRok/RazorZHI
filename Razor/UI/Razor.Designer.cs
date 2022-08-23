@@ -24,7 +24,7 @@ namespace Assistant
         private System.Windows.Forms.ColumnHeader skillHDRcap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox baseTotal;
-        private System.Windows.Forms.TabPage dressTab;
+        //private System.Windows.Forms.TabPage dressTab;
         private System.Windows.Forms.Button skillCopySel;
         private System.Windows.Forms.Button skillCopyAll;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -561,7 +561,7 @@ namespace Assistant
             this.lblWaypoint = new System.Windows.Forms.Label();
             this.btnAddWaypoint = new System.Windows.Forms.Button();
             this.waypointList = new System.Windows.Forms.ListBox();
-            this.dressTab = new System.Windows.Forms.TabPage();
+            //this.dressTab = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.clearDress = new System.Windows.Forms.Button();
             this.dressDelSel = new System.Windows.Forms.Button();
@@ -802,7 +802,7 @@ namespace Assistant
             this.subBandageTimerTab.SuspendLayout();
             this.subOverheadTab.SuspendLayout();
             this.subWaypoints.SuspendLayout();
-            this.dressTab.SuspendLayout();
+            //this.dressTab.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.skillsTab.SuspendLayout();
@@ -854,7 +854,7 @@ namespace Assistant
             this.tabs.Controls.Add(this.generalTab);
             this.tabs.Controls.Add(this.moreOptTab);
             this.tabs.Controls.Add(this.displayTab);
-            this.tabs.Controls.Add(this.dressTab);
+            //this.tabs.Controls.Add(this.dressTab);
             this.tabs.Controls.Add(this.skillsTab);
             this.tabs.Controls.Add(this.agentsTab);
             this.tabs.Controls.Add(this.filtersTab);
@@ -2928,13 +2928,13 @@ namespace Assistant
             // 
             // dressTab
             // 
-            this.dressTab.Controls.Add(this.groupBox6);
+            /*this.dressTab.Controls.Add(this.groupBox6);
             this.dressTab.Controls.Add(this.groupBox5);
             this.dressTab.Location = new System.Drawing.Point(4, 44);
             this.dressTab.Name = "dressTab";
             this.dressTab.Size = new System.Drawing.Size(519, 322);
             this.dressTab.TabIndex = 3;
-            this.dressTab.Text = "Arm/Dress";
+            this.dressTab.Text = "Arm/Dress";*/
             // 
             // groupBox6
             // 
@@ -5322,7 +5322,7 @@ namespace Assistant
             this.subOverheadTab.PerformLayout();
             this.subWaypoints.ResumeLayout(false);
             this.subWaypoints.PerformLayout();
-            this.dressTab.ResumeLayout(false);
+            //this.dressTab.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.skillsTab.ResumeLayout(false);

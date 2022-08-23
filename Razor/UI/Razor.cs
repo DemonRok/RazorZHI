@@ -274,7 +274,7 @@ namespace Assistant
 
             lblNeuHue.SafeAction(s => { InitPreviewHue(s, "NeutralSpellHue"); });
 
-            undressConflicts.SafeAction(s => { s.Checked = Config.GetBool("UndressConflicts"); });
+            //undressConflicts.SafeAction(s => { s.Checked = Config.GetBool("UndressConflicts"); });
 
             taskbar.SafeAction(s => { s.Checked = !(systray.Checked = Config.GetBool("Systray")); });
 
@@ -662,14 +662,14 @@ namespace Assistant
 
                 titleBarParams.SelectedIndex = 0;
             }
-            else if (tabs.SelectedTab == dressTab)
+            /*else if (tabs.SelectedTab == dressTab)
             {
                 int sel = dressList.SelectedIndex;
                 dressItems.Items.Clear();
                 DressList.Redraw();
                 if (sel >= 0 && sel < dressList.Items.Count)
                     dressList.SelectedIndex = sel;
-            }
+            }*/
             else if (tabs.SelectedTab == hotkeysTab)
             {
                 filterHotkeys.Text = string.Empty;
