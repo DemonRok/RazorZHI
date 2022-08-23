@@ -432,6 +432,18 @@ namespace Assistant.Boat
             }
         }
 
+        private void boatSetCourse_Click(object sender, EventArgs e)
+        {
+            SendBoatCommand("Set Course", false);
+            _ancherUp = true;
+        }
+
+        private void boatClearCourse_Click(object sender, EventArgs e)
+        {
+            SendBoatCommand("Clear Course", false);
+            _ancherUp = true;
+        }
+
         private void boatAnchorRaise_Click(object sender, EventArgs e)
         {
             SendBoatCommand("Raise Anchor", false);
