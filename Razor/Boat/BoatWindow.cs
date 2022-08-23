@@ -500,42 +500,42 @@ namespace Assistant.Boat
 
         private void boatGoto2_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 2", false);
+            SendBoatCommand("Not Implemented 2", false);
         }
 
         private void boatGoto3_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 3", false);
+            SendBoatCommand("Not Implemented 3", false);
         }
 
         private void boatGoto4_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 4", false);
+            SendBoatCommand("Not Implemented 4", false);
         }
 
         private void boatGoto5_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 5", false);
+            SendBoatCommand("Not Implemented 5", false);
         }
 
         private void boatGoto6_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 6", false);
+            SendBoatCommand("Not Implemented 6", false);
         }
 
         private void boatGoto7_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 7", false);
+            SendBoatCommand("Not Implemented 7", false);
         }
 
         private void boatGoto8_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 8", false);
+            SendBoatCommand("Not Implemented 8", false);
         }
 
         private void boatGoto9_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Goto 9", false);
+            SendBoatCommand("Not Implemented 9", false);
         }
 
         private void boatStart_Click(object sender, EventArgs e)
@@ -566,6 +566,48 @@ namespace Assistant.Boat
         private void boatClose_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void boatTurnAround_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatTurnAround, "Turn Around");
+        }
+
+        private void boatStop_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatStop, "Stop");
+        }
+
+        private void boatSetCourse_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatSetCourse, "Set Course");
+        }
+
+        private void boatClearCourse_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatClearCourse, "Clear Course");
+        }
+
+        private void boatSpeedFast_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatSpeedFast, "Fast");
+        }
+
+        private void boatAnchorRaise_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatAnchorRaise, "Raise Anchor");
+        }
+
+        private void boatAnchorDrop_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(boatAnchorDrop, "Drop Anchor");
         }
     }
 }

@@ -189,6 +189,7 @@ namespace Assistant.Boat
             this.boatSetCourse.TabIndex = 36;
             this.boatSetCourse.TabStop = false;
             this.boatSetCourse.Click += new System.EventHandler(this.boatSetCourse_Click);
+            this.boatSetCourse.MouseHover += new System.EventHandler(this.boatSetCourse_MouseHover);
             // 
             // boatClearCourse
             // 
@@ -204,6 +205,7 @@ namespace Assistant.Boat
             this.boatClearCourse.TabIndex = 37;
             this.boatClearCourse.TabStop = false;
             this.boatClearCourse.Click += new System.EventHandler(this.boatClearCourse_Click);
+            this.boatClearCourse.MouseHover += new System.EventHandler(this.boatClearCourse_MouseHover);
             // 
             // boatAnchorRaise
             // 
@@ -217,6 +219,7 @@ namespace Assistant.Boat
             this.boatAnchorRaise.TabIndex = 8;
             this.boatAnchorRaise.TabStop = false;
             this.boatAnchorRaise.Click += new System.EventHandler(this.boatAnchorRaise_Click);
+            this.boatAnchorRaise.MouseHover += new System.EventHandler(this.boatAnchorRaise_MouseHover);
             // 
             // boatAnchorDrop
             // 
@@ -230,6 +233,7 @@ namespace Assistant.Boat
             this.boatAnchorDrop.TabIndex = 9;
             this.boatAnchorDrop.TabStop = false;
             this.boatAnchorDrop.Click += new System.EventHandler(this.boatAnchorDrop_Click);
+            this.boatAnchorDrop.MouseHover += new System.EventHandler(this.boatAnchorDrop_MouseHover);
             // 
             // boatSpeedFast
             // 
@@ -243,6 +247,7 @@ namespace Assistant.Boat
             this.boatSpeedFast.TabIndex = 35;
             this.boatSpeedFast.TabStop = false;
             this.boatSpeedFast.Click += new System.EventHandler(this.boatSpeedFast_Click);
+            this.boatSpeedFast.MouseHover += new System.EventHandler(this.boatSpeedFast_MouseHover);
             // 
             // boatSpeedNormal
             // 
@@ -293,6 +298,7 @@ namespace Assistant.Boat
             this.boatStop.TabIndex = 14;
             this.boatStop.TabStop = false;
             this.boatStop.Click += new System.EventHandler(this.boatStop_Click);
+            this.boatStop.MouseHover += new System.EventHandler(this.boatStop_MouseHover);
             // 
             // boatTurnRight
             // 
@@ -328,6 +334,7 @@ namespace Assistant.Boat
             this.boatTurnAround.TabIndex = 18;
             this.boatTurnAround.TabStop = false;
             this.boatTurnAround.Click += new System.EventHandler(this.boatTurnAround_Click);
+            this.boatTurnAround.MouseHover += new System.EventHandler(this.boatTurnAround_MouseHover);
             // 
             // boatGoto1
             // 
