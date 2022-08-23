@@ -20,6 +20,7 @@
 
 using System;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace Assistant.Boat
 {
@@ -434,6 +435,9 @@ namespace Assistant.Boat
 
         private void boatSetCourse_Click(object sender, EventArgs e)
         {
+            SendBoatCommand("Raise Anchor", false);
+            var t = Task.Delay(1000);
+            t.Wait();
             SendBoatCommand("Set Course", false);
             _ancherUp = true;
         }
@@ -441,7 +445,10 @@ namespace Assistant.Boat
         private void boatClearCourse_Click(object sender, EventArgs e)
         {
             SendBoatCommand("Clear Course", false);
-            _ancherUp = true;
+            var t = Task.Delay(1000);
+            t.Wait();
+            SendBoatCommand("Drop Anchor", false);
+            _ancherUp = false;
         }
 
         private void boatAnchorRaise_Click(object sender, EventArgs e)
