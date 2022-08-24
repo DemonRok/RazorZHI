@@ -151,9 +151,9 @@ namespace Assistant
 
             opacityLabel.SafeAction(s => { s.Text = Language.Format(LocString.OpacityA1, opacity.Value); });
 
-            spellUnequip.SafeAction(s => { });
+            //spellUnequip.SafeAction(s => { });
 
-            spellUnequip.SafeAction(s => { s.Checked = Config.GetBool("SpellUnequip"); });
+            //spellUnequip.SafeAction(s => { s.Checked = Config.GetBool("SpellUnequip"); });
 
             ltRange.SafeAction(s =>
             {
@@ -239,7 +239,7 @@ namespace Assistant
 
             blockDis.SafeAction(s => { s.Checked = Config.GetBool("BlockDismount"); });
 
-            autoOpenDoors.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoors"); });
+            //autoOpenDoors.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoors"); });
 
             objectDelay.SafeAction(s => { s.Checked = Config.GetBool("ObjectDelayEnabled"); });
 
@@ -292,17 +292,17 @@ namespace Assistant
 
             showNotoHue.SafeAction(s => { s.Checked = Config.GetBool("ShowNotoHue"); });
 
-            corpseRange.SafeAction(s =>
+            /*corpseRange.SafeAction(s =>
             {
                 s.Enabled = openCorpses.Checked = Config.GetBool("AutoOpenCorpses");
                 s.Text = Config.GetInt("CorpseRange").ToString();
-            });
+            });*/
 
             actionStatusMsg.SafeAction(s => { s.Checked = Config.GetBool("ActionStatusMsg"); });
 
             autoStackRes.SafeAction(s => { s.Checked = Config.GetBool("AutoStack"); });
 
-            rememberPwds.SafeAction(s => { s.Checked = Config.GetBool("RememberPwds"); });
+            //rememberPwds.SafeAction(s => { s.Checked = Config.GetBool("RememberPwds"); });
 
             filterSnoop.SafeAction(s => { s.Checked = Config.GetBool("FilterSnoopMsg"); });
 
@@ -320,7 +320,7 @@ namespace Assistant
 
             gameSize.SafeAction(s => { s.Checked = Config.GetBool("ForceSizeEnabled"); });
 
-            potionEquip.SafeAction(s => { s.Checked = Config.GetBool("PotionEquip"); });
+            //potionEquip.SafeAction(s => { s.Checked = Config.GetBool("PotionEquip"); });
 
             blockHealPoison.SafeAction(s => { s.Checked = Config.GetBool("BlockHealPoison"); });
 
@@ -328,11 +328,11 @@ namespace Assistant
 
             //logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
 
-            healthFmt.SafeAction(s =>
+            /*healthFmt.SafeAction(s =>
             {
                 s.Enabled = showHealthOH.Checked = Config.GetBool("ShowHealth");
                 s.Text = Config.GetString("HealthFmt");
-            });
+            });*/
 
             chkPartyOverhead.SafeAction(s => { s.Checked = Config.GetBool("ShowPartyStats"); });
 
@@ -375,7 +375,7 @@ namespace Assistant
 
             stealthOverhead.SafeAction(s => { s.Checked = Config.GetBool("StealthOverhead"); });
 
-            blockOpenCorpsesTwice.SafeAction(s => { s.Checked = Config.GetBool("BlockOpenCorpsesTwice"); });
+            //blockOpenCorpsesTwice.SafeAction(s => { s.Checked = Config.GetBool("BlockOpenCorpsesTwice"); });
 
             showContainerLabels.SafeAction(s => { s.Checked = Config.GetBool("ShowContainerLabels"); });
 
@@ -445,7 +445,7 @@ namespace Assistant
 
             macroActionDelay.SafeAction(s => { s.Checked = Config.GetBool("MacroActionDelay"); });
 
-            autoOpenDoorWhenHidden.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoorWhenHidden"); });
+            //autoOpenDoorWhenHidden.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoorWhenHidden"); });
 
             disableMacroPlayFinish.SafeAction(s => { s.Checked = Config.GetBool("DisableMacroPlayFinish"); });
 
@@ -509,13 +509,13 @@ namespace Assistant
 
             overrideSpellFormat.SafeAction(s => { s.Checked = Config.GetBool("OverrideSpellFormat"); });
 
-            reequipHandsPotion.SafeAction(s => { s.Checked = Config.GetBool("PotionReequip"); });
+            //reequipHandsPotion.SafeAction(s => { s.Checked = Config.GetBool("PotionReequip"); });
 
             enableTextFilter.SafeAction(s => { s.Checked = Config.GetBool("EnableTextFilter"); });
 
             disableScriptTooltips.SafeAction(s => { s.Checked = Config.GetBool("DisableScriptTooltips"); });
 
-            buyAgentIgnoreGold.SafeAction(s => { s.Checked = Config.GetBool("BuyAgentsIgnoreGold"); });
+            //buyAgentIgnoreGold.SafeAction(s => { s.Checked = Config.GetBool("BuyAgentsIgnoreGold"); });
 
             nextPrevAbcOrder.SafeAction(s => { s.Checked = Config.GetBool("NextPrevAlphabetical"); });
 
@@ -2260,16 +2260,16 @@ namespace Assistant
             Counter.FullRecount();
         }
 
-        private void openCorpses_CheckedChanged(object sender, System.EventArgs e)
+        /*private void openCorpses_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("AutoOpenCorpses", openCorpses.Checked);
             corpseRange.Enabled = openCorpses.Checked;
-        }
+        }*/
 
-        private void corpseRange_TextChanged(object sender, System.EventArgs e)
+        /*private void corpseRange_TextChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("CorpseRange", Utility.ToInt32(corpseRange.Text, 2));
-        }
+        }*/
 
         private void showWelcome_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -3956,7 +3956,7 @@ namespace Assistant
             Config.SetProperty("CapPath", screenPath.Text);
         }
 
-        private void rememberPwds_CheckedChanged(object sender, System.EventArgs e)
+        /*private void rememberPwds_CheckedChanged(object sender, System.EventArgs e)
         {
             if (rememberPwds.Checked && !Config.GetBool("RememberPwds"))
             {
@@ -3969,7 +3969,7 @@ namespace Assistant
             }
 
             Config.SetProperty("RememberPwds", rememberPwds.Checked);
-        }
+        }*/
 
         private void langSel_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -4001,10 +4001,10 @@ namespace Assistant
             //HotKey.KeyDown(e.KeyData);
         }
 
-        private void spellUnequip_CheckedChanged(object sender, System.EventArgs e)
+        /*private void spellUnequip_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("SpellUnequip", spellUnequip.Checked);
-        }
+        }*/
 
         private void rangeCheckLT_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -4090,10 +4090,10 @@ namespace Assistant
             Config.SetProperty("AutoFriend", autoFriend.Checked);
         }
 
-        private void autoOpenDoors_CheckedChanged(object sender, System.EventArgs e)
+        /*private void autoOpenDoors_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("AutoOpenDoors", autoOpenDoors.Checked);
-        }
+        }*/
 
         private void msglvl_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -4184,10 +4184,10 @@ namespace Assistant
             }
         }
 
-        private void potionEquip_CheckedChanged(object sender, System.EventArgs e)
+        /*private void potionEquip_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("PotionEquip", potionEquip.Checked);
-        }
+        }*/
 
         private void blockHealPoison_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -4341,14 +4341,14 @@ namespace Assistant
             if (!Client.Instance.AllowBit(FeatureBit.RangeCheckLT))
                 LockControl(this.rangeCheckLT);
 
-            if (!Client.Instance.AllowBit(FeatureBit.AutoOpenDoors))
-                LockControl(this.autoOpenDoors);
+            //if (!Client.Instance.AllowBit(FeatureBit.AutoOpenDoors))
+                //LockControl(this.autoOpenDoors);
 
-            if (!Client.Instance.AllowBit(FeatureBit.UnequipBeforeCast))
-                LockControl(this.spellUnequip);
+            //if (!Client.Instance.AllowBit(FeatureBit.UnequipBeforeCast))
+                //LockControl(this.spellUnequip);
 
-            if (!Client.Instance.AllowBit(FeatureBit.AutoPotionEquip))
-                LockControl(this.potionEquip);
+            //if (!Client.Instance.AllowBit(FeatureBit.AutoPotionEquip))
+                //LockControl(this.potionEquip);
 
             if (!Client.Instance.AllowBit(FeatureBit.BlockHealPoisoned))
                 LockControl(this.blockHealPoison);
@@ -4356,12 +4356,12 @@ namespace Assistant
             if (!Client.Instance.AllowBit(FeatureBit.LoopingMacros))
                 LockControl(this.loopMacro);
 
-            if (!Client.Instance.AllowBit(FeatureBit.OverheadHealth))
+            /*if (!Client.Instance.AllowBit(FeatureBit.OverheadHealth))
             {
                 LockControl(this.showHealthOH);
                 LockControl(this.healthFmt);
                 LockControl(this.chkPartyOverhead);
-            }
+            }*/
         }
 
         public Assistant.MapUO.MapWindow MapWindow;
@@ -4384,15 +4384,15 @@ namespace Assistant
             }
         }
 
-        private void showHealthOH_CheckedChanged(object sender, System.EventArgs e)
+        /*private void showHealthOH_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("ShowHealth", healthFmt.Enabled = showHealthOH.Checked);
-        }
+        }*/
 
-        private void healthFmt_TextChanged(object sender, System.EventArgs e)
+        /*private void healthFmt_TextChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("HealthFmt", healthFmt.Text);
-        }
+        }*/
 
         private void chkPartyOverhead_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -4824,7 +4824,7 @@ namespace Assistant
             Config.SetProperty("ShowBuffDebuffOverhead", showBuffDebuffOverhead.Checked);
         }
 
-        private void blockOpenCorpsesTwice_CheckedChanged(object sender, EventArgs e)
+        /*private void blockOpenCorpsesTwice_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("BlockOpenCorpsesTwice", blockOpenCorpsesTwice.Checked);
 
@@ -4835,7 +4835,7 @@ namespace Assistant
 
                 World.Player.OpenedCorpses.Clear();
             }
-        }
+        }*/
 
         private void showAttackTarget_CheckedChanged(object sender, EventArgs e)
         {
@@ -5594,11 +5594,11 @@ namespace Assistant
                 s.Checked = false;
             });
 
-            rememberPwds.SafeAction(s =>
+            /*rememberPwds.SafeAction(s =>
             {
                 s.Enabled = false;
                 s.Checked = false;
-            });
+            });*/
 
             highlightSpellReags.SafeAction(s =>
             {
@@ -5624,13 +5624,13 @@ namespace Assistant
                 s.Checked = false;
             });
 
-            showHealthOH.SafeAction(s =>
+            /*showHealthOH.SafeAction(s =>
             {
                 s.Enabled = false;
                 s.Checked = false;
-            });
+            });*/
 
-            healthFmt.SafeAction(s => { s.Enabled = false; });
+            //healthFmt.SafeAction(s => { s.Enabled = false; });
         }
 
         private void macroActionDelay_CheckedChanged(object sender, EventArgs e)
@@ -5644,10 +5644,10 @@ namespace Assistant
                 MessageBoxIcon.Information);
         }
 
-        private void autoDoorWhenHidden_CheckedChanged(object sender, EventArgs e)
+        /*private void autoDoorWhenHidden_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("AutoOpenDoorWhenHidden", autoOpenDoorWhenHidden.Checked);
-        }
+        }*/
 
         private void disableMacroPlayFinish_CheckedChanged(object sender, EventArgs e)
         {
@@ -7300,10 +7300,10 @@ namespace Assistant
             Config.SetProperty("OverrideSpellFormat", overrideSpellFormat.Checked);            
         }
 
-        private void reequipHandsPotion_CheckedChanged(object sender, EventArgs e)
+        /*private void reequipHandsPotion_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("PotionReequip", reequipHandsPotion.Checked);
-        }
+        }*/
 
         private void agentSetHotKey_Click(object sender, EventArgs e)
         {
@@ -7676,10 +7676,10 @@ namespace Assistant
             }
         }
 
-        private void buyAgentIgnoreGold_CheckedChanged(object sender, EventArgs e)
+        /*private void buyAgentIgnoreGold_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("BuyAgentsIgnoreGold", buyAgentIgnoreGold.Checked);
-        }
+        }*/
 
         private ContextMenuStrip m_AgentsMenu = null;
 
@@ -7757,5 +7757,6 @@ namespace Assistant
                 MobileFilter.ApplyToMobiles();
             }
         }
+
     }
 }

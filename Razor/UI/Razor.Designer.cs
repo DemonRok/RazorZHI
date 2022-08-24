@@ -180,9 +180,6 @@ namespace Assistant
         private Button containerLabels;
         private CheckBox showContainerLabels;
         private CheckBox showBuffDebuffOverhead;
-        private TextBox healthFmt;
-        private Label label10;
-        private CheckBox showHealthOH;
         private CheckBox chkPartyOverhead;
         private TabPage subOptionsMiscTab;
         //private Button setMinLightLevel;
@@ -194,12 +191,8 @@ namespace Assistant
         //private CheckBox minMaxLightLevel;
         private CheckBox blockPartyInvites;
         private CheckBox blockTradeRequests;
-        private CheckBox blockOpenCorpsesTwice;
         private CheckBox preAOSstatbar;
-        private TextBox corpseRange;
         private CheckBox autoStackRes;
-        private Label label4;
-        private CheckBox openCorpses;
         private CheckBox blockDis;
         private CheckBox showStaticWalls;
         private CheckBox showStaticWallLabels;
@@ -207,9 +200,6 @@ namespace Assistant
         private TextBox forceSizeX;
         private TextBox forceSizeY;
         private CheckBox blockHealPoison;
-        private CheckBox potionEquip;
-        private CheckBox spellUnequip;
-        private CheckBox autoOpenDoors;
         private CheckBox chkStealth;
         private Label label18;
         private CheckBox gameSize;
@@ -217,7 +207,6 @@ namespace Assistant
         private CheckBox showDamageTaken;
         private CheckBox damageDealtOverhead;
         private CheckBox showDamageDealt;
-        private CheckBox rememberPwds;
         private TabControl displayCountersTabCtrl;
         private TabPage subDisplayTab;
         private GroupBox groupBox11;
@@ -275,7 +264,6 @@ namespace Assistant
         private Button boatControl;
         private CheckBox captureMibs;
         private CheckBox macroActionDelay;
-        private CheckBox autoOpenDoorWhenHidden;
         private CheckBox disableMacroPlayFinish;
         private TabPage subBandageTimerTab;
         private CheckBox onlyShowBandageTimerSeconds;
@@ -400,9 +388,6 @@ namespace Assistant
             this.damageDealtOverhead = new System.Windows.Forms.CheckBox();
             this.showDamageDealt = new System.Windows.Forms.CheckBox();
             this.showBuffDebuffOverhead = new System.Windows.Forms.CheckBox();
-            this.healthFmt = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.showHealthOH = new System.Windows.Forms.CheckBox();
             this.chkPartyOverhead = new System.Windows.Forms.CheckBox();
             this.containerLabels = new System.Windows.Forms.Button();
             this.showContainerLabels = new System.Windows.Forms.CheckBox();
@@ -452,21 +437,14 @@ namespace Assistant
             this.queueTargets = new System.Windows.Forms.CheckBox();
             this.lblTargetFormat = new System.Windows.Forms.Label();
             this.subOptionsMiscTab = new System.Windows.Forms.TabPage();
-            this.buyAgentIgnoreGold = new System.Windows.Forms.CheckBox();
-            this.reequipHandsPotion = new System.Windows.Forms.CheckBox();
-            this.autoOpenDoorWhenHidden = new System.Windows.Forms.CheckBox();
             this.lblStealthFormat = new System.Windows.Forms.Label();
             this.stealthStepsFormat = new System.Windows.Forms.TextBox();
-            this.rememberPwds = new System.Windows.Forms.CheckBox();
             this.showStaticWalls = new System.Windows.Forms.CheckBox();
             this.showStaticWallLabels = new System.Windows.Forms.CheckBox();
             this.stealthOverhead = new System.Windows.Forms.CheckBox();
             this.forceSizeX = new System.Windows.Forms.TextBox();
             this.forceSizeY = new System.Windows.Forms.TextBox();
             this.blockHealPoison = new System.Windows.Forms.CheckBox();
-            this.potionEquip = new System.Windows.Forms.CheckBox();
-            this.spellUnequip = new System.Windows.Forms.CheckBox();
-            this.autoOpenDoors = new System.Windows.Forms.CheckBox();
             this.chkStealth = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.gameSize = new System.Windows.Forms.CheckBox();
@@ -474,12 +452,8 @@ namespace Assistant
             this.lblSeason = new System.Windows.Forms.Label();
             this.blockPartyInvites = new System.Windows.Forms.CheckBox();
             this.blockTradeRequests = new System.Windows.Forms.CheckBox();
-            this.blockOpenCorpsesTwice = new System.Windows.Forms.CheckBox();
             this.preAOSstatbar = new System.Windows.Forms.CheckBox();
-            this.corpseRange = new System.Windows.Forms.TextBox();
             this.autoStackRes = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.openCorpses = new System.Windows.Forms.CheckBox();
             this.blockDis = new System.Windows.Forms.CheckBox();
             this.displayTab = new System.Windows.Forms.TabPage();
             this.displayCountersTabCtrl = new System.Windows.Forms.TabControl();
@@ -561,21 +535,6 @@ namespace Assistant
             this.lblWaypoint = new System.Windows.Forms.Label();
             this.btnAddWaypoint = new System.Windows.Forms.Button();
             this.waypointList = new System.Windows.Forms.ListBox();
-            //this.dressTab = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.clearDress = new System.Windows.Forms.Button();
-            this.dressDelSel = new System.Windows.Forms.Button();
-            this.undressBag = new System.Windows.Forms.Button();
-            this.undressList = new System.Windows.Forms.Button();
-            this.dressUseCur = new System.Windows.Forms.Button();
-            this.targItem = new System.Windows.Forms.Button();
-            this.dressItems = new System.Windows.Forms.ListBox();
-            this.dressNow = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.removeDress = new System.Windows.Forms.Button();
-            this.addDress = new System.Windows.Forms.Button();
-            this.dressList = new System.Windows.Forms.ListBox();
-            this.undressConflicts = new System.Windows.Forms.CheckBox();
             this.skillsTab = new System.Windows.Forms.TabPage();
             this.captureMibs = new System.Windows.Forms.CheckBox();
             this.dispDeltaOverhead = new System.Windows.Forms.CheckBox();
@@ -779,6 +738,20 @@ namespace Assistant
             this.linkMain = new System.Windows.Forms.LinkLabel();
             this.label21 = new System.Windows.Forms.Label();
             this.aboutVer = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.clearDress = new System.Windows.Forms.Button();
+            this.dressDelSel = new System.Windows.Forms.Button();
+            this.undressBag = new System.Windows.Forms.Button();
+            this.undressList = new System.Windows.Forms.Button();
+            this.dressUseCur = new System.Windows.Forms.Button();
+            this.targItem = new System.Windows.Forms.Button();
+            this.dressItems = new System.Windows.Forms.ListBox();
+            this.dressNow = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.removeDress = new System.Windows.Forms.Button();
+            this.addDress = new System.Windows.Forms.Button();
+            this.dressList = new System.Windows.Forms.ListBox();
+            this.undressConflicts = new System.Windows.Forms.CheckBox();
             this.tabs.SuspendLayout();
             this.generalTab.SuspendLayout();
             this.subGeneralTab.SuspendLayout();
@@ -802,9 +775,6 @@ namespace Assistant
             this.subBandageTimerTab.SuspendLayout();
             this.subOverheadTab.SuspendLayout();
             this.subWaypoints.SuspendLayout();
-            //this.dressTab.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.skillsTab.SuspendLayout();
             this.agentsTab.SuspendLayout();
             this.agentGroup.SuspendLayout();
@@ -841,6 +811,8 @@ namespace Assistant
             this.advancedTab.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.aboutTab.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_NotifyIcon
@@ -854,7 +826,6 @@ namespace Assistant
             this.tabs.Controls.Add(this.generalTab);
             this.tabs.Controls.Add(this.moreOptTab);
             this.tabs.Controls.Add(this.displayTab);
-            //this.tabs.Controls.Add(this.dressTab);
             this.tabs.Controls.Add(this.skillsTab);
             this.tabs.Controls.Add(this.agentsTab);
             this.tabs.Controls.Add(this.filtersTab);
@@ -1122,9 +1093,6 @@ namespace Assistant
             this.subOptionsSpeechTab.Controls.Add(this.damageDealtOverhead);
             this.subOptionsSpeechTab.Controls.Add(this.showDamageDealt);
             this.subOptionsSpeechTab.Controls.Add(this.showBuffDebuffOverhead);
-            this.subOptionsSpeechTab.Controls.Add(this.healthFmt);
-            this.subOptionsSpeechTab.Controls.Add(this.label10);
-            this.subOptionsSpeechTab.Controls.Add(this.showHealthOH);
             this.subOptionsSpeechTab.Controls.Add(this.chkPartyOverhead);
             this.subOptionsSpeechTab.Controls.Add(this.containerLabels);
             this.subOptionsSpeechTab.Controls.Add(this.showContainerLabels);
@@ -1168,7 +1136,7 @@ namespace Assistant
             // buffDebuffOptions
             // 
             this.buffDebuffOptions.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buffDebuffOptions.Location = new System.Drawing.Point(438, 209);
+            this.buffDebuffOptions.Location = new System.Drawing.Point(438, 165);
             this.buffDebuffOptions.Name = "buffDebuffOptions";
             this.buffDebuffOptions.Size = new System.Drawing.Size(33, 19);
             this.buffDebuffOptions.TabIndex = 129;
@@ -1179,7 +1147,7 @@ namespace Assistant
             // damageTakenOverhead
             // 
             this.damageTakenOverhead.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.damageTakenOverhead.Location = new System.Drawing.Point(394, 185);
+            this.damageTakenOverhead.Location = new System.Drawing.Point(394, 141);
             this.damageTakenOverhead.Name = "damageTakenOverhead";
             this.damageTakenOverhead.Size = new System.Drawing.Size(77, 19);
             this.damageTakenOverhead.TabIndex = 128;
@@ -1190,7 +1158,7 @@ namespace Assistant
             // showDamageTaken
             // 
             this.showDamageTaken.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.showDamageTaken.Location = new System.Drawing.Point(260, 185);
+            this.showDamageTaken.Location = new System.Drawing.Point(260, 141);
             this.showDamageTaken.Name = "showDamageTaken";
             this.showDamageTaken.Size = new System.Drawing.Size(139, 19);
             this.showDamageTaken.TabIndex = 127;
@@ -1201,7 +1169,7 @@ namespace Assistant
             // damageDealtOverhead
             // 
             this.damageDealtOverhead.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.damageDealtOverhead.Location = new System.Drawing.Point(394, 160);
+            this.damageDealtOverhead.Location = new System.Drawing.Point(394, 116);
             this.damageDealtOverhead.Name = "damageDealtOverhead";
             this.damageDealtOverhead.Size = new System.Drawing.Size(77, 19);
             this.damageDealtOverhead.TabIndex = 126;
@@ -1212,7 +1180,7 @@ namespace Assistant
             // showDamageDealt
             // 
             this.showDamageDealt.AutoSize = true;
-            this.showDamageDealt.Location = new System.Drawing.Point(260, 160);
+            this.showDamageDealt.Location = new System.Drawing.Point(260, 116);
             this.showDamageDealt.Name = "showDamageDealt";
             this.showDamageDealt.Size = new System.Drawing.Size(130, 19);
             this.showDamageDealt.TabIndex = 125;
@@ -1223,7 +1191,7 @@ namespace Assistant
             // showBuffDebuffOverhead
             // 
             this.showBuffDebuffOverhead.AutoSize = true;
-            this.showBuffDebuffOverhead.Location = new System.Drawing.Point(260, 210);
+            this.showBuffDebuffOverhead.Location = new System.Drawing.Point(260, 166);
             this.showBuffDebuffOverhead.Name = "showBuffDebuffOverhead";
             this.showBuffDebuffOverhead.Size = new System.Drawing.Size(172, 19);
             this.showBuffDebuffOverhead.TabIndex = 91;
@@ -1231,37 +1199,9 @@ namespace Assistant
             this.showBuffDebuffOverhead.UseVisualStyleBackColor = true;
             this.showBuffDebuffOverhead.CheckedChanged += new System.EventHandler(this.showBuffDebuffOverhead_CheckedChanged);
             // 
-            // healthFmt
-            // 
-            this.healthFmt.Location = new System.Drawing.Point(377, 110);
-            this.healthFmt.Name = "healthFmt";
-            this.healthFmt.Size = new System.Drawing.Size(53, 23);
-            this.healthFmt.TabIndex = 89;
-            this.healthFmt.Text = "[{0}%]";
-            this.healthFmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.healthFmt.TextChanged += new System.EventHandler(this.healthFmt_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(283, 111);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 18);
-            this.label10.TabIndex = 88;
-            this.label10.Text = "Health Format:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // showHealthOH
-            // 
-            this.showHealthOH.Location = new System.Drawing.Point(260, 88);
-            this.showHealthOH.Name = "showHealthOH";
-            this.showHealthOH.Size = new System.Drawing.Size(231, 20);
-            this.showHealthOH.TabIndex = 87;
-            this.showHealthOH.Text = "Show health above people/creatures";
-            this.showHealthOH.CheckedChanged += new System.EventHandler(this.showHealthOH_CheckedChanged);
-            // 
             // chkPartyOverhead
             // 
-            this.chkPartyOverhead.Location = new System.Drawing.Point(260, 134);
+            this.chkPartyOverhead.Location = new System.Drawing.Point(260, 90);
             this.chkPartyOverhead.Name = "chkPartyOverhead";
             this.chkPartyOverhead.Size = new System.Drawing.Size(238, 20);
             this.chkPartyOverhead.TabIndex = 90;
@@ -1499,10 +1439,10 @@ namespace Assistant
             this.subOptionsTargetTab.Controls.Add(this.label6);
             this.subOptionsTargetTab.Controls.Add(this.queueTargets);
             this.subOptionsTargetTab.Controls.Add(this.lblTargetFormat);
-            this.subOptionsTargetTab.Location = new System.Drawing.Point(4, 22);
+            this.subOptionsTargetTab.Location = new System.Drawing.Point(4, 24);
             this.subOptionsTargetTab.Name = "subOptionsTargetTab";
             this.subOptionsTargetTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subOptionsTargetTab.Size = new System.Drawing.Size(502, 288);
+            this.subOptionsTargetTab.Size = new System.Drawing.Size(502, 286);
             this.subOptionsTargetTab.TabIndex = 1;
             this.subOptionsTargetTab.Text = "Targeting & Queues  ";
             // 
@@ -1731,21 +1671,14 @@ namespace Assistant
             // subOptionsMiscTab
             // 
             this.subOptionsMiscTab.BackColor = System.Drawing.SystemColors.Control;
-            this.subOptionsMiscTab.Controls.Add(this.buyAgentIgnoreGold);
-            this.subOptionsMiscTab.Controls.Add(this.reequipHandsPotion);
-            this.subOptionsMiscTab.Controls.Add(this.autoOpenDoorWhenHidden);
             this.subOptionsMiscTab.Controls.Add(this.lblStealthFormat);
             this.subOptionsMiscTab.Controls.Add(this.stealthStepsFormat);
-            this.subOptionsMiscTab.Controls.Add(this.rememberPwds);
             this.subOptionsMiscTab.Controls.Add(this.showStaticWalls);
             this.subOptionsMiscTab.Controls.Add(this.showStaticWallLabels);
             this.subOptionsMiscTab.Controls.Add(this.stealthOverhead);
             this.subOptionsMiscTab.Controls.Add(this.forceSizeX);
             this.subOptionsMiscTab.Controls.Add(this.forceSizeY);
             this.subOptionsMiscTab.Controls.Add(this.blockHealPoison);
-            this.subOptionsMiscTab.Controls.Add(this.potionEquip);
-            this.subOptionsMiscTab.Controls.Add(this.spellUnequip);
-            this.subOptionsMiscTab.Controls.Add(this.autoOpenDoors);
             this.subOptionsMiscTab.Controls.Add(this.chkStealth);
             this.subOptionsMiscTab.Controls.Add(this.label18);
             this.subOptionsMiscTab.Controls.Add(this.gameSize);
@@ -1753,54 +1686,19 @@ namespace Assistant
             this.subOptionsMiscTab.Controls.Add(this.lblSeason);
             this.subOptionsMiscTab.Controls.Add(this.blockPartyInvites);
             this.subOptionsMiscTab.Controls.Add(this.blockTradeRequests);
-            this.subOptionsMiscTab.Controls.Add(this.blockOpenCorpsesTwice);
             this.subOptionsMiscTab.Controls.Add(this.preAOSstatbar);
-            this.subOptionsMiscTab.Controls.Add(this.corpseRange);
             this.subOptionsMiscTab.Controls.Add(this.autoStackRes);
-            this.subOptionsMiscTab.Controls.Add(this.label4);
-            this.subOptionsMiscTab.Controls.Add(this.openCorpses);
             this.subOptionsMiscTab.Controls.Add(this.blockDis);
-            this.subOptionsMiscTab.Location = new System.Drawing.Point(4, 22);
+            this.subOptionsMiscTab.Location = new System.Drawing.Point(4, 24);
             this.subOptionsMiscTab.Name = "subOptionsMiscTab";
-            this.subOptionsMiscTab.Size = new System.Drawing.Size(502, 288);
+            this.subOptionsMiscTab.Size = new System.Drawing.Size(502, 286);
             this.subOptionsMiscTab.TabIndex = 2;
             this.subOptionsMiscTab.Text = "Additional Options  ";
-            // 
-            // buyAgentIgnoreGold
-            // 
-            this.buyAgentIgnoreGold.AutoSize = true;
-            this.buyAgentIgnoreGold.Location = new System.Drawing.Point(260, 244);
-            this.buyAgentIgnoreGold.Name = "buyAgentIgnoreGold";
-            this.buyAgentIgnoreGold.Size = new System.Drawing.Size(185, 19);
-            this.buyAgentIgnoreGold.TabIndex = 126;
-            this.buyAgentIgnoreGold.Text = "Buy Agents ignore player gold";
-            this.buyAgentIgnoreGold.UseVisualStyleBackColor = true;
-            this.buyAgentIgnoreGold.CheckedChanged += new System.EventHandler(this.buyAgentIgnoreGold_CheckedChanged);
-            // 
-            // reequipHandsPotion
-            // 
-            this.reequipHandsPotion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reequipHandsPotion.Location = new System.Drawing.Point(423, 140);
-            this.reequipHandsPotion.Name = "reequipHandsPotion";
-            this.reequipHandsPotion.Size = new System.Drawing.Size(69, 20);
-            this.reequipHandsPotion.TabIndex = 125;
-            this.reequipHandsPotion.Text = "Re-equip";
-            this.reequipHandsPotion.CheckedChanged += new System.EventHandler(this.reequipHandsPotion_CheckedChanged);
-            // 
-            // autoOpenDoorWhenHidden
-            // 
-            this.autoOpenDoorWhenHidden.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoOpenDoorWhenHidden.Location = new System.Drawing.Point(393, 88);
-            this.autoOpenDoorWhenHidden.Name = "autoOpenDoorWhenHidden";
-            this.autoOpenDoorWhenHidden.Size = new System.Drawing.Size(95, 20);
-            this.autoOpenDoorWhenHidden.TabIndex = 124;
-            this.autoOpenDoorWhenHidden.Text = "When hidden";
-            this.autoOpenDoorWhenHidden.CheckedChanged += new System.EventHandler(this.autoDoorWhenHidden_CheckedChanged);
             // 
             // lblStealthFormat
             // 
             this.lblStealthFormat.AutoSize = true;
-            this.lblStealthFormat.Location = new System.Drawing.Point(280, 62);
+            this.lblStealthFormat.Location = new System.Drawing.Point(282, 42);
             this.lblStealthFormat.Name = "lblStealthFormat";
             this.lblStealthFormat.Size = new System.Drawing.Size(48, 15);
             this.lblStealthFormat.TabIndex = 123;
@@ -1808,26 +1706,17 @@ namespace Assistant
             // 
             // stealthStepsFormat
             // 
-            this.stealthStepsFormat.Location = new System.Drawing.Point(334, 59);
+            this.stealthStepsFormat.Location = new System.Drawing.Point(336, 34);
             this.stealthStepsFormat.Name = "stealthStepsFormat";
             this.stealthStepsFormat.Size = new System.Drawing.Size(114, 23);
             this.stealthStepsFormat.TabIndex = 122;
             this.stealthStepsFormat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.stealthStepsFormat.TextChanged += new System.EventHandler(this.stealthStepsFormat_TextChanged);
             // 
-            // rememberPwds
-            // 
-            this.rememberPwds.Location = new System.Drawing.Point(260, 12);
-            this.rememberPwds.Name = "rememberPwds";
-            this.rememberPwds.Size = new System.Drawing.Size(148, 20);
-            this.rememberPwds.TabIndex = 121;
-            this.rememberPwds.Text = "Remember passwords ";
-            this.rememberPwds.CheckedChanged += new System.EventHandler(this.rememberPwds_CheckedChanged);
-            // 
             // showStaticWalls
             // 
             this.showStaticWalls.AutoSize = true;
-            this.showStaticWalls.Location = new System.Drawing.Point(260, 219);
+            this.showStaticWalls.Location = new System.Drawing.Point(260, 116);
             this.showStaticWalls.Name = "showStaticWalls";
             this.showStaticWalls.Size = new System.Drawing.Size(153, 19);
             this.showStaticWalls.TabIndex = 119;
@@ -1839,7 +1728,7 @@ namespace Assistant
             // 
             this.showStaticWallLabels.AutoSize = true;
             this.showStaticWallLabels.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showStaticWallLabels.Location = new System.Drawing.Point(421, 220);
+            this.showStaticWallLabels.Location = new System.Drawing.Point(421, 117);
             this.showStaticWallLabels.Name = "showStaticWallLabels";
             this.showStaticWallLabels.Size = new System.Drawing.Size(55, 17);
             this.showStaticWallLabels.TabIndex = 120;
@@ -1850,7 +1739,7 @@ namespace Assistant
             // stealthOverhead
             // 
             this.stealthOverhead.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stealthOverhead.Location = new System.Drawing.Point(393, 37);
+            this.stealthOverhead.Location = new System.Drawing.Point(387, 12);
             this.stealthOverhead.Name = "stealthOverhead";
             this.stealthOverhead.Size = new System.Drawing.Size(99, 20);
             this.stealthOverhead.TabIndex = 117;
@@ -1860,7 +1749,7 @@ namespace Assistant
             // 
             // forceSizeX
             // 
-            this.forceSizeX.Location = new System.Drawing.Point(387, 190);
+            this.forceSizeX.Location = new System.Drawing.Point(387, 89);
             this.forceSizeX.Name = "forceSizeX";
             this.forceSizeX.Size = new System.Drawing.Size(34, 23);
             this.forceSizeX.TabIndex = 111;
@@ -1868,7 +1757,7 @@ namespace Assistant
             // 
             // forceSizeY
             // 
-            this.forceSizeY.Location = new System.Drawing.Point(443, 191);
+            this.forceSizeY.Location = new System.Drawing.Point(443, 90);
             this.forceSizeY.Name = "forceSizeY";
             this.forceSizeY.Size = new System.Drawing.Size(33, 23);
             this.forceSizeY.TabIndex = 112;
@@ -1876,43 +1765,16 @@ namespace Assistant
             // 
             // blockHealPoison
             // 
-            this.blockHealPoison.Location = new System.Drawing.Point(260, 166);
+            this.blockHealPoison.Location = new System.Drawing.Point(260, 63);
             this.blockHealPoison.Name = "blockHealPoison";
             this.blockHealPoison.Size = new System.Drawing.Size(201, 20);
             this.blockHealPoison.TabIndex = 116;
             this.blockHealPoison.Text = "Block heal if target is poisoned";
             this.blockHealPoison.CheckedChanged += new System.EventHandler(this.blockHealPoison_CheckedChanged);
             // 
-            // potionEquip
-            // 
-            this.potionEquip.Location = new System.Drawing.Point(260, 140);
-            this.potionEquip.Name = "potionEquip";
-            this.potionEquip.Size = new System.Drawing.Size(232, 20);
-            this.potionEquip.TabIndex = 115;
-            this.potionEquip.Text = "Auto Unequip for potions";
-            this.potionEquip.CheckedChanged += new System.EventHandler(this.potionEquip_CheckedChanged);
-            // 
-            // spellUnequip
-            // 
-            this.spellUnequip.Location = new System.Drawing.Point(260, 114);
-            this.spellUnequip.Name = "spellUnequip";
-            this.spellUnequip.Size = new System.Drawing.Size(213, 20);
-            this.spellUnequip.TabIndex = 108;
-            this.spellUnequip.Text = "Auto Unequip hands before casting";
-            this.spellUnequip.CheckedChanged += new System.EventHandler(this.spellUnequip_CheckedChanged);
-            // 
-            // autoOpenDoors
-            // 
-            this.autoOpenDoors.Location = new System.Drawing.Point(260, 88);
-            this.autoOpenDoors.Name = "autoOpenDoors";
-            this.autoOpenDoors.Size = new System.Drawing.Size(118, 20);
-            this.autoOpenDoors.TabIndex = 110;
-            this.autoOpenDoors.Text = "Auto-open doors";
-            this.autoOpenDoors.CheckedChanged += new System.EventHandler(this.autoOpenDoors_CheckedChanged);
-            // 
             // chkStealth
             // 
-            this.chkStealth.Location = new System.Drawing.Point(260, 37);
+            this.chkStealth.Location = new System.Drawing.Point(260, 12);
             this.chkStealth.Name = "chkStealth";
             this.chkStealth.Size = new System.Drawing.Size(190, 20);
             this.chkStealth.TabIndex = 107;
@@ -1922,7 +1784,7 @@ namespace Assistant
             // label18
             // 
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(427, 193);
+            this.label18.Location = new System.Drawing.Point(427, 92);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(10, 18);
             this.label18.TabIndex = 114;
@@ -1931,7 +1793,7 @@ namespace Assistant
             // 
             // gameSize
             // 
-            this.gameSize.Location = new System.Drawing.Point(260, 192);
+            this.gameSize.Location = new System.Drawing.Point(260, 91);
             this.gameSize.Name = "gameSize";
             this.gameSize.Size = new System.Drawing.Size(118, 18);
             this.gameSize.TabIndex = 113;
@@ -1966,7 +1828,7 @@ namespace Assistant
             // 
             // blockPartyInvites
             // 
-            this.blockPartyInvites.Location = new System.Drawing.Point(9, 169);
+            this.blockPartyInvites.Location = new System.Drawing.Point(9, 115);
             this.blockPartyInvites.Name = "blockPartyInvites";
             this.blockPartyInvites.Size = new System.Drawing.Size(184, 20);
             this.blockPartyInvites.TabIndex = 98;
@@ -1975,22 +1837,12 @@ namespace Assistant
             // 
             // blockTradeRequests
             // 
-            this.blockTradeRequests.Location = new System.Drawing.Point(9, 143);
+            this.blockTradeRequests.Location = new System.Drawing.Point(9, 89);
             this.blockTradeRequests.Name = "blockTradeRequests";
             this.blockTradeRequests.Size = new System.Drawing.Size(184, 20);
             this.blockTradeRequests.TabIndex = 97;
             this.blockTradeRequests.Text = "Block trade requests";
             this.blockTradeRequests.CheckedChanged += new System.EventHandler(this.blockTradeRequests_CheckedChanged);
-            // 
-            // blockOpenCorpsesTwice
-            // 
-            this.blockOpenCorpsesTwice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blockOpenCorpsesTwice.Location = new System.Drawing.Point(9, 91);
-            this.blockOpenCorpsesTwice.Name = "blockOpenCorpsesTwice";
-            this.blockOpenCorpsesTwice.Size = new System.Drawing.Size(209, 20);
-            this.blockOpenCorpsesTwice.TabIndex = 96;
-            this.blockOpenCorpsesTwice.Text = "Block opening corpses twice";
-            this.blockOpenCorpsesTwice.CheckedChanged += new System.EventHandler(this.blockOpenCorpsesTwice_CheckedChanged);
             // 
             // preAOSstatbar
             // 
@@ -2001,15 +1853,6 @@ namespace Assistant
             this.preAOSstatbar.Text = "Use Pre-AOS status window";
             this.preAOSstatbar.CheckedChanged += new System.EventHandler(this.preAOSstatbar_CheckedChanged);
             // 
-            // corpseRange
-            // 
-            this.corpseRange.Location = new System.Drawing.Point(169, 63);
-            this.corpseRange.Name = "corpseRange";
-            this.corpseRange.Size = new System.Drawing.Size(24, 23);
-            this.corpseRange.TabIndex = 91;
-            this.corpseRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.corpseRange.TextChanged += new System.EventHandler(this.corpseRange_TextChanged);
-            // 
             // autoStackRes
             // 
             this.autoStackRes.Location = new System.Drawing.Point(9, 37);
@@ -2019,26 +1862,9 @@ namespace Assistant
             this.autoStackRes.Text = "Auto-Stack Ore/Fish/Logs at Feet";
             this.autoStackRes.CheckedChanged += new System.EventHandler(this.autoStackRes_CheckedChanged);
             // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(201, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 16);
-            this.label4.TabIndex = 92;
-            this.label4.Text = "tiles";
-            // 
-            // openCorpses
-            // 
-            this.openCorpses.Location = new System.Drawing.Point(9, 65);
-            this.openCorpses.Name = "openCorpses";
-            this.openCorpses.Size = new System.Drawing.Size(165, 20);
-            this.openCorpses.TabIndex = 90;
-            this.openCorpses.Text = "Open new corpses within";
-            this.openCorpses.CheckedChanged += new System.EventHandler(this.openCorpses_CheckedChanged);
-            // 
             // blockDis
             // 
-            this.blockDis.Location = new System.Drawing.Point(9, 117);
+            this.blockDis.Location = new System.Drawing.Point(9, 63);
             this.blockDis.Name = "blockDis";
             this.blockDis.Size = new System.Drawing.Size(184, 20);
             this.blockDis.TabIndex = 94;
@@ -2925,158 +2751,6 @@ namespace Assistant
             this.waypointList.TabIndex = 0;
             this.waypointList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listWaypoints_MouseDoubleClick);
             this.waypointList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listWaypoints_MouseDown);
-            // 
-            // dressTab
-            // 
-            /*this.dressTab.Controls.Add(this.groupBox6);
-            this.dressTab.Controls.Add(this.groupBox5);
-            this.dressTab.Location = new System.Drawing.Point(4, 44);
-            this.dressTab.Name = "dressTab";
-            this.dressTab.Size = new System.Drawing.Size(519, 322);
-            this.dressTab.TabIndex = 3;
-            this.dressTab.Text = "Arm/Dress";*/
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.clearDress);
-            this.groupBox6.Controls.Add(this.dressDelSel);
-            this.groupBox6.Controls.Add(this.undressBag);
-            this.groupBox6.Controls.Add(this.undressList);
-            this.groupBox6.Controls.Add(this.dressUseCur);
-            this.groupBox6.Controls.Add(this.targItem);
-            this.groupBox6.Controls.Add(this.dressItems);
-            this.groupBox6.Controls.Add(this.dressNow);
-            this.groupBox6.Location = new System.Drawing.Point(201, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(311, 309);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Arm/Dress Items";
-            // 
-            // clearDress
-            // 
-            this.clearDress.Location = new System.Drawing.Point(209, 257);
-            this.clearDress.Name = "clearDress";
-            this.clearDress.Size = new System.Drawing.Size(96, 32);
-            this.clearDress.TabIndex = 13;
-            this.clearDress.Text = "Clear List";
-            this.clearDress.Click += new System.EventHandler(this.clearDress_Click);
-            // 
-            // dressDelSel
-            // 
-            this.dressDelSel.Location = new System.Drawing.Point(209, 170);
-            this.dressDelSel.Name = "dressDelSel";
-            this.dressDelSel.Size = new System.Drawing.Size(96, 32);
-            this.dressDelSel.TabIndex = 12;
-            this.dressDelSel.Text = "Remove";
-            this.dressDelSel.Click += new System.EventHandler(this.dressDelSel_Click);
-            // 
-            // undressBag
-            // 
-            this.undressBag.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.undressBag.Location = new System.Drawing.Point(209, 208);
-            this.undressBag.Name = "undressBag";
-            this.undressBag.Size = new System.Drawing.Size(96, 40);
-            this.undressBag.TabIndex = 11;
-            this.undressBag.Text = "Change Undress Bag";
-            this.undressBag.Click += new System.EventHandler(this.undressBag_Click);
-            // 
-            // undressList
-            // 
-            this.undressList.Location = new System.Drawing.Point(209, 56);
-            this.undressList.Name = "undressList";
-            this.undressList.Size = new System.Drawing.Size(96, 32);
-            this.undressList.TabIndex = 10;
-            this.undressList.Text = "Undress";
-            this.undressList.Click += new System.EventHandler(this.undressList_Click);
-            // 
-            // dressUseCur
-            // 
-            this.dressUseCur.Location = new System.Drawing.Point(209, 132);
-            this.dressUseCur.Name = "dressUseCur";
-            this.dressUseCur.Size = new System.Drawing.Size(96, 32);
-            this.dressUseCur.TabIndex = 9;
-            this.dressUseCur.Text = "Add Current";
-            this.dressUseCur.Click += new System.EventHandler(this.dressUseCur_Click);
-            // 
-            // targItem
-            // 
-            this.targItem.Location = new System.Drawing.Point(209, 94);
-            this.targItem.Name = "targItem";
-            this.targItem.Size = new System.Drawing.Size(96, 32);
-            this.targItem.TabIndex = 7;
-            this.targItem.Text = "Add (Target)";
-            this.targItem.Click += new System.EventHandler(this.targItem_Click);
-            // 
-            // dressItems
-            // 
-            this.dressItems.IntegralHeight = false;
-            this.dressItems.ItemHeight = 15;
-            this.dressItems.Location = new System.Drawing.Point(6, 18);
-            this.dressItems.Name = "dressItems";
-            this.dressItems.Size = new System.Drawing.Size(197, 285);
-            this.dressItems.TabIndex = 6;
-            this.dressItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dressItems_KeyDown);
-            this.dressItems.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dressItems_MouseDown);
-            // 
-            // dressNow
-            // 
-            this.dressNow.Location = new System.Drawing.Point(209, 18);
-            this.dressNow.Name = "dressNow";
-            this.dressNow.Size = new System.Drawing.Size(96, 32);
-            this.dressNow.TabIndex = 6;
-            this.dressNow.Text = "Dress";
-            this.dressNow.Click += new System.EventHandler(this.dressNow_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.removeDress);
-            this.groupBox5.Controls.Add(this.addDress);
-            this.groupBox5.Controls.Add(this.dressList);
-            this.groupBox5.Controls.Add(this.undressConflicts);
-            this.groupBox5.Location = new System.Drawing.Point(8, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(187, 309);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Arm/Dress Selection";
-            // 
-            // removeDress
-            // 
-            this.removeDress.Location = new System.Drawing.Point(117, 254);
-            this.removeDress.Name = "removeDress";
-            this.removeDress.Size = new System.Drawing.Size(64, 25);
-            this.removeDress.TabIndex = 5;
-            this.removeDress.Text = "Remove";
-            this.removeDress.Click += new System.EventHandler(this.removeDress_Click);
-            // 
-            // addDress
-            // 
-            this.addDress.Location = new System.Drawing.Point(6, 254);
-            this.addDress.Name = "addDress";
-            this.addDress.Size = new System.Drawing.Size(64, 25);
-            this.addDress.TabIndex = 4;
-            this.addDress.Text = "Aggiungi";
-            this.addDress.Click += new System.EventHandler(this.addDress_Click);
-            // 
-            // dressList
-            // 
-            this.dressList.IntegralHeight = false;
-            this.dressList.ItemHeight = 15;
-            this.dressList.Location = new System.Drawing.Point(6, 18);
-            this.dressList.Name = "dressList";
-            this.dressList.Size = new System.Drawing.Size(175, 230);
-            this.dressList.TabIndex = 3;
-            this.dressList.SelectedIndexChanged += new System.EventHandler(this.dressList_SelectedIndexChanged);
-            // 
-            // undressConflicts
-            // 
-            this.undressConflicts.Location = new System.Drawing.Point(6, 285);
-            this.undressConflicts.Name = "undressConflicts";
-            this.undressConflicts.Size = new System.Drawing.Size(137, 18);
-            this.undressConflicts.TabIndex = 6;
-            this.undressConflicts.Text = "Auto-move conflicts";
-            this.undressConflicts.CheckedChanged += new System.EventHandler(this.undressConflicts_CheckedChanged);
             // 
             // skillsTab
             // 
@@ -4423,7 +4097,7 @@ namespace Assistant
         '\"',
         '\'',
         '\''};
-            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(25, 15);
+            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(2, 15);
             this.scriptEditor.BackBrush = null;
             this.scriptEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptEditor.CaretColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
@@ -5105,7 +4779,7 @@ namespace Assistant
             "Warnings & Errors",
             "Errors Only",
             "None"});
-            this.msglvl.Location = new System.Drawing.Point(343, 127);
+            this.msglvl.Location = new System.Drawing.Point(344, 47);
             this.msglvl.Name = "msglvl";
             this.msglvl.Size = new System.Drawing.Size(168, 23);
             this.msglvl.TabIndex = 69;
@@ -5113,7 +4787,7 @@ namespace Assistant
             // 
             // label17
             // 
-            this.label17.Location = new System.Drawing.Point(282, 132);
+            this.label17.Location = new System.Drawing.Point(283, 52);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(55, 18);
             this.label17.TabIndex = 68;
@@ -5269,6 +4943,146 @@ namespace Assistant
             this.aboutVer.Text = "RazorZHI v{0}";
             this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.clearDress);
+            this.groupBox6.Controls.Add(this.dressDelSel);
+            this.groupBox6.Controls.Add(this.undressBag);
+            this.groupBox6.Controls.Add(this.undressList);
+            this.groupBox6.Controls.Add(this.dressUseCur);
+            this.groupBox6.Controls.Add(this.targItem);
+            this.groupBox6.Controls.Add(this.dressItems);
+            this.groupBox6.Controls.Add(this.dressNow);
+            this.groupBox6.Location = new System.Drawing.Point(201, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(311, 309);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Arm/Dress Items";
+            // 
+            // clearDress
+            // 
+            this.clearDress.Location = new System.Drawing.Point(209, 257);
+            this.clearDress.Name = "clearDress";
+            this.clearDress.Size = new System.Drawing.Size(96, 32);
+            this.clearDress.TabIndex = 13;
+            this.clearDress.Text = "Clear List";
+            this.clearDress.Click += new System.EventHandler(this.clearDress_Click);
+            // 
+            // dressDelSel
+            // 
+            this.dressDelSel.Location = new System.Drawing.Point(209, 170);
+            this.dressDelSel.Name = "dressDelSel";
+            this.dressDelSel.Size = new System.Drawing.Size(96, 32);
+            this.dressDelSel.TabIndex = 12;
+            this.dressDelSel.Text = "Remove";
+            this.dressDelSel.Click += new System.EventHandler(this.dressDelSel_Click);
+            // 
+            // undressBag
+            // 
+            this.undressBag.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.undressBag.Location = new System.Drawing.Point(209, 208);
+            this.undressBag.Name = "undressBag";
+            this.undressBag.Size = new System.Drawing.Size(96, 40);
+            this.undressBag.TabIndex = 11;
+            this.undressBag.Text = "Change Undress Bag";
+            this.undressBag.Click += new System.EventHandler(this.undressBag_Click);
+            // 
+            // undressList
+            // 
+            this.undressList.Location = new System.Drawing.Point(209, 56);
+            this.undressList.Name = "undressList";
+            this.undressList.Size = new System.Drawing.Size(96, 32);
+            this.undressList.TabIndex = 10;
+            this.undressList.Text = "Undress";
+            this.undressList.Click += new System.EventHandler(this.undressList_Click);
+            // 
+            // dressUseCur
+            // 
+            this.dressUseCur.Location = new System.Drawing.Point(209, 132);
+            this.dressUseCur.Name = "dressUseCur";
+            this.dressUseCur.Size = new System.Drawing.Size(96, 32);
+            this.dressUseCur.TabIndex = 9;
+            this.dressUseCur.Text = "Add Current";
+            this.dressUseCur.Click += new System.EventHandler(this.dressUseCur_Click);
+            // 
+            // targItem
+            // 
+            this.targItem.Location = new System.Drawing.Point(209, 94);
+            this.targItem.Name = "targItem";
+            this.targItem.Size = new System.Drawing.Size(96, 32);
+            this.targItem.TabIndex = 7;
+            this.targItem.Text = "Add (Target)";
+            this.targItem.Click += new System.EventHandler(this.targItem_Click);
+            // 
+            // dressItems
+            // 
+            this.dressItems.IntegralHeight = false;
+            this.dressItems.Location = new System.Drawing.Point(6, 18);
+            this.dressItems.Name = "dressItems";
+            this.dressItems.Size = new System.Drawing.Size(197, 285);
+            this.dressItems.TabIndex = 6;
+            this.dressItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dressItems_KeyDown);
+            this.dressItems.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dressItems_MouseDown);
+            // 
+            // dressNow
+            // 
+            this.dressNow.Location = new System.Drawing.Point(209, 18);
+            this.dressNow.Name = "dressNow";
+            this.dressNow.Size = new System.Drawing.Size(96, 32);
+            this.dressNow.TabIndex = 6;
+            this.dressNow.Text = "Dress";
+            this.dressNow.Click += new System.EventHandler(this.dressNow_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.removeDress);
+            this.groupBox5.Controls.Add(this.addDress);
+            this.groupBox5.Controls.Add(this.dressList);
+            this.groupBox5.Controls.Add(this.undressConflicts);
+            this.groupBox5.Location = new System.Drawing.Point(8, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(187, 309);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Arm/Dress Selection";
+            // 
+            // removeDress
+            // 
+            this.removeDress.Location = new System.Drawing.Point(117, 254);
+            this.removeDress.Name = "removeDress";
+            this.removeDress.Size = new System.Drawing.Size(64, 25);
+            this.removeDress.TabIndex = 5;
+            this.removeDress.Text = "Remove";
+            this.removeDress.Click += new System.EventHandler(this.removeDress_Click);
+            // 
+            // addDress
+            // 
+            this.addDress.Location = new System.Drawing.Point(6, 254);
+            this.addDress.Name = "addDress";
+            this.addDress.Size = new System.Drawing.Size(64, 25);
+            this.addDress.TabIndex = 4;
+            this.addDress.Text = "Aggiungi";
+            this.addDress.Click += new System.EventHandler(this.addDress_Click);
+            // 
+            // dressList
+            // 
+            this.dressList.IntegralHeight = false;
+            this.dressList.Location = new System.Drawing.Point(6, 18);
+            this.dressList.Name = "dressList";
+            this.dressList.Size = new System.Drawing.Size(175, 230);
+            this.dressList.TabIndex = 3;
+            this.dressList.SelectedIndexChanged += new System.EventHandler(this.dressList_SelectedIndexChanged);
+            // 
+            // undressConflicts
+            // 
+            this.undressConflicts.Location = new System.Drawing.Point(6, 285);
+            this.undressConflicts.Name = "undressConflicts";
+            this.undressConflicts.Size = new System.Drawing.Size(137, 18);
+            this.undressConflicts.TabIndex = 6;
+            this.undressConflicts.Text = "Auto-move conflicts";
+            this.undressConflicts.CheckedChanged += new System.EventHandler(this.undressConflicts_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 16);
@@ -5322,9 +5136,6 @@ namespace Assistant
             this.subOverheadTab.PerformLayout();
             this.subWaypoints.ResumeLayout(false);
             this.subWaypoints.PerformLayout();
-            //this.dressTab.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.skillsTab.ResumeLayout(false);
             this.skillsTab.PerformLayout();
             this.agentsTab.ResumeLayout(false);
@@ -5378,6 +5189,8 @@ namespace Assistant
             this.groupBox16.ResumeLayout(false);
             this.aboutTab.ResumeLayout(false);
             this.aboutTab.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5484,7 +5297,6 @@ namespace Assistant
         private Button setBackupFolder;
         private Button createBackup;
         private CheckBox overrideSpellFormat;
-        private CheckBox reequipHandsPotion;
         private Button agentSetHotKey;
         private TabPage subFilterText;
         private GroupBox gbFilterText;
@@ -5507,7 +5319,6 @@ namespace Assistant
         private FastColoredTextBoxNS.FastColoredTextBox scriptEditor;
         private Label scriptHotkey;
         private Button openScreenshotFolder;
-        private CheckBox buyAgentIgnoreGold;
         private CheckBox nextPrevAbcOrder;
         private ComboBox wyrmAnimationList;
         private CheckBox filterWhiteWyrm;
