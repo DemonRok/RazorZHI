@@ -435,20 +435,28 @@ namespace Assistant.Boat
 
         private void boatSetCourse_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Raise Anchor", false);
-            var t = Task.Delay(1000);
-            t.Wait();
-            SendBoatCommand("Set Course", false);
-            _ancherUp = true;
+            var t = new Task(() =>
+            {
+                SendBoatCommand("Raise Anchor", false);
+                var w = new Task(()=> { var a = 1; });
+                w.Wait(1000);
+                SendBoatCommand("Set Course", false);
+                _ancherUp = true;
+            });
+            t.Start();
         }
 
         private void boatClearCourse_Click(object sender, EventArgs e)
         {
-            SendBoatCommand("Clear Course", false);
-            var t = Task.Delay(1000);
-            t.Wait();
-            SendBoatCommand("Drop Anchor", false);
-            _ancherUp = false;
+            var t = new Task(() =>
+            {
+                SendBoatCommand("Clear Course", false);
+                var w = new Task(()=> { var a = 1; });
+                w.Wait(1000);
+                SendBoatCommand("Drop Anchor", false);
+                _ancherUp = true;
+            });
+            t.Start();
         }
 
         private void boatAnchorRaise_Click(object sender, EventArgs e)
