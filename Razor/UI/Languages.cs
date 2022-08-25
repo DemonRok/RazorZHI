@@ -594,6 +594,7 @@ namespace Assistant
         PauseScript,
         ResumeScriptMessage,
         PauseScriptMessage,
+        AllGo,
         __End
     }
 

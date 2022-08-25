@@ -829,3 +829,4 @@ InputBox::ok=&OK
 2123=> Pause Current Script
 2124=Script resuming from line {0}
 2125=Script pausing on line {0}
+2126=All Go

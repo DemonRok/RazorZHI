@@ -58,14 +58,14 @@ namespace Assistant.HotKeys
             HotKey.Add(HKCategory.Misc, LocString.PartyAdd, new HotKeyCallback(PartyAdd));
 
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllCome, new HotKeyCallback(PetAllCome));
-            HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllFollowMe,
-                new HotKeyCallback(PetAllFollowMe));
+            HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllFollowMe, new HotKeyCallback(PetAllFollowMe));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllFollow, new HotKeyCallback(PetAllFollow));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllGuardMe, new HotKeyCallback(PetAllGuardMe));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllGuard, new HotKeyCallback(PetAllGuard));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllKill, new HotKeyCallback(PetAllKill));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllStay, new HotKeyCallback(PetAllStay));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllStop, new HotKeyCallback(PetAllStop));
+            HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllGo, new HotKeyCallback(PetAllGo));
 
             HotKeyCallbackState call = new HotKeyCallbackState(OnUseItem);
             HotKey.Add(HKCategory.Items, LocString.UseBandage, call, (ushort) 3617);
@@ -161,6 +161,11 @@ namespace Assistant.HotKeys
         private static void PetAllStop()
         {
             World.Player.Say(Language.GetString(LocString.AllStop));
+        }
+
+        private static void PetAllGo()
+        {
+            World.Player.Say(Language.GetString(LocString.AllGo));
         }
 
         private static void CaptureBod()
