@@ -170,25 +170,25 @@ namespace Assistant
         {
             if (EngineZHI.MainWindow == null)
             {
-                m_List.Add(list);
-                HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Dress: {list.Name}",
-                    new HotKeyCallback(list.Dress));
-                HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Undress: {list.Name}",
-                    new HotKeyCallback(list.Undress));
-                HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Toggle: {list.Name}",
-                    new HotKeyCallback(list.Toggle));
+                //m_List.Add(list);
+                //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Dress: {list.Name}",
+                    //new HotKeyCallback(list.Dress));
+                //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Undress: {list.Name}",
+                    //new HotKeyCallback(list.Undress));
+                //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Toggle: {list.Name}",
+                    //new HotKeyCallback(list.Toggle));
             }
             else
             {
                 EngineZHI.MainWindow.SafeAction(s =>
                 {
-                    m_List.Add(list);
-                    HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Dress: {list.Name}",
-                        new HotKeyCallback(list.Dress));
-                    HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Undress: {list.Name}",
-                        new HotKeyCallback(list.Undress));
-                    HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Toggle: {list.Name}",
-                        new HotKeyCallback(list.Toggle));
+                    //m_List.Add(list);
+                    //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Dress: {list.Name}",
+                        //new HotKeyCallback(list.Dress));
+                    //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Undress: {list.Name}",
+                        //new HotKeyCallback(list.Undress));
+                    //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Toggle: {list.Name}",
+                        //new HotKeyCallback(list.Toggle));
                 });
             }
         }

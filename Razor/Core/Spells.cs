@@ -339,12 +339,14 @@ namespace Assistant
 
             HotKeyCallback = new HotKeyCallbackState(OnHotKey);
             foreach (Spell s in m_SpellsByID.Values)
-                HotKey.Add(HKCategory.Spells, HKSubCat.SpellOffset + s.Circle, s.Name, HotKeyCallback,
-                    (ushort) s.GetID());
+                if (s.Circle < 10)
+                {
+                    HotKey.Add(HKCategory.Spells, HKSubCat.SpellOffset + s.Circle, s.Name, HotKeyCallback, (ushort)s.GetID());
+                }
             HotKey.Add(HKCategory.Spells, LocString.HealOrCureSelf, new HotKeyCallback(HealOrCureSelf));
             HotKey.Add(HKCategory.Spells, LocString.MiniHealOrCureSelf, new HotKeyCallback(MiniHealOrCureSelf));
             HotKey.Add(HKCategory.Spells, LocString.GHealOrCureSelf, new HotKeyCallback(GHealOrCureSelf));
-            HotKey.Add(HKCategory.Spells, LocString.Interrupt, new HotKeyCallback(Interrupt));
+            //HotKey.Add(HKCategory.Spells, LocString.Interrupt, new HotKeyCallback(Interrupt));
         }
 
         public static void HealOrCureSelf()

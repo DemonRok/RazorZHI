@@ -177,20 +177,17 @@ namespace Assistant
 
         public static void Initialize()
         {
-            HotKey.Add(HKCategory.Misc, HKSubCat.None, LocString.ToggleWarPeace, new HotKeyCallback(ToggleWarPeace));
-            HotKey.Add(HKCategory.Misc, HKSubCat.None, LocString.ToggleWar, new HotKeyCallback(ToggleWar));
-            HotKey.Add(HKCategory.Misc, HKSubCat.None, LocString.TogglePeace, new HotKeyCallback(TogglePeace));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.None, LocString.ToggleWarPeace, new HotKeyCallback(ToggleWarPeace));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.None, LocString.ToggleWar, new HotKeyCallback(ToggleWar));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.None, LocString.TogglePeace, new HotKeyCallback(TogglePeace));
 
-            HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.ClearAbility,
-                new HotKeyCallback(ClearAbilities));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.ClearAbility, new HotKeyCallback(ClearAbilities));
 
-            HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.SetPrimAb,
-                new HotKeyCallback(SetPrimaryAbility));
-            HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.SetSecAb,
-                new HotKeyCallback(SetSecondaryAbility));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.SetPrimAb, new HotKeyCallback(SetPrimaryAbility));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.SetSecAb, new HotKeyCallback(SetSecondaryAbility));
 
-            HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.ToggleStun, new HotKeyCallback(OnStun));
-            HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.ToggleDisarm, new HotKeyCallback(OnDisarm));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.ToggleStun, new HotKeyCallback(OnStun));
+            //HotKey.Add(HKCategory.Misc, HKSubCat.SpecialMoves, LocString.ToggleDisarm, new HotKeyCallback(OnDisarm));
         }
 
         private static void ToggleWarPeace()

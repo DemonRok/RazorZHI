@@ -47,8 +47,8 @@ namespace Assistant
         Items,
         Targets,
         Agents,
-        Dress,
-        Macros,
+        //Dress,
+        Macros = 5,
         Spells,
         Skills,
         Misc,
@@ -74,7 +74,7 @@ namespace Assistant
         PaladinC = SpellOffset + 20,
 
         //items
-        Potions,
+        Potions = 22,
 
         // misc:
         SpecialMoves,
@@ -457,7 +457,7 @@ namespace Assistant
 
             TreeNode items = MakeNode("Items", HKCategory.Items);
 
-            MakeNode(items, "Potions", HKSubCat.Potions);
+            //MakeNode(items, "Potions", HKSubCat.Potions);
 
             TreeNode targets = MakeNode("Targets", HKCategory.Targets);
 
@@ -471,7 +471,7 @@ namespace Assistant
 
             MakeNode("Agents", HKCategory.Agents);
 
-            MakeNode("Dress", HKCategory.Dress);
+            //MakeNode("Dress", HKCategory.Dress);
 
             MakeNode("Macros", HKCategory.Macros);
 
@@ -484,18 +484,18 @@ namespace Assistant
             MakeNode(spells, "6th", HKSubCat.SixthC);
             MakeNode(spells, "7th", HKSubCat.SeventhC);
             MakeNode(spells, "8th", HKSubCat.EighthC);
-            MakeNode(spells, "Necro", HKSubCat.NecroC);
-            MakeNode(spells, "Paladin", HKSubCat.PaladinC);
-            MakeNode(spells, "Bushido", HKSubCat.BushidoC);
-            MakeNode(spells, "Ninjisu", HKSubCat.NinjisuC);
-            MakeNode(spells, "Spellweaving", HKSubCat.SpellWeaveC);
-            MakeNode(spells, "Mysticism", HKSubCat.MystC);
-            MakeNode(spells, "Masteries", HKSubCat.MasteriesC);
+            //MakeNode(spells, "Necro", HKSubCat.NecroC);
+            //MakeNode(spells, "Paladin", HKSubCat.PaladinC);
+            //MakeNode(spells, "Bushido", HKSubCat.BushidoC);
+            //MakeNode(spells, "Ninjisu", HKSubCat.NinjisuC);
+            //MakeNode(spells, "Spellweaving", HKSubCat.SpellWeaveC);
+            //MakeNode(spells, "Mysticism", HKSubCat.MystC);
+            //MakeNode(spells, "Masteries", HKSubCat.MasteriesC);
 
             MakeNode("Skills", HKCategory.Skills);
 
             TreeNode misc = MakeNode("Misc", HKCategory.Misc);
-            MakeNode(misc, "Special Moves", HKSubCat.SpecialMoves);
+            //MakeNode(misc, "Special Moves", HKSubCat.SpecialMoves);
             MakeNode(misc, "Pet Commands", HKSubCat.PetCommands);
 
             MakeNode("Friends", HKCategory.Friends);
@@ -522,9 +522,9 @@ namespace Assistant
                 else if (node.Tag is HKCategory)
                     node.Text = Language.GetString((int) LocString.HotKeys + (int) ((HKCategory) node.Tag));
                 else if (node.Tag is HKSubCat)
-                    node.Text = Language.GetString(GetHKSubCatLangKey((HKSubCat) node.Tag));
+                    node.Text = Language.GetString(GetHKSubCatLangKey((HKSubCat)node.Tag));
                 else if (node.Tag is Int32)
-                    node.Text = Language.GetString((int) node.Tag);
+                    node.Text = Language.GetString((int)node.Tag);
 
                 if (node != m_Root && node.NextNode != null)
                     UpdateNode(node.NextNode);

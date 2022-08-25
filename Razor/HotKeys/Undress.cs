@@ -26,15 +26,15 @@ namespace Assistant.HotKeys
     {
         public static void Initialize()
         {
-            HotKey.Add(HKCategory.Dress, LocString.ArmDisarmRight, new HotKeyCallback(Dress.ToggleRight));
-            HotKey.Add(HKCategory.Dress, LocString.ArmDisarmLeft, new HotKeyCallback(Dress.ToggleLeft));
+            //HotKey.Add(HKCategory.Dress, LocString.ArmDisarmRight, new HotKeyCallback(Dress.ToggleRight));
+            //HotKey.Add(HKCategory.Dress, LocString.ArmDisarmLeft, new HotKeyCallback(Dress.ToggleLeft));
 
-            HotKey.Add(HKCategory.Dress, LocString.UndressAll, new HotKeyCallback(OnUndressAll));
-            HotKey.Add(HKCategory.Dress, LocString.UndressHands, new HotKeyCallback(OnUnequipBothHands));
-            HotKey.Add(HKCategory.Dress, LocString.UndressLeft, new HotKeyCallback(OnUnequipLeft));
-            HotKey.Add(HKCategory.Dress, LocString.UndressRight, new HotKeyCallback(OnUnequipRight));
-            HotKey.Add(HKCategory.Dress, LocString.UndressHat, new HotKeyCallback(OnUnequipHat));
-            HotKey.Add(HKCategory.Dress, LocString.UndressJewels, new HotKeyCallback(OnUnequipJewelry));
+            //HotKey.Add(HKCategory.Dress, LocString.UndressAll, new HotKeyCallback(OnUndressAll));
+            //HotKey.Add(HKCategory.Dress, LocString.UndressHands, new HotKeyCallback(OnUnequipBothHands));
+            //HotKey.Add(HKCategory.Dress, LocString.UndressLeft, new HotKeyCallback(OnUnequipLeft));
+            //HotKey.Add(HKCategory.Dress, LocString.UndressRight, new HotKeyCallback(OnUnequipRight));
+            //HotKey.Add(HKCategory.Dress, LocString.UndressHat, new HotKeyCallback(OnUnequipHat));
+            //HotKey.Add(HKCategory.Dress, LocString.UndressJewels, new HotKeyCallback(OnUnequipJewelry));
         }
 
         public static void OnUndressAll()

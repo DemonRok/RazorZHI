@@ -398,11 +398,10 @@ MacroInsertWait::insert=&Insert
 1307=Arm/Disarm Mano Destra
 1308=Arm/Disarm Mano Sinistra
 1309=Lascia quel che stai tenendo
-
 1311=> Attiva/Disattiva Macro RazorZHI
 1312=Macro Attivate({0} per disattivare)
 1313=Macro Disattivate ({0} per attivare)
-1314=MAcro Attive
+1314=Macro Attive
 1315=Macro Inattive
 1316=Walk: {0}
 1317=Add Type (Target)...

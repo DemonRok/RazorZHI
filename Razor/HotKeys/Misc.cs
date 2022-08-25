@@ -69,14 +69,14 @@ namespace Assistant.HotKeys
 
             HotKeyCallbackState call = new HotKeyCallbackState(OnUseItem);
             HotKey.Add(HKCategory.Items, LocString.UseBandage, call, (ushort) 3617);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkHeal, call, (ushort) 3852);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkCure, call, (ushort) 3847);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkRef, call, (ushort) 3851);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkNS, call, (ushort) 3846);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkExp, call, (ushort) 3853);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkStr, call, (ushort) 3849);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkAg, call, (ushort) 3848);
-            HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkApple, new HotKeyCallback(OnDrinkApple));
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkHeal, call, (ushort) 3852);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkCure, call, (ushort) 3847);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkRef, call, (ushort) 3851);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkNS, call, (ushort) 3846);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkExp, call, (ushort) 3853);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkStr, call, (ushort) 3849);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkAg, call, (ushort) 3848);
+            //HotKey.Add(HKCategory.Items, HKSubCat.Potions, LocString.DrinkApple, new HotKeyCallback(OnDrinkApple));
 
 
             // Set the packet handler for single click and establish hotkeys for grab item
@@ -86,7 +86,7 @@ namespace Assistant.HotKeys
 
             _grabHotBag = Convert.ToUInt32(Config.GetString("GrabHotBag"));
 
-            HotKey.Add(HKCategory.Misc, LocString.GumpInfo, GetInfoGump);
+            //HotKey.Add(HKCategory.Misc, LocString.GumpInfo, GetInfoGump);
             HotKey.Add(HKCategory.Misc, LocString.GumpSysMsg, GetSysMsgGump);
             HotKey.Add(HKCategory.Misc, LocString.GumpHotKeys, GetHotKeysGump);
             HotKey.Add(HKCategory.Misc, LocString.GumpBoatControl, GetBoatControlGump);
