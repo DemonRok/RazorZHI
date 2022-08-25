@@ -830,3 +830,5 @@ InputBox::ok=&OK
 2124=Script resuming from line {0}
 2125=Script pausing on line {0}
 2126=All Go
+2127=Hunting
+2128=Tracking

@@ -595,6 +595,8 @@ namespace Assistant
         ResumeScriptMessage,
         PauseScriptMessage,
         AllGo,
+        HuntingPet,
+        TrackingPet,
         __End
     }
 

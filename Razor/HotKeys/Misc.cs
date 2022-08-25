@@ -66,6 +66,8 @@ namespace Assistant.HotKeys
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllStay, new HotKeyCallback(PetAllStay));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllStop, new HotKeyCallback(PetAllStop));
             HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.AllGo, new HotKeyCallback(PetAllGo));
+            HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.HuntingPet, new HotKeyCallback(PetHunting));
+            HotKey.Add(HKCategory.Misc, HKSubCat.PetCommands, LocString.TrackingPet, new HotKeyCallback(PetTracking));
 
             HotKeyCallbackState call = new HotKeyCallbackState(OnUseItem);
             HotKey.Add(HKCategory.Items, LocString.UseBandage, call, (ushort) 3617);
@@ -166,6 +168,16 @@ namespace Assistant.HotKeys
         private static void PetAllGo()
         {
             World.Player.Say(Language.GetString(LocString.AllGo));
+        }
+
+        private static void PetHunting()
+        {
+            World.Player.Say(Language.GetString(LocString.HuntingPet));
+        }
+
+        private static void PetTracking()
+        {
+            World.Player.Say(Language.GetString(LocString.TrackingPet));
         }
 
         private static void CaptureBod()
