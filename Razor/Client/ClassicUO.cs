@@ -187,6 +187,8 @@ namespace Assistant
 
         public override bool ServerEncrypted { get; set; }
 
+        public static Assembly Assembly { get; set; }
+
         public unsafe bool Install(PluginHeader* header)
         {
             _sendToClient =
@@ -237,6 +239,8 @@ namespace Assistant
             header->OnFocusGained = Marshal.GetFunctionPointerForDelegate(_onFocusGained);
             header->OnFocusLost = Marshal.GetFunctionPointerForDelegate(_onFocusLost);
 
+            Assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.FullName.StartsWith("ClassicUO,")); 
+            
             return true;
         }
 
