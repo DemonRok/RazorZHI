@@ -1,5 +1,6 @@
-﻿/* Copyright (C) 2009 Matthew Geyer
- * 
+﻿#region license
+/* Copyright (C) 2009 Matthew Geyer
+*
  * This file is part of UO Machine.
  * 
  * UO Machine is free software: you can redistribute it and/or modify
@@ -14,6 +15,7 @@
  * 
  * You should have received a copy of the GNU General Public License
  * along with UO Machine.  If not, see <http://www.gnu.org/licenses/>. */
+#endregion
 
 using System;
 using System.Collections.Generic;
