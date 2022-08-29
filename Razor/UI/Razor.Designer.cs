@@ -612,6 +612,7 @@ namespace Assistant
             this.dohotkey = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.hkCommand = new System.Windows.Forms.TextBox();
+            this.hkCmdLabel = new System.Windows.Forms.Label();
             this.cliLocSound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.setSound = new System.Windows.Forms.Button();
             this.chkAlt = new System.Windows.Forms.CheckBox();
