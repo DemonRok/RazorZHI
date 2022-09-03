@@ -644,7 +644,9 @@ namespace Assistant.Scripts
                 "drop", "droprelloc", "gumpresponse", "gumpclose", "hotkey", "lasttarget", "lift", "lifttype",
                 "menu", "menuresponse", "organizer", "overhead", "potion", "promptresponse", "restock", "say",
                 "whisper", "yell", "emote", "script", "scavenger", "sell", "setability", "setlasttarget", "setvar",
-                "skill", "sysmsg", "target", "targettype", "targetrelloc", "useonce", "walk", "wait",
+                "skill", "sysmsg", "target", "targettype",
+                //"targetrelloc",
+                "useonce", "walk", "wait",
                 "pause", "waitforgump", "waitformenu", "waitforprompt", "waitfortarget", "waitforsysmsg", "clearsysmsg", "clearjournal",
                 "waitforsysmsg", "random"
             };
@@ -841,10 +843,10 @@ namespace Assistant.Scripts
                 "usetype 'dagger'\n\twaitfortarget\n\ttargettype 'robe'\n\tuseobject 0x4005ECAF\n\twaitfortarget\n\ttargettype 0x1f03\n\tuseobject 0x4005ECAF\n\twaitfortarget\n\ttargettype 0x1f03 true");
             descriptionCommands.Add("targettype", tooltip);
 
-            tooltip = new ToolTipDescriptions("targetrelloc", new[] { "targetrelloc (x-offset) (y-offset)" }, "N/A",
+            /*tooltip = new ToolTipDescriptions("targetrelloc", new[] { "targetrelloc (x-offset) (y-offset)" }, "N/A",
                 "This command will target a specific location on the map relative to your position.",
                 "cast 'fire field'\n\twaitfortarget\n\ttargetrelloc 1 1");
-            descriptionCommands.Add("targetrelloc", tooltip);
+            descriptionCommands.Add("targetrelloc", tooltip);*/
 
             /*tooltip = new ToolTipDescriptions("undress",
                 new[] { "undress ['name of dress list']' or undress 'LayerName'" }, "N/A",

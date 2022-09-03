@@ -33,7 +33,7 @@ namespace Assistant.Scripts
             Interpreter.RegisterCommandHandler("target", Target); //Absolute Target
 
             Interpreter.RegisterCommandHandler("targettype", TargetType); //TargetTypeAction
-            Interpreter.RegisterCommandHandler("targetrelloc", TargetRelLoc); //TargetRelLocAction
+            //Interpreter.RegisterCommandHandler("targetrelloc", TargetRelLoc); //TargetRelLocAction
             Interpreter.RegisterCommandHandler("targetloc", TargetLocation);
 
             Interpreter.RegisterCommandHandler("waitfortarget", WaitForTarget); //WaitForTargetAction
@@ -184,7 +184,7 @@ namespace Assistant.Scripts
             return true;
         }
 
-        private static bool TargetRelLoc(string command, Variable[] vars, bool quiet, bool force)
+        /*private static bool TargetRelLoc(string command, Variable[] vars, bool quiet, bool force)
         {
             if (Targeting.FromGrabHotKey)
                 return false;
@@ -212,7 +212,7 @@ namespace Assistant.Scripts
             }
 
             return true;
-        }
+        }*/
 
         private static bool TargetLocation(string command, Variable[] vars, bool quiet, bool force)
         {

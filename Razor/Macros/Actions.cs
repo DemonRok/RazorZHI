@@ -1078,7 +1078,7 @@ namespace Assistant.Macros
                     new MacroMenuItem(LocString.ReTarget, new MacroMenuCallback(ReTarget)),
                     new MacroMenuItem(LocString.ConvLT, new MacroMenuCallback(ConvertToLastTarget)),
                     new MacroMenuItem(LocString.ConvTargType, new MacroMenuCallback(ConvertToByType)),
-                    new MacroMenuItem(LocString.ConvRelLoc, new MacroMenuCallback(ConvertToRelLoc))
+                    //new MacroMenuItem(LocString.ConvRelLoc, new MacroMenuCallback(ConvertToRelLoc))
                 };
             }
 
@@ -1117,14 +1117,14 @@ namespace Assistant.Macros
                 m_Parent.Convert(this, new TargetTypeAction(m_Info.Serial.IsMobile, m_Info.Gfx));
         }
 
-        private void ConvertToRelLoc(object[] args)
+        /*private void ConvertToRelLoc(object[] args)
         {
             if (m_Parent != null)
                 m_Parent.Convert(this,
                     new TargetRelLocAction((sbyte) (m_Info.X - World.Player.Position.X),
                         (sbyte) (m_Info.Y - World.Player.Position
                                      .Y))); //, (sbyte)(m_Info.Z - World.Player.Position.Z) ) );
-        }
+        }*/
     }
 
     /// <summary>
@@ -1425,7 +1425,7 @@ namespace Assistant.Macros
         }
     }
 
-    public class TargetRelLocAction : MacroAction
+    /*public class TargetRelLocAction : MacroAction
     {
         private sbyte m_X, m_Y;
 
@@ -1505,7 +1505,7 @@ namespace Assistant.Macros
             if (m_Parent != null)
                 m_Parent.Update();
         }
-    }
+    }*/
 
     public class LastTargetAction : MacroAction
     {
