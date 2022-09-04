@@ -641,7 +641,9 @@ namespace Assistant.Scripts
             {
                 "alliance", "clearall", "cleardragdrop", "clearhands", "emote", "guild", "attack", "interrupt", "virtue", "yell",
                 "cast", "dclick", "dclicktype",
-                "drop", "droprelloc", "gumpresponse", "gumpclose", "hotkey", "lasttarget", "lift", "lifttype",
+                //"drop", "droprelloc",
+                "gumpresponse", "gumpclose", "hotkey", "lasttarget",
+                //"lift", "lifttype",
                 "menu", "menuresponse", "organizer", "overhead", "potion", "promptresponse", "restock", "say",
                 "whisper", "yell", "emote", "script", "scavenger", "sell", "setability", "setlasttarget", "setvar",
                 "skill", "sysmsg", "target", "targettype",
@@ -692,9 +694,9 @@ namespace Assistant.Scripts
 
             /*tooltip = new ToolTipDescriptions("dress", new[] { "dress ('name of dress list')" }, "N/A",
                 "This command will execute a spec dress list you have defined in Razor.", "dress 'My Sunday Best'");
-            descriptionCommands.Add("dress", tooltip);*/
+            descriptionCommands.Add("dress", tooltip);
 
-            tooltip = new ToolTipDescriptions("drop", new[] { "drop (serial) (x/y/z/layername)" }, "N/A",
+            /*tooltip = new ToolTipDescriptions("drop", new[] { "drop (serial) (x/y/z/layername)" }, "N/A",
                 "This command will drop the item you are holding either at your feet,\n\t\ton a specific layer or at a specific X / Y / Z location.",
                 "lift 0x400D54A7 1\n\t\tdrop 0x6311 InnerTorso");
             descriptionCommands.Add("drop", tooltip);
@@ -706,7 +708,7 @@ namespace Assistant.Scripts
             tooltip = new ToolTipDescriptions("droprelloc", new[] { "droprelloc (x) (y)" }, "N/A",
                 "This command will drop the item you're holding to a location relative to your position.",
                 "lift 0x400EED2A 1\n\twait 1000\n\tdroprelloc 1 1");
-            descriptionCommands.Add("droprelloc", tooltip);
+            descriptionCommands.Add("droprelloc", tooltip);*/
 
             tooltip = new ToolTipDescriptions("gumpresponse", new[] { "gumpresponse (buttonID)" }, "N/A",
                 "Responds to a specific gump button", "gumpresponse 4");
@@ -726,7 +728,7 @@ namespace Assistant.Scripts
                 "cast 'magic arrow'\n\twaitfortarget\n\tlasttarget");
             descriptionCommands.Add("lasttarget", tooltip);
 
-            tooltip = new ToolTipDescriptions("lift", new[] { "lift (serial) [amount]" }, "N/A",
+            /*tooltip = new ToolTipDescriptions("lift", new[] { "lift (serial) [amount]" }, "N/A",
                 "This command will lift a specific item and amount. If no amount is provided, 1 is defaulted.",
                 "lift 0x400EED2A 1\n\twait 1000\n\tdroprelloc 1 1 0");
             descriptionCommands.Add("lift", tooltip);
@@ -735,7 +737,7 @@ namespace Assistant.Scripts
                 new[] { "lifttype (gfx) [amount] or lifttype ('name of item') [amount] [hue]" }, "N/A",
                 "This command will lift a specific item by type either by the graphic id or by the name.\n\tIf no amount is provided, 1 is defaulted.",
                 "lifttype 'robe'\n\twait 1000\n\tdroprelloc 1 1 0\n\tlifttype 0x1FCD\n\twait 1000\n\tdroprelloc 1 1");
-            descriptionCommands.Add("lifttype", tooltip);
+            descriptionCommands.Add("lifttype", tooltip);*/
 
             tooltip = new ToolTipDescriptions("menu", new[] { "menu (serial) (index) [false]" }, "N/A",
                 "Selects a specific index within a context menu", "# open backpack\n\tmenu 0 1");
