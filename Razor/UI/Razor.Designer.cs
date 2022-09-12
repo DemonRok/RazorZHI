@@ -261,24 +261,12 @@ namespace Assistant
         private CheckBox captureMibs;
         private CheckBox macroActionDelay;
         private CheckBox disableMacroPlayFinish;
-        private TabPage subBandageTimerTab;
-        private CheckBox onlyShowBandageTimerSeconds;
-        private TextBox bandageTimerFormat;
-        private CheckBox showBandageTimer;
-        private ComboBox bandageTimerLocation;
-        private TextBox bandageTimerSeconds;
-        private Label lblBandageCountFormat;
-        private Button setBandageHue;
         private Button setTargetIndicatorHue;
         private GroupBox groupSmartTarget;
         private CheckBox nonFriendlyHarmfulOnly;
         private CheckBox friendBeneficialOnly;
         private CheckBox onlyNextPrevBeneficial;
         private CheckBox smartLT;
-        private TextBox bandageEndMessage;
-        private TextBox bandageStartMessage;
-        private CheckBox showBandageEnd;
-        private CheckBox showBandageStart;
         private Button buffDebuffOptions;
         private TextBox captureOthersDeathDelay;
         private Label lblCaptureOthersDeathMs;
@@ -479,19 +467,8 @@ namespace Assistant
             this.delCounter = new System.Windows.Forms.Button();
             this.addCounter = new System.Windows.Forms.Button();
             this.recount = new System.Windows.Forms.Button();
-            this.subBandageTimerTab = new System.Windows.Forms.TabPage();
-            this.bandageEndMessage = new System.Windows.Forms.TextBox();
-            this.bandageStartMessage = new System.Windows.Forms.TextBox();
-            this.showBandageEnd = new System.Windows.Forms.CheckBox();
-            this.showBandageStart = new System.Windows.Forms.CheckBox();
-            this.setBandageHue = new System.Windows.Forms.Button();
-            this.bandageTimerLocation = new System.Windows.Forms.ComboBox();
-            this.bandageTimerSeconds = new System.Windows.Forms.TextBox();
-            this.onlyShowBandageTimerSeconds = new System.Windows.Forms.CheckBox();
-            this.bandageTimerFormat = new System.Windows.Forms.TextBox();
-            this.showBandageTimer = new System.Windows.Forms.CheckBox();
-            this.lblBandageCountFormat = new System.Windows.Forms.Label();
             this.subOverheadTab = new System.Windows.Forms.TabPage();
+            this.setSound = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.unicodeStyle = new System.Windows.Forms.RadioButton();
             this.asciiStyle = new System.Windows.Forms.RadioButton();
@@ -504,6 +481,7 @@ namespace Assistant
             this.cliLocOverheadView = new System.Windows.Forms.ListView();
             this.cliLocOriginal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cliLocOverheadMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cliLocSound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cliLocSearch = new System.Windows.Forms.Button();
             this.cliLocTextSearch = new System.Windows.Forms.TextBox();
             this.lblOhSearch = new System.Windows.Forms.Label();
@@ -613,8 +591,6 @@ namespace Assistant
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.hkCommand = new System.Windows.Forms.TextBox();
             this.hkCmdLabel = new System.Windows.Forms.Label();
-            this.cliLocSound = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.setSound = new System.Windows.Forms.Button();
             this.chkAlt = new System.Windows.Forms.CheckBox();
             this.chkPass = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -715,6 +691,8 @@ namespace Assistant
             this.screenPrev = new System.Windows.Forms.PictureBox();
             this.dispTime = new System.Windows.Forms.CheckBox();
             this.advancedTab = new System.Windows.Forms.TabPage();
+            this.fontDecrease = new System.Windows.Forms.Button();
+            this.fontIncrease = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.lastBackup = new System.Windows.Forms.Label();
             this.openBackupFolder = new System.Windows.Forms.Button();
@@ -750,8 +728,6 @@ namespace Assistant
             this.addDress = new System.Windows.Forms.Button();
             this.dressList = new System.Windows.Forms.ListBox();
             this.undressConflicts = new System.Windows.Forms.CheckBox();
-            this.fontIncrease = new System.Windows.Forms.Button();
-            this.fontDecrease = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.generalTab.SuspendLayout();
             this.subGeneralTab.SuspendLayout();
@@ -772,7 +748,6 @@ namespace Assistant
             this.groupBox3.SuspendLayout();
             this.subCountersTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.subBandageTimerTab.SuspendLayout();
             this.subOverheadTab.SuspendLayout();
             this.subWaypoints.SuspendLayout();
             this.skillsTab.SuspendLayout();
@@ -823,9 +798,9 @@ namespace Assistant
             // 
             // tabs
             // 
-            this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right))); 
+            this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabs.Controls.Add(this.generalTab);
             this.tabs.Controls.Add(this.moreOptTab);
             this.tabs.Controls.Add(this.displayTab);
@@ -861,9 +836,9 @@ namespace Assistant
             // 
             // subGeneralTab
             // 
-            this.subGeneralTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-           | System.Windows.Forms.AnchorStyles.Left)
-           | System.Windows.Forms.AnchorStyles.Right))); 
+            this.subGeneralTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.subGeneralTab.Controls.Add(this.subGenTab);
             this.subGeneralTab.Location = new System.Drawing.Point(6, 3);
             this.subGeneralTab.Name = "subGeneralTab";
@@ -1009,7 +984,8 @@ namespace Assistant
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.saveProfile);
             this.groupBox4.Controls.Add(this.cloneProfile);
             this.groupBox4.Controls.Add(this.delProfile);
@@ -1025,7 +1001,7 @@ namespace Assistant
             // saveProfile
             // 
             this.saveProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveProfile.AutoSize = true; 
+            this.saveProfile.AutoSize = true;
             this.saveProfile.Location = new System.Drawing.Point(300, 56);
             this.saveProfile.Name = "saveProfile";
             this.saveProfile.Size = new System.Drawing.Size(55, 30);
@@ -1047,10 +1023,10 @@ namespace Assistant
             // delProfile
             // 
             this.delProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.delProfile.AutoSize = true; 
-            this.delProfile.Location = new System.Drawing.Point(422, 56);
+            this.delProfile.AutoSize = true;
+            this.delProfile.Location = new System.Drawing.Point(420, 56);
             this.delProfile.Name = "delProfile";
-            this.delProfile.Size = new System.Drawing.Size(60, 30);
+            this.delProfile.Size = new System.Drawing.Size(62, 30);
             this.delProfile.TabIndex = 2;
             this.delProfile.Text = "Cancella";
             this.delProfile.Click += new System.EventHandler(this.delProfile_Click);
@@ -1058,7 +1034,7 @@ namespace Assistant
             // newProfile
             // 
             this.newProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.newProfile.AutoSize = true; 
+            this.newProfile.AutoSize = true;
             this.newProfile.Location = new System.Drawing.Point(239, 56);
             this.newProfile.Name = "newProfile";
             this.newProfile.Size = new System.Drawing.Size(55, 30);
@@ -1068,7 +1044,8 @@ namespace Assistant
             // 
             // profiles
             // 
-            this.profiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.profiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.profiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.profiles.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profiles.ItemHeight = 20;
@@ -1090,7 +1067,9 @@ namespace Assistant
             // 
             // optionsTabCtrl
             // 
-            this.optionsTabCtrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.optionsTabCtrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.optionsTabCtrl.Controls.Add(this.subOptionsSpeechTab);
             this.optionsTabCtrl.Controls.Add(this.subOptionsTargetTab);
             this.optionsTabCtrl.Controls.Add(this.subOptionsMiscTab);
@@ -1215,7 +1194,7 @@ namespace Assistant
             this.showBuffDebuffOverhead.Text = "Show buff/debuff overhead";
             this.showBuffDebuffOverhead.UseVisualStyleBackColor = true;
             this.showBuffDebuffOverhead.CheckedChanged += new System.EventHandler(this.showBuffDebuffOverhead_CheckedChanged);
-            // 
+            //
             // chkPartyOverhead
             // 
             this.chkPartyOverhead.Location = new System.Drawing.Point(260, 90);
@@ -1456,10 +1435,10 @@ namespace Assistant
             this.subOptionsTargetTab.Controls.Add(this.label6);
             this.subOptionsTargetTab.Controls.Add(this.queueTargets);
             this.subOptionsTargetTab.Controls.Add(this.lblTargetFormat);
-            this.subOptionsTargetTab.Location = new System.Drawing.Point(4, 24);
+            this.subOptionsTargetTab.Location = new System.Drawing.Point(4, 22);
             this.subOptionsTargetTab.Name = "subOptionsTargetTab";
             this.subOptionsTargetTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subOptionsTargetTab.Size = new System.Drawing.Size(502, 286);
+            this.subOptionsTargetTab.Size = new System.Drawing.Size(502, 288);
             this.subOptionsTargetTab.TabIndex = 1;
             this.subOptionsTargetTab.Text = "Targeting & Queues  ";
             // 
@@ -1706,9 +1685,9 @@ namespace Assistant
             this.subOptionsMiscTab.Controls.Add(this.preAOSstatbar);
             this.subOptionsMiscTab.Controls.Add(this.autoStackRes);
             this.subOptionsMiscTab.Controls.Add(this.blockDis);
-            this.subOptionsMiscTab.Location = new System.Drawing.Point(4, 24);
+            this.subOptionsMiscTab.Location = new System.Drawing.Point(4, 22);
             this.subOptionsMiscTab.Name = "subOptionsMiscTab";
-            this.subOptionsMiscTab.Size = new System.Drawing.Size(502, 286);
+            this.subOptionsMiscTab.Size = new System.Drawing.Size(502, 288);
             this.subOptionsMiscTab.TabIndex = 2;
             this.subOptionsMiscTab.Text = "Additional Options  ";
             // 
@@ -1899,10 +1878,11 @@ namespace Assistant
             // 
             // displayCountersTabCtrl
             // 
-            this.displayCountersTabCtrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.displayCountersTabCtrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.displayCountersTabCtrl.Controls.Add(this.subDisplayTab);
             this.displayCountersTabCtrl.Controls.Add(this.subCountersTab);
-            this.displayCountersTabCtrl.Controls.Add(this.subBandageTimerTab);
             this.displayCountersTabCtrl.Controls.Add(this.subOverheadTab);
             this.displayCountersTabCtrl.Controls.Add(this.subWaypoints);
             this.displayCountersTabCtrl.Location = new System.Drawing.Point(6, 3);
@@ -1930,7 +1910,8 @@ namespace Assistant
             // 
             // groupBox11
             // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.Controls.Add(this.razorTitleBarKey);
             this.groupBox11.Controls.Add(this.showInRazorTitleBar);
             this.groupBox11.Controls.Add(this.razorTitleBar);
@@ -1943,6 +1924,7 @@ namespace Assistant
             // 
             // razorTitleBarKey
             // 
+            this.razorTitleBarKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.razorTitleBarKey.Location = new System.Drawing.Point(468, 17);
             this.razorTitleBarKey.Name = "razorTitleBarKey";
             this.razorTitleBarKey.Size = new System.Drawing.Size(16, 20);
@@ -1953,7 +1935,6 @@ namespace Assistant
             // 
             // showInRazorTitleBar
             // 
-            this.razorTitleBarKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
             this.showInRazorTitleBar.AutoSize = true;
             this.showInRazorTitleBar.Location = new System.Drawing.Point(6, 17);
             this.showInRazorTitleBar.Name = "showInRazorTitleBar";
@@ -1965,7 +1946,8 @@ namespace Assistant
             // 
             // razorTitleBar
             // 
-            this.razorTitleBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.razorTitleBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.razorTitleBar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.razorTitleBar.Location = new System.Drawing.Point(6, 42);
             this.razorTitleBar.Name = "razorTitleBar";
@@ -1976,7 +1958,7 @@ namespace Assistant
             // 
             // trackDps
             // 
-            this.trackDps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.trackDps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackDps.AutoSize = true;
             this.trackDps.Location = new System.Drawing.Point(273, 178);
             this.trackDps.Name = "trackDps";
@@ -1988,7 +1970,7 @@ namespace Assistant
             // 
             // trackIncomingGold
             // 
-            this.trackIncomingGold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.trackIncomingGold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackIncomingGold.AutoSize = true;
             this.trackIncomingGold.Location = new System.Drawing.Point(273, 152);
             this.trackIncomingGold.Name = "trackIncomingGold";
@@ -2000,7 +1982,7 @@ namespace Assistant
             // 
             // showNotoHue
             // 
-            this.showNotoHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.showNotoHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.showNotoHue.Location = new System.Drawing.Point(6, 177);
             this.showNotoHue.Name = "showNotoHue";
             this.showNotoHue.Size = new System.Drawing.Size(221, 20);
@@ -2010,7 +1992,7 @@ namespace Assistant
             // 
             // highlightSpellReags
             // 
-            this.highlightSpellReags.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.highlightSpellReags.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.highlightSpellReags.Location = new System.Drawing.Point(6, 151);
             this.highlightSpellReags.Name = "highlightSpellReags";
             this.highlightSpellReags.Size = new System.Drawing.Size(205, 20);
@@ -2020,7 +2002,9 @@ namespace Assistant
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.titleBarParams);
             this.groupBox3.Controls.Add(this.titleStr);
             this.groupBox3.Controls.Add(this.showInBar);
@@ -2033,7 +2017,7 @@ namespace Assistant
             // 
             // titleBarParams
             // 
-            this.titleBarParams.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.titleBarParams.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.titleBarParams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.titleBarParams.FormattingEnabled = true;
             this.titleBarParams.Items.AddRange(new object[] {
@@ -2096,7 +2080,9 @@ namespace Assistant
             // 
             // titleStr
             // 
-            this.titleStr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.titleStr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleStr.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleStr.Location = new System.Drawing.Point(6, 48);
             this.titleStr.Multiline = true;
@@ -2124,10 +2110,10 @@ namespace Assistant
             this.subCountersTab.Controls.Add(this.titlebarImages);
             this.subCountersTab.Controls.Add(this.checkNewConts);
             this.subCountersTab.Controls.Add(this.groupBox2);
-            this.subCountersTab.Location = new System.Drawing.Point(4, 22);
+            this.subCountersTab.Location = new System.Drawing.Point(4, 24);
             this.subCountersTab.Name = "subCountersTab";
             this.subCountersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subCountersTab.Size = new System.Drawing.Size(502, 288);
+            this.subCountersTab.Size = new System.Drawing.Size(502, 286);
             this.subCountersTab.TabIndex = 1;
             this.subCountersTab.Text = "Counters";
             // 
@@ -2179,7 +2165,8 @@ namespace Assistant
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.counters);
             this.groupBox2.Controls.Add(this.delCounter);
             this.groupBox2.Controls.Add(this.addCounter);
@@ -2193,7 +2180,8 @@ namespace Assistant
             // 
             // counters
             // 
-            this.counters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.counters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.counters.CheckBoxes = true;
             this.counters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cntName,
@@ -2224,7 +2212,7 @@ namespace Assistant
             // delCounter
             // 
             this.delCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.delCounter.Location = new System.Drawing.Point(108, 231); 
+            this.delCounter.Location = new System.Drawing.Point(108, 231);
             this.delCounter.Name = "delCounter";
             this.delCounter.Size = new System.Drawing.Size(71, 37);
             this.delCounter.TabIndex = 4;
@@ -2251,137 +2239,6 @@ namespace Assistant
             this.recount.Text = "Recount";
             this.recount.Click += new System.EventHandler(this.recount_Click);
             // 
-            // subBandageTimerTab
-            // 
-            this.subBandageTimerTab.BackColor = System.Drawing.SystemColors.Control;
-            this.subBandageTimerTab.Controls.Add(this.bandageEndMessage);
-            this.subBandageTimerTab.Controls.Add(this.bandageStartMessage);
-            this.subBandageTimerTab.Controls.Add(this.showBandageEnd);
-            this.subBandageTimerTab.Controls.Add(this.showBandageStart);
-            this.subBandageTimerTab.Controls.Add(this.setBandageHue);
-            this.subBandageTimerTab.Controls.Add(this.bandageTimerLocation);
-            this.subBandageTimerTab.Controls.Add(this.bandageTimerSeconds);
-            this.subBandageTimerTab.Controls.Add(this.onlyShowBandageTimerSeconds);
-            this.subBandageTimerTab.Controls.Add(this.bandageTimerFormat);
-            this.subBandageTimerTab.Controls.Add(this.showBandageTimer);
-            this.subBandageTimerTab.Controls.Add(this.lblBandageCountFormat);
-            this.subBandageTimerTab.Location = new System.Drawing.Point(4, 22);
-            this.subBandageTimerTab.Name = "subBandageTimerTab";
-            this.subBandageTimerTab.Size = new System.Drawing.Size(502, 288);
-            this.subBandageTimerTab.TabIndex = 2;
-            this.subBandageTimerTab.Text = "Bandage Timer";
-            // 
-            // bandageEndMessage
-            // 
-            this.bandageEndMessage.Location = new System.Drawing.Point(205, 123);
-            this.bandageEndMessage.Name = "bandageEndMessage";
-            this.bandageEndMessage.Size = new System.Drawing.Size(146, 23);
-            this.bandageEndMessage.TabIndex = 62;
-            this.bandageEndMessage.Text = "Bandage: Ending";
-            this.bandageEndMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bandageEndMessage.TextChanged += new System.EventHandler(this.BandageEndMessage_TextChanged);
-            // 
-            // bandageStartMessage
-            // 
-            this.bandageStartMessage.Location = new System.Drawing.Point(205, 98);
-            this.bandageStartMessage.Name = "bandageStartMessage";
-            this.bandageStartMessage.Size = new System.Drawing.Size(146, 23);
-            this.bandageStartMessage.TabIndex = 61;
-            this.bandageStartMessage.Text = "Bandage: Starting";
-            this.bandageStartMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bandageStartMessage.TextChanged += new System.EventHandler(this.BandageStartMessage_TextChanged);
-            // 
-            // showBandageEnd
-            // 
-            this.showBandageEnd.AutoSize = true;
-            this.showBandageEnd.Location = new System.Drawing.Point(9, 125);
-            this.showBandageEnd.Name = "showBandageEnd";
-            this.showBandageEnd.Size = new System.Drawing.Size(187, 19);
-            this.showBandageEnd.TabIndex = 60;
-            this.showBandageEnd.Text = "Show bandaging end message";
-            this.showBandageEnd.UseVisualStyleBackColor = true;
-            this.showBandageEnd.CheckedChanged += new System.EventHandler(this.ShowBandageEnd_CheckedChanged);
-            // 
-            // showBandageStart
-            // 
-            this.showBandageStart.AutoSize = true;
-            this.showBandageStart.Location = new System.Drawing.Point(9, 100);
-            this.showBandageStart.Name = "showBandageStart";
-            this.showBandageStart.Size = new System.Drawing.Size(190, 19);
-            this.showBandageStart.TabIndex = 58;
-            this.showBandageStart.Text = "Show bandaging start message";
-            this.showBandageStart.UseVisualStyleBackColor = true;
-            this.showBandageStart.CheckedChanged += new System.EventHandler(this.ShowBandageStart_CheckedChanged);
-            // 
-            // setBandageHue
-            // 
-            this.setBandageHue.Location = new System.Drawing.Point(269, 41);
-            this.setBandageHue.Name = "setBandageHue";
-            this.setBandageHue.Size = new System.Drawing.Size(67, 23);
-            this.setBandageHue.TabIndex = 57;
-            this.setBandageHue.Text = "Set Hue";
-            this.setBandageHue.UseVisualStyleBackColor = true;
-            this.setBandageHue.Click += new System.EventHandler(this.setBandageHue_Click);
-            // 
-            // bandageTimerLocation
-            // 
-            this.bandageTimerLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bandageTimerLocation.FormattingEnabled = true;
-            this.bandageTimerLocation.Items.AddRange(new object[] {
-            "Overhead",
-            "System Messages"});
-            this.bandageTimerLocation.Location = new System.Drawing.Point(145, 10);
-            this.bandageTimerLocation.Name = "bandageTimerLocation";
-            this.bandageTimerLocation.Size = new System.Drawing.Size(118, 23);
-            this.bandageTimerLocation.TabIndex = 56;
-            this.bandageTimerLocation.SelectedIndexChanged += new System.EventHandler(this.bandageTimerLocation_SelectedIndexChanged);
-            // 
-            // bandageTimerSeconds
-            // 
-            this.bandageTimerSeconds.Location = new System.Drawing.Point(180, 71);
-            this.bandageTimerSeconds.Name = "bandageTimerSeconds";
-            this.bandageTimerSeconds.Size = new System.Drawing.Size(48, 23);
-            this.bandageTimerSeconds.TabIndex = 55;
-            this.bandageTimerSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bandageTimerSeconds.TextChanged += new System.EventHandler(this.bandageTimerSeconds_TextChanged);
-            // 
-            // onlyShowBandageTimerSeconds
-            // 
-            this.onlyShowBandageTimerSeconds.Location = new System.Drawing.Point(9, 72);
-            this.onlyShowBandageTimerSeconds.Name = "onlyShowBandageTimerSeconds";
-            this.onlyShowBandageTimerSeconds.Size = new System.Drawing.Size(205, 20);
-            this.onlyShowBandageTimerSeconds.TabIndex = 53;
-            this.onlyShowBandageTimerSeconds.Text = "Only show every X seconds:";
-            this.onlyShowBandageTimerSeconds.CheckedChanged += new System.EventHandler(this.onlyShowBandageTimerSeconds_CheckedChanged);
-            // 
-            // bandageTimerFormat
-            // 
-            this.bandageTimerFormat.Location = new System.Drawing.Point(113, 41);
-            this.bandageTimerFormat.Name = "bandageTimerFormat";
-            this.bandageTimerFormat.Size = new System.Drawing.Size(150, 23);
-            this.bandageTimerFormat.TabIndex = 52;
-            this.bandageTimerFormat.Text = "Bandage: {count}s";
-            this.bandageTimerFormat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bandageTimerFormat.TextChanged += new System.EventHandler(this.bandageTimerFormat_TextChanged);
-            // 
-            // showBandageTimer
-            // 
-            this.showBandageTimer.Location = new System.Drawing.Point(9, 11);
-            this.showBandageTimer.Name = "showBandageTimer";
-            this.showBandageTimer.Size = new System.Drawing.Size(205, 20);
-            this.showBandageTimer.TabIndex = 51;
-            this.showBandageTimer.Text = "Show bandage timer";
-            this.showBandageTimer.CheckedChanged += new System.EventHandler(this.showBandageTimer_CheckedChanged);
-            // 
-            // lblBandageCountFormat
-            // 
-            this.lblBandageCountFormat.Location = new System.Drawing.Point(21, 41);
-            this.lblBandageCountFormat.Name = "lblBandageCountFormat";
-            this.lblBandageCountFormat.Size = new System.Drawing.Size(159, 23);
-            this.lblBandageCountFormat.TabIndex = 54;
-            this.lblBandageCountFormat.Text = "Format && Hue:";
-            this.lblBandageCountFormat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // subOverheadTab
             // 
             this.subOverheadTab.BackColor = System.Drawing.SystemColors.Control;
@@ -2401,9 +2258,9 @@ namespace Assistant
             this.subOverheadTab.Controls.Add(this.lblOhSearch);
             this.subOverheadTab.Controls.Add(this.cliLocSearchView);
             this.subOverheadTab.Controls.Add(this.showOverheadMessages);
-            this.subOverheadTab.Location = new System.Drawing.Point(4, 22);
+            this.subOverheadTab.Location = new System.Drawing.Point(4, 24);
             this.subOverheadTab.Name = "subOverheadTab";
-            this.subOverheadTab.Size = new System.Drawing.Size(502, 288);
+            this.subOverheadTab.Size = new System.Drawing.Size(502, 286);
             this.subOverheadTab.TabIndex = 3;
             this.subOverheadTab.Text = "Overhead Messages";
             // 
@@ -2505,7 +2362,7 @@ namespace Assistant
             // 
             // setOverheadMessage
             // 
-            this.setOverheadMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.setOverheadMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.setOverheadMessage.Location = new System.Drawing.Point(443, 9);
             this.setOverheadMessage.Name = "setOverheadMessage";
             this.setOverheadMessage.Size = new System.Drawing.Size(56, 24);
@@ -2516,7 +2373,9 @@ namespace Assistant
             // 
             // cliLocOverheadView
             // 
-            this.cliLocOverheadView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.cliLocOverheadView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cliLocOverheadView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cliLocOriginal,
             this.cliLocOverheadMessage,
@@ -2546,7 +2405,7 @@ namespace Assistant
             // 
             // cliLocSearch
             // 
-            this.cliLocSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.cliLocSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cliLocSearch.Location = new System.Drawing.Point(377, 9);
             this.cliLocSearch.Name = "cliLocSearch";
             this.cliLocSearch.Size = new System.Drawing.Size(60, 24);
@@ -2557,7 +2416,8 @@ namespace Assistant
             // 
             // cliLocTextSearch
             // 
-            this.cliLocTextSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.cliLocTextSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cliLocTextSearch.Location = new System.Drawing.Point(146, 9);
             this.cliLocTextSearch.Name = "cliLocTextSearch";
             this.cliLocTextSearch.Size = new System.Drawing.Size(225, 23);
@@ -2627,9 +2487,9 @@ namespace Assistant
             this.subWaypoints.Controls.Add(this.lblWaypoint);
             this.subWaypoints.Controls.Add(this.btnAddWaypoint);
             this.subWaypoints.Controls.Add(this.waypointList);
-            this.subWaypoints.Location = new System.Drawing.Point(4, 22);
+            this.subWaypoints.Location = new System.Drawing.Point(4, 24);
             this.subWaypoints.Name = "subWaypoints";
-            this.subWaypoints.Size = new System.Drawing.Size(502, 288);
+            this.subWaypoints.Size = new System.Drawing.Size(502, 286);
             this.subWaypoints.TabIndex = 4;
             this.subWaypoints.Text = "Waypoints";
             // 
@@ -2801,12 +2661,13 @@ namespace Assistant
             // 
             // waypointList
             // 
-            this.waypointList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.waypointList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.waypointList.FormattingEnabled = true;
             this.waypointList.ItemHeight = 15;
             this.waypointList.Location = new System.Drawing.Point(11, 12);
             this.waypointList.Name = "waypointList";
-            this.waypointList.Size = new System.Drawing.Size(164, 259);
+            this.waypointList.Size = new System.Drawing.Size(164, 244);
             this.waypointList.TabIndex = 0;
             this.waypointList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listWaypoints_MouseDoubleClick);
             this.waypointList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listWaypoints_MouseDown);
@@ -2833,7 +2694,7 @@ namespace Assistant
             // 
             // captureMibs
             // 
-            this.captureMibs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.captureMibs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.captureMibs.Location = new System.Drawing.Point(356, 230);
             this.captureMibs.Name = "captureMibs";
             this.captureMibs.Size = new System.Drawing.Size(153, 19);
@@ -2844,7 +2705,7 @@ namespace Assistant
             // 
             // dispDeltaOverhead
             // 
-            this.dispDeltaOverhead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dispDeltaOverhead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dispDeltaOverhead.AutoSize = true;
             this.dispDeltaOverhead.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dispDeltaOverhead.Location = new System.Drawing.Point(441, 207);
@@ -2857,7 +2718,7 @@ namespace Assistant
             // 
             // logSkillChanges
             // 
-            this.logSkillChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.logSkillChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logSkillChanges.Location = new System.Drawing.Point(356, 157);
             this.logSkillChanges.Name = "logSkillChanges";
             this.logSkillChanges.Size = new System.Drawing.Size(156, 19);
@@ -2868,7 +2729,7 @@ namespace Assistant
             // 
             // dispDelta
             // 
-            this.dispDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dispDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dispDelta.Location = new System.Drawing.Point(356, 182);
             this.dispDelta.Name = "dispDelta";
             this.dispDelta.Size = new System.Drawing.Size(156, 19);
@@ -2878,7 +2739,7 @@ namespace Assistant
             // 
             // skillCopyAll
             // 
-            this.skillCopyAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.skillCopyAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.skillCopyAll.Location = new System.Drawing.Point(356, 119);
             this.skillCopyAll.Name = "skillCopyAll";
             this.skillCopyAll.Size = new System.Drawing.Size(156, 32);
@@ -2888,7 +2749,7 @@ namespace Assistant
             // 
             // skillCopySel
             // 
-            this.skillCopySel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.skillCopySel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.skillCopySel.Location = new System.Drawing.Point(356, 81);
             this.skillCopySel.Name = "skillCopySel";
             this.skillCopySel.Size = new System.Drawing.Size(156, 32);
@@ -2898,7 +2759,7 @@ namespace Assistant
             // 
             // baseTotal
             // 
-            this.baseTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right))); 
+            this.baseTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.baseTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.baseTotal.Location = new System.Drawing.Point(428, 290);
             this.baseTotal.Name = "baseTotal";
@@ -2909,7 +2770,7 @@ namespace Assistant
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right))); 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Location = new System.Drawing.Point(356, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 23);
@@ -2919,7 +2780,7 @@ namespace Assistant
             // 
             // locks
             // 
-            this.locks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.locks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.locks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.locks.Items.AddRange(new object[] {
             "Up",
@@ -2932,7 +2793,7 @@ namespace Assistant
             // 
             // setlocks
             // 
-            this.setlocks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.setlocks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.setlocks.Location = new System.Drawing.Point(356, 43);
             this.setlocks.Name = "setlocks";
             this.setlocks.Size = new System.Drawing.Size(106, 32);
@@ -2942,7 +2803,7 @@ namespace Assistant
             // 
             // resetDelta
             // 
-            this.resetDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.resetDelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.resetDelta.Location = new System.Drawing.Point(356, 5);
             this.resetDelta.Name = "resetDelta";
             this.resetDelta.Size = new System.Drawing.Size(156, 32);
@@ -2952,7 +2813,9 @@ namespace Assistant
             // 
             // skillList
             // 
-            this.skillList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.skillList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.skillList.AutoArrange = false;
             this.skillList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.skillHDRName,
@@ -3057,7 +2920,9 @@ namespace Assistant
             // 
             // agentGroup
             // 
-            this.agentGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.agentGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.agentGroup.Controls.Add(this.agentSubList);
             this.agentGroup.Location = new System.Drawing.Point(144, 3);
             this.agentGroup.Name = "agentGroup";
@@ -3067,7 +2932,9 @@ namespace Assistant
             // 
             // agentSubList
             // 
-            this.agentSubList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.agentSubList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.agentSubList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agentSubList.IntegralHeight = false;
             this.agentSubList.ItemHeight = 15;
@@ -3121,7 +2988,9 @@ namespace Assistant
             // 
             // filterTabs
             // 
-            this.filterTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.filterTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.filterTabs.Controls.Add(this.subFilterTab);
             this.filterTabs.Controls.Add(this.subFilterText);
             this.filterTabs.Controls.Add(this.subFilterSoundMusic);
@@ -3154,7 +3023,8 @@ namespace Assistant
             // 
             // wyrmAnimationList
             // 
-            this.wyrmAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.wyrmAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wyrmAnimationList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.wyrmAnimationList.DropDownWidth = 250;
             this.wyrmAnimationList.FormattingEnabled = true;
@@ -3177,7 +3047,8 @@ namespace Assistant
             // 
             // daemonAnimationList
             // 
-            this.daemonAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.daemonAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.daemonAnimationList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.daemonAnimationList.DropDownWidth = 250;
             this.daemonAnimationList.FormattingEnabled = true;
@@ -3200,7 +3071,8 @@ namespace Assistant
             // 
             // drakeAnimationList
             // 
-            this.drakeAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.drakeAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.drakeAnimationList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drakeAnimationList.DropDownWidth = 250;
             this.drakeAnimationList.FormattingEnabled = true;
@@ -3223,7 +3095,8 @@ namespace Assistant
             // 
             // dragonAnimationList
             // 
-            this.dragonAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dragonAnimationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dragonAnimationList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dragonAnimationList.DropDownWidth = 250;
             this.dragonAnimationList.FormattingEnabled = true;
@@ -3246,7 +3119,9 @@ namespace Assistant
             // 
             // filters
             // 
-            this.filters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); this.filters.CheckOnClick = true;
+            this.filters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.filters.CheckOnClick = true;
             this.filters.IntegralHeight = false;
             this.filters.Location = new System.Drawing.Point(6, 6);
             this.filters.Name = "filters";
@@ -3267,7 +3142,8 @@ namespace Assistant
             // 
             // gbFilterText
             // 
-            this.gbFilterText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.gbFilterText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gbFilterText.Controls.Add(this.removeFilterText);
             this.gbFilterText.Controls.Add(this.addFilterText);
             this.gbFilterText.Controls.Add(this.textFilterList);
@@ -3303,7 +3179,8 @@ namespace Assistant
             // 
             // textFilterList
             // 
-            this.textFilterList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.textFilterList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.textFilterList.FormattingEnabled = true;
             this.textFilterList.ItemHeight = 15;
             this.textFilterList.Location = new System.Drawing.Point(6, 48);
@@ -3324,7 +3201,9 @@ namespace Assistant
             // 
             // gbFilterMessages
             // 
-            this.gbFilterMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.gbFilterMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbFilterMessages.Controls.Add(this.filterOverheadMessages);
             this.gbFilterMessages.Controls.Add(this.lblFilterDelaySeconds);
             this.gbFilterMessages.Controls.Add(this.lblFilterDelay);
@@ -3505,7 +3384,8 @@ namespace Assistant
             // 
             // soundFilterList
             // 
-            this.soundFilterList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.soundFilterList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.soundFilterList.FormattingEnabled = true;
             this.soundFilterList.Location = new System.Drawing.Point(8, 14);
             this.soundFilterList.Name = "soundFilterList";
@@ -3573,7 +3453,8 @@ namespace Assistant
             // 
             // targetFilter
             // 
-            this.targetFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.targetFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.targetFilter.FormattingEnabled = true;
             this.targetFilter.ItemHeight = 15;
             this.targetFilter.Location = new System.Drawing.Point(247, 6);
@@ -3608,7 +3489,8 @@ namespace Assistant
             // 
             // filterHotkeys
             // 
-            this.filterHotkeys.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.filterHotkeys.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.filterHotkeys.Location = new System.Drawing.Point(50, 8);
             this.filterHotkeys.Name = "filterHotkeys";
             this.filterHotkeys.Size = new System.Drawing.Size(281, 23);
@@ -3626,7 +3508,7 @@ namespace Assistant
             // 
             // hkStatus
             // 
-            this.hkStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.hkStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hkStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hkStatus.Location = new System.Drawing.Point(337, 226);
             this.hkStatus.Name = "hkStatus";
@@ -3646,7 +3528,7 @@ namespace Assistant
             // 
             // dohotkey
             // 
-            this.dohotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dohotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dohotkey.Location = new System.Drawing.Point(337, 170);
             this.dohotkey.Name = "dohotkey";
             this.dohotkey.Size = new System.Drawing.Size(175, 29);
@@ -3656,7 +3538,7 @@ namespace Assistant
             // 
             // groupBox8
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.hkCommand);
             this.groupBox8.Controls.Add(this.hkCmdLabel);
             this.groupBox8.Controls.Add(this.chkAlt);
@@ -3688,7 +3570,7 @@ namespace Assistant
             this.hkCmdLabel.Size = new System.Drawing.Size(68, 20);
             this.hkCmdLabel.TabIndex = 10;
             this.hkCmdLabel.Text = "Command";
-            //
+            // 
             // chkAlt
             // 
             this.chkAlt.Location = new System.Drawing.Point(58, 20);
@@ -3770,7 +3652,9 @@ namespace Assistant
             // 
             // tabControl2
             // 
-            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.subMacrosTab);
             this.tabControl2.Controls.Add(this.subMacrosOptionsTab);
             this.tabControl2.Location = new System.Drawing.Point(6, 3);
@@ -3797,7 +3681,9 @@ namespace Assistant
             // 
             // macroActGroup
             // 
-            this.macroActGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.macroActGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.macroActGroup.Controls.Add(this.setMacroHotKey);
             this.macroActGroup.Controls.Add(this.playMacro);
             this.macroActGroup.Controls.Add(this.waitDisp);
@@ -3814,7 +3700,7 @@ namespace Assistant
             // 
             // setMacroHotKey
             // 
-            this.setMacroHotKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.setMacroHotKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.setMacroHotKey.Location = new System.Drawing.Point(230, 95);
             this.setMacroHotKey.Name = "setMacroHotKey";
             this.setMacroHotKey.Size = new System.Drawing.Size(60, 33);
@@ -3824,7 +3710,7 @@ namespace Assistant
             // 
             // playMacro
             // 
-            this.playMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.playMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.playMacro.Location = new System.Drawing.Point(230, 17);
             this.playMacro.Name = "playMacro";
             this.playMacro.Size = new System.Drawing.Size(60, 33);
@@ -3834,7 +3720,7 @@ namespace Assistant
             // 
             // waitDisp
             // 
-            this.waitDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.waitDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.waitDisp.Location = new System.Drawing.Point(230, 132);
             this.waitDisp.Name = "waitDisp";
             this.waitDisp.Size = new System.Drawing.Size(60, 89);
@@ -3843,7 +3729,7 @@ namespace Assistant
             // 
             // loopMacro
             // 
-            this.loopMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right))); 
+            this.loopMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.loopMacro.Location = new System.Drawing.Point(233, 242);
             this.loopMacro.Name = "loopMacro";
             this.loopMacro.Size = new System.Drawing.Size(57, 24);
@@ -3854,7 +3740,7 @@ namespace Assistant
             // 
             // recMacro
             // 
-            this.recMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.recMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.recMacro.Location = new System.Drawing.Point(230, 56);
             this.recMacro.Name = "recMacro";
             this.recMacro.Size = new System.Drawing.Size(60, 33);
@@ -3864,7 +3750,9 @@ namespace Assistant
             // 
             // actionList
             // 
-            this.actionList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.actionList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.actionList.BackColor = System.Drawing.SystemColors.Window;
             this.actionList.HorizontalScrollbar = true;
             this.actionList.IntegralHeight = false;
@@ -3878,7 +3766,8 @@ namespace Assistant
             // 
             // filterMacros
             // 
-            this.filterMacros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.filterMacros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.filterMacros.Location = new System.Drawing.Point(47, 7);
             this.filterMacros.Name = "filterMacros";
             this.filterMacros.Size = new System.Drawing.Size(147, 23);
@@ -3896,7 +3785,9 @@ namespace Assistant
             // 
             // macroTree
             // 
-            this.macroTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.macroTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.macroTree.FullRowSelect = true;
             this.macroTree.HideSelection = false;
             this.macroTree.Location = new System.Drawing.Point(6, 36);
@@ -3909,7 +3800,7 @@ namespace Assistant
             // 
             // delMacro
             // 
-            this.delMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.delMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.delMacro.Location = new System.Drawing.Point(120, 245);
             this.delMacro.Name = "delMacro";
             this.delMacro.Size = new System.Drawing.Size(74, 30);
@@ -3919,7 +3810,7 @@ namespace Assistant
             // 
             // newMacro
             // 
-            this.newMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.newMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.newMacro.Location = new System.Drawing.Point(8, 245);
             this.newMacro.Name = "newMacro";
             this.newMacro.Size = new System.Drawing.Size(74, 30);
@@ -4024,7 +3915,8 @@ namespace Assistant
             // 
             // macroVariableGroup
             // 
-            this.macroVariableGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.macroVariableGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.macroVariableGroup.Controls.Add(this.macroVariableTypeList);
             this.macroVariableGroup.Controls.Add(this.retargetMacroVariable);
             this.macroVariableGroup.Controls.Add(this.insertMacroVariable);
@@ -4113,7 +4005,9 @@ namespace Assistant
             // 
             // subTabScripts
             // 
-            this.subTabScripts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.subTabScripts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.subTabScripts.Controls.Add(this.subScripts);
             this.subTabScripts.Controls.Add(this.subScriptOptions);
             this.subTabScripts.Location = new System.Drawing.Point(6, 3);
@@ -4142,7 +4036,7 @@ namespace Assistant
             // 
             // scriptHotkey
             // 
-            this.scriptHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.scriptHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptHotkey.ForeColor = System.Drawing.SystemColors.ControlText;
             this.scriptHotkey.Location = new System.Drawing.Point(432, 168);
             this.scriptHotkey.Name = "scriptHotkey";
@@ -4153,7 +4047,9 @@ namespace Assistant
             // 
             // scriptSplitContainer
             // 
-            this.scriptSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.scriptSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptSplitContainer.BackColor = System.Drawing.SystemColors.Control;
             this.scriptSplitContainer.Location = new System.Drawing.Point(7, 7);
             this.scriptSplitContainer.Name = "scriptSplitContainer";
@@ -4173,7 +4069,9 @@ namespace Assistant
             // 
             // scriptTree
             // 
-            this.scriptTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptTree.Location = new System.Drawing.Point(0, 31);
             this.scriptTree.Name = "scriptTree";
             this.scriptTree.Size = new System.Drawing.Size(110, 241);
@@ -4184,7 +4082,8 @@ namespace Assistant
             // 
             // scriptFilter
             // 
-            this.scriptFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptFilter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scriptFilter.Location = new System.Drawing.Point(0, 0);
             this.scriptFilter.Name = "scriptFilter";
@@ -4194,7 +4093,9 @@ namespace Assistant
             // 
             // scriptEditor
             // 
-            this.scriptEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.scriptEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptEditor.AutoCompleteBracketsList = new char[] {
         '(',
         ')',
@@ -4206,7 +4107,7 @@ namespace Assistant
         '\"',
         '\'',
         '\''};
-            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(25, 15);
+            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(2, 15);
             this.scriptEditor.BackBrush = null;
             this.scriptEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptEditor.CaretColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
@@ -4228,7 +4129,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(287, 272);
+            this.scriptEditor.Size = new System.Drawing.Size(275, 272);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4237,8 +4138,6 @@ namespace Assistant
             // 
             // scriptGuide
             // 
-            this.saveScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveScript.AutoSize = true; 
             this.scriptGuide.Location = new System.Drawing.Point(432, 253);
             this.scriptGuide.Name = "scriptGuide";
             this.scriptGuide.Size = new System.Drawing.Size(60, 26);
@@ -4249,6 +4148,8 @@ namespace Assistant
             // 
             // saveScript
             // 
+            this.saveScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveScript.AutoSize = true;
             this.saveScript.Location = new System.Drawing.Point(432, 83);
             this.saveScript.Name = "saveScript";
             this.saveScript.Size = new System.Drawing.Size(60, 32);
@@ -4260,7 +4161,7 @@ namespace Assistant
             // newScript
             // 
             this.newScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.newScript.AutoSize = true; 
+            this.newScript.AutoSize = true;
             this.newScript.Location = new System.Drawing.Point(432, 221);
             this.newScript.Name = "newScript";
             this.newScript.Size = new System.Drawing.Size(60, 26);
@@ -4272,7 +4173,7 @@ namespace Assistant
             // setScriptHotkey
             // 
             this.setScriptHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.setScriptHotkey.AutoSize = true; 
+            this.setScriptHotkey.AutoSize = true;
             this.setScriptHotkey.Location = new System.Drawing.Point(432, 133);
             this.setScriptHotkey.Name = "setScriptHotkey";
             this.setScriptHotkey.Size = new System.Drawing.Size(60, 32);
@@ -4283,8 +4184,6 @@ namespace Assistant
             // 
             // recordScript
             // 
-            this.playScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.playScript.AutoSize = true; 
             this.recordScript.Location = new System.Drawing.Point(432, 45);
             this.recordScript.Name = "recordScript";
             this.recordScript.Size = new System.Drawing.Size(60, 32);
@@ -4295,6 +4194,8 @@ namespace Assistant
             // 
             // playScript
             // 
+            this.playScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.playScript.AutoSize = true;
             this.playScript.Location = new System.Drawing.Point(432, 7);
             this.playScript.Name = "playScript";
             this.playScript.Size = new System.Drawing.Size(60, 32);
@@ -4479,7 +4380,7 @@ namespace Assistant
             // 
             // friendsGroupBox
             // 
-            this.friendClearList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); this.friendsGroupBox.Controls.Add(this.showFriendOverhead);
+            this.friendsGroupBox.Controls.Add(this.showFriendOverhead);
             this.friendsGroupBox.Controls.Add(this.setFriendsFormatHue);
             this.friendsGroupBox.Controls.Add(this.friendOverheadFormat);
             this.friendsGroupBox.Controls.Add(this.friendFormat);
@@ -4559,7 +4460,7 @@ namespace Assistant
             // 
             // friendClearList
             // 
-            this.friendClearList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.friendClearList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.friendClearList.Location = new System.Drawing.Point(174, 274);
             this.friendClearList.Name = "friendClearList";
             this.friendClearList.Size = new System.Drawing.Size(79, 33);
@@ -4570,7 +4471,7 @@ namespace Assistant
             // 
             // friendRemoveSelected
             // 
-            this.friendRemoveSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.friendRemoveSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.friendRemoveSelected.Location = new System.Drawing.Point(94, 274);
             this.friendRemoveSelected.Name = "friendRemoveSelected";
             this.friendRemoveSelected.Size = new System.Drawing.Size(74, 33);
@@ -4581,7 +4482,7 @@ namespace Assistant
             // 
             // friendAddTarget
             // 
-            this.friendAddTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.friendAddTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.friendAddTarget.Location = new System.Drawing.Point(6, 274);
             this.friendAddTarget.Name = "friendAddTarget";
             this.friendAddTarget.Size = new System.Drawing.Size(82, 33);
@@ -4592,7 +4493,9 @@ namespace Assistant
             // 
             // friendsList
             // 
-            this.friendsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.friendsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.friendsList.FormattingEnabled = true;
             this.friendsList.ItemHeight = 15;
             this.friendsList.Location = new System.Drawing.Point(5, 114);
@@ -4649,7 +4552,6 @@ namespace Assistant
             // 
             // openScreenshotFolder
             // 
-            this.captureOwnDeathDelay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
             this.openScreenshotFolder.Location = new System.Drawing.Point(266, 201);
             this.openScreenshotFolder.Name = "openScreenshotFolder";
             this.openScreenshotFolder.Size = new System.Drawing.Size(155, 23);
@@ -4660,6 +4562,7 @@ namespace Assistant
             // 
             // captureOwnDeathDelay
             // 
+            this.captureOwnDeathDelay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.captureOwnDeathDelay.Location = new System.Drawing.Point(419, 263);
             this.captureOwnDeathDelay.Name = "captureOwnDeathDelay";
             this.captureOwnDeathDelay.Size = new System.Drawing.Size(32, 23);
@@ -4670,7 +4573,7 @@ namespace Assistant
             // 
             // lblOwnDeathMs
             // 
-            this.lblOwnDeathMs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.lblOwnDeathMs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblOwnDeathMs.Location = new System.Drawing.Point(453, 267);
             this.lblOwnDeathMs.Name = "lblOwnDeathMs";
             this.lblOwnDeathMs.Size = new System.Drawing.Size(26, 18);
@@ -4679,7 +4582,7 @@ namespace Assistant
             // 
             // captureOwnDeath
             // 
-            this.captureOwnDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.captureOwnDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.captureOwnDeath.Location = new System.Drawing.Point(235, 266);
             this.captureOwnDeath.Name = "captureOwnDeath";
             this.captureOwnDeath.Size = new System.Drawing.Size(158, 20);
@@ -4699,7 +4602,7 @@ namespace Assistant
             // 
             // lblCaptureOthersDeathMs
             // 
-            this.lblCaptureOthersDeathMs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.lblCaptureOthersDeathMs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCaptureOthersDeathMs.Location = new System.Drawing.Point(453, 242);
             this.lblCaptureOthersDeathMs.Name = "lblCaptureOthersDeathMs";
             this.lblCaptureOthersDeathMs.Size = new System.Drawing.Size(26, 18);
@@ -4708,7 +4611,7 @@ namespace Assistant
             // 
             // imgFmt
             // 
-            this.imgFmt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.imgFmt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.imgFmt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.imgFmt.Items.AddRange(new object[] {
             "jpg",
@@ -4727,7 +4630,7 @@ namespace Assistant
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.Location = new System.Drawing.Point(6, 237);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(92, 20);
@@ -4737,7 +4640,7 @@ namespace Assistant
             // 
             // capNow
             // 
-            this.capNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right))); 
+            this.capNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.capNow.Location = new System.Drawing.Point(266, 173);
             this.capNow.Name = "capNow";
             this.capNow.Size = new System.Drawing.Size(155, 22);
@@ -4747,7 +4650,8 @@ namespace Assistant
             // 
             // screenPath
             // 
-            this.screenPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.screenPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.screenPath.Location = new System.Drawing.Point(8, 12);
             this.screenPath.Name = "screenPath";
             this.screenPath.Size = new System.Drawing.Size(463, 23);
@@ -4756,7 +4660,7 @@ namespace Assistant
             // 
             // radioUO
             // 
-            this.radioUO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.radioUO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioUO.Location = new System.Drawing.Point(13, 260);
             this.radioUO.Name = "radioUO";
             this.radioUO.Size = new System.Drawing.Size(75, 26);
@@ -4766,7 +4670,7 @@ namespace Assistant
             // 
             // radioFull
             // 
-            this.radioFull.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.radioFull.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioFull.Location = new System.Drawing.Point(103, 260);
             this.radioFull.Name = "radioFull";
             this.radioFull.Size = new System.Drawing.Size(88, 26);
@@ -4776,7 +4680,7 @@ namespace Assistant
             // 
             // captureOthersDeath
             // 
-            this.captureOthersDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.captureOthersDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.captureOthersDeath.Location = new System.Drawing.Point(235, 240);
             this.captureOthersDeath.Name = "captureOthersDeath";
             this.captureOthersDeath.Size = new System.Drawing.Size(216, 20);
@@ -4786,7 +4690,7 @@ namespace Assistant
             // 
             // setScnPath
             // 
-            this.setScnPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.setScnPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.setScnPath.Location = new System.Drawing.Point(477, 12);
             this.setScnPath.Name = "setScnPath";
             this.setScnPath.Size = new System.Drawing.Size(35, 23);
@@ -4796,7 +4700,9 @@ namespace Assistant
             // 
             // screensList
             // 
-            this.screensList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.screensList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.screensList.IntegralHeight = false;
             this.screensList.ItemHeight = 15;
             this.screensList.Location = new System.Drawing.Point(8, 41);
@@ -4809,7 +4715,8 @@ namespace Assistant
             // 
             // screenPrev
             // 
-            this.screenPrev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.screenPrev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.screenPrev.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.screenPrev.Location = new System.Drawing.Point(266, 41);
             this.screenPrev.Name = "screenPrev";
@@ -4821,7 +4728,7 @@ namespace Assistant
             // 
             // dispTime
             // 
-            this.dispTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.dispTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dispTime.Location = new System.Drawing.Point(13, 289);
             this.dispTime.Name = "dispTime";
             this.dispTime.Size = new System.Drawing.Size(206, 20);
@@ -4833,7 +4740,7 @@ namespace Assistant
             // 
             this.advancedTab.BackColor = System.Drawing.SystemColors.Control;
             this.advancedTab.Controls.Add(this.fontDecrease);
-            this.advancedTab.Controls.Add(this.fontIncrease); 
+            this.advancedTab.Controls.Add(this.fontIncrease);
             this.advancedTab.Controls.Add(this.groupBox16);
             this.advancedTab.Controls.Add(this.openRazorDataDir);
             this.advancedTab.Controls.Add(this.msglvl);
@@ -4845,6 +4752,26 @@ namespace Assistant
             this.advancedTab.Size = new System.Drawing.Size(519, 322);
             this.advancedTab.TabIndex = 12;
             this.advancedTab.Text = "Advanced";
+            // 
+            // fontDecrease
+            // 
+            this.fontDecrease.Location = new System.Drawing.Point(242, 156);
+            this.fontDecrease.Name = "fontDecrease";
+            this.fontDecrease.Size = new System.Drawing.Size(36, 23);
+            this.fontDecrease.TabIndex = 82;
+            this.fontDecrease.Text = "-";
+            this.fontDecrease.UseVisualStyleBackColor = true;
+            this.fontDecrease.Click += new System.EventHandler(this.fontDecrease_Click);
+            // 
+            // fontIncrease
+            // 
+            this.fontIncrease.Location = new System.Drawing.Point(284, 156);
+            this.fontIncrease.Name = "fontIncrease";
+            this.fontIncrease.Size = new System.Drawing.Size(36, 23);
+            this.fontIncrease.TabIndex = 81;
+            this.fontIncrease.Text = "+";
+            this.fontIncrease.UseVisualStyleBackColor = true;
+            this.fontIncrease.Click += new System.EventHandler(this.fontIncrease_Click);
             // 
             // groupBox16
             // 
@@ -4900,7 +4827,7 @@ namespace Assistant
             // 
             // openRazorDataDir
             // 
-            this.openRazorDataDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.openRazorDataDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.openRazorDataDir.Location = new System.Drawing.Point(241, 8);
             this.openRazorDataDir.Name = "openRazorDataDir";
             this.openRazorDataDir.Size = new System.Drawing.Size(271, 33);
@@ -4911,7 +4838,7 @@ namespace Assistant
             // 
             // msglvl
             // 
-            this.msglvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.msglvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.msglvl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.msglvl.Items.AddRange(new object[] {
             "Show All",
@@ -4926,7 +4853,7 @@ namespace Assistant
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.Location = new System.Drawing.Point(283, 52);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(55, 18);
@@ -4949,7 +4876,9 @@ namespace Assistant
             // 
             // features
             // 
-            this.features.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.features.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.features.Cursor = System.Windows.Forms.Cursors.No;
             this.features.Location = new System.Drawing.Point(241, 184);
             this.features.Multiline = true;
@@ -4980,7 +4909,7 @@ namespace Assistant
             // 
             // linkGitHub
             // 
-            this.linkGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.linkGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.linkGitHub.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkGitHub.Location = new System.Drawing.Point(9, 157);
             this.linkGitHub.Name = "linkGitHub";
@@ -4993,7 +4922,7 @@ namespace Assistant
             // 
             // lblCredits3
             // 
-            this.lblCredits3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.lblCredits3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCredits3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCredits3.Location = new System.Drawing.Point(8, 259);
             this.lblCredits3.Name = "lblCredits3";
@@ -5004,7 +4933,7 @@ namespace Assistant
             // 
             // linkHelp
             // 
-            this.linkHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.linkHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkHelp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkHelp.Location = new System.Drawing.Point(434, 10);
             this.linkHelp.Name = "linkHelp";
@@ -5017,7 +4946,7 @@ namespace Assistant
             // 
             // lblCredits2
             // 
-            this.lblCredits2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.lblCredits2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCredits2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCredits2.Location = new System.Drawing.Point(9, 239);
             this.lblCredits2.Name = "lblCredits2";
@@ -5028,7 +4957,7 @@ namespace Assistant
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(96, 120);
@@ -5039,7 +4968,7 @@ namespace Assistant
             // 
             // lblCredits1
             // 
-            this.lblCredits1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.lblCredits1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCredits1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCredits1.Location = new System.Drawing.Point(6, 219);
             this.lblCredits1.Name = "lblCredits1";
@@ -5050,7 +4979,7 @@ namespace Assistant
             // 
             // aboutSubInfo
             // 
-            this.aboutSubInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.aboutSubInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.aboutSubInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutSubInfo.Location = new System.Drawing.Point(6, 75);
             this.aboutSubInfo.Name = "aboutSubInfo";
@@ -5061,7 +4990,7 @@ namespace Assistant
             // 
             // linkMain
             // 
-            this.linkMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.linkMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.linkMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkMain.Location = new System.Drawing.Point(9, 137);
             this.linkMain.Name = "linkMain";
@@ -5084,7 +5013,7 @@ namespace Assistant
             // 
             // aboutVer
             // 
-            this.aboutVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right))); 
+            this.aboutVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.aboutVer.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutVer.Location = new System.Drawing.Point(6, 40);
             this.aboutVer.Name = "aboutVer";
@@ -5092,30 +5021,12 @@ namespace Assistant
             this.aboutVer.TabIndex = 14;
             this.aboutVer.Text = "RazorZHI v{0}";
             this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
-            // fontIncrease
-            // 
-            this.fontIncrease.Location = new System.Drawing.Point(284, 156);
-            this.fontIncrease.Name = "fontIncrease";
-            this.fontIncrease.Size = new System.Drawing.Size(36, 23);
-            this.fontIncrease.TabIndex = 81;
-            this.fontIncrease.Text = "+";
-            this.fontIncrease.UseVisualStyleBackColor = true;
-            this.fontIncrease.Click += new System.EventHandler(this.fontIncrease_Click);
-            // 
-            // fontDecrease
-            // 
-            this.fontDecrease.Location = new System.Drawing.Point(242, 156);
-            this.fontDecrease.Name = "fontDecrease";
-            this.fontDecrease.Size = new System.Drawing.Size(36, 23);
-            this.fontDecrease.TabIndex = 82;
-            this.fontDecrease.Text = "-";
-            this.fontDecrease.UseVisualStyleBackColor = true;
-            this.fontDecrease.Click += new System.EventHandler(this.fontDecrease_Click);
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.clearDress);
             this.groupBox6.Controls.Add(this.dressDelSel);
             this.groupBox6.Controls.Add(this.undressBag);
@@ -5133,7 +5044,7 @@ namespace Assistant
             // 
             // clearDress
             // 
-            this.clearDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.clearDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.clearDress.Location = new System.Drawing.Point(209, 257);
             this.clearDress.Name = "clearDress";
             this.clearDress.Size = new System.Drawing.Size(96, 32);
@@ -5143,7 +5054,7 @@ namespace Assistant
             // 
             // dressDelSel
             // 
-            this.dressDelSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dressDelSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dressDelSel.Location = new System.Drawing.Point(209, 170);
             this.dressDelSel.Name = "dressDelSel";
             this.dressDelSel.Size = new System.Drawing.Size(96, 32);
@@ -5153,7 +5064,7 @@ namespace Assistant
             // 
             // undressBag
             // 
-            this.undressBag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.undressBag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.undressBag.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.undressBag.Location = new System.Drawing.Point(209, 208);
             this.undressBag.Name = "undressBag";
@@ -5164,7 +5075,7 @@ namespace Assistant
             // 
             // undressList
             // 
-            this.undressList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.undressList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.undressList.Location = new System.Drawing.Point(209, 56);
             this.undressList.Name = "undressList";
             this.undressList.Size = new System.Drawing.Size(96, 32);
@@ -5174,7 +5085,7 @@ namespace Assistant
             // 
             // dressUseCur
             // 
-            this.dressUseCur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dressUseCur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dressUseCur.Location = new System.Drawing.Point(209, 132);
             this.dressUseCur.Name = "dressUseCur";
             this.dressUseCur.Size = new System.Drawing.Size(96, 32);
@@ -5184,7 +5095,7 @@ namespace Assistant
             // 
             // targItem
             // 
-            this.targItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.targItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.targItem.Location = new System.Drawing.Point(209, 94);
             this.targItem.Name = "targItem";
             this.targItem.Size = new System.Drawing.Size(96, 32);
@@ -5194,7 +5105,9 @@ namespace Assistant
             // 
             // dressItems
             // 
-            this.dressItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dressItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dressItems.IntegralHeight = false;
             this.dressItems.Location = new System.Drawing.Point(6, 18);
             this.dressItems.Name = "dressItems";
@@ -5205,7 +5118,7 @@ namespace Assistant
             // 
             // dressNow
             // 
-            this.dressNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dressNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dressNow.Location = new System.Drawing.Point(209, 18);
             this.dressNow.Name = "dressNow";
             this.dressNow.Size = new System.Drawing.Size(96, 32);
@@ -5215,7 +5128,8 @@ namespace Assistant
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left))); 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox5.Controls.Add(this.removeDress);
             this.groupBox5.Controls.Add(this.addDress);
             this.groupBox5.Controls.Add(this.dressList);
@@ -5229,7 +5143,7 @@ namespace Assistant
             // 
             // removeDress
             // 
-            this.removeDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.removeDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.removeDress.Location = new System.Drawing.Point(117, 254);
             this.removeDress.Name = "removeDress";
             this.removeDress.Size = new System.Drawing.Size(64, 25);
@@ -5239,7 +5153,7 @@ namespace Assistant
             // 
             // addDress
             // 
-            this.addDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.addDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addDress.Location = new System.Drawing.Point(6, 254);
             this.addDress.Name = "addDress";
             this.addDress.Size = new System.Drawing.Size(64, 25);
@@ -5249,7 +5163,9 @@ namespace Assistant
             // 
             // dressList
             // 
-            this.dressList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right))); 
+            this.dressList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dressList.IntegralHeight = false;
             this.dressList.Location = new System.Drawing.Point(6, 18);
             this.dressList.Name = "dressList";
@@ -5259,7 +5175,7 @@ namespace Assistant
             // 
             // undressConflicts
             // 
-            this.undressConflicts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left))); 
+            this.undressConflicts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.undressConflicts.Location = new System.Drawing.Point(6, 285);
             this.undressConflicts.Name = "undressConflicts";
             this.undressConflicts.Size = new System.Drawing.Size(137, 18);
@@ -5283,7 +5199,7 @@ namespace Assistant
             this.Closing += new System.ComponentModel.CancelEventHandler(this.MainForm_Closing);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Load += new System.EventHandler(this.MainForm_StartLoad);
-            this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd); 
+            this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.Move += new System.EventHandler(this.MainForm_Move);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
@@ -5294,7 +5210,7 @@ namespace Assistant
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.opacity)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout(); 
+            this.groupBox4.PerformLayout();
             this.moreOptTab.ResumeLayout(false);
             this.optionsTabCtrl.ResumeLayout(false);
             this.subOptionsSpeechTab.ResumeLayout(false);
@@ -5316,8 +5232,6 @@ namespace Assistant
             this.subCountersTab.ResumeLayout(false);
             this.subCountersTab.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.subBandageTimerTab.ResumeLayout(false);
-            this.subBandageTimerTab.PerformLayout();
             this.subOverheadTab.ResumeLayout(false);
             this.subOverheadTab.PerformLayout();
             this.subWaypoints.ResumeLayout(false);

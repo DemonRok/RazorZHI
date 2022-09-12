@@ -328,12 +328,6 @@ namespace Assistant
 
             //logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
 
-            /*healthFmt.SafeAction(s =>
-            {
-                s.Enabled = showHealthOH.Checked = Config.GetBool("ShowHealth");
-                s.Text = Config.GetString("HealthFmt");
-            });*/
-
             chkPartyOverhead.SafeAction(s => { s.Checked = Config.GetBool("ShowPartyStats"); });
 
             dressList.SafeAction(s => { s.SelectedIndex = -1; });
@@ -452,13 +446,6 @@ namespace Assistant
             disableMacroPlayFinish.SafeAction(s => { s.Checked = Config.GetBool("DisableMacroPlayFinish"); });
 
 
-            showBandageTimer.SafeAction(s => { s.Checked = Config.GetBool("ShowBandageTimer"); });
-            bandageTimerLocation.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBandageTimerLocation"); });
-            onlyShowBandageTimerSeconds.SafeAction(s => { s.Checked = Config.GetBool("OnlyShowBandageTimerEvery"); });
-            bandageTimerSeconds.SafeAction(s => { s.Text = Config.GetInt("OnlyShowBandageTimerSeconds").ToString(); });
-            bandageTimerFormat.SafeAction(s => { s.Text = Config.GetString("ShowBandageTimerFormat"); });
-            lblBandageCountFormat.SafeAction(s => { InitPreviewHue(s, "ShowBandageTimerHue"); });
-
             lblTargetFormat.SafeAction(s => { InitPreviewHue(s, "TargetIndicatorHue"); });
 
             filterSystemMessages.SafeAction(s => { s.Checked = Config.GetBool("FilterSystemMessages"); });
@@ -469,11 +456,6 @@ namespace Assistant
             onlyNextPrevBeneficial.SafeAction(s => { s.Checked = Config.GetBool("OnlyNextPrevBeneficial"); });
             friendBeneficialOnly.SafeAction(s => { s.Checked = Config.GetBool("FriendlyBeneficialOnly"); });
             nonFriendlyHarmfulOnly.SafeAction(s => { s.Checked = Config.GetBool("NonFriendlyHarmfulOnly"); });
-
-            showBandageStart.SafeAction(s => { s.Checked = Config.GetBool("ShowBandageStart"); });
-            showBandageEnd.SafeAction(s => { s.Checked = Config.GetBool("ShowBandageEnd"); });
-            bandageStartMessage.SafeAction(s => { s.Text = Config.GetString("BandageStartMessage"); });
-            bandageEndMessage.SafeAction(s => { s.Text = Config.GetString("BandageEndMessage"); });
 
             captureOthersDeathDelay.SafeAction(
                 s => { s.Text = Config.GetDouble("CaptureOthersDeathDelay").ToString(); });
@@ -4426,16 +4408,6 @@ namespace Assistant
             }
         }
 
-        /*private void showHealthOH_CheckedChanged(object sender, System.EventArgs e)
-        {
-            Config.SetProperty("ShowHealth", healthFmt.Enabled = showHealthOH.Checked);
-        }*/
-
-        /*private void healthFmt_TextChanged(object sender, System.EventArgs e)
-        {
-            Config.SetProperty("HealthFmt", healthFmt.Text);
-        }*/
-
         private void chkPartyOverhead_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("ShowPartyStats", chkPartyOverhead.Checked);
@@ -5696,44 +5668,6 @@ namespace Assistant
             Config.SetProperty("DisableMacroPlayFinish", disableMacroPlayFinish.Checked);
         }
 
-        private void showBandageTimer_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("ShowBandageTimer", showBandageTimer.Checked);
-        }
-
-        private void bandageTimerLocation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("ShowBandageTimerLocation", bandageTimerLocation.SelectedIndex);
-        }
-
-        private void onlyShowBandageTimerSeconds_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("OnlyShowBandageTimerEvery", onlyShowBandageTimerSeconds.Checked);
-        }
-
-        private void bandageTimerSeconds_TextChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("OnlyShowBandageTimerSeconds", Utility.ToInt32(bandageTimerSeconds.Text.Trim(), 1));
-        }
-
-        private void bandageTimerFormat_TextChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("ShowBandageTimerFormat", bandageTimerFormat.Text);
-
-            if (string.IsNullOrEmpty(bandageTimerFormat.Text))
-            {
-                Config.SetProperty("ShowBandageTimerFormat", "Bandage: {count}s");
-                bandageTimerFormat.Text = "Bandage: {count}s";
-            }
-
-            Config.SetProperty("ShowBandageTimerFormat", bandageTimerFormat.Text);
-        }
-
-        private void setBandageHue_Click(object sender, EventArgs e)
-        {
-            lblBandageCountFormat.SafeAction(s => { SetHue(s, "ShowBandageTimerHue"); });
-        }
-
         private void friendRemoveSelected_Click(object sender, EventArgs e)
         {
             if (friendsGroup.SelectedIndex < 0 || friendsList.SelectedIndex < 0)
@@ -6053,38 +5987,6 @@ namespace Assistant
         private void nonFriendlyHarmfulOnly_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("NonFriendlyHarmfulOnly", nonFriendlyHarmfulOnly.Checked);
-        }
-
-        private void ShowBandageStart_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("ShowBandageStart", showBandageStart.Checked);
-        }
-
-        private void ShowBandageEnd_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SetProperty("ShowBandageEnd", showBandageEnd.Checked);
-        }
-
-        private void BandageStartMessage_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(bandageStartMessage.Text))
-            {
-                Config.SetProperty("BandageStartMessage", "Bandage: Starting");
-                bandageStartMessage.SafeAction(s => s.Text = "Bandage: Starting");
-            }
-
-            Config.SetProperty("BandageStartMessage", bandageStartMessage.Text);
-        }
-
-        private void BandageEndMessage_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(bandageEndMessage.Text))
-            {
-                Config.SetProperty("BandageEndMessage", "Bandage: Ending");
-                bandageEndMessage.SafeAction(s => s.Text = "Bandage: Ending");
-            }
-
-            Config.SetProperty("BandageEndMessage", bandageEndMessage.Text);
         }
 
         private BuffDebuffOptions _buffDebuffOptions = null;
