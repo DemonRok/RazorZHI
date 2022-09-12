@@ -319,8 +319,8 @@ namespace Assistant.Agents
         public void Scavenge(Item item)
         {
             DebugLog("Checking WorldItem {0} ...", item);
-            if (!m_Enabled || !m_Items.Contains(item.ItemID) || World.Player.Backpack == null || World.Player.IsGhost ||
-                World.Player.Weight >= World.Player.MaxWeight)
+            if (!m_Enabled || !m_Items.Contains(item.ItemID) || World.Player.Backpack == null || World.Player.IsGhost) // ||
+                //World.Player.Weight >= World.Player.MaxWeight)
             {
                 DebugLog("... skipped.");
                 return;
