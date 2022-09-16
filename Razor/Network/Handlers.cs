@@ -53,11 +53,11 @@ namespace Assistant
             PacketHandler.RegisterClientToServerFilter(0x02, new PacketFilterCallback(MovementRequest));
             PacketHandler.RegisterClientToServerFilter(0x05, new PacketFilterCallback(AttackRequest));
             PacketHandler.RegisterClientToServerViewer(0x06, new PacketViewerCallback(ClientDoubleClick));
-            PacketHandler.RegisterClientToServerViewer(0x07, new PacketViewerCallback(LiftRequest));
-            PacketHandler.RegisterClientToServerViewer(0x08, new PacketViewerCallback(DropRequest));
+            //PacketHandler.RegisterClientToServerViewer(0x07, new PacketViewerCallback(LiftRequest));
+            //PacketHandler.RegisterClientToServerViewer(0x08, new PacketViewerCallback(DropRequest));
             PacketHandler.RegisterClientToServerViewer(0x09, new PacketViewerCallback(ClientSingleClick));
             PacketHandler.RegisterClientToServerViewer(0x12, new PacketViewerCallback(ClientTextCommand));
-            PacketHandler.RegisterClientToServerViewer(0x13, new PacketViewerCallback(EquipRequest));
+            //PacketHandler.RegisterClientToServerViewer(0x13, new PacketViewerCallback(EquipRequest));
             // 0x29 - UOKR confirm drop.  0 bytes payload (just a single byte, 0x29, no length or data)
             PacketHandler.RegisterClientToServerViewer(0x3A, new PacketViewerCallback(SetSkillLock));
             PacketHandler.RegisterClientToServerViewer(0x5D, new PacketViewerCallback(PlayCharacter));
@@ -558,7 +558,7 @@ namespace Assistant
 
             if (Macros.MacroManager.AcceptActions)
             {
-                MacroManager.Action(new LiftAction(serial, amount, iid));
+                //MacroManager.Action(new LiftAction(serial, amount, iid));
                 //MacroManager.Action( new PauseAction( TimeSpan.FromMilliseconds( Config.GetInt( "ObjectDelay" ) ) ) );
             }
 
@@ -578,7 +578,7 @@ namespace Assistant
             //MacroManager.PlayError( MacroError.LiftRej );
         }
 
-        private static void EquipRequest(PacketReader p, PacketHandlerEventArgs args)
+        /*private static void EquipRequest(PacketReader p, PacketHandlerEventArgs args)
         {
             Serial iser = p.ReadUInt32(); // item being dropped serial
             Layer layer = (Layer) p.ReadByte();
@@ -616,16 +616,16 @@ namespace Assistant
 
             if (Config.GetBool("QueueActions"))
                 args.Block = DragDropManager.Drop(item, m, layer);
-        }
+        }*/
 
-        private static void DropRequest(PacketReader p, PacketHandlerEventArgs args)
+        /*private static void DropRequest(PacketReader p, PacketHandlerEventArgs args)
         {
             Serial iser = p.ReadUInt32();
             int x = p.ReadInt16();
             int y = p.ReadInt16();
             int z = p.ReadSByte();
             if (EngineZHI.UsePostKRPackets)
-                /* grid num */
+                ///* grid num 
                 p.ReadByte();
             Point3D newPos = new Point3D(x, y, z);
             Serial dser = p.ReadUInt32();
@@ -646,7 +646,7 @@ namespace Assistant
 
             if (Config.GetBool("QueueActions"))
                 args.Block = DragDropManager.Drop(i, dser, newPos);
-        }
+        }*/
 
         private static void MovementRequest(Packet p, PacketHandlerEventArgs args)
         {

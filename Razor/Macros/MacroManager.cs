@@ -140,7 +140,7 @@ namespace Assistant.Macros
                 m_PrevPlay = null;
             }
 
-            LiftAction.LastLift = null;
+            //LiftAction.LastLift = null;
             m_Current = m;
             m_Current.PlayAt(at);
 
@@ -191,7 +191,7 @@ namespace Assistant.Macros
                 m_PrevPlay = null;
             }
 
-            LiftAction.LastLift = null;
+            //LiftAction.LastLift = null;
             m_Current = m;
             m_Current.Play();
 

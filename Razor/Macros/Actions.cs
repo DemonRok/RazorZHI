@@ -485,7 +485,7 @@ namespace Assistant.Macros
         }
     }
 
-    public class LiftAction : MacroWaitAction
+    /*public class LiftAction : MacroWaitAction
     {
         private ushort m_Amount;
         private Serial m_Serial;
@@ -561,7 +561,7 @@ namespace Assistant.Macros
                 m_MenuItems = new MacroMenuItem[]
                 {
                     new MacroMenuItem(LocString.ReTarget, new MacroMenuCallback(ReTarget)),
-                    new MacroMenuItem(LocString.ConvLiftByType, new MacroMenuCallback(ConvertToByType)),
+                    //new MacroMenuItem(LocString.ConvLiftByType, new MacroMenuCallback(ConvertToByType)),
                     new MacroMenuItem(LocString.Edit, new MacroMenuCallback(EditAmount))
                 };
             }
@@ -602,9 +602,9 @@ namespace Assistant.Macros
             if (m_Gfx != 0 && m_Parent != null)
                 m_Parent.Convert(this, new LiftTypeAction(m_Gfx, m_Amount));
         }
-    }
+    }*/
 
-    public class LiftTypeAction : MacroWaitAction
+    /*public class LiftTypeAction : MacroWaitAction
     {
         private ushort m_Gfx;
         private ushort m_Amount;
@@ -638,7 +638,7 @@ namespace Assistant.Macros
 
                  if ( list.Count > 0 )
                       item = (Item)list[ Utility.Random( list.Count ) ];
-            }*/
+            }
 
             if (item != null)
             {
@@ -875,7 +875,7 @@ namespace Assistant.Macros
         {
             return Language.Format(LocString.DropRelA3, m_Loc[0], m_Loc[1], m_Loc[2]);
         }
-    }
+    }*/
 
     public class GumpResponseAction : MacroAction
     {
