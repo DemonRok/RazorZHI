@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Assistant.Scripts.EngineZHI
+namespace Assistant.Scripts.EngineZHI160922
 {
     public class RunTimeError : Exception
     {

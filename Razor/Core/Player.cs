@@ -536,8 +536,8 @@ namespace Assistant
 
             ilist = null;
 
-            if (EngineZHI.MainWindow != null && EngineZHI.MainWindow.MapWindow != null)
-                EngineZHI.MainWindow.SafeAction(f => f.MapWindow.PlayerMoved());
+            if (EngineZHI160922.MainWindow != null && EngineZHI160922.MainWindow.MapWindow != null)
+                EngineZHI160922.MainWindow.SafeAction(f => f.MapWindow.PlayerMoved());
 
             base.OnPositionChanging(oldPos);
         }
@@ -573,8 +573,8 @@ namespace Assistant
 
             UOAssist.PostMapChange(cur);
 
-            if (EngineZHI.MainWindow != null && EngineZHI.MainWindow.MapWindow != null)
-                EngineZHI.MainWindow.SafeAction(s => s.MapWindow.PlayerMoved());
+            if (EngineZHI160922.MainWindow != null && EngineZHI160922.MainWindow.MapWindow != null)
+                EngineZHI160922.MainWindow.SafeAction(s => s.MapWindow.PlayerMoved());
         }
 
         /*public override void OnMapChange( byte old, byte cur )

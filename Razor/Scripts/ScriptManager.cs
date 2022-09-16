@@ -26,7 +26,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Assistant.Gumps.Internal;
 using Assistant.Macros;
-using Assistant.Scripts.EngineZHI;
+using Assistant.Scripts.EngineZHI160922;
 using Assistant.UI;
 using FastColoredTextBoxNS;
 
@@ -139,8 +139,8 @@ namespace Assistant.Scripts
                             if (Config.GetBool("ScriptDisablePlayFinish"))
                                 World.Player?.SendMessage(LocString.ScriptPlaying);
 
-                            Assistant.EngineZHI.MainWindow.LockScriptUI(true);
-                            Assistant.EngineZHI.RazorScriptEditorWindow?.LockScriptUI(true);
+                            Assistant.EngineZHI160922.MainWindow.LockScriptUI(true);
+                            Assistant.EngineZHI160922.RazorScriptEditorWindow?.LockScriptUI(true);
                             ScriptRunning = true;
                         }
                     }
@@ -151,8 +151,8 @@ namespace Assistant.Scripts
                             if (Config.GetBool("ScriptDisablePlayFinish"))
                                 World.Player?.SendMessage(LocString.ScriptFinished);
 
-                            Assistant.EngineZHI.MainWindow.LockScriptUI(false);
-                            Assistant.EngineZHI.RazorScriptEditorWindow?.LockScriptUI(false);
+                            Assistant.EngineZHI160922.MainWindow.LockScriptUI(false);
+                            Assistant.EngineZHI160922.RazorScriptEditorWindow?.LockScriptUI(false);
                             ScriptRunning = false;
 
                             ClearHighlightLine(HighlightType.Execution);
@@ -474,8 +474,8 @@ namespace Assistant.Scripts
         {
             StopScript();
             Timer.Stop();
-            Assistant.EngineZHI.MainWindow.LockScriptUI(false);
-            Assistant.EngineZHI.RazorScriptEditorWindow?.LockScriptUI(false);
+            Assistant.EngineZHI160922.MainWindow.LockScriptUI(false);
+            Assistant.EngineZHI160922.RazorScriptEditorWindow?.LockScriptUI(false);
         }
 
         public static void StartEngine()

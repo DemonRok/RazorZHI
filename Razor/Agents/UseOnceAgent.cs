@@ -143,14 +143,14 @@ namespace Assistant.Agents
 
             m_SubList.EndUpdate();
 
-            if (!Client.Instance.AllowBit(FeatureBit.UseOnceAgent) && EngineZHI.MainWindow != null)
+            if (!Client.Instance.AllowBit(FeatureBit.UseOnceAgent) && EngineZHI160922.MainWindow != null)
             {
                 for (int i = 0; i < buttons.Length; i++)
                 {
-                    EngineZHI.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
+                    EngineZHI160922.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
                 }
 
-                EngineZHI.MainWindow.SafeAction(s => s.LockControl(subList));
+                EngineZHI160922.MainWindow.SafeAction(s => s.LockControl(subList));
             }
         }
 
@@ -209,7 +209,7 @@ namespace Assistant.Agents
         {
             if (Config.GetBool("AlwaysOnTop"))
             {
-                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             if (!location && serial.IsItem)
@@ -236,7 +236,7 @@ namespace Assistant.Agents
 
         private void OnTargetRemove(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             if (!location && serial.IsItem)
             {
                 for (int i = 0; i < m_Items.Count; i++)
@@ -277,10 +277,10 @@ namespace Assistant.Agents
         {
             if (Config.GetBool("AlwaysOnTop"))
             {
-                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             }
 
-            EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             if (!location && serial.IsItem)
             {
                 Item i = World.FindItem(serial);

@@ -171,7 +171,7 @@ namespace Assistant.Core
 
             HueEntry h = new HueEntry(GetHue(selectedItem.SubItems[1].Text));
 
-            if (h.ShowDialog(EngineZHI.MainWindow) == DialogResult.OK)
+            if (h.ShowDialog(EngineZHI160922.MainWindow) == DialogResult.OK)
             {
                 int hueIdx = h.Hue;
 
@@ -218,7 +218,7 @@ namespace Assistant.Core
 
             SoundEntry soundDialog = new SoundEntry(soundId, selectedItem.SubItems[2].Text);
 
-            if (soundDialog.ShowDialog(EngineZHI.MainWindow) == DialogResult.OK)
+            if (soundDialog.ShowDialog(EngineZHI160922.MainWindow) == DialogResult.OK)
             {
                 selectedItem.SubItems[2].Text = SoundMusicManager.GetSoundName((ushort)soundId);
 

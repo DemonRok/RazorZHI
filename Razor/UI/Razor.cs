@@ -87,7 +87,7 @@ namespace Assistant
 
             UpdateTitle();
 
-            EngineZHI.ActiveWindow = this;
+            EngineZHI160922.ActiveWindow = this;
 
             DisableCloseButton();
 
@@ -102,9 +102,9 @@ namespace Assistant
 
         public void MainForm_EndLoad()
         {
-            Ultima.Multis.PostHSFormat = EngineZHI.UsePostHSChanges;
+            Ultima.Multis.PostHSFormat = EngineZHI160922.UsePostHSChanges;
 
-            PacketsTable.AdjustPacketSizeByVersion(EngineZHI.ClientVersion);
+            PacketsTable.AdjustPacketSizeByVersion(EngineZHI160922.ClientVersion);
 
             SplashScreen.Message = LocString.Welcome;
             InitConfig();
@@ -503,7 +503,7 @@ namespace Assistant
 
             nextPrevAbcOrder.SafeAction(s => { s.Checked = Config.GetBool("NextPrevAlphabetical"); });
 
-            EngineZHI.MainWindow.Size = new Size(Config.GetInt("WindowSizeX"), Config.GetInt("WindowSizeY"));
+            EngineZHI160922.MainWindow.Size = new Size(Config.GetInt("WindowSizeX"), Config.GetInt("WindowSizeY"));
 
             // Disable SmartCPU in case it was enabled before the feature was removed
             Client.Instance.SetSmartCPU(false);
@@ -1410,7 +1410,7 @@ namespace Assistant
                 e.Cancel = true;
             }
 
-            //if ( EngineZHI.NoPatch )
+            //if ( EngineZHI160922.NoPatch )
             //	e.Cancel = MessageBox.Show( this, "Are you sure you want to close Razor?\n(This will not close the UO client.)", "Close Razor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question ) == DialogResult.No;
         }
 
@@ -2164,8 +2164,8 @@ namespace Assistant
                 s.EndUpdate();
             });
 
-            Config.SetProperty("WindowSizeX", EngineZHI.MainWindow.Size.Width);
-            Config.SetProperty("WindowSizeY", EngineZHI.MainWindow.Size.Height);
+            Config.SetProperty("WindowSizeX", EngineZHI160922.MainWindow.Size.Width);
+            Config.SetProperty("WindowSizeY", EngineZHI160922.MainWindow.Size.Height);
         }
 
         private bool IsNear(int a, int b)
@@ -2605,7 +2605,7 @@ namespace Assistant
                     path = Path.Combine(Config.GetUserDirectory("Macros"), path);
                 else
                     path = Path.Combine((string) node.Tag, path);
-                EngineZHI.EnsureDirectory(path);
+                EngineZHI160922.EnsureDirectory(path);
             }
             catch
             {
@@ -2761,7 +2761,7 @@ namespace Assistant
 
                 try
                 {
-                    EngineZHI.MainWindow.SafeAction(s =>
+                    EngineZHI160922.MainWindow.SafeAction(s =>
                     {
                         File.Move(sel.Filename, newMacro);
                         MacroManager.Remove(sel);
@@ -2926,7 +2926,7 @@ namespace Assistant
             if (m == null)
                 return;
 
-            EngineZHI.MainWindow.SafeAction(s =>
+            EngineZHI160922.MainWindow.SafeAction(s =>
             {
                 if (hotkeyTree.TopNode == null)
                 {
@@ -3100,7 +3100,7 @@ namespace Assistant
                     {
                         if (a.GetType().Name.Equals("IfAction"))
                         {
-                            new MacroInsertIf(a).ShowDialog(EngineZHI.MainWindow);
+                            new MacroInsertIf(a).ShowDialog(EngineZHI160922.MainWindow);
                         }
                         else if (a.GetType().Name.Equals("ForAction"))
                         {
@@ -3132,7 +3132,7 @@ namespace Assistant
                         }
                         else
                         {
-                            new MacroInsertWait(a).ShowDialog(EngineZHI.MainWindow);
+                            new MacroInsertWait(a).ShowDialog(EngineZHI160922.MainWindow);
                         }
                     }
                 }
@@ -3843,14 +3843,14 @@ namespace Assistant
                 str = "RazorZHI v{0}";
             }
 
-            str = string.Format(str, EngineZHI.Version);
+            str = string.Format(str, EngineZHI160922.Version);
 
             if (World.Player != null)
             {
                 if (Config.GetBool("ShowInRazorTitleBar") && !string.IsNullOrEmpty(razorTitleBar.Text))
                 {
                     Text = razorTitleBar.Text.Replace("{name}", World.Player.Name).Replace("{shard}", World.ShardName)
-                        .Replace("{version}", EngineZHI.Version).Replace("{profile}", Config.CurrentProfile.Name)
+                        .Replace("{version}", EngineZHI160922.Version).Replace("{profile}", Config.CurrentProfile.Name)
                         .Replace("{account}", World.AccountName);
                 }
                 else
@@ -3877,7 +3877,7 @@ namespace Assistant
                     if (Config.GetBool("ShowInRazorTitleBar") && !string.IsNullOrEmpty(razorTitleBar.Text))
                     {
                         string title = razorTitleBar.Text.Replace("{name}", World.Player.Name).Replace("{shard}", World.ShardName)
-                            .Replace("{version}", EngineZHI.Version).Replace("{profile}", Config.CurrentProfile.Name)
+                            .Replace("{version}", EngineZHI160922.Version).Replace("{profile}", Config.CurrentProfile.Name)
                             .Replace("{account}", World.AccountName);
 
                         m_NotifyIcon.Text = title.Length > 63 ? title.Substring(0, 63) : title;
@@ -4145,7 +4145,7 @@ namespace Assistant
                 if (x > 100 && x < 2000 && y > 100 && y < 2000)
                     Client.Instance.SetGameSize(x, y);
                 else
-                    MessageBox.Show(EngineZHI.MainWindow, Language.GetString(LocString.ForceSizeBad), "Bad Size",
+                    MessageBox.Show(EngineZHI160922.MainWindow, Language.GetString(LocString.ForceSizeBad), "Bad Size",
                         MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
@@ -4669,7 +4669,7 @@ namespace Assistant
                 MacroManager.DisplayMacroVariables(macroVariables);
             }
 
-            EngineZHI.MainWindow.ShowMe();
+            EngineZHI160922.MainWindow.ShowMe();
         }
 
         private void OnMacroVariableReTarget(bool ground, Serial serial, Point3D pt, ushort gfx)
@@ -4689,7 +4689,7 @@ namespace Assistant
             // Save and reload the macros and vars
             MacroManager.DisplayMacroVariables(macroVariables);
 
-            EngineZHI.MainWindow.ShowMe();
+            EngineZHI160922.MainWindow.ShowMe();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -5494,7 +5494,7 @@ namespace Assistant
         private void razorTitleBarKey_Click(object sender, EventArgs e)
         {
             //Replace("{name}", World.Player.Name).Replace("{shard}", World.ShardName)
-            //.Replace("{version}", EngineZHI.Version).Replace("{profile}", Config.CurrentProfile.Name).Replace("{account}", World.AccountName);
+            //.Replace("{version}", EngineZHI160922.Version).Replace("{profile}", Config.CurrentProfile.Name).Replace("{account}", World.AccountName);
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("You can insert these variables into the Razor Title Bar to display specific information.");
@@ -6117,7 +6117,7 @@ namespace Assistant
         {
             try
             {
-                EngineZHI.MainWindow.SafeAction(s =>
+                EngineZHI160922.MainWindow.SafeAction(s =>
                 {
                     Macro sel = GetMacroSel();
 
@@ -6273,7 +6273,7 @@ namespace Assistant
 
         public void LockScriptUI(bool enabled)
         {
-            EngineZHI.MainWindow.SafeAction(s =>
+            EngineZHI160922.MainWindow.SafeAction(s =>
             {
                 scriptEditor.Enabled = !enabled;
                 recordScript.Enabled = !enabled;
@@ -6440,7 +6440,7 @@ namespace Assistant
         {
             try
             {
-                EngineZHI.MainWindow.SafeAction(s =>
+                EngineZHI160922.MainWindow.SafeAction(s =>
                 {
                     RazorScript script = GetScriptSel();
 
@@ -6510,7 +6510,7 @@ namespace Assistant
                 ScriptManager.RedrawScripts();
             }
 
-            EngineZHI.MainWindow.ShowMe();
+            EngineZHI160922.MainWindow.ShowMe();
         }
 
         private void OnScriptVariableReTarget(bool ground, Serial serial, Point3D pt, ushort gfx)
@@ -6529,7 +6529,7 @@ namespace Assistant
 
             ScriptManager.RedrawScripts();
 
-            EngineZHI.MainWindow.ShowMe();
+            EngineZHI160922.MainWindow.ShowMe();
         }
 
         private void changeScriptVariable_Click(object sender, EventArgs e)
@@ -6713,12 +6713,12 @@ namespace Assistant
 
         private void OnScriptEditorPopout(object sender, EventArgs e)
         {
-            if (EngineZHI.RazorScriptEditorWindow == null)
+            if (EngineZHI160922.RazorScriptEditorWindow == null)
             {
-                EngineZHI.RazorScriptEditorWindow = new RazorScriptEditor();
+                EngineZHI160922.RazorScriptEditorWindow = new RazorScriptEditor();
             }
 
-            EngineZHI.RazorScriptEditorWindow.SafeAction(s =>
+            EngineZHI160922.RazorScriptEditorWindow.SafeAction(s =>
             {
                 s.Closing += RazorScriptEditor_Closing;
                 s.Show();
@@ -6729,7 +6729,7 @@ namespace Assistant
 
         private void RazorScriptEditor_Closing(object sender, CancelEventArgs e)
         {
-            EngineZHI.RazorScriptEditorWindow?.SafeAction(s =>
+            EngineZHI160922.RazorScriptEditorWindow?.SafeAction(s =>
             {
                 e.Cancel = true;
                 s.TopMost = false;
@@ -7254,7 +7254,7 @@ namespace Assistant
 
             try
             {
-                EngineZHI.MainWindow.SafeAction(s =>
+                EngineZHI160922.MainWindow.SafeAction(s =>
                 {
                     Agent agent = (Agent) agentList.SelectedItem;
 
@@ -7338,7 +7338,7 @@ namespace Assistant
             if (_selectedScript == null)
                 return;
 
-            EngineZHI.MainWindow.SafeAction(s =>
+            EngineZHI160922.MainWindow.SafeAction(s =>
             {
                 UpdateScriptWindowTitle(true);
 
@@ -7419,7 +7419,7 @@ namespace Assistant
                 }
                 else
                 {
-                    append = $"RazorZHI v{EngineZHI.Version}";
+                    append = $"RazorZHI v{EngineZHI160922.Version}";
                 }
 
                 Text = saved ? $"[{_selectedScript.Name}] - {append}" : $"[*{_selectedScript.Name}] - {append}";
@@ -7495,7 +7495,7 @@ namespace Assistant
 
                 try
                 {
-                    EngineZHI.MainWindow.SafeAction(s =>
+                    EngineZHI160922.MainWindow.SafeAction(s =>
                     {
                         File.Move(selScript.Path, newScriptPath);
                         ScriptManager.RemoveScript(selScript);
@@ -7580,7 +7580,7 @@ namespace Assistant
                 else
                     path = Path.Combine((string)node.Tag, path);
 
-                EngineZHI.EnsureDirectory(path);
+                EngineZHI160922.EnsureDirectory(path);
             }
             catch
             {

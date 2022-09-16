@@ -140,14 +140,14 @@ namespace Assistant.Agents
 
             subList.EndUpdate();
 
-            if (!Client.Instance.AllowBit(FeatureBit.RestockAgent) && EngineZHI.MainWindow != null)
+            if (!Client.Instance.AllowBit(FeatureBit.RestockAgent) && EngineZHI160922.MainWindow != null)
             {
                 for (int i = 0; i < buttons.Length; i++)
                 {
-                    EngineZHI.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
+                    EngineZHI160922.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
                 }
 
-                EngineZHI.MainWindow.SafeAction(s => s.LockControl(subList));
+                EngineZHI160922.MainWindow.SafeAction(s => s.LockControl(subList));
             }
         }
 
@@ -239,9 +239,9 @@ namespace Assistant.Agents
 
         private void OnHBTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            if (EngineZHI.MainWindow != null && !ScriptManager.Running)
+            if (EngineZHI160922.MainWindow != null && !ScriptManager.Running)
             {
-                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             Item hb = World.FindItem(m_HotBag);
@@ -438,7 +438,7 @@ namespace Assistant.Agents
                 }
                 else
                 {
-                    EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                    EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
                 }
 
                 return true;
@@ -453,7 +453,7 @@ namespace Assistant.Agents
             }
             else
             {
-                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             return false;
@@ -490,7 +490,7 @@ namespace Assistant.Agents
                 }
                 else
                 {
-                    EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                    EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
                 }
 
                 return true;
@@ -505,7 +505,7 @@ namespace Assistant.Agents
             }
             else
             {
-                EngineZHI.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             return false;

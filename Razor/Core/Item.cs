@@ -845,7 +845,7 @@ namespace Assistant
             }
             catch // ( Exception e )
             {
-                //EngineZHI.LogCrash( e );
+                //EngineZHI160922.LogCrash( e );
             }
         }
     }
