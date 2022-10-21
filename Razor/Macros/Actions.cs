@@ -94,7 +94,7 @@ namespace Assistant.Macros
 
     public abstract class MacroWaitAction : MacroAction
     {
-        protected TimeSpan m_Timeout = TimeSpan.FromMinutes(5);
+        protected TimeSpan m_Timeout = TimeSpan.FromSeconds(10);
         private DateTime m_Start;
         private MacroMenuItem m_MenuItem = null;
 
