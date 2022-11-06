@@ -7796,6 +7796,11 @@ namespace Assistant
             if (itemTree.SelectedNode != null)
             {
                 TreeNode selectedNode = itemTree.SelectedNode;
+                
+                if (selectedNode.Tag == null)
+                {
+                    return;
+                }
 
                 string command = itemRandomNumber.Value > 0
                     ? $"[add static {selectedNode.Tag} {itemRandomNumber.Value:F0} set movable {itemMovable.Checked}"
@@ -7841,6 +7846,15 @@ namespace Assistant
                     World.Player.SendMessage(MsgLevel.Info, $"Command: {command}");
                     World.Player.Say(command);
                 }
+            }
+        }
+        private void itemTree_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (itemTree.SelectedNode != null)
+            {
+
+
+                ItemAddCommand(sender, e);
             }
         }
 
@@ -7938,11 +7952,6 @@ namespace Assistant
 
                 doorViewer.ArtIndex = ((DoorInfo)doorTree.SelectedNode.Tag).BaseId + StaffToolsManager.GetDoorOffset(button.Name);
             }
-        }
-
-        private void DoorFacingLeave(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }
