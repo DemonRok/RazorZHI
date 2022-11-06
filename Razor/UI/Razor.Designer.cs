@@ -695,26 +695,11 @@ namespace Assistant
             this.openBackupFolder = new System.Windows.Forms.Button();
             this.setBackupFolder = new System.Windows.Forms.Button();
             this.createBackup = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.openRazorDataDir = new System.Windows.Forms.Button();
             this.msglvl = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.statusBox = new System.Windows.Forms.TextBox();
             this.features = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.clearDress = new System.Windows.Forms.Button();
-            this.dressDelSel = new System.Windows.Forms.Button();
-            this.undressBag = new System.Windows.Forms.Button();
-            this.undressList = new System.Windows.Forms.Button();
-            this.dressUseCur = new System.Windows.Forms.Button();
-            this.targItem = new System.Windows.Forms.Button();
-            this.dressItems = new System.Windows.Forms.ListBox();
-            this.dressNow = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.removeDress = new System.Windows.Forms.Button();
-            this.addDress = new System.Windows.Forms.Button();
-            this.dressList = new System.Windows.Forms.ListBox();
-            this.undressConflicts = new System.Windows.Forms.CheckBox();
             this.advancedStaffDeco = new System.Windows.Forms.TabPage();
             this.itemMovable = new System.Windows.Forms.CheckBox();
             this.itemRandomNumber = new System.Windows.Forms.NumericUpDown();
@@ -746,6 +731,20 @@ namespace Assistant
             this.linkMain = new System.Windows.Forms.LinkLabel();
             this.label21 = new System.Windows.Forms.Label();
             this.aboutVer = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.clearDress = new System.Windows.Forms.Button();
+            this.dressDelSel = new System.Windows.Forms.Button();
+            this.undressBag = new System.Windows.Forms.Button();
+            this.undressList = new System.Windows.Forms.Button();
+            this.dressUseCur = new System.Windows.Forms.Button();
+            this.targItem = new System.Windows.Forms.Button();
+            this.dressItems = new System.Windows.Forms.ListBox();
+            this.dressNow = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.removeDress = new System.Windows.Forms.Button();
+            this.addDress = new System.Windows.Forms.Button();
+            this.dressList = new System.Windows.Forms.ListBox();
+            this.undressConflicts = new System.Windows.Forms.CheckBox();
             this.tabs.SuspendLayout();
             this.generalTab.SuspendLayout();
             this.subGeneralTab.SuspendLayout();
@@ -1218,7 +1217,7 @@ namespace Assistant
             this.showBuffDebuffOverhead.Text = "Show buff/debuff overhead";
             this.showBuffDebuffOverhead.UseVisualStyleBackColor = true;
             this.showBuffDebuffOverhead.CheckedChanged += new System.EventHandler(this.showBuffDebuffOverhead_CheckedChanged);
-            //
+            // 
             // chkPartyOverhead
             // 
             this.chkPartyOverhead.Location = new System.Drawing.Point(260, 90);
@@ -2134,10 +2133,10 @@ namespace Assistant
             this.subCountersTab.Controls.Add(this.titlebarImages);
             this.subCountersTab.Controls.Add(this.checkNewConts);
             this.subCountersTab.Controls.Add(this.groupBox2);
-            this.subCountersTab.Location = new System.Drawing.Point(4, 24);
+            this.subCountersTab.Location = new System.Drawing.Point(4, 22);
             this.subCountersTab.Name = "subCountersTab";
             this.subCountersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subCountersTab.Size = new System.Drawing.Size(502, 286);
+            this.subCountersTab.Size = new System.Drawing.Size(502, 288);
             this.subCountersTab.TabIndex = 1;
             this.subCountersTab.Text = "Counters";
             // 
@@ -2197,7 +2196,7 @@ namespace Assistant
             this.groupBox2.Controls.Add(this.recount);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(284, 272);
+            this.groupBox2.Size = new System.Drawing.Size(284, 274);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Counters";
@@ -2217,7 +2216,7 @@ namespace Assistant
             this.counters.Location = new System.Drawing.Point(6, 18);
             this.counters.MultiSelect = false;
             this.counters.Name = "counters";
-            this.counters.Size = new System.Drawing.Size(272, 207);
+            this.counters.Size = new System.Drawing.Size(272, 209);
             this.counters.TabIndex = 11;
             this.counters.UseCompatibleStateImageBehavior = false;
             this.counters.View = System.Windows.Forms.View.Details;
@@ -2236,7 +2235,7 @@ namespace Assistant
             // delCounter
             // 
             this.delCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.delCounter.Location = new System.Drawing.Point(108, 231);
+            this.delCounter.Location = new System.Drawing.Point(108, 233);
             this.delCounter.Name = "delCounter";
             this.delCounter.Size = new System.Drawing.Size(71, 37);
             this.delCounter.TabIndex = 4;
@@ -2246,7 +2245,7 @@ namespace Assistant
             // addCounter
             // 
             this.addCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addCounter.Location = new System.Drawing.Point(6, 231);
+            this.addCounter.Location = new System.Drawing.Point(6, 233);
             this.addCounter.Name = "addCounter";
             this.addCounter.Size = new System.Drawing.Size(70, 37);
             this.addCounter.TabIndex = 3;
@@ -2256,7 +2255,7 @@ namespace Assistant
             // recount
             // 
             this.recount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.recount.Location = new System.Drawing.Point(208, 231);
+            this.recount.Location = new System.Drawing.Point(208, 233);
             this.recount.Name = "recount";
             this.recount.Size = new System.Drawing.Size(70, 37);
             this.recount.TabIndex = 2;
@@ -2282,16 +2281,16 @@ namespace Assistant
             this.subOverheadTab.Controls.Add(this.lblOhSearch);
             this.subOverheadTab.Controls.Add(this.cliLocSearchView);
             this.subOverheadTab.Controls.Add(this.showOverheadMessages);
-            this.subOverheadTab.Location = new System.Drawing.Point(4, 24);
+            this.subOverheadTab.Location = new System.Drawing.Point(4, 22);
             this.subOverheadTab.Name = "subOverheadTab";
-            this.subOverheadTab.Size = new System.Drawing.Size(502, 286);
+            this.subOverheadTab.Size = new System.Drawing.Size(502, 288);
             this.subOverheadTab.TabIndex = 3;
             this.subOverheadTab.Text = "Overhead Messages";
             // 
             // setSound
             // 
             this.setSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.setSound.Location = new System.Drawing.Point(8, 257);
+            this.setSound.Location = new System.Drawing.Point(8, 259);
             this.setSound.Name = "setSound";
             this.setSound.Size = new System.Drawing.Size(84, 28);
             this.setSound.TabIndex = 103;
@@ -2335,7 +2334,7 @@ namespace Assistant
             // editOverheadMessage
             // 
             this.editOverheadMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.editOverheadMessage.Location = new System.Drawing.Point(8, 155);
+            this.editOverheadMessage.Location = new System.Drawing.Point(8, 157);
             this.editOverheadMessage.Name = "editOverheadMessage";
             this.editOverheadMessage.Size = new System.Drawing.Size(84, 28);
             this.editOverheadMessage.TabIndex = 97;
@@ -2346,7 +2345,7 @@ namespace Assistant
             // setColorHue
             // 
             this.setColorHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.setColorHue.Location = new System.Drawing.Point(8, 223);
+            this.setColorHue.Location = new System.Drawing.Point(8, 225);
             this.setColorHue.Name = "setColorHue";
             this.setColorHue.Size = new System.Drawing.Size(84, 28);
             this.setColorHue.TabIndex = 96;
@@ -2357,7 +2356,7 @@ namespace Assistant
             // removeOverheadMessage
             // 
             this.removeOverheadMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.removeOverheadMessage.Location = new System.Drawing.Point(8, 189);
+            this.removeOverheadMessage.Location = new System.Drawing.Point(8, 191);
             this.removeOverheadMessage.Name = "removeOverheadMessage";
             this.removeOverheadMessage.Size = new System.Drawing.Size(84, 28);
             this.removeOverheadMessage.TabIndex = 95;
@@ -2407,7 +2406,7 @@ namespace Assistant
             this.cliLocOverheadView.HideSelection = false;
             this.cliLocOverheadView.Location = new System.Drawing.Point(98, 156);
             this.cliLocOverheadView.Name = "cliLocOverheadView";
-            this.cliLocOverheadView.Size = new System.Drawing.Size(401, 129);
+            this.cliLocOverheadView.Size = new System.Drawing.Size(401, 131);
             this.cliLocOverheadView.TabIndex = 91;
             this.cliLocOverheadView.UseCompatibleStateImageBehavior = false;
             this.cliLocOverheadView.View = System.Windows.Forms.View.Details;
@@ -2511,9 +2510,9 @@ namespace Assistant
             this.subWaypoints.Controls.Add(this.lblWaypoint);
             this.subWaypoints.Controls.Add(this.btnAddWaypoint);
             this.subWaypoints.Controls.Add(this.waypointList);
-            this.subWaypoints.Location = new System.Drawing.Point(4, 24);
+            this.subWaypoints.Location = new System.Drawing.Point(4, 22);
             this.subWaypoints.Name = "subWaypoints";
-            this.subWaypoints.Size = new System.Drawing.Size(502, 286);
+            this.subWaypoints.Size = new System.Drawing.Size(502, 288);
             this.subWaypoints.TabIndex = 4;
             this.subWaypoints.Text = "Waypoints";
             // 
@@ -3807,7 +3806,7 @@ namespace Assistant
             // 
             // macroTree
             // 
-            this.macroTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.macroTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.macroTree.FullRowSelect = true;
             this.macroTree.HideSelection = false;
@@ -4150,7 +4149,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(173, 270);
+            this.scriptEditor.Size = new System.Drawing.Size(167, 270);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4768,10 +4767,10 @@ namespace Assistant
             this.advancedTab.Text = "Advanced";
             // 
             // subAdvancedTab
-            //
-            this.subAdvancedTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            this.subAdvancedTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.subAdvancedTab.Controls.Add(this.advancedInfoTab);
             this.subAdvancedTab.Controls.Add(this.advancedStaffDeco);
             this.subAdvancedTab.Controls.Add(this.advancedStaffDoors);
@@ -4788,14 +4787,9 @@ namespace Assistant
             this.advancedInfoTab.Controls.Add(this.fontDecrease);
             this.advancedInfoTab.Controls.Add(this.fontIncrease);
             this.advancedInfoTab.Controls.Add(this.groupBox16);
-            //this.advancedInfoTab.Controls.Add(this.enableUOAAPI);
-            //this.advancedInfoTab.Controls.Add(this.disableSmartCPU);
-            this.advancedInfoTab.Controls.Add(this.checkBox1);
-            //this.advancedInfoTab.Controls.Add(this.negotiate);
             this.advancedInfoTab.Controls.Add(this.openRazorDataDir);
             this.advancedInfoTab.Controls.Add(this.msglvl);
             this.advancedInfoTab.Controls.Add(this.label17);
-            //this.advancedInfoTab.Controls.Add(this.logPackets);
             this.advancedInfoTab.Controls.Add(this.statusBox);
             this.advancedInfoTab.Controls.Add(this.features);
             this.advancedInfoTab.Location = new System.Drawing.Point(4, 24);
@@ -4822,15 +4816,6 @@ namespace Assistant
             this.fontIncrease.TabIndex = 93;
             this.fontIncrease.Text = "+";
             this.fontIncrease.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.Location = new System.Drawing.Point(240, 56);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(197, 20);
-            this.checkBox1.TabIndex = 89;
-            this.checkBox1.Text = "Negotiate features with server";
             // 
             // groupBox16
             // 
@@ -4942,7 +4927,7 @@ namespace Assistant
             this.features.Size = new System.Drawing.Size(255, 115);
             this.features.TabIndex = 83;
             this.features.Visible = false;
-            //
+            // 
             // advancedStaffDeco
             // 
             this.advancedStaffDeco.BackColor = System.Drawing.SystemColors.Control;
@@ -5023,172 +5008,11 @@ namespace Assistant
             this.itemAdd.UseVisualStyleBackColor = true;
             this.itemAdd.Click += new System.EventHandler(this.itemAdd_Click);
             this.itemAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemAdd_MouseDown);
-            //
-            // groupBox6
-            // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.Controls.Add(this.clearDress);
-            this.groupBox6.Controls.Add(this.dressDelSel);
-            this.groupBox6.Controls.Add(this.undressBag);
-            this.groupBox6.Controls.Add(this.undressList);
-            this.groupBox6.Controls.Add(this.dressUseCur);
-            this.groupBox6.Controls.Add(this.targItem);
-            this.groupBox6.Controls.Add(this.dressItems);
-            this.groupBox6.Controls.Add(this.dressNow);
-            this.groupBox6.Location = new System.Drawing.Point(201, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(311, 309);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Arm/Dress Items";
-            // 
-            // clearDress
-            // 
-            this.clearDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearDress.Location = new System.Drawing.Point(209, 257);
-            this.clearDress.Name = "clearDress";
-            this.clearDress.Size = new System.Drawing.Size(96, 32);
-            this.clearDress.TabIndex = 13;
-            this.clearDress.Text = "Clear List";
-            this.clearDress.Click += new System.EventHandler(this.clearDress_Click);
-            // 
-            // dressDelSel
-            // 
-            this.dressDelSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dressDelSel.Location = new System.Drawing.Point(209, 170);
-            this.dressDelSel.Name = "dressDelSel";
-            this.dressDelSel.Size = new System.Drawing.Size(96, 32);
-            this.dressDelSel.TabIndex = 12;
-            this.dressDelSel.Text = "Remove";
-            this.dressDelSel.Click += new System.EventHandler(this.dressDelSel_Click);
-            // 
-            // undressBag
-            // 
-            this.undressBag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.undressBag.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.undressBag.Location = new System.Drawing.Point(209, 208);
-            this.undressBag.Name = "undressBag";
-            this.undressBag.Size = new System.Drawing.Size(96, 40);
-            this.undressBag.TabIndex = 11;
-            this.undressBag.Text = "Change Undress Bag";
-            this.undressBag.Click += new System.EventHandler(this.undressBag_Click);
-            // 
-            // undressList
-            // 
-            this.undressList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.undressList.Location = new System.Drawing.Point(209, 56);
-            this.undressList.Name = "undressList";
-            this.undressList.Size = new System.Drawing.Size(96, 32);
-            this.undressList.TabIndex = 10;
-            this.undressList.Text = "Undress";
-            this.undressList.Click += new System.EventHandler(this.undressList_Click);
-            // 
-            // dressUseCur
-            // 
-            this.dressUseCur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dressUseCur.Location = new System.Drawing.Point(209, 132);
-            this.dressUseCur.Name = "dressUseCur";
-            this.dressUseCur.Size = new System.Drawing.Size(96, 32);
-            this.dressUseCur.TabIndex = 9;
-            this.dressUseCur.Text = "Add Current";
-            this.dressUseCur.Click += new System.EventHandler(this.dressUseCur_Click);
-            // 
-            // targItem
-            // 
-            this.targItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.targItem.Location = new System.Drawing.Point(209, 94);
-            this.targItem.Name = "targItem";
-            this.targItem.Size = new System.Drawing.Size(96, 32);
-            this.targItem.TabIndex = 7;
-            this.targItem.Text = "Add (Target)";
-            this.targItem.Click += new System.EventHandler(this.targItem_Click);
-            // 
-            // dressItems
-            // 
-            this.dressItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dressItems.IntegralHeight = false;
-            this.dressItems.Location = new System.Drawing.Point(6, 18);
-            this.dressItems.Name = "dressItems";
-            this.dressItems.Size = new System.Drawing.Size(197, 285);
-            this.dressItems.TabIndex = 6;
-            this.dressItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dressItems_KeyDown);
-            this.dressItems.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dressItems_MouseDown);
-            // 
-            // dressNow
-            // 
-            this.dressNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dressNow.Location = new System.Drawing.Point(209, 18);
-            this.dressNow.Name = "dressNow";
-            this.dressNow.Size = new System.Drawing.Size(96, 32);
-            this.dressNow.TabIndex = 6;
-            this.dressNow.Text = "Dress";
-            this.dressNow.Click += new System.EventHandler(this.dressNow_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox5.Controls.Add(this.removeDress);
-            this.groupBox5.Controls.Add(this.addDress);
-            this.groupBox5.Controls.Add(this.dressList);
-            this.groupBox5.Controls.Add(this.undressConflicts);
-            this.groupBox5.Location = new System.Drawing.Point(8, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(187, 309);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Arm/Dress Selection";
-            // 
-            // removeDress
-            // 
-            this.removeDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.removeDress.Location = new System.Drawing.Point(117, 254);
-            this.removeDress.Name = "removeDress";
-            this.removeDress.Size = new System.Drawing.Size(64, 25);
-            this.removeDress.TabIndex = 5;
-            this.removeDress.Text = "Remove";
-            this.removeDress.Click += new System.EventHandler(this.removeDress_Click);
-            // 
-            // addDress
-            // 
-            this.addDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addDress.Location = new System.Drawing.Point(6, 254);
-            this.addDress.Name = "addDress";
-            this.addDress.Size = new System.Drawing.Size(64, 25);
-            this.addDress.TabIndex = 4;
-            this.addDress.Text = "Aggiungi";
-            this.addDress.Click += new System.EventHandler(this.addDress_Click);
-            // 
-            // dressList
-            // 
-            this.dressList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dressList.IntegralHeight = false;
-            this.dressList.Location = new System.Drawing.Point(6, 18);
-            this.dressList.Name = "dressList";
-            this.dressList.Size = new System.Drawing.Size(175, 230);
-            this.dressList.TabIndex = 3;
-            this.dressList.SelectedIndexChanged += new System.EventHandler(this.dressList_SelectedIndexChanged);
-            // 
-            // undressConflicts
-            // 
-            this.undressConflicts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.undressConflicts.Location = new System.Drawing.Point(6, 285);
-            this.undressConflicts.Name = "undressConflicts";
-            this.undressConflicts.Size = new System.Drawing.Size(137, 18);
-            this.undressConflicts.TabIndex = 6;
-            this.undressConflicts.Text = "Auto-move conflicts";
-            this.undressConflicts.CheckedChanged += new System.EventHandler(this.undressConflicts_CheckedChanged);
             // 
             // itemTree
             // 
-            this.itemTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.itemTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itemTree.Location = new System.Drawing.Point(6, 6);
             this.itemTree.Name = "itemTree";
@@ -5233,7 +5057,7 @@ namespace Assistant
             // 
             // doorViewer
             // 
-            this.doorViewer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.doorViewer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.doorViewer.Animate = false;
             this.doorViewer.Art = Assistant.UI.Art.Items;
@@ -5251,7 +5075,7 @@ namespace Assistant
             // 
             // doorTree
             // 
-            this.doorTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.doorTree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.doorTree.Location = new System.Drawing.Point(3, 3);
             this.doorTree.Name = "doorTree";
@@ -5488,6 +5312,167 @@ namespace Assistant
             this.aboutVer.Text = "Razor v{0}";
             this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.clearDress);
+            this.groupBox6.Controls.Add(this.dressDelSel);
+            this.groupBox6.Controls.Add(this.undressBag);
+            this.groupBox6.Controls.Add(this.undressList);
+            this.groupBox6.Controls.Add(this.dressUseCur);
+            this.groupBox6.Controls.Add(this.targItem);
+            this.groupBox6.Controls.Add(this.dressItems);
+            this.groupBox6.Controls.Add(this.dressNow);
+            this.groupBox6.Location = new System.Drawing.Point(201, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(311, 309);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Arm/Dress Items";
+            // 
+            // clearDress
+            // 
+            this.clearDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearDress.Location = new System.Drawing.Point(209, 257);
+            this.clearDress.Name = "clearDress";
+            this.clearDress.Size = new System.Drawing.Size(96, 32);
+            this.clearDress.TabIndex = 13;
+            this.clearDress.Text = "Clear List";
+            this.clearDress.Click += new System.EventHandler(this.clearDress_Click);
+            // 
+            // dressDelSel
+            // 
+            this.dressDelSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dressDelSel.Location = new System.Drawing.Point(209, 170);
+            this.dressDelSel.Name = "dressDelSel";
+            this.dressDelSel.Size = new System.Drawing.Size(96, 32);
+            this.dressDelSel.TabIndex = 12;
+            this.dressDelSel.Text = "Remove";
+            this.dressDelSel.Click += new System.EventHandler(this.dressDelSel_Click);
+            // 
+            // undressBag
+            // 
+            this.undressBag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.undressBag.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.undressBag.Location = new System.Drawing.Point(209, 208);
+            this.undressBag.Name = "undressBag";
+            this.undressBag.Size = new System.Drawing.Size(96, 40);
+            this.undressBag.TabIndex = 11;
+            this.undressBag.Text = "Change Undress Bag";
+            this.undressBag.Click += new System.EventHandler(this.undressBag_Click);
+            // 
+            // undressList
+            // 
+            this.undressList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.undressList.Location = new System.Drawing.Point(209, 56);
+            this.undressList.Name = "undressList";
+            this.undressList.Size = new System.Drawing.Size(96, 32);
+            this.undressList.TabIndex = 10;
+            this.undressList.Text = "Undress";
+            this.undressList.Click += new System.EventHandler(this.undressList_Click);
+            // 
+            // dressUseCur
+            // 
+            this.dressUseCur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dressUseCur.Location = new System.Drawing.Point(209, 132);
+            this.dressUseCur.Name = "dressUseCur";
+            this.dressUseCur.Size = new System.Drawing.Size(96, 32);
+            this.dressUseCur.TabIndex = 9;
+            this.dressUseCur.Text = "Add Current";
+            this.dressUseCur.Click += new System.EventHandler(this.dressUseCur_Click);
+            // 
+            // targItem
+            // 
+            this.targItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.targItem.Location = new System.Drawing.Point(209, 94);
+            this.targItem.Name = "targItem";
+            this.targItem.Size = new System.Drawing.Size(96, 32);
+            this.targItem.TabIndex = 7;
+            this.targItem.Text = "Add (Target)";
+            this.targItem.Click += new System.EventHandler(this.targItem_Click);
+            // 
+            // dressItems
+            // 
+            this.dressItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dressItems.IntegralHeight = false;
+            this.dressItems.Location = new System.Drawing.Point(6, 18);
+            this.dressItems.Name = "dressItems";
+            this.dressItems.Size = new System.Drawing.Size(197, 285);
+            this.dressItems.TabIndex = 6;
+            this.dressItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dressItems_KeyDown);
+            this.dressItems.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dressItems_MouseDown);
+            // 
+            // dressNow
+            // 
+            this.dressNow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dressNow.Location = new System.Drawing.Point(209, 18);
+            this.dressNow.Name = "dressNow";
+            this.dressNow.Size = new System.Drawing.Size(96, 32);
+            this.dressNow.TabIndex = 6;
+            this.dressNow.Text = "Dress";
+            this.dressNow.Click += new System.EventHandler(this.dressNow_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox5.Controls.Add(this.removeDress);
+            this.groupBox5.Controls.Add(this.addDress);
+            this.groupBox5.Controls.Add(this.dressList);
+            this.groupBox5.Controls.Add(this.undressConflicts);
+            this.groupBox5.Location = new System.Drawing.Point(8, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(187, 309);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Arm/Dress Selection";
+            // 
+            // removeDress
+            // 
+            this.removeDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removeDress.Location = new System.Drawing.Point(117, 254);
+            this.removeDress.Name = "removeDress";
+            this.removeDress.Size = new System.Drawing.Size(64, 25);
+            this.removeDress.TabIndex = 5;
+            this.removeDress.Text = "Remove";
+            this.removeDress.Click += new System.EventHandler(this.removeDress_Click);
+            // 
+            // addDress
+            // 
+            this.addDress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addDress.Location = new System.Drawing.Point(6, 254);
+            this.addDress.Name = "addDress";
+            this.addDress.Size = new System.Drawing.Size(64, 25);
+            this.addDress.TabIndex = 4;
+            this.addDress.Text = "Aggiungi";
+            this.addDress.Click += new System.EventHandler(this.addDress_Click);
+            // 
+            // dressList
+            // 
+            this.dressList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dressList.IntegralHeight = false;
+            this.dressList.Location = new System.Drawing.Point(6, 18);
+            this.dressList.Name = "dressList";
+            this.dressList.Size = new System.Drawing.Size(175, 230);
+            this.dressList.TabIndex = 3;
+            this.dressList.SelectedIndexChanged += new System.EventHandler(this.dressList_SelectedIndexChanged);
+            // 
+            // undressConflicts
+            // 
+            this.undressConflicts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.undressConflicts.Location = new System.Drawing.Point(6, 285);
+            this.undressConflicts.Name = "undressConflicts";
+            this.undressConflicts.Size = new System.Drawing.Size(137, 18);
+            this.undressConflicts.TabIndex = 6;
+            this.undressConflicts.Text = "Auto-move conflicts";
+            this.undressConflicts.CheckedChanged += new System.EventHandler(this.undressConflicts_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 16);
@@ -5591,8 +5576,6 @@ namespace Assistant
             this.screenshotTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenPrev)).EndInit();
             this.advancedTab.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.subAdvancedTab.ResumeLayout(false);
             this.advancedInfoTab.ResumeLayout(false);
             this.advancedInfoTab.PerformLayout();
@@ -5604,6 +5587,8 @@ namespace Assistant
             this.advancedStaffDoors.ResumeLayout(false);
             this.aboutTab.ResumeLayout(false);
             this.aboutTab.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5753,7 +5738,6 @@ namespace Assistant
         private TextBox statusBox;
         private TextBox features;
         private TabPage advancedStaffDeco;
-        private CheckBox checkBox1;
         private UI.ArtViewer artViewer;
         private TreeView itemTree;
         private NumericUpDown itemRandomNumber;
