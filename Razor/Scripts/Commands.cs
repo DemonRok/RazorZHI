@@ -713,7 +713,7 @@ namespace Assistant.Scripts
 
             ushort amount = 1;
 
-            if (vars.Length == 2)
+            if (vars.Length >= 2)
             {
                 amount = Utility.ToUInt16(vars[1].AsString(), 1);
             }
