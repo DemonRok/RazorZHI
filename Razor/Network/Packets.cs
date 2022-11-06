@@ -1822,4 +1822,13 @@ namespace Assistant
             WriteAsciiNull(id.ToString());
         }
     }
+    
+    public sealed class RenamePacket : Packet
+    {
+        public RenamePacket(uint serial, string newName) : base(0x75, 35)
+        {
+            Write(serial);
+            WriteAsciiFixed(newName, 30);
+        }
+    }
 }
