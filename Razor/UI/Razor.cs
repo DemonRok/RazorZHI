@@ -7348,7 +7348,7 @@ namespace Assistant
                     RebuildHotKeyCache();
                 }
 
-                TreeNode resultNode = SearchTreeView($"{Language.Format(LocString.PlayScript, _selectedScript.Name)}", hotkeyTree.Nodes);
+                TreeNode resultNode = SearchTreeView($"{Language.Format(LocString.PlayScript, _selectedScript.ToString())}", hotkeyTree.Nodes);
 
                 if (resultNode != null)
                 {
