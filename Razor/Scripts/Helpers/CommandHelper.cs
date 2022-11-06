@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Assistant.Filters;
 using Assistant.Scripts.EngineZHI160922;
 
@@ -824,6 +825,18 @@ namespace Assistant.Scripts.Helpers
                         throw new RunTimeError($"Unknown target type: '{args[1].AsString()}'");
                 }
             }
+        }
+
+        public static string ReplaceStringInterpolations(string stringWithPossibleInterpolation)
+        {
+            Regex regex = new Regex(@"\{{(.*?)\}}");
+            return regex.Replace(stringWithPossibleInterpolation, match =>
+            {
+                string varName = match.Groups[1].Value;
+                Variable varContent = Interpreter.GetVariable(varName);
+
+                return varContent?.AsString() ?? "<not found>";
+            });
         }
     }
 }

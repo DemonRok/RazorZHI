@@ -69,6 +69,7 @@ namespace Assistant.Scripts.EngineZHI160922
         LESS_THAN_OR_EQUAL,
         GREATER_THAN,
         GREATER_THAN_OR_EQUAL,
+        IN,
         AS,
 
         // Logical Operators
@@ -347,6 +348,9 @@ namespace Assistant.Scripts.EngineZHI160922
                 case ">=":
                     type = ASTNodeType.GREATER_THAN_OR_EQUAL;
                     break;
+                case "in":
+                    type = ASTNodeType.IN;
+                    break;
                 case "as":
                     type = ASTNodeType.AS;
                     break;
@@ -480,6 +484,7 @@ namespace Assistant.Scripts.EngineZHI160922
                 case "<=":
                 case ">":
                 case ">=":
+                case "in":
                 case "as":
                     return true;
             }
