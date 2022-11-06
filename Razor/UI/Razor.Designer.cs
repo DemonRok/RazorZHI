@@ -686,20 +686,8 @@ namespace Assistant
             this.screenPrev = new System.Windows.Forms.PictureBox();
             this.dispTime = new System.Windows.Forms.CheckBox();
             this.advancedTab = new System.Windows.Forms.TabPage();
-            this.aboutTab = new System.Windows.Forms.TabPage();
-            this.linkGitHub = new System.Windows.Forms.LinkLabel();
-            this.lblCredits3 = new System.Windows.Forms.Label();
-            this.linkHelp = new System.Windows.Forms.LinkLabel();
-            this.lblCredits2 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblCredits1 = new System.Windows.Forms.Label();
-            this.aboutSubInfo = new System.Windows.Forms.Label();
-            this.linkMain = new System.Windows.Forms.LinkLabel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.aboutVer = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.subAdvancedTab = new System.Windows.Forms.TabControl();
             this.advancedInfoTab = new System.Windows.Forms.TabPage();
-            this.advancedStaffTab = new System.Windows.Forms.TabPage();
             this.fontDecrease = new System.Windows.Forms.Button();
             this.fontIncrease = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
@@ -707,12 +695,12 @@ namespace Assistant
             this.openBackupFolder = new System.Windows.Forms.Button();
             this.setBackupFolder = new System.Windows.Forms.Button();
             this.createBackup = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.openRazorDataDir = new System.Windows.Forms.Button();
             this.msglvl = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.statusBox = new System.Windows.Forms.TextBox();
             this.features = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.clearDress = new System.Windows.Forms.Button();
             this.dressDelSel = new System.Windows.Forms.Button();
@@ -727,6 +715,20 @@ namespace Assistant
             this.addDress = new System.Windows.Forms.Button();
             this.dressList = new System.Windows.Forms.ListBox();
             this.undressConflicts = new System.Windows.Forms.CheckBox();
+            this.advancedStaffTab = new System.Windows.Forms.TabPage();
+            this.itemTree = new System.Windows.Forms.TreeView();
+            this.artViewer = new Assistant.UI.ArtViewer();
+            this.aboutTab = new System.Windows.Forms.TabPage();
+            this.linkGitHub = new System.Windows.Forms.LinkLabel();
+            this.lblCredits3 = new System.Windows.Forms.Label();
+            this.linkHelp = new System.Windows.Forms.LinkLabel();
+            this.lblCredits2 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblCredits1 = new System.Windows.Forms.Label();
+            this.aboutSubInfo = new System.Windows.Forms.Label();
+            this.linkMain = new System.Windows.Forms.LinkLabel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.aboutVer = new System.Windows.Forms.Label();
             this.tabs.SuspendLayout();
             this.generalTab.SuspendLayout();
             this.subGeneralTab.SuspendLayout();
@@ -783,10 +785,11 @@ namespace Assistant
             this.screenshotTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenPrev)).BeginInit();
             this.advancedTab.SuspendLayout();
-            this.aboutTab.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.subAdvancedTab.SuspendLayout();
             this.advancedInfoTab.SuspendLayout();
             this.groupBox16.SuspendLayout();
+            this.advancedStaffTab.SuspendLayout();
+            this.aboutTab.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -1916,7 +1919,7 @@ namespace Assistant
             this.groupBox11.Controls.Add(this.razorTitleBarKey);
             this.groupBox11.Controls.Add(this.showInRazorTitleBar);
             this.groupBox11.Controls.Add(this.razorTitleBar);
-            this.groupBox11.Location = new System.Drawing.Point(6, 207);
+            this.groupBox11.Location = new System.Drawing.Point(6, 205);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(490, 71);
             this.groupBox11.TabIndex = 51;
@@ -1961,7 +1964,7 @@ namespace Assistant
             // 
             this.trackDps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackDps.AutoSize = true;
-            this.trackDps.Location = new System.Drawing.Point(273, 178);
+            this.trackDps.Location = new System.Drawing.Point(273, 176);
             this.trackDps.Name = "trackDps";
             this.trackDps.Size = new System.Drawing.Size(146, 19);
             this.trackDps.TabIndex = 53;
@@ -1973,7 +1976,7 @@ namespace Assistant
             // 
             this.trackIncomingGold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackIncomingGold.AutoSize = true;
-            this.trackIncomingGold.Location = new System.Drawing.Point(273, 152);
+            this.trackIncomingGold.Location = new System.Drawing.Point(273, 150);
             this.trackIncomingGold.Name = "trackIncomingGold";
             this.trackIncomingGold.Size = new System.Drawing.Size(223, 19);
             this.trackIncomingGold.TabIndex = 52;
@@ -1984,7 +1987,7 @@ namespace Assistant
             // showNotoHue
             // 
             this.showNotoHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.showNotoHue.Location = new System.Drawing.Point(6, 177);
+            this.showNotoHue.Location = new System.Drawing.Point(6, 175);
             this.showNotoHue.Name = "showNotoHue";
             this.showNotoHue.Size = new System.Drawing.Size(221, 20);
             this.showNotoHue.TabIndex = 51;
@@ -1994,7 +1997,7 @@ namespace Assistant
             // highlightSpellReags
             // 
             this.highlightSpellReags.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.highlightSpellReags.Location = new System.Drawing.Point(6, 151);
+            this.highlightSpellReags.Location = new System.Drawing.Point(6, 149);
             this.highlightSpellReags.Name = "highlightSpellReags";
             this.highlightSpellReags.Size = new System.Drawing.Size(205, 20);
             this.highlightSpellReags.TabIndex = 50;
@@ -2011,7 +2014,7 @@ namespace Assistant
             this.groupBox3.Controls.Add(this.showInBar);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(490, 139);
+            this.groupBox3.Size = new System.Drawing.Size(490, 137);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Title Bar Display";
@@ -2089,7 +2092,7 @@ namespace Assistant
             this.titleStr.Multiline = true;
             this.titleStr.Name = "titleStr";
             this.titleStr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.titleStr.Size = new System.Drawing.Size(478, 85);
+            this.titleStr.Size = new System.Drawing.Size(478, 83);
             this.titleStr.TabIndex = 4;
             this.titleStr.TextChanged += new System.EventHandler(this.titleStr_TextChanged);
             // 
@@ -3126,7 +3129,7 @@ namespace Assistant
             this.filters.IntegralHeight = false;
             this.filters.Location = new System.Drawing.Point(6, 6);
             this.filters.Name = "filters";
-            this.filters.Size = new System.Drawing.Size(197, 273);
+            this.filters.Size = new System.Drawing.Size(197, 271);
             this.filters.TabIndex = 114;
             this.filters.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.OnFilterCheck);
             // 
@@ -3186,7 +3189,7 @@ namespace Assistant
             this.textFilterList.ItemHeight = 15;
             this.textFilterList.Location = new System.Drawing.Point(6, 48);
             this.textFilterList.Name = "textFilterList";
-            this.textFilterList.Size = new System.Drawing.Size(217, 169);
+            this.textFilterList.Size = new System.Drawing.Size(217, 154);
             this.textFilterList.TabIndex = 0;
             // 
             // enableTextFilter
@@ -3390,7 +3393,7 @@ namespace Assistant
             this.soundFilterList.FormattingEnabled = true;
             this.soundFilterList.Location = new System.Drawing.Point(8, 14);
             this.soundFilterList.Name = "soundFilterList";
-            this.soundFilterList.Size = new System.Drawing.Size(201, 256);
+            this.soundFilterList.Size = new System.Drawing.Size(201, 238);
             this.soundFilterList.TabIndex = 0;
             this.soundFilterList.SelectedIndexChanged += new System.EventHandler(this.soundFilterList_SelectedIndexChanged);
             // 
@@ -3460,7 +3463,7 @@ namespace Assistant
             this.targetFilter.ItemHeight = 15;
             this.targetFilter.Location = new System.Drawing.Point(247, 6);
             this.targetFilter.Name = "targetFilter";
-            this.targetFilter.Size = new System.Drawing.Size(245, 229);
+            this.targetFilter.Size = new System.Drawing.Size(245, 214);
             this.targetFilter.TabIndex = 14;
             // 
             // targetFilterEnabled
@@ -3693,7 +3696,7 @@ namespace Assistant
             this.macroActGroup.Controls.Add(this.actionList);
             this.macroActGroup.Location = new System.Drawing.Point(200, 3);
             this.macroActGroup.Name = "macroActGroup";
-            this.macroActGroup.Size = new System.Drawing.Size(296, 272);
+            this.macroActGroup.Size = new System.Drawing.Size(296, 270);
             this.macroActGroup.TabIndex = 18;
             this.macroActGroup.TabStop = false;
             this.macroActGroup.Text = "Actions";
@@ -3731,7 +3734,7 @@ namespace Assistant
             // loopMacro
             // 
             this.loopMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.loopMacro.Location = new System.Drawing.Point(233, 242);
+            this.loopMacro.Location = new System.Drawing.Point(233, 240);
             this.loopMacro.Name = "loopMacro";
             this.loopMacro.Size = new System.Drawing.Size(57, 24);
             this.loopMacro.TabIndex = 4;
@@ -3760,7 +3763,7 @@ namespace Assistant
             this.actionList.ItemHeight = 15;
             this.actionList.Location = new System.Drawing.Point(6, 17);
             this.actionList.Name = "actionList";
-            this.actionList.Size = new System.Drawing.Size(218, 249);
+            this.actionList.Size = new System.Drawing.Size(218, 247);
             this.actionList.TabIndex = 0;
             this.actionList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.actionList_KeyDown);
             this.actionList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.actionList_MouseDown);
@@ -3790,7 +3793,7 @@ namespace Assistant
             this.macroTree.HideSelection = false;
             this.macroTree.Location = new System.Drawing.Point(6, 36);
             this.macroTree.Name = "macroTree";
-            this.macroTree.Size = new System.Drawing.Size(188, 203);
+            this.macroTree.Size = new System.Drawing.Size(188, 201);
             this.macroTree.Sorted = true;
             this.macroTree.TabIndex = 15;
             this.macroTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.macroTree_AfterSelect);
@@ -3799,7 +3802,7 @@ namespace Assistant
             // delMacro
             // 
             this.delMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.delMacro.Location = new System.Drawing.Point(120, 245);
+            this.delMacro.Location = new System.Drawing.Point(120, 243);
             this.delMacro.Name = "delMacro";
             this.delMacro.Size = new System.Drawing.Size(74, 30);
             this.delMacro.TabIndex = 14;
@@ -3809,7 +3812,7 @@ namespace Assistant
             // newMacro
             // 
             this.newMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.newMacro.Location = new System.Drawing.Point(8, 245);
+            this.newMacro.Location = new System.Drawing.Point(8, 243);
             this.newMacro.Name = "newMacro";
             this.newMacro.Size = new System.Drawing.Size(74, 30);
             this.newMacro.TabIndex = 13;
@@ -4060,7 +4063,7 @@ namespace Assistant
             // scriptSplitContainer.Panel2
             // 
             this.scriptSplitContainer.Panel2.Controls.Add(this.scriptEditor);
-            this.scriptSplitContainer.Size = new System.Drawing.Size(419, 272);
+            this.scriptSplitContainer.Size = new System.Drawing.Size(419, 270);
             this.scriptSplitContainer.SplitterDistance = 110;
             this.scriptSplitContainer.SplitterWidth = 10;
             this.scriptSplitContainer.TabIndex = 28;
@@ -4072,7 +4075,7 @@ namespace Assistant
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptTree.Location = new System.Drawing.Point(0, 31);
             this.scriptTree.Name = "scriptTree";
-            this.scriptTree.Size = new System.Drawing.Size(110, 241);
+            this.scriptTree.Size = new System.Drawing.Size(110, 239);
             this.scriptTree.Sorted = true;
             this.scriptTree.TabIndex = 29;
             this.scriptTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.scriptTree_AfterSelect);
@@ -4127,7 +4130,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(275, 272);
+            this.scriptEditor.Size = new System.Drawing.Size(275, 270);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4136,7 +4139,7 @@ namespace Assistant
             // 
             // scriptGuide
             // 
-            this.scriptGuide.Location = new System.Drawing.Point(432, 253);
+            this.scriptGuide.Location = new System.Drawing.Point(432, 251);
             this.scriptGuide.Name = "scriptGuide";
             this.scriptGuide.Size = new System.Drawing.Size(60, 26);
             this.scriptGuide.TabIndex = 26;
@@ -4737,155 +4740,26 @@ namespace Assistant
             // advancedTab
             // 
             this.advancedTab.BackColor = System.Drawing.SystemColors.Control;
-            this.advancedTab.Controls.Add(this.tabControl1);
+            this.advancedTab.Controls.Add(this.subAdvancedTab);
             this.advancedTab.Location = new System.Drawing.Point(4, 44);
             this.advancedTab.Name = "advancedTab";
             this.advancedTab.Size = new System.Drawing.Size(519, 322);
             this.advancedTab.TabIndex = 12;
             this.advancedTab.Text = "Advanced";
             // 
-            // aboutTab
-            // 
-            this.aboutTab.Controls.Add(this.linkGitHub);
-            this.aboutTab.Controls.Add(this.lblCredits3);
-            this.aboutTab.Controls.Add(this.linkHelp);
-            this.aboutTab.Controls.Add(this.lblCredits2);
-            this.aboutTab.Controls.Add(this.label20);
-            this.aboutTab.Controls.Add(this.lblCredits1);
-            this.aboutTab.Controls.Add(this.aboutSubInfo);
-            this.aboutTab.Controls.Add(this.linkMain);
-            this.aboutTab.Controls.Add(this.label21);
-            this.aboutTab.Controls.Add(this.aboutVer);
-            this.aboutTab.Location = new System.Drawing.Point(4, 44);
-            this.aboutTab.Name = "aboutTab";
-            this.aboutTab.Size = new System.Drawing.Size(519, 322);
-            this.aboutTab.TabIndex = 9;
-            this.aboutTab.Text = "About";
-            // 
-            // linkGitHub
-            // 
-            this.linkGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkGitHub.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkGitHub.Location = new System.Drawing.Point(9, 157);
-            this.linkGitHub.Name = "linkGitHub";
-            this.linkGitHub.Size = new System.Drawing.Size(506, 20);
-            this.linkGitHub.TabIndex = 25;
-            this.linkGitHub.TabStop = true;
-            this.linkGitHub.Text = "https://github.com/markdwags/Razor";
-            this.linkGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGitHub_LinkClicked);
-            // 
-            // lblCredits3
-            // 
-            this.lblCredits3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCredits3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCredits3.Location = new System.Drawing.Point(8, 259);
-            this.lblCredits3.Name = "lblCredits3";
-            this.lblCredits3.Size = new System.Drawing.Size(503, 20);
-            this.lblCredits3.TabIndex = 24;
-            this.lblCredits3.Text = "Cross-platform implementation by DarkLotus";
-            this.lblCredits3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkHelp
-            // 
-            this.linkHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkHelp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkHelp.Location = new System.Drawing.Point(434, 10);
-            this.linkHelp.Name = "linkHelp";
-            this.linkHelp.Size = new System.Drawing.Size(78, 20);
-            this.linkHelp.TabIndex = 23;
-            this.linkHelp.TabStop = true;
-            this.linkHelp.Text = "Need Help?";
-            this.linkHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHelp_LinkClicked);
-            // 
-            // lblCredits2
-            // 
-            this.lblCredits2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCredits2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCredits2.Location = new System.Drawing.Point(9, 239);
-            this.lblCredits2.Name = "lblCredits2";
-            this.lblCredits2.Size = new System.Drawing.Size(503, 20);
-            this.lblCredits2.TabIndex = 22;
-            this.lblCredits2.Text = "Major design changes including ClassicUO integration by Jaedan";
-            this.lblCredits2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(12, 120);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(499, 17);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "For feedback, support and the latest releases please visit:\r\n";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblCredits1
-            // 
-            this.lblCredits1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCredits1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCredits1.Location = new System.Drawing.Point(6, 219);
-            this.lblCredits1.Name = "lblCredits1";
-            this.lblCredits1.Size = new System.Drawing.Size(506, 20);
-            this.lblCredits1.TabIndex = 19;
-            this.lblCredits1.Text = "Razor was designed by Zippy, modified and maintained by Quick";
-            this.lblCredits1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // aboutSubInfo
-            // 
-            this.aboutSubInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.aboutSubInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutSubInfo.Location = new System.Drawing.Point(6, 75);
-            this.aboutSubInfo.Name = "aboutSubInfo";
-            this.aboutSubInfo.Size = new System.Drawing.Size(506, 19);
-            this.aboutSubInfo.TabIndex = 17;
-            this.aboutSubInfo.Text = "Community Edition";
-            this.aboutSubInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkMain
-            // 
-            this.linkMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkMain.Location = new System.Drawing.Point(9, 137);
-            this.linkMain.Name = "linkMain";
-            this.linkMain.Size = new System.Drawing.Size(506, 20);
-            this.linkMain.TabIndex = 16;
-            this.linkMain.TabStop = true;
-            this.linkMain.Text = "https://www.razorce.com";
-            this.linkMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkMain.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(52, 98);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(0, 15);
-            this.label21.TabIndex = 15;
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // aboutVer
-            // 
-            this.aboutVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.aboutVer.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutVer.Location = new System.Drawing.Point(6, 40);
-            this.aboutVer.Name = "aboutVer";
-            this.aboutVer.Size = new System.Drawing.Size(506, 35);
-            this.aboutVer.TabIndex = 14;
-            this.aboutVer.Text = "Razor v{0}";
-            this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.advancedInfoTab);
-            this.tabControl1.Controls.Add(this.advancedStaffTab);
-            this.tabControl1.Location = new System.Drawing.Point(6, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(506, 313);
-            this.tabControl1.TabIndex = 0;
+            // subAdvancedTab
+            //
+            this.subAdvancedTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.subAdvancedTab.Controls.Add(this.advancedInfoTab);
+            this.subAdvancedTab.Controls.Add(this.advancedStaffTab);
+            this.subAdvancedTab.Location = new System.Drawing.Point(6, 3);
+            this.subAdvancedTab.Name = "subAdvancedTab";
+            this.subAdvancedTab.SelectedIndex = 0;
+            this.subAdvancedTab.Size = new System.Drawing.Size(506, 313);
+            this.subAdvancedTab.TabIndex = 0;
+            this.subAdvancedTab.SelectedIndexChanged += new System.EventHandler(this.subAdvancedTab_SelectedIndexChanged);
             // 
             // advancedInfoTab
             // 
@@ -4910,16 +4784,6 @@ namespace Assistant
             this.advancedInfoTab.TabIndex = 0;
             this.advancedInfoTab.Text = "Information";
             // 
-            // advancedStaffTab
-            // 
-            this.advancedStaffTab.BackColor = System.Drawing.SystemColors.Control;
-            this.advancedStaffTab.Location = new System.Drawing.Point(4, 24);
-            this.advancedStaffTab.Name = "advancedStaffTab";
-            this.advancedStaffTab.Padding = new System.Windows.Forms.Padding(3);
-            this.advancedStaffTab.Size = new System.Drawing.Size(498, 285);
-            this.advancedStaffTab.TabIndex = 1;
-            this.advancedStaffTab.Text = "Staff Tools";
-            // 
             // fontDecrease
             // 
             this.fontDecrease.Location = new System.Drawing.Point(237, 135);
@@ -4937,6 +4801,15 @@ namespace Assistant
             this.fontIncrease.TabIndex = 93;
             this.fontIncrease.Text = "+";
             this.fontIncrease.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.Location = new System.Drawing.Point(240, 56);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(197, 20);
+            this.checkBox1.TabIndex = 89;
+            this.checkBox1.Text = "Negotiate features with server";
             // 
             // groupBox16
             // 
@@ -5045,18 +4918,10 @@ namespace Assistant
             this.features.Name = "features";
             this.features.ReadOnly = true;
             this.features.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.features.Size = new System.Drawing.Size(255, 117);
+            this.features.Size = new System.Drawing.Size(255, 115);
             this.features.TabIndex = 83;
             this.features.Visible = false;
             //
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.Location = new System.Drawing.Point(240, 56);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(197, 20);
-            this.checkBox1.TabIndex = 89;
-            this.checkBox1.Text = "Negotiate features with server";
             // groupBox6
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5218,6 +5083,178 @@ namespace Assistant
             this.undressConflicts.Text = "Auto-move conflicts";
             this.undressConflicts.CheckedChanged += new System.EventHandler(this.undressConflicts_CheckedChanged);
             // 
+            // advancedStaffTab
+            //
+            this.advancedStaffTab.BackColor = System.Drawing.SystemColors.Control;
+            this.advancedStaffTab.Controls.Add(this.itemTree);
+            this.advancedStaffTab.Controls.Add(this.artViewer);
+            this.advancedStaffTab.Location = new System.Drawing.Point(4, 24);
+            this.advancedStaffTab.Name = "advancedStaffTab";
+            this.advancedStaffTab.Padding = new System.Windows.Forms.Padding(3);
+            this.advancedStaffTab.Size = new System.Drawing.Size(498, 285);
+            this.advancedStaffTab.TabIndex = 1;
+            this.advancedStaffTab.Text = "Staff Tools";
+            // 
+            // itemTree
+            // 
+            this.itemTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.itemTree.Location = new System.Drawing.Point(6, 6);
+            this.itemTree.Name = "itemTree";
+            this.itemTree.Size = new System.Drawing.Size(209, 273);
+            this.itemTree.TabIndex = 1;
+            this.itemTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.itemTree_AfterSelect);
+            // 
+            // artViewer
+            // 
+            this.artViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.artViewer.Animate = false;
+            this.artViewer.Art = Assistant.UI.Art.Items;
+            this.artViewer.ArtIndex = 0;
+            this.artViewer.Hue = 0;
+            this.artViewer.Location = new System.Drawing.Point(313, 6);
+            this.artViewer.Name = "artViewer";
+            this.artViewer.ResizeTallItems = false;
+            this.artViewer.RoomView = true;
+            this.artViewer.ShowHexID = true;
+            this.artViewer.ShowID = true;
+            this.artViewer.Size = new System.Drawing.Size(179, 196);
+            this.artViewer.TabIndex = 0;
+            // 
+            // aboutTab
+            // 
+            this.aboutTab.Controls.Add(this.linkGitHub);
+            this.aboutTab.Controls.Add(this.lblCredits3);
+            this.aboutTab.Controls.Add(this.linkHelp);
+            this.aboutTab.Controls.Add(this.lblCredits2);
+            this.aboutTab.Controls.Add(this.label20);
+            this.aboutTab.Controls.Add(this.lblCredits1);
+            this.aboutTab.Controls.Add(this.aboutSubInfo);
+            this.aboutTab.Controls.Add(this.linkMain);
+            this.aboutTab.Controls.Add(this.label21);
+            this.aboutTab.Controls.Add(this.aboutVer);
+            this.aboutTab.Location = new System.Drawing.Point(4, 44);
+            this.aboutTab.Name = "aboutTab";
+            this.aboutTab.Size = new System.Drawing.Size(519, 322);
+            this.aboutTab.TabIndex = 9;
+            this.aboutTab.Text = "About";
+            // 
+            // linkGitHub
+            // 
+            this.linkGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkGitHub.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkGitHub.Location = new System.Drawing.Point(9, 157);
+            this.linkGitHub.Name = "linkGitHub";
+            this.linkGitHub.Size = new System.Drawing.Size(506, 20);
+            this.linkGitHub.TabIndex = 25;
+            this.linkGitHub.TabStop = true;
+            this.linkGitHub.Text = "https://github.com/markdwags/Razor";
+            this.linkGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGitHub_LinkClicked);
+            // 
+            // lblCredits3
+            // 
+            this.lblCredits3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCredits3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCredits3.Location = new System.Drawing.Point(8, 259);
+            this.lblCredits3.Name = "lblCredits3";
+            this.lblCredits3.Size = new System.Drawing.Size(503, 20);
+            this.lblCredits3.TabIndex = 24;
+            this.lblCredits3.Text = "Cross-platform implementation by DarkLotus";
+            this.lblCredits3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkHelp
+            // 
+            this.linkHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkHelp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkHelp.Location = new System.Drawing.Point(434, 10);
+            this.linkHelp.Name = "linkHelp";
+            this.linkHelp.Size = new System.Drawing.Size(78, 20);
+            this.linkHelp.TabIndex = 23;
+            this.linkHelp.TabStop = true;
+            this.linkHelp.Text = "Need Help?";
+            this.linkHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHelp_LinkClicked);
+            // 
+            // lblCredits2
+            // 
+            this.lblCredits2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCredits2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCredits2.Location = new System.Drawing.Point(9, 239);
+            this.lblCredits2.Name = "lblCredits2";
+            this.lblCredits2.Size = new System.Drawing.Size(503, 20);
+            this.lblCredits2.TabIndex = 22;
+            this.lblCredits2.Text = "Major design changes including ClassicUO integration by Jaedan";
+            this.lblCredits2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(12, 120);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(499, 17);
+            this.label20.TabIndex = 21;
+            this.label20.Text = "For feedback, support and the latest releases please visit:\r\n";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCredits1
+            // 
+            this.lblCredits1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCredits1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCredits1.Location = new System.Drawing.Point(6, 219);
+            this.lblCredits1.Name = "lblCredits1";
+            this.lblCredits1.Size = new System.Drawing.Size(506, 20);
+            this.lblCredits1.TabIndex = 19;
+            this.lblCredits1.Text = "Razor was designed by Zippy, modified and maintained by Quick";
+            this.lblCredits1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // aboutSubInfo
+            // 
+            this.aboutSubInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.aboutSubInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutSubInfo.Location = new System.Drawing.Point(6, 75);
+            this.aboutSubInfo.Name = "aboutSubInfo";
+            this.aboutSubInfo.Size = new System.Drawing.Size(506, 19);
+            this.aboutSubInfo.TabIndex = 17;
+            this.aboutSubInfo.Text = "Community Edition";
+            this.aboutSubInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkMain
+            // 
+            this.linkMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkMain.Location = new System.Drawing.Point(9, 137);
+            this.linkMain.Name = "linkMain";
+            this.linkMain.Size = new System.Drawing.Size(506, 20);
+            this.linkMain.TabIndex = 16;
+            this.linkMain.TabStop = true;
+            this.linkMain.Text = "https://www.razorce.com";
+            this.linkMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkMain.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(52, 98);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(0, 15);
+            this.label21.TabIndex = 15;
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // aboutVer
+            // 
+            this.aboutVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.aboutVer.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutVer.Location = new System.Drawing.Point(6, 40);
+            this.aboutVer.Name = "aboutVer";
+            this.aboutVer.Size = new System.Drawing.Size(506, 35);
+            this.aboutVer.TabIndex = 14;
+            this.aboutVer.Text = "Razor v{0}";
+            this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 16);
@@ -5321,14 +5358,15 @@ namespace Assistant
             this.screenshotTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenPrev)).EndInit();
             this.advancedTab.ResumeLayout(false);
-            this.aboutTab.ResumeLayout(false);
-            this.aboutTab.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.subAdvancedTab.ResumeLayout(false);
             this.advancedInfoTab.ResumeLayout(false);
             this.advancedInfoTab.PerformLayout();
             this.groupBox16.ResumeLayout(false);
+            this.advancedStaffTab.ResumeLayout(false);
+            this.aboutTab.ResumeLayout(false);
+            this.aboutTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5459,7 +5497,7 @@ namespace Assistant
         private Label hkCmdLabel;
         private ColumnHeader cliLocSound;
         private Button setSound;
-        private TabControl tabControl1;
+        private TabControl subAdvancedTab;
         private TabPage advancedInfoTab;
         private Button fontDecrease;
         private Button fontIncrease;
@@ -5479,5 +5517,7 @@ namespace Assistant
         private TextBox features;
         private TabPage advancedStaffTab;
         private CheckBox checkBox1;
+        private UI.ArtViewer artViewer;
+        private TreeView itemTree;
     }
 }
