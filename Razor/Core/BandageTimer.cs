@@ -1,5 +1,4 @@
 #region license
-
 // Razor: An Ultima Online Assistant
 // Copyright (c) 2022 Razor Development Community on GitHub <https://github.com/markdwags/Razor>
 // 
@@ -15,10 +14,10 @@
 // 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 #endregion
 
 using System;
+using Assistant.Core;
 
 namespace Assistant
 {
@@ -58,46 +57,11 @@ namespace Assistant
         static BandageTimer()
         {
             m_Timer = new InternalTimer();
+            
+            MessageManager.OnSystemMessage += OnSystemMessage;
         }
-
-        public static void OnLocalizedMessage(int num)
-        {
-            if (Running)
-            {
-                if (num == 500955 || (num >= 500962 && num <= 500969) || (num >= 503252 && num <= 503261) ||
-                    num == 1010058 || num == 1010648 || num == 1010650 || num == 1060088 || num == 1060167)
-                {
-                    Stop();
-
-                    if (Config.GetBool("ShowBandageTimer") && Config.GetBool("ShowBandageEnd"))
-                        ShowBandagingStatusMessage(Config.GetString("BandageEndMessage"));
-
-                    return;
-                }
-
-                // Check if they are re-healing before the timer ends
-                if (num == 500956)
-                {
-                    Start();
-
-                    if (Config.GetBool("ShowBandageTimer") && Config.GetBool("ShowBandageStart"))
-                        ShowBandagingStatusMessage(Config.GetString("BandageStartMessage"));
-                }
-            }
-            else
-            {
-                // Start timer as soon as there is the "You begin applying the bandages." message
-                if (num == 500956)
-                {
-                    Start();
-
-                    if (Config.GetBool("ShowBandageTimer") && Config.GetBool("ShowBandageStart"))
-                        ShowBandagingStatusMessage(Config.GetString("BandageStartMessage"));
-                }
-            }
-        }
-
-        public static void OnAsciiMessage(string msg)
+        
+        public static void OnSystemMessage(Packet p, PacketHandlerEventArgs args, Serial source, ushort graphic, MessageType type, ushort hue, ushort font, string lang, string sourceName, string msg)
         {
             if (Running)
             {
@@ -140,6 +104,43 @@ namespace Assistant
             {
                 // Start timer as soon as there is the "You begin applying the bandages." message
                 if (msg == "You begin applying the bandages.")
+                {
+                    Start();
+
+                    if (Config.GetBool("ShowBandageTimer") && Config.GetBool("ShowBandageStart"))
+                        ShowBandagingStatusMessage(Config.GetString("BandageStartMessage"));
+                }
+            }
+        }
+
+        public static void OnLocalizedMessage(int num)
+        {
+            if (Running)
+            {
+                if (num == 500955 || (num >= 500962 && num <= 500969) || (num >= 503252 && num <= 503261) ||
+                    num == 1010058 || num == 1010648 || num == 1010650 || num == 1060088 || num == 1060167)
+                {
+                    Stop();
+
+                    if (Config.GetBool("ShowBandageTimer") && Config.GetBool("ShowBandageEnd"))
+                        ShowBandagingStatusMessage(Config.GetString("BandageEndMessage"));
+
+                    return;
+                }
+
+                // Check if they are re-healing before the timer ends
+                if (num == 500956)
+                {
+                    Start();
+
+                    if (Config.GetBool("ShowBandageTimer") && Config.GetBool("ShowBandageStart"))
+                        ShowBandagingStatusMessage(Config.GetString("BandageStartMessage"));
+                }
+            }
+            else
+            {
+                // Start timer as soon as there is the "You begin applying the bandages." message
+                if (num == 500956)
                 {
                     Start();
 

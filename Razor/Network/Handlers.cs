@@ -1921,7 +1921,7 @@ namespace Assistant
             SpellPowerwordsBuilder.Insert(0, Config.GetString("SpellFormat"));
         }
 
-        public static void HandleSpeech(Packet p, PacketHandlerEventArgs args, Serial ser, ushort body,
+        /*public static void HandleSpeech(Packet p, PacketHandlerEventArgs args, Serial ser, ushort body,
             MessageType type, ushort hue, ushort font, string lang, string name, string text)
         {
             if (World.Player == null)
@@ -1967,7 +1967,7 @@ namespace Assistant
             else if (ser.IsMobile && type == MessageType.Label)
             {
                 Mobile m = World.FindMobile(ser);
-                if (m != null /*&& ( m.Name == null || m.Name == "" || m.Name == "(Not Seen)" )*/ &&
+                if (m != null /*&& ( m.Name == null || m.Name == "" || m.Name == "(Not Seen)" )#1# &&
                     m.Name.IndexOf(text) != 5 && m != World.Player && !(text.StartsWith("(") && text.EndsWith(")")))
                     m.Name = text;
             }
@@ -1975,7 +1975,7 @@ namespace Assistant
             { // send fake spells to bottom left
                  p.Seek( 3, SeekOrigin.Begin );
                  p.Write( (uint)0xFFFFFFFF );
-            }*/
+            }#1#
             else
             {
                 if (ser == Serial.MinusOne && name == "System")
@@ -2071,7 +2071,7 @@ namespace Assistant
                     }
                 }
             }
-        }
+        }*/
 
         public static void AsciiSpeech(Packet p, PacketHandlerEventArgs args)
         {
@@ -2093,14 +2093,7 @@ namespace Assistant
             }
             else
             {
-                HandleSpeech(p, args, serial, body, type, hue, font, "A", name, text);
-
-                if (!serial.IsValid)
-                {
-                    BandageTimer.OnAsciiMessage(text);
-                }
-
-                GateTimer.OnAsciiMessage(text);
+                MessageManager.HandleMessage(p, args, serial, body, type, hue, font, "A", name, text);
             }
         }
 
@@ -2116,12 +2109,7 @@ namespace Assistant
             string name = p.ReadStringSafe(30);
             string text = p.ReadUnicodeStringSafe();
 
-            HandleSpeech(p, args, serial, body, type, hue, font, lang, name, text);
-
-            if (!serial.IsValid)
-            {
-                BandageTimer.OnAsciiMessage(text);
-            }
+            MessageManager.HandleMessage(p, args, serial, body, type, hue, font, lang, name, text);
         }
 
         private static void OnLocalizedMessage(Packet p, PacketHandlerEventArgs args)
@@ -2151,7 +2139,7 @@ namespace Assistant
             try
             {
                 string text = Language.ClilocFormat(num, ext_str);
-                HandleSpeech(p, args, serial, body, type, hue, font, Language.CliLocName.ToUpper(), name, text);
+                MessageManager.HandleMessage(p, args, serial, body, type, hue, font, Language.CliLocName.ToUpper(), name, text);
             }
             catch (Exception e)
             {
@@ -2187,10 +2175,15 @@ namespace Assistant
 
             string text;
             if ((affixType & 1) != 0) // prepend
+            {
                 text = $"{affix}{Language.ClilocFormat(num, args)}";
+            }
             else // 0 == append, 2 = system
+            {
                 text = $"{Language.ClilocFormat(num, args)}{affix}";
-            HandleSpeech(p, phea, serial, body, type, hue, font, Language.CliLocName.ToUpper(), name, text);
+            }
+
+            MessageManager.HandleMessage(p, phea, serial, body, type, hue, font, Language.CliLocName.ToUpper(), name, text);
         }
 
         private static void SendGump(PacketReader p, PacketHandlerEventArgs args)
