@@ -194,12 +194,6 @@ namespace Assistant
             get { return m_MainWnd; }
         }
 
-        public static RazorScriptEditor RazorScriptEditorWindow
-        {
-            get { return m_RazorScriptEditorWnd; }
-            set { m_RazorScriptEditorWnd = value; }
-        }
-
         public static bool Running
         {
             get { return m_Running; }
@@ -226,8 +220,6 @@ namespace Assistant
         }
 
         private static MainForm m_MainWnd;
-
-        private static RazorScriptEditor m_RazorScriptEditorWnd;
 
         private static Form m_ActiveWnd;
 
