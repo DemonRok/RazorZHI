@@ -4125,9 +4125,9 @@ namespace Assistant
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptDocMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptDocMap.ForeColor = System.Drawing.Color.Maroon;
-            this.scriptDocMap.Location = new System.Drawing.Point(167, -4);
+            this.scriptDocMap.Location = new System.Drawing.Point(209, -4);
             this.scriptDocMap.Name = "scriptDocMap";
-            this.scriptDocMap.Size = new System.Drawing.Size(105, 272);
+            this.scriptDocMap.Size = new System.Drawing.Size(87, 272);
             this.scriptDocMap.TabIndex = 22;
             this.scriptDocMap.Target = null;
             // 
@@ -4147,7 +4147,7 @@ namespace Assistant
         '\"',
         '\'',
         '\''};
-            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(2, 15);
+            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(25, 15);
             this.scriptEditor.BackBrush = null;
             this.scriptEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptEditor.CaretColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
@@ -4169,7 +4169,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(161, 270);
+            this.scriptEditor.Size = new System.Drawing.Size(203, 270);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4869,6 +4869,7 @@ namespace Assistant
             this.openBackupFolder.TabIndex = 81;
             this.openBackupFolder.Text = "Open Folder";
             this.openBackupFolder.UseVisualStyleBackColor = true;
+            this.openBackupFolder.Click += new System.EventHandler(this.openBackupFolder_Click);
             // 
             // setBackupFolder
             // 
@@ -4878,6 +4879,7 @@ namespace Assistant
             this.setBackupFolder.TabIndex = 80;
             this.setBackupFolder.Text = "Set Folder";
             this.setBackupFolder.UseVisualStyleBackColor = true;
+            this.setBackupFolder.Click += new System.EventHandler(this.setBackupFolder_Click);
             // 
             // createBackup
             // 
@@ -4887,6 +4889,7 @@ namespace Assistant
             this.createBackup.TabIndex = 79;
             this.createBackup.Text = "Create Backup";
             this.createBackup.UseVisualStyleBackColor = true;
+            this.createBackup.Click += new System.EventHandler(this.createBackup_Click);
             // 
             // openRazorDataDir
             // 
@@ -4897,6 +4900,7 @@ namespace Assistant
             this.openRazorDataDir.TabIndex = 88;
             this.openRazorDataDir.Text = "Open Data Directory";
             this.openRazorDataDir.UseVisualStyleBackColor = true;
+            this.openRazorDataDir.Click += new System.EventHandler(this.openRazorDataDir_Click);
             // 
             // msglvl
             // 

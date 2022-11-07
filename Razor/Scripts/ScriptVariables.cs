@@ -89,7 +89,7 @@ namespace Assistant.Scripts
             }
         }
 
-        public static List<ScriptVariable> ScriptVariableList = new List<ScriptVariable>();
+        public static List<ScriptVariable> ScriptVariableList { get; set; } = new List<ScriptVariable>();
 
         public static void Save(XmlTextWriter xml)
         {
