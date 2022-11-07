@@ -1204,10 +1204,22 @@ namespace Assistant.Scripts
                 {
                     _lastDressList.Dress();
                 }
-                else if (!quiet)
+                else
                 {
-                    CommandHelper.SendWarning(command, $"'{vars[0].AsString()}' not found", quiet);
-                    return true;
+                    Serial serial = vars[0].AsSerial();
+                    Item item = World.FindItem(serial);
+                    if (item != null)
+                    {
+                        DressList dressList = new DressList("temp");
+                        dressList.Items.Add(serial);
+                        dressList.Dress();
+                        _lastDressList = dressList;
+                    }
+                    else
+                    {
+                        CommandHelper.SendWarning(command, $"'{vars[0].AsString()}' not found", quiet);
+                        return true;
+                    }
                 }
             }
             else if (ActionQueue.Empty)
@@ -1248,7 +1260,20 @@ namespace Assistant.Scripts
                     }
                     else
                     {
-                        throw new RunTimeError($"'{vars[0].AsString()}' not found");
+                        Serial serial = vars[0].AsSerial();
+                        Item item = World.FindItem(serial);
+                        if (item != null)
+                        {
+                            DressList undressList = new DressList("temp");
+                            undressList.Items.Add(serial);
+                            undressList.Undress();
+                            _lastUndressList = undressList;
+                        }
+                        else
+                        {
+                            CommandHelper.SendWarning(command, $"'{vars[0].AsString()}' not found", quiet);
+                            return true;
+                        }
                     }
                 }
             }
