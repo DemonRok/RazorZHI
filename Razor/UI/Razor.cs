@@ -507,6 +507,8 @@ namespace Assistant
 
             nextPrevAbcOrder.SafeAction(s => { s.Checked = Config.GetBool("NextPrevAlphabetical"); });
 
+            playEmoteSound.SafeAction(s => { s.Checked = Config.GetBool("PlayEmoteSound"); });
+
             EngineZHI160922.MainWindow.Size = new Size(Config.GetInt("WindowSizeX"), Config.GetInt("WindowSizeY"));
 
             // Disable SmartCPU in case it was enabled before the feature was removed
@@ -8021,6 +8023,12 @@ namespace Assistant
             }
 
             return filteredNodes.ToArray();
+
+        }
+
+        private void playEmoteSound_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("PlayEmoteSound", playEmoteSound.Checked);
         }
     }
 }
