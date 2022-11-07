@@ -1306,9 +1306,19 @@ namespace Assistant.Scripts
             //Assistant.Macros.GumpResponseAction|1|0|1|0&Hello How are you?
             //Assistant.Macros.GumpResponseAction|501|0|2|1&box2|0&box1
 
-            Client.Instance.SendToClient(new CloseGump(World.Player.CurrentGumpI));
-            Client.Instance.SendToServer(new GumpResponse(World.Player.CurrentGumpS, World.Player.CurrentGumpI,
-                buttonId, new int[] { }, new GumpTextEntry[] { }));
+            uint gumpI = World.Player.CurrentGumpI;
+            if (vars.Length > 0)
+            {
+                gumpI = vars[0].AsUInt();
+            }
+            if (!World.Player.GumpList.ContainsKey(gumpI))
+            {
+                CommandHelper.SendWarning(command, $"'{gumpI}' unknown gump id", quiet);
+                return true;
+            }
+            uint gumpS = World.Player.GumpList[gumpI].GumpSerial;
+            Client.Instance.SendToClient(new CloseGump(gumpI));
+            Client.Instance.SendToServer(new GumpResponse(gumpS, gumpI, 0, new int[] { }, new GumpTextEntry[] { }));
 
             World.Player.HasGump = false;
             World.Player.HasCompressedGump = false;

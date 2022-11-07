@@ -2039,7 +2039,7 @@ namespace Assistant
             World.Player.CurrentGumpS = p.ReadUInt32();
             World.Player.CurrentGumpI = p.ReadUInt32();
             World.Player.HasGump = true;
-            //byte[] data = p.CopyBytes( 11, p.Length - 11 );
+            World.Player.GumpList.Add(World.Player.CurrentGumpI, new PlayerData.GumpInfo(World.Player.CurrentGumpS, World.Player.CurrentGumpI));
 
             if (Macros.MacroManager.AcceptActions &&
                 MacroManager.Action(new WaitForGumpAction(World.Player.CurrentGumpI)))
@@ -2056,6 +2056,8 @@ namespace Assistant
             Serial ser = p.ReadUInt32();
             uint gumpId = p.ReadUInt32();
             int buttonId = p.ReadInt32();
+
+            World.Player.GumpList.Remove(gumpId);
 
             World.Player.HasGump = false;
             World.Player.HasCompressedGump = false;
@@ -2124,6 +2126,9 @@ namespace Assistant
                     // int serial, int tid
                     if (World.Player != null)
                     {
+                        uint gumpId = p.ReadUInt32();
+
+                        World.Player.GumpList.Remove(gumpId); 
                         World.Player.HasGump = false;
                         World.Player.HasCompressedGump = false;
                     }
@@ -2727,6 +2732,13 @@ namespace Assistant
                     }
                 }
 
+                if (World.Player.GumpList.ContainsKey(World.Player.CurrentGumpI))
+                {
+                    World.Player.GumpList.Remove(World.Player.CurrentGumpI);
+                }
+
+                World.Player.GumpList.Add(World.Player.CurrentGumpI, new PlayerData.GumpInfo(World.Player.CurrentGumpS, World.Player.CurrentGumpI, gumpStrings)); 
+                
                 World.Player.CurrentGumpStrings.AddRange(gumpStrings);
                 World.Player.CurrentGumpRawData = layout; // Get raw data of current gump
             }
