@@ -789,7 +789,7 @@ namespace Assistant
         public uint PromptType;
         public string PromptInputText;
 
-        public Dictionary<uint, GumpInfo> GumpList = new Dictionary<uint, GumpInfo>();
+        public Dictionary<uint, GumpInfo> GumpList { get; set; } = new Dictionary<uint, GumpInfo>();
         public class GumpInfo
         {
             private uint _serial;

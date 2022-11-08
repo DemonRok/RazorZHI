@@ -2039,7 +2039,11 @@ namespace Assistant
             World.Player.CurrentGumpS = p.ReadUInt32();
             World.Player.CurrentGumpI = p.ReadUInt32();
             World.Player.HasGump = true;
-            World.Player.GumpList.Add(World.Player.CurrentGumpI, new PlayerData.GumpInfo(World.Player.CurrentGumpS, World.Player.CurrentGumpI));
+            
+            if (!World.Player.GumpList.TryGetValue(World.Player.CurrentGumpI, out PlayerData.GumpInfo _))
+            {
+                World.Player.GumpList.Add(World.Player.CurrentGumpI, new PlayerData.GumpInfo(World.Player.CurrentGumpS, World.Player.CurrentGumpI));
+            }
 
             if (Macros.MacroManager.AcceptActions &&
                 MacroManager.Action(new WaitForGumpAction(World.Player.CurrentGumpI)))

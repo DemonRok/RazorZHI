@@ -20,6 +20,7 @@
 
 using System;
 using System.IO;
+using Assistant.Agents;
 
 namespace Assistant.Core
 {
@@ -98,23 +99,17 @@ namespace Assistant.Core
 
                     break;
                 default:
-                    if (source == Serial.MinusOne && sourceName == "System")
+                    OnSystemMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
+
+                    if (GetLabelCommand)
                     {
-                        OnSystemMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
+                        OnLabelMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
+                    }
+                    else
+                    {
+                        OnMobileMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
                     }
 
-                    if (source.IsMobile && source != World.Player.Serial)
-                    {
-                        if (GetLabelCommand)
-                        {
-                            OnLabelMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
-                        }
-                        else
-                        {
-                            OnMobileMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
-                        }
-                    }
-                    
                     break;
             }
         }
