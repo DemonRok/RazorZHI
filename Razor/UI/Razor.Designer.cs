@@ -1150,6 +1150,17 @@ namespace Assistant
             this.subOptionsSpeechTab.TabIndex = 0;
             this.subOptionsSpeechTab.Text = "Speech & Messages  ";
             // 
+            // playEmoteSound
+            // 
+            this.playEmoteSound.AutoSize = true;
+            this.playEmoteSound.Location = new System.Drawing.Point(260, 235);
+            this.playEmoteSound.Name = "playEmoteSound";
+            this.playEmoteSound.Size = new System.Drawing.Size(136, 19);
+            this.playEmoteSound.TabIndex = 131;
+            this.playEmoteSound.Text = "Play *emote* sounds";
+            this.playEmoteSound.UseVisualStyleBackColor = true;
+            this.playEmoteSound.CheckedChanged += new System.EventHandler(this.playEmoteSound_CheckedChanged);
+            // 
             // overrideSpellFormat
             // 
             this.overrideSpellFormat.Location = new System.Drawing.Point(9, 205);
@@ -4088,7 +4099,7 @@ namespace Assistant
             // 
             // scriptSplitContainer.Panel2
             // 
-            this.scriptSplitContainer.Panel2.Controls.Add(this.scriptDocMap); 
+            this.scriptSplitContainer.Panel2.Controls.Add(this.scriptDocMap);
             this.scriptSplitContainer.Panel2.Controls.Add(this.scriptEditor);
             this.scriptSplitContainer.Size = new System.Drawing.Size(419, 268);
             this.scriptSplitContainer.SplitterDistance = 110;
@@ -4121,11 +4132,11 @@ namespace Assistant
             // 
             // scriptDocMap
             // 
-            this.scriptDocMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.scriptDocMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptDocMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptDocMap.ForeColor = System.Drawing.Color.Maroon;
-            this.scriptDocMap.Location = new System.Drawing.Point(209, -4);
+            this.scriptDocMap.Location = new System.Drawing.Point(203, -4);
             this.scriptDocMap.Name = "scriptDocMap";
             this.scriptDocMap.Size = new System.Drawing.Size(87, 272);
             this.scriptDocMap.TabIndex = 22;
@@ -4147,7 +4158,7 @@ namespace Assistant
         '\"',
         '\'',
         '\''};
-            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(25, 15);
+            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(2, 15);
             this.scriptEditor.BackBrush = null;
             this.scriptEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptEditor.CaretColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
@@ -4169,7 +4180,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(203, 270);
+            this.scriptEditor.Size = new System.Drawing.Size(197, 270);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4957,9 +4968,6 @@ namespace Assistant
             // advancedStaffDeco
             // 
             this.advancedStaffDeco.BackColor = System.Drawing.SystemColors.Control;
-            this.advancedStaffDeco.Controls.Add(this.itemAppendM);
-            this.advancedStaffDeco.Controls.Add(this.itemCopyToClipboard);
-            this.advancedStaffDeco.Controls.Add(this.itemSearch);
             this.advancedStaffDeco.Controls.Add(this.itemMovable);
             this.advancedStaffDeco.Controls.Add(this.itemAppendM);
             this.advancedStaffDeco.Controls.Add(this.itemCopyToClipboard);
@@ -5003,7 +5011,7 @@ namespace Assistant
             // itemSearch
             // 
             this.itemSearch.AcceptsReturn = true;
-            this.itemSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.itemSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itemSearch.Location = new System.Drawing.Point(6, 6);
             this.itemSearch.Name = "itemSearch";
@@ -5378,17 +5386,6 @@ namespace Assistant
             this.aboutVer.Text = "Razor v{0}";
             this.aboutVer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // playEmoteSound
-            // 
-            this.playEmoteSound.AutoSize = true;
-            this.playEmoteSound.Location = new System.Drawing.Point(260, 235);
-            this.playEmoteSound.Name = "playEmoteSound";
-            this.playEmoteSound.Size = new System.Drawing.Size(136, 19);
-            this.playEmoteSound.TabIndex = 131;
-            this.playEmoteSound.Text = "Play *emote* sounds";
-            this.playEmoteSound.UseVisualStyleBackColor = true;
-            this.playEmoteSound.CheckedChanged += new System.EventHandler(this.playEmoteSound_CheckedChanged);
-            // 
             // groupBox6
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5556,7 +5553,6 @@ namespace Assistant
             this.ClientSize = new System.Drawing.Size(530, 372);
             this.Controls.Add(this.tabs);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(546, 411);
             this.Name = "MainForm";
