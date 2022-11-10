@@ -19,11 +19,9 @@
 #endregion
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using Assistant.Core;
 using Assistant.HotKeys;
 using Assistant.Scripts.EngineZHI160922;
@@ -74,11 +72,11 @@ namespace Assistant.Scripts
             // Hotkey execution
             Interpreter.RegisterCommandHandler("hotkey", Hotkey); //HotKeyAction
 
-            
 
-            Interpreter.RegisterCommandHandler("overhead", HeadMsg); //OverheadMessageAction
-            Interpreter.RegisterCommandHandler("headmsg", HeadMsg); //OverheadMessageAction
-            Interpreter.RegisterCommandHandler("sysmsg", SysMsg); //SystemMessageAction
+
+            Interpreter.RegisterCommandHandler("overhead", OverheadMessage); //OverheadMessageAction
+            Interpreter.RegisterCommandHandler("headmsg", OverheadMessage); //OverheadMessageAction
+            Interpreter.RegisterCommandHandler("sysmsg", SystemMessage); //SystemMessageAction
             Interpreter.RegisterCommandHandler("clearsysmsg", ClearSysMsg); //SystemMessageAction
             Interpreter.RegisterCommandHandler("clearjournal", ClearSysMsg); //SystemMessageAction
 
@@ -128,12 +126,12 @@ namespace Assistant.Scripts
 
         private enum GetLabelState
         {
-            NONE,
-            WAITING_FOR_FIRST_LABEL,
-            WAITING_FOR_REMAINING_LABELS
+            None,
+            WaitingForFirstLabel,
+            WaitingForRemainingLabels
         };
 
-        private static GetLabelState _getLabelState = GetLabelState.NONE;
+        private static GetLabelState _getLabelState = GetLabelState.None;
         private static Action<Packet, PacketHandlerEventArgs, Serial, ushort, MessageType, ushort, ushort, string, string, string> _onLabelMessage;
         private static Action _onStop;
 
@@ -156,14 +154,14 @@ namespace Assistant.Scripts
 
             switch (_getLabelState)
             {
-                case GetLabelState.NONE:
-                    _getLabelState = GetLabelState.WAITING_FOR_FIRST_LABEL;
+                case GetLabelState.None:
+                    _getLabelState = GetLabelState.WaitingForFirstLabel;
                     Interpreter.Timeout(2000, () =>
                     {
                         MessageManager.OnLabelMessage -= _onLabelMessage;
                         _onLabelMessage = null;
                         Interpreter.OnStop -= _onStop;
-                        _getLabelState = GetLabelState.NONE;
+                        _getLabelState = GetLabelState.None;
                         MessageManager.GetLabelCommand = false;
                         return true;
                     });
@@ -186,7 +184,7 @@ namespace Assistant.Scripts
                             MessageManager.OnLabelMessage -= _onLabelMessage;
                             _onLabelMessage = null;
                         }
-                        _getLabelState = GetLabelState.NONE;
+                        _getLabelState = GetLabelState.None;
 
                         Interpreter.OnStop -= _onStop;
                         MessageManager.GetLabelCommand = false;
@@ -199,10 +197,10 @@ namespace Assistant.Scripts
 
                         a.Block = true;
 
-                        if (_getLabelState == GetLabelState.WAITING_FOR_FIRST_LABEL)
+                        if (_getLabelState == GetLabelState.WaitingForFirstLabel)
                         {
                             // After the first message, switch to a pause instead of a timeout.
-                            _getLabelState = GetLabelState.WAITING_FOR_REMAINING_LABELS;
+                            _getLabelState = GetLabelState.WaitingForRemainingLabels;
                             Interpreter.Pause(500);
                         }
 
@@ -215,15 +213,15 @@ namespace Assistant.Scripts
                     MessageManager.OnLabelMessage += _onLabelMessage;
 
                     break;
-                case GetLabelState.WAITING_FOR_FIRST_LABEL:
+                case GetLabelState.WaitingForFirstLabel:
                     break;
-                case GetLabelState.WAITING_FOR_REMAINING_LABELS:
+                case GetLabelState.WaitingForRemainingLabels:
                     // We get here after the pause has expired.
                     Interpreter.OnStop -= _onStop;
                     MessageManager.OnLabelMessage -= _onLabelMessage;
 
                     _onLabelMessage = null;
-                    _getLabelState = GetLabelState.NONE;
+                    _getLabelState = GetLabelState.None;
 
                     MessageManager.GetLabelCommand = false;
 
@@ -351,12 +349,12 @@ namespace Assistant.Scripts
             return true;
         }
 
-        private static string[] virtues = new string[3] { "honor", "sacrifice", "valor" };
+        private static readonly string[] Virtues = { "honor", "sacrifice", "valor" };
 
         private static bool Virtue(string command, Variable[] vars, bool quiet, bool force)
         {
 
-            if (vars.Length == 0 || !virtues.Contains(vars[0].AsString()))
+            if (vars.Length == 0 || !Virtues.Contains(vars[0].AsString()))
             {
                 throw new RunTimeError("Usage: virtue ('honor'/'sacrifice'/'valor')");
             }
@@ -597,11 +595,11 @@ namespace Assistant.Scripts
             return false;
         }
 
-        private static string[] abilities = new string[4] {"primary", "secondary", "stun", "disarm"};
+        private static readonly string[] Abilities = { "primary", "secondary", "stun", "disarm" };
 
         private static bool SetAbility(string command, Variable[] vars, bool quiet, bool force)
         {
-            if (vars.Length < 1 || !abilities.Contains(vars[0].AsString()))
+            if (vars.Length < 1 || !Abilities.Contains(vars[0].AsString()))
             {
                 throw new RunTimeError("Usage: setability ('primary'/'secondary'/'stun'/'disarm') ['on'/'off']");
             }
@@ -622,8 +620,6 @@ namespace Assistant.Scripts
                     case "disarm":
                         Client.Instance.SendToServer(new DisarmRequest());
                         break;
-                    default:
-                        break;
                 }
             }
             else if (vars.Length == 2 && vars[1].AsString() == "off")
@@ -635,11 +631,11 @@ namespace Assistant.Scripts
             return true;
         }
 
-        private static string[] hands = new string[4] {"left", "right", "both", "hands"};
+        private static readonly string[] Hands = { "left", "right", "both", "hands" };
 
         private static bool ClearHands(string command, Variable[] vars, bool quiet, bool force)
         {
-            if (vars.Length == 0 || !hands.Contains(vars[0].AsString()))
+            if (vars.Length == 0 || !Hands.Contains(vars[0].AsString()))
             {
                 throw new RunTimeError("Usage: clearhands ('left'/'right'/'both')");
             }
@@ -740,7 +736,7 @@ namespace Assistant.Scripts
                 throw new RunTimeError("Usage: dclick (serial) or dclick ('left'/'right'/'hands')");
             }
 
-            if (hands.Contains(vars[0].AsString()))
+            if (Hands.Contains(vars[0].AsString()))
             {
                 Item item;
 
@@ -1146,7 +1142,7 @@ namespace Assistant.Scripts
             return true;
         }
 
-        private static bool HeadMsg(string command, Variable[] vars, bool quiet, bool force)
+        private static bool OverheadMessage(string command, Variable[] vars, bool quiet, bool force)
         {
             if (vars.Length == 0)
             {
@@ -1160,7 +1156,7 @@ namespace Assistant.Scripts
             {
                 World.Player.OverheadMessage(Config.GetInt("SysColor"), overheadMessage);
             }
-            else
+            else if (vars.Length == 2)
             {
                 int hue = Utility.ToInt32(vars[1].AsString(), 0);
 
@@ -1168,7 +1164,7 @@ namespace Assistant.Scripts
                 {
                     uint serial = vars[2].AsSerial();
                     Mobile m = World.FindMobile(serial);
-                    m?.OverheadMessage(hue, vars[0].AsString());
+                    m?.OverheadMessage(hue, overheadMessage);
                 }
                 else
                 {
@@ -1179,7 +1175,7 @@ namespace Assistant.Scripts
             return true;
         }
 
-        private static bool SysMsg(string command, Variable[] vars, bool quiet, bool force)
+        private static bool SystemMessage(string command, Variable[] vars, bool quiet, bool force)
         {
             if (vars.Length == 0)
             {
@@ -1195,7 +1191,7 @@ namespace Assistant.Scripts
             }
             else if (vars.Length == 2)
             {
-                World.Player.SendMessage(Utility.ToInt32(vars[1].AsString(), 0), vars[0].AsString());
+                World.Player.SendMessage(Utility.ToInt32(vars[1].AsString(), 0), sysMessage);
             }
 
             return true;
