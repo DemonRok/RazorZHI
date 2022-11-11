@@ -704,10 +704,10 @@ namespace Assistant
             this.statusBox = new System.Windows.Forms.TextBox();
             this.features = new System.Windows.Forms.TextBox();
             this.advancedStaffDeco = new System.Windows.Forms.TabPage();
+            this.itemMovable = new System.Windows.Forms.CheckBox();
             this.itemAppendM = new System.Windows.Forms.CheckBox();
             this.itemCopyToClipboard = new System.Windows.Forms.CheckBox();
             this.itemSearch = new System.Windows.Forms.TextBox();
-            this.itemMovable = new System.Windows.Forms.CheckBox();
             this.itemRandomNumber = new System.Windows.Forms.NumericUpDown();
             this.itemRandom = new System.Windows.Forms.CheckBox();
             this.itemTileCount = new System.Windows.Forms.NumericUpDown();
@@ -4136,7 +4136,7 @@ namespace Assistant
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptDocMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptDocMap.ForeColor = System.Drawing.Color.Maroon;
-            this.scriptDocMap.Location = new System.Drawing.Point(203, -4);
+            this.scriptDocMap.Location = new System.Drawing.Point(197, -4);
             this.scriptDocMap.Name = "scriptDocMap";
             this.scriptDocMap.Size = new System.Drawing.Size(87, 272);
             this.scriptDocMap.TabIndex = 22;
@@ -4158,7 +4158,7 @@ namespace Assistant
         '\"',
         '\'',
         '\''};
-            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(2, 15);
+            this.scriptEditor.AutoScrollMinSize = new System.Drawing.Size(25, 15);
             this.scriptEditor.BackBrush = null;
             this.scriptEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptEditor.CaretColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
@@ -4180,7 +4180,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(197, 270);
+            this.scriptEditor.Size = new System.Drawing.Size(191, 270);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4189,6 +4189,8 @@ namespace Assistant
             // 
             // scriptGuide
             // 
+            this.scriptGuide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptGuide.AutoSize = true;
             this.scriptGuide.Location = new System.Drawing.Point(432, 249);
             this.scriptGuide.Name = "scriptGuide";
             this.scriptGuide.Size = new System.Drawing.Size(60, 26);
@@ -4235,6 +4237,8 @@ namespace Assistant
             // 
             // recordScript
             // 
+            this.recordScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.recordScript.AutoSize = true;
             this.recordScript.Location = new System.Drawing.Point(432, 45);
             this.recordScript.Name = "recordScript";
             this.recordScript.Size = new System.Drawing.Size(60, 32);
@@ -4986,6 +4990,17 @@ namespace Assistant
             this.advancedStaffDeco.TabIndex = 1;
             this.advancedStaffDeco.Text = "Decoration";
             // 
+            // itemMovable
+            // 
+            this.itemMovable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.itemMovable.AutoSize = true;
+            this.itemMovable.Location = new System.Drawing.Point(221, 109);
+            this.itemMovable.Name = "itemMovable";
+            this.itemMovable.Size = new System.Drawing.Size(72, 19);
+            this.itemMovable.TabIndex = 8;
+            this.itemMovable.Text = "Movable";
+            this.itemMovable.UseVisualStyleBackColor = true;
+            // 
             // itemAppendM
             // 
             this.itemAppendM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -5019,17 +5034,6 @@ namespace Assistant
             this.itemSearch.TabIndex = 9;
             this.itemSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.itemSearch_KeyDown);
             this.itemSearch.LostFocus += new System.EventHandler(this.itemSearch_LostFocus);
-            // 
-            // itemMovable
-            // 
-            this.itemMovable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.itemMovable.AutoSize = true;
-            this.itemMovable.Location = new System.Drawing.Point(221, 109);
-            this.itemMovable.Name = "itemMovable";
-            this.itemMovable.Size = new System.Drawing.Size(72, 19);
-            this.itemMovable.TabIndex = 8;
-            this.itemMovable.Text = "Movable";
-            this.itemMovable.UseVisualStyleBackColor = true;
             // 
             // itemRandomNumber
             // 
