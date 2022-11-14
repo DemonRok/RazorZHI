@@ -26,7 +26,7 @@ namespace Assistant.Gumps.Internal
 {
     public sealed class SystemMessagesGump : Gump
     {
-        public SystemMessagesGump() : base(0, 0)
+        public SystemMessagesGump() : base(5, 35)
         {
             Closable = true;
             Disposable = true;
@@ -47,7 +47,9 @@ namespace Assistant.Gumps.Internal
             int id = 0;
             int count = 0;
 
-            foreach (string message in SystemMessages.Messages.ToArray().Reverse())
+            //DemonRok limitato a 3 pagine da MessageManager.cs
+            //foreach (string message in SystemMessages.Messages.ToArray().Reverse())
+            foreach (string message in SystemMessages.Messages.ToArray())
             {
                 AddButton(18, buttonY, 1209, 1210, id, GumpButtonType.Reply, 0);
                 AddTextEntry(44, textY, 463, 20, 2954, id, SystemMessages.Messages[count]);

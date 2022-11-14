@@ -53,10 +53,10 @@ namespace Assistant.Core
                 OverheadManager.DisplayOverheadMessage(text);
             }
 
-            if (!source.IsValid || source == World.Player.Serial || source.IsItem)
-            {
+            //if (!source.IsValid || source == World.Player.Serial || source.IsItem)
+            //{
                 Add(text);
-            }
+            //}
             if (Config.GetBool("FilterSystemMessages") && source == Serial.MinusOne || source == Serial.Zero)
             {
                 if (!MessageQueue.Enqueue(source, null, graphic, type, hue, font, lang, sourceName, text))
@@ -73,11 +73,18 @@ namespace Assistant.Core
                 return;
             }
 
-            Messages.Add(text);
+            if (Messages.Count == 0)
+            { 
+                Messages.Add(text);
+            }
+            else
+            { 
+                Messages.Insert(0, text);
+            }
 
-            if (Messages.Count >= 100)
+            if (Messages.Count >= 16)
             {
-                Messages.RemoveRange(0, 10);
+                Messages.RemoveAt(Messages.Count - 1);
             }
         }
 
