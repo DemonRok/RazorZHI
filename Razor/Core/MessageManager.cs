@@ -90,7 +90,7 @@ namespace Assistant.Core
                                 {
                                     if (sound != 0)
                                     {
-                                        Client.Instance.SendToClient(new PlaySound((int) sound));
+                                        Client.Instance.SendToClient(new PlaySound((int)sound));
                                     }
                                 }
                             }
@@ -98,19 +98,16 @@ namespace Assistant.Core
                     }
 
                     break;
-                default:
-                    OnSystemMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
+            }
 
-                    if (GetLabelCommand)
-                    {
-                        OnLabelMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
-                    }
-                    else
-                    {
-                        OnMobileMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
-                    }
-
-                    break;
+            OnSystemMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
+            if (GetLabelCommand)
+            {
+                OnLabelMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
+            }
+            else
+            {
+                OnMobileMessage?.Invoke(p, args, source, graphic, type, hue, font, lang, sourceName, text);
             }
         }
 
