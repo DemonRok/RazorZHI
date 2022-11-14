@@ -118,10 +118,14 @@ namespace Assistant.Core
                                  MessageType type, ushort hue, ushort font, string lang, string sourceName,
                                  string text)
         {
-            if (Config.GetBool("ForceSpeechHue"))
+            if ((type == MessageType.Emote || type == MessageType.Regular || type == MessageType.Whisper ||
+                 type == MessageType.Yell) && source.IsMobile && source != World.Player.Serial)
             {
-                p.Seek(10, SeekOrigin.Begin);
-                p.Write((ushort)Config.GetInt("SpeechHue"));
+                if (Config.GetBool("ForceSpeechHue"))
+                {
+                    p.Seek(10, SeekOrigin.Begin);
+                    p.Write((ushort)Config.GetInt("SpeechHue"));
+                }
             }
         }
     }
