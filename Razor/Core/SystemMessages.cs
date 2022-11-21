@@ -99,7 +99,7 @@ namespace Assistant.Core
             {
                 if (Messages[i].IndexOf(text, StringComparison.OrdinalIgnoreCase) != -1)
                 {
-                    Messages.RemoveRange(0, i + 1);
+                    //Messages.RemoveRange(0, i + 1);
                     return true;
                 }
             }
