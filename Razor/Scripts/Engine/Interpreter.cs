@@ -950,7 +950,12 @@ namespace Assistant.Scripts.EngineZHI160922
                     case ASTNodeType.IN:
                         return ((string)rhs).Contains((string)lhs);
                     case ASTNodeType.AS:
-                        Interpreter.SetVariable(rhs.ToString(), lhs.ToString());
+
+                        if ((uint)lhs > 0)
+                        {
+                            Interpreter.SetVariable(rhs.ToString(), lhs.ToString());
+                        }
+
                         return CompareOperands(ASTNodeType.EQUAL, lhs, true);
                 }
             }
