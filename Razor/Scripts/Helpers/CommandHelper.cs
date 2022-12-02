@@ -29,12 +29,12 @@ namespace Assistant.Scripts.Helpers
             else if (inRange) // inrange includes both backpack and within 2 tiles
             {
                 items.AddRange(World.FindItemsByName(name).Where(item =>
-                    !item.IsInBank && (Utility.InRange(World.Player.Position, item.Position, 2) ||
+                    !item.IsInBank && !Interpreter.CheckIgnored(item.Serial) && (Utility.InRange(World.Player.Position, item.Position, 2) ||
                                        item.RootContainer == World.Player)).ToList());
             }
             else
             {
-                items.AddRange(World.FindItemsByName(name).Where(item => !item.IsInBank).ToList());
+                items.AddRange(World.FindItemsByName(name).Where(item => !item.IsInBank && !Interpreter.CheckIgnored(item.Serial)).ToList());
             }
 
             if (hue > -1)
@@ -59,17 +59,17 @@ namespace Assistant.Scripts.Helpers
 
             if (backpack && World.Player.Backpack != null)
             {
-                items = World.Player.Backpack.FindItemsById(id, true);
+                items = World.Player.Backpack.FindItemsById(id, true).Where(item => !Interpreter.CheckIgnored(item.Serial)).ToList();
             } 
             else if (inRange)
             {
                 items.AddRange(World.FindItemsById(id).Where(item =>
-                    !item.IsInBank && (Utility.InRange(World.Player.Position, item.Position, 2) ||
+                    !item.IsInBank && !Interpreter.CheckIgnored(item.Serial) && (Utility.InRange(World.Player.Position, item.Position, 2) ||
                                        item.RootContainer == World.Player)).ToList());
             }
             else
             {
-                items.AddRange(World.FindItemsById(id).Where(item => !item.IsInBank).ToList());
+                items.AddRange(World.FindItemsById(id).Where(item => !item.IsInBank && !Interpreter.CheckIgnored(item.Serial)).ToList());
             }
 
             if (hue > -1)
@@ -93,11 +93,11 @@ namespace Assistant.Scripts.Helpers
             if (inRange)
             {
                 mobiles = World.FindMobilesByName(name)
-                    .Where(m => Utility.InRange(World.Player.Position, m.Position, 2)).ToList();
+                    .Where(m => Utility.InRange(World.Player.Position, m.Position, 2) && !Interpreter.CheckIgnored(m.Serial)).ToList();
             }
             else
             {
-                mobiles = World.FindMobilesByName(name);
+                mobiles = World.FindMobilesByName(name).Where(m => !Interpreter.CheckIgnored(m.Serial)).ToList();
             }
 
             return mobiles;
@@ -116,11 +116,11 @@ namespace Assistant.Scripts.Helpers
             if (inRange)
             {
                 mobiles = World.MobilesInRange()
-                    .Where(m => Utility.InRange(World.Player.Position, m.Position, 2) && m.Body == id).ToList();
+                    .Where(m => Utility.InRange(World.Player.Position, m.Position, 2) && m.Body == id && !Interpreter.CheckIgnored(m.Serial)).ToList();
             }
             else
             {
-                mobiles = World.MobilesInRange().Where(m => m.Body == id).ToList();
+                mobiles = World.MobilesInRange().Where(m => m.Body == id && !Interpreter.CheckIgnored(m.Serial)).ToList();
             }
 
             return mobiles;

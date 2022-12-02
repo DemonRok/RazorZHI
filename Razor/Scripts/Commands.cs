@@ -329,13 +329,25 @@ namespace Assistant.Scripts
         {
             if (vars.Length != 1)
             {
-                throw new RunTimeError("Usage: ignore (serial)");
+                throw new RunTimeError("Usage: ignore ('serial')");
+            }
+            var serial = vars[0].AsSerial();
+            Interpreter.AddIgnore(serial);
+            CommandHelper.SendMessage($"Added '{serial}' to ignore list", quiet);
+            return true;
+        }
+
+        private static bool RemoveIgnore(string commands, Variable[] vars, bool quiet, bool force)
+        {
+            if (vars.Length != 1)
+            {
+                throw new RunTimeError("Usage: unignore ('serial')");
             }
 
             var serial = vars[0].AsSerial();
             Interpreter.AddIgnore(serial);
 
-            CommandHelper.SendMessage($"Added {serial} to ignore list", quiet);
+            CommandHelper.SendMessage($"Removed '{serial}' from ignore list", quiet);
 
             return true;
         }
