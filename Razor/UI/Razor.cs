@@ -6287,9 +6287,11 @@ namespace Assistant
             {
                 SaveScript();
             }
+            
+            RazorScript selScript = GetScriptSel();
 
             // We want to play the contents of the script editor
-            ScriptManager.PlayScript(scriptEditor.Lines.ToArray(), true);
+            ScriptManager.PlayScript(scriptEditor.Lines.ToArray(), selScript != null ? selScript.ToString() : "N/A", true);
         }
 
         public void LockScriptUI(bool enabled)
@@ -6811,7 +6813,10 @@ namespace Assistant
 
             string[] lines = scriptEditor.SelectedText.Split(new[] {"\r\n", "\r", "\n"}, StringSplitOptions.None);
 
-            ScriptManager.PlayScript(lines);
+            RazorScript selScript = GetScriptSel();
+
+            // We want to play the contents of the script editor
+            ScriptManager.PlayScript(lines, selScript != null ? selScript.ToString() : "N/A", true);
         }
 
         private void autoSaveScriptPlay_CheckedChanged(object sender, EventArgs e)
