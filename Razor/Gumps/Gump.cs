@@ -681,6 +681,15 @@ namespace Assistant.Gumps
             Add(ge);
         }
 
+        public void AddProgressBar(int x, int y, int w, int h, double min, double max, Color color, Color back, Color fore)
+        {
+            string bg = $"<BODYBGCOLOR=#{back.ToArgb():X}>";
+            string fg = $"<BODYBGCOLOR=#{fore.ToArgb():X}>";
+
+            AddHtml(x, y, w, h, bg, false, false);
+            AddHtml(x + 2, y + 2, (int)Math.Ceiling((w - 4) * (min / max)), h - 4, fg, false, false);
+        }
+
         public int Intern(string value)
         {
             int indexOf = _strings.IndexOf(value);
