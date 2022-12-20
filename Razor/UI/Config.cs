@@ -327,6 +327,13 @@ namespace Assistant
             AddProperty("WindowSizeY", 411);
             
             AddProperty("PlayEmoteSound", false);
+            
+            AddProperty("ShowBuffDebuffGump", false);
+            AddProperty("ShowBuffDebuffIcons", true);
+            AddProperty("ShowBuffDebuffSmallBars", false);
+            AddProperty("ShowBuffDebuffWidth", 100);
+            AddProperty("ShowBuffDebuffHeight", 18);
+            AddProperty("ShowBuffDebuffSort", 2);
 
             Counter.Default();
             Filter.DisableAll();

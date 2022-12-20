@@ -410,7 +410,8 @@ namespace Assistant
             BandageTimer.Stop();
             GateTimer.Stop();
             WaypointManager.StopTimer();
-            BuffsTimer.Stop();
+            BuffDebuffManager.Stop();
+            CooldownManager.Stop();
             StealthSteps.Unhide();
             EngineZHI160922.MainWindow.OnLogout();
             if (EngineZHI160922.MainWindow.MapWindow != null)

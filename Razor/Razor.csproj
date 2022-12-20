@@ -198,15 +198,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\BuffDebuffManager.cs" />
-    <Compile Include="Core\BuffsTimer.cs" />
     <Compile Include="Core\BodCapture.cs" />
     <Compile Include="Core\ClassicUOManager.cs" />
-	<Compile Include="Core\CooldownManager.cs" />
+    <Compile Include="Core\CooldownManager.cs" />
     <Compile Include="Core\Dress.cs" />
     <Compile Include="Core\EncodedSpeech.cs" />
     <Compile Include="Core\DamageTracker.cs" />
-	<Compile Include="Core\StaffToolsManager.cs" />
-	<Compile Include="Core\MessageManager.cs" />
+    <Compile Include="Core\StaffToolsManager.cs" />
+    <Compile Include="Core\MessageManager.cs" />
     <Compile Include="Core\Overrides.cs" />
     <Compile Include="Core\SystemMessages.cs" />
     <Compile Include="Core\TextFilterManager.cs" />
@@ -269,7 +268,8 @@
     <Compile Include="Core\Geometry.cs">
       <SubType>Code</SubType>
     </Compile>
-	<Compile Include="Gumps\Internal\CooldownGump.cs" />
+	<Compile Include="Gumps\Internal\BuffGump.cs" />
+    <Compile Include="Gumps\Internal\CooldownGump.cs" />
     <Compile Include="Gumps\Internal\DamageTrackerListGump.cs" />
     <Compile Include="Gumps\Internal\InputDialogGump.cs" />
     <Compile Include="Gumps\Internal\MobileInfoGump.cs" />
@@ -414,7 +414,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-	<Compile Include="UI\ArtViewer.cs">
+    <Compile Include="UI\ArtViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\ArtViewer.Designer.cs">
