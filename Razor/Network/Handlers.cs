@@ -2869,8 +2869,8 @@ namespace Assistant
 
                         BuffDebuff buffInfo = new BuffDebuff
                         {
-                            IconNumber = icon,
-                            IconId = iconId,
+                            IconId = BuffDebuffManager.BuffTable[iconId],
+
                             BuffIconType = (BuffIconType)icon,
                             ClilocMessage1 = Language.GetCliloc((int) p.ReadUInt32()),
                             ClilocMessage2 = Language.GetCliloc((int) p.ReadUInt32()),
