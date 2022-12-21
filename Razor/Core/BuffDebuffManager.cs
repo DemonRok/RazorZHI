@@ -20,9 +20,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Assistant.Agents;
+using Assistant.Gumps.Internal;
 
 namespace Assistant.Core
 {
