@@ -51,9 +51,9 @@ namespace Assistant.Scripts
             Interpreter.RegisterCommandHandler("useobject", DClick); //DoubleClickAction
 
             // Moving stuff
-            //Interpreter.RegisterCommandHandler("drop", DropItem); //DropAction
+            Interpreter.RegisterCommandHandler("drop", DropItem); //DropAction
             //Interpreter.RegisterCommandHandler("droprelloc", DropRelLoc); //DropAction
-            //Interpreter.RegisterCommandHandler("lift", LiftItem); //LiftAction
+            Interpreter.RegisterCommandHandler("lift", LiftItem); //LiftAction
             //Interpreter.RegisterCommandHandler("lifttype", LiftType); //LiftTypeAction
 
             // Gump
