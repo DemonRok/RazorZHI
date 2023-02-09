@@ -54,7 +54,7 @@ namespace Assistant.Scripts
             Interpreter.RegisterCommandHandler("drop", DropItem); //DropAction
             //Interpreter.RegisterCommandHandler("droprelloc", DropRelLoc); //DropAction
             Interpreter.RegisterCommandHandler("lift", LiftItem); //LiftAction
-            //Interpreter.RegisterCommandHandler("lifttype", LiftType); //LiftTypeAction
+            Interpreter.RegisterCommandHandler("lifttype", LiftType); //LiftTypeAction
 
             // Gump
             Interpreter.RegisterCommandHandler("waitforgump", WaitForGump); // WaitForGumpAction
