@@ -6300,8 +6300,7 @@ namespace Assistant
             RazorScript selScript = GetScriptSel();
 
             // We want to play the contents of the script editor
-            
-            ScriptManager.PlayScriptFromUI(scriptEditor.Lines.ToArray(), selScript != null ? selScript.ToString() : "N/A", true);
+            ScriptManager.PlayScript(scriptEditor.Lines.ToArray(), selScript != null ? selScript.ToString() : "N/A", true);
         }
 
         public void LockScriptUI(bool enabled)
@@ -6826,7 +6825,7 @@ namespace Assistant
             RazorScript selScript = GetScriptSel();
 
             // We want to play the contents of the script editor
-            ScriptManager.PlayScriptFromUI(lines, selScript != null ? selScript.ToString() : "N/A", true);
+            ScriptManager.PlayScript(lines, selScript != null ? selScript.ToString() : "N/A", true);
         }
 
         private void autoSaveScriptPlay_CheckedChanged(object sender, EventArgs e)
