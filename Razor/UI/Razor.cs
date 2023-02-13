@@ -516,6 +516,7 @@ namespace Assistant
             useBlackBuffDebuffBg.SafeAction(s => { s.Checked = Config.GetBool("UseBlackBuffDebuffBg"); });
             buffBarSort.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBuffDebuffSort"); });
             showBuffDebuffTimeType.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBuffDebuffTimeType"); });
+            defaultScriptDelay.SafeAction(s => { s.Checked = Config.GetBool("DefaultScriptDelay"); });
 
             EngineZHI160922.MainWindow.Size = new Size(Config.GetInt("WindowSizeX"), Config.GetInt("WindowSizeY"));
 
@@ -8084,6 +8085,13 @@ namespace Assistant
                 return;
 
             Config.SetProperty("ShowBuffDebuffTimeType", showBuffDebuffTimeType.SelectedIndex);
+        }
+
+        private void defaultScriptDelay_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("DefaultScriptDelay", defaultScriptDelay.Checked);
+
+            ScriptManager.ResetTimer();
         }
     }
 }
