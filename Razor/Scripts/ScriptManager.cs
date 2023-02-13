@@ -371,7 +371,33 @@ namespace Assistant.Scripts
             }
         }
 
-        public static void PlayScript(string[] lines, string name, bool highlight = false)
+        public static void PlayScript(string[] lines, string name)
+        {
+            if (World.Player == null || lines == null)
+                return;
+            if (MacroManager.Playing || MacroManager.StepThrough)
+                MacroManager.Stop();
+            StopScript();
+            SetLastTargetActive = false;
+            SetVariableActive = false;
+            if (_queuedScript != null)
+                return;
+            if (!Client.Instance.ClientRunning)
+                return;
+            try
+            {
+                Script script = new Script(Lexer.Lex(lines));
+
+                _queuedScript = script;
+                _queuedScriptName = name;
+            }
+            catch (SyntaxError syntaxError)
+            {
+                World.Player.SendMessage(MsgLevel.Error, $"{syntaxError.Message}: '{syntaxError.Line}' (Line #{syntaxError.LineNumber + 1})");
+            }
+        }
+
+        public static void PlayScriptFromUI(string[] lines, string name, bool highlight = false)
         {
             if (World.Player == null || ScriptEditor == null || lines == null)
                 return;
@@ -397,13 +423,21 @@ namespace Assistant.Scripts
             if (!Client.Instance.ClientRunning)
                 return;
 
-            if (World.Player == null)
-                return;
+            try
+            {
+                Script script = new Script(Lexer.Lex(lines));
 
-            Script script = new Script(Lexer.Lex(lines));
-
-            _queuedScript = script;
-            _queuedScriptName = name;
+                _queuedScript = script;
+                _queuedScriptName = name;
+            }
+            catch (SyntaxError syntaxError)
+            {
+                World.Player.SendMessage(MsgLevel.Error, $"{syntaxError.Message}: '{syntaxError.Line}' (Line #{syntaxError.LineNumber + 1})");
+                if (EnableHighlight)
+                {
+                    SetHighlightLine(syntaxError.LineNumber, HighlightType.Error);
+                }
+            }
         }
 
         /*private static void ActiveScriptStatementExecuted(ASTNode statement)
