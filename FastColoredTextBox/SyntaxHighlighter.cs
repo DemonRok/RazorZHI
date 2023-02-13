@@ -360,7 +360,7 @@ namespace FastColoredTextBoxNS
 
             RazorCommandRegex =
                 new Regex(
-                    @"\b(attack|cast|target|targettype|targetloc|waitfortarget|wft|dclick|dclicktype|dclickvar|usetype|useobject|waitforgump|gumpresponse|gumpclose|menu|menuresponse|waitformenu|promptresponse|waitforprompt|hotkey|say|msg|overhead|sysmsg|wait|pause|waitforstat|setability|setlasttarget|lasttarget|setvar|skill|useskill|walk|script|useonce|organizer|organize|org|restock|scav|scavenger|potion|clearsysmsg|clearjournal|whisper|yell|guild|alliance|emote|waitforsysmsg|wfsysmsg|clearall|virtue|interrupt|sound|music|classicuo|cuo|rename|getlabel|ignore|unignore|clearignore|cooldown)\b",
+                    @"\b(attack|cast|target|targettype|targetloc|drop|waitfortarget|wft|dclick|dclicktype|dclickvar|usetype|useobject|lift|lifttype|waitforgump|gumpresponse|gumpclose|menu|menuresponse|waitformenu|promptresponse|waitforprompt|hotkey|say|msg|overhead|sysmsg|wait|pause|waitforstat|setability|setlasttarget|lasttarget|setvar|skill|useskill|walk|script|useonce|organizer|organize|org|restock|scav|scavenger|potion|clearsysmsg|clearjournal|whisper|yell|guild|alliance|emote|waitforsysmsg|wfsysmsg|clearall|virtue|interrupt|sound|music|classicuo|cuo|rename|getlabel|ignore|unignore|clearignore|cooldown)\b",
                     RegexCompiledOption);
 
             RazorLayerRegex =
