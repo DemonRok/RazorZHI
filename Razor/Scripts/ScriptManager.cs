@@ -92,7 +92,7 @@ namespace Assistant.Scripts
         private class ScriptTimer : Timer
         {
             // Only run scripts once every 25ms to avoid spamming.
-            public ScriptTimer(int delay) : base(TimeSpan.FromMilliseconds(delay), TimeSpan.FromMilliseconds(delay))
+            public ScriptTimer() : base(TimeSpan.FromMilliseconds(25), TimeSpan.FromMilliseconds(25))
             {
             }
 
@@ -453,17 +453,11 @@ namespace Assistant.Scripts
             }
         }*/
 
-        private static ScriptTimer Timer { get; set; }
+        private static ScriptTimer Timer { get; }
 
         static ScriptManager()
         {
-            Timer = new ScriptTimer(Config.GetBool("DefaultScriptDelay") ? 25 : 0);
-        }
-        public static void ResetTimer()
-        {
-            Timer.Stop();
-            Timer = new ScriptTimer(Config.GetBool("DefaultScriptDelay") ? 25 : 0);
-            Timer.Start();
+            Timer = new ScriptTimer();
         }
 
         private static void UpdateLineNumber(int lineNum)

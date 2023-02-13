@@ -336,8 +336,6 @@ namespace Assistant
             AddProperty("UseBlackBuffDebuffBg", false);
             AddProperty("ShowBuffDebuffTimeType", 0);
 
-            AddProperty("DefaultScriptDelay", true);
-
             Counter.Default();
             Filter.DisableAll();
             DressList.ClearAll();
