@@ -870,7 +870,8 @@ namespace Assistant.Scripts
         {
             if (vars.Length < 1)
             {
-                throw new RunTimeError("Usage: drop (serial) (x y z/layername)");
+                //throw new RunTimeError("Usage: drop (serial) (x y z/layername)");
+                throw new RunTimeError("Usage: drop (serial) (x y z)");
             }
 
             Serial serial = vars[0].AsString().IndexOf("ground", StringComparison.OrdinalIgnoreCase) > 0
@@ -884,16 +885,21 @@ namespace Assistant.Scripts
             {
                 case 1: // drop at feet if only serial is provided
                     to = new Point3D(World.Player.Position.X, World.Player.Position.Y, World.Player.Position.Z);
+                    Interpreter.Pause(100);
                     break;
                 case 2: // dropping on a layer
-                    layer = (Layer) Enum.Parse(typeof(Layer), vars[1].AsString(), true);
+                    //layer = (Layer) Enum.Parse(typeof(Layer), vars[1].AsString(), true);
+                    layer = Layer.Invalid;
+                    CommandHelper.SendWarning(command, "Drop Layer not enabled", quiet);
+                    Interpreter.Pause(100);
                     break;
                 case 3: // x y
                     to = new Point3D(Utility.ToInt32(vars[1].AsString(), 0), Utility.ToInt32(vars[2].AsString(), 0), 0);
+                    Interpreter.Pause(100);
                     break;
                 case 4: // x y z
-                    to = new Point3D(Utility.ToInt32(vars[1].AsString(), 0), Utility.ToInt32(vars[2].AsString(), 0),
-                        Utility.ToInt32(vars[3].AsString(), 0));
+                    to = new Point3D(Utility.ToInt32(vars[1].AsString(), 0), Utility.ToInt32(vars[2].AsString(), 0), Utility.ToInt32(vars[3].AsString(), 0));
+                    Interpreter.Pause(100);
                     break;
             }
 
