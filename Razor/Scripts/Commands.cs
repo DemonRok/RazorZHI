@@ -493,67 +493,67 @@ namespace Assistant.Scripts
             return false;
         }
 
+        private enum SetVarState
+        {
+            INITIAL_PROMPT,
+            WAIT_FOR_TARGET,
+            COMPLETE,
+        };
+        
+        private static SetVarState _setVarState = SetVarState.INITIAL_PROMPT;
+
         private static bool SetVar(string command, Variable[] vars, bool quiet, bool force)
         {
-            if (vars.Length < 1)
+            if (vars.Length < 1 || vars.Length > 2)
             {
-                throw new RunTimeError("Usage: setvar ('variable') ['serial'] [timeout]");
+                throw new RunTimeError("Usage: setvar ('variable') [serial] [timeout]");
             }
-
-            string name = vars[0].AsString();
-            Serial serial = Serial.Zero;
-
+            string name = vars[0].AsString(false);
             if (vars.Length == 2)
             {
-                serial = vars[1].AsSerial();
+                // No need to target anything. We have the serial.
+                var serial = vars[1].AsSerial();
                 if (force)
                 {
-                    Interpreter.SetVariable(name, serial.ToString());
+                    Interpreter.SetVariable(name, serial.ToString(), true);
                     return true;
                 }
-            }
-            
-            ScriptVariables.ScriptVariable variable = ScriptVariables.GetVariable(name);
-
-            if (variable == null) // new variable
-            {
-                World.Player.SendMessage(MsgLevel.Info, $"'{name}' not found, creating new variable", quiet);
-                
-                variable = new ScriptVariables.ScriptVariable(name, new TargetInfo());
-
-                ScriptVariables.ScriptVariableList.Add(variable);
-
-                ScriptVariables.RegisterVariable(name);
-            }
-            if (serial != Serial.Zero) // they supplied a serial
-            {
-                variable.TargetInfo.Serial = serial;
-                World.Player.SendMessage(MsgLevel.Info, $"'{name}' script variable updated to '{variable.TargetInfo.Serial}'", quiet);
-
-                ScriptManager.RedrawScriptVariables();
+                if (ScriptVariables.GetVariable(name) == Serial.MinusOne && !quiet)
+                {
+                    CommandHelper.SendMessage($"'{name}' not found, creating new variable", quiet);
+                }
+                ScriptVariables.RegisterVariable(name, serial);
+                CommandHelper.SendMessage($"'{name}' script variable updated to '{serial}'", quiet);
+                Assistant.EngineZHI160922.MainWindow.SaveScriptVariables();
                 return true;
             }
-
-            Interpreter.Timeout(vars.Length == 3 ? vars[2].AsUInt() : 30000, () => { return true; });
-
-            if (!ScriptManager.SetVariableActive)
+            Interpreter.Timeout(vars.Length == 2 ? vars[1].AsUInt() : 30000, () => { _setVarState = SetVarState.INITIAL_PROMPT; return true; });
+            switch (_setVarState)
             {
-                variable.SetTarget();
-                ScriptManager.SetVariableActive = true;
-
-                return false;
-            }
-
-            if (variable.TargetWasSet)
-            {
-                Interpreter.ClearTimeout();
-                ScriptManager.SetVariableActive = false;
-
-                World.Player.SendMessage(MsgLevel.Info, $"'{name}' script variable updated to '{variable.TargetInfo.Serial}'", quiet);
-
-                ScriptManager.RedrawScriptVariables();
-
-                return true;
+                case SetVarState.INITIAL_PROMPT:
+                    if (ScriptVariables.GetVariable(name) == Serial.MinusOne)
+                    {
+                        CommandHelper.SendMessage($"'{name}' not found, creating new variable", quiet);
+                    }
+                    World.Player.SendMessage(MsgLevel.Force, $"Select target for variable '{name}'");
+                    _setVarState = SetVarState.WAIT_FOR_TARGET;
+                    Targeting.OneTimeTarget((ground, serial, pt, gfx) =>
+                    {
+                        ScriptVariables.RegisterVariable(name, serial);
+                        CommandHelper.SendMessage($"'{name}' script variable updated to '{serial}'", quiet);
+                        Assistant.EngineZHI160922.MainWindow.SaveScriptVariables();
+                        _setVarState = SetVarState.COMPLETE;
+                    },
+                    () =>
+                    {
+                        _setVarState = SetVarState.COMPLETE;
+                    });
+                    break;
+                case SetVarState.WAIT_FOR_TARGET:
+                    break;
+                case SetVarState.COMPLETE:
+                    _setVarState = SetVarState.INITIAL_PROMPT;
+                    return true;
             }
 
             return false;
