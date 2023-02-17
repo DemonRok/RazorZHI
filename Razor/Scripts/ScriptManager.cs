@@ -378,6 +378,8 @@ namespace Assistant.Scripts
             if (MacroManager.Playing || MacroManager.StepThrough)
                 MacroManager.Stop();
             StopScript();
+            EnableHighlight = false; 
+            
             SetLastTargetActive = false;
             SetVariableActive = false;
             if (_queuedScript != null)
