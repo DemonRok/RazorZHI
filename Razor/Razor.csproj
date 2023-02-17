@@ -16,7 +16,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Assistant</RootNamespace>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
-    <StartupObject>Assistant.EngineZHI160922</StartupObject>
+    <StartupObject>Assistant.EngineZHI171223</StartupObject>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkProfile>
@@ -268,7 +268,7 @@
     <Compile Include="Core\Geometry.cs">
       <SubType>Code</SubType>
     </Compile>
-	<Compile Include="Gumps\Internal\BuffGump.cs" />
+    <Compile Include="Gumps\Internal\BuffGump.cs" />
     <Compile Include="Gumps\Internal\CooldownGump.cs" />
     <Compile Include="Gumps\Internal\DamageTrackerListGump.cs" />
     <Compile Include="Gumps\Internal\InputDialogGump.cs" />

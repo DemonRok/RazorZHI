@@ -48,7 +48,7 @@ namespace Assistant
                 {
                     using (StreamWriter w = new StreamWriter("DragDrop.log", true))
                     {
-                        w.Write(EngineZHI160922.MistedDateTime.ToString("HH:mm:ss.fff"));
+                        w.Write(EngineZHI171223.MistedDateTime.ToString("HH:mm:ss.fff"));
                         w.Write(":: ");
                         w.WriteLine(str, args);
                         w.Flush();

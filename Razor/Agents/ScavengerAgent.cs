@@ -250,7 +250,7 @@ namespace Assistant.Agents
 
         private void OnTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI171223.MainWindow.SafeAction(s => s.ShowMe());
 
             if (location || !serial.IsItem)
             {
@@ -278,7 +278,7 @@ namespace Assistant.Agents
 
         private void OnTargetBag(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI160922.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI171223.MainWindow.SafeAction(s => s.ShowMe());
 
             if (location || !serial.IsItem)
             {
@@ -363,7 +363,7 @@ namespace Assistant.Agents
             {
                 using (System.IO.StreamWriter w = new System.IO.StreamWriter("Scavenger.log", true))
                 {
-                    w.Write(EngineZHI160922.MistedDateTime.ToString("HH:mm:ss.fff"));
+                    w.Write(EngineZHI171223.MistedDateTime.ToString("HH:mm:ss.fff"));
                     w.Write(":: ");
                     w.WriteLine(str, args);
                     w.Flush();

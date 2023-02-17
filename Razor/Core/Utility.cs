@@ -364,7 +364,7 @@ namespace Assistant
             int val;
             if (str.StartsWith("0x"))
             {
-                if (int.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI160922.Culture, out val))
+                if (int.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI171223.Culture, out val))
                     return val;
             }
             else if (int.TryParse(str, out val))
@@ -381,7 +381,7 @@ namespace Assistant
             uint val;
             if (str.StartsWith("0x"))
             {
-                if (uint.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI160922.Culture, out val))
+                if (uint.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI171223.Culture, out val))
                     return val;
             }
             else if (uint.TryParse(str, out val))
@@ -408,7 +408,7 @@ namespace Assistant
             ushort val;
             if (str.StartsWith("0x"))
             {
-                if (ushort.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI160922.Culture, out val))
+                if (ushort.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI171223.Culture, out val))
                     return val;
             }
             else if (ushort.TryParse(str, out val))

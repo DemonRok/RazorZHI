@@ -89,7 +89,7 @@ namespace Assistant.Macros
                 }
 
                 // Save and reload the macros and vars
-                EngineZHI160922.MainWindow.SaveMacroVariables();
+                EngineZHI171223.MainWindow.SaveMacroVariables();
 
                 TargetWasSet = true;
             }
