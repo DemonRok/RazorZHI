@@ -1,6 +1,6 @@
 # Command Overview
 
-The commands issued in the scripting engine are similar to commands you might enter into a command prompt or shell.  Each line has a starting command, and a set of parameters.  Some of those parameters are required, some are optional.
+The commands issued in the scripting engine are similar to commands you might enter into a command prompt or shell.  Each line has a starting command and a set of parameters.  Some of those parameters are required, some are optional.
 
 `command (required) [optional]`
 
@@ -636,7 +636,7 @@ Types: `heal, cure, refresh, nightsight, ns, explosion, strength, str, agility`
 **Description**: This command will pause the script until you select a target to be assigned a variable. You can also provide a serial directly, which will bypass the target selection. Default timeout is 30 seconds that can be changed by passing in a new timeout value in milliseconds.
 
 !!! tip "Temp variables"
-    If you issue the `setvar!` (note the `!`) the variable will not be available in Razor's variable list to be used by other scripts and will go away at the end of the script's execution.
+    If you use `setvar!` (note the `!`) the variable will not be available in Razor's variable list to be used by other scripts and will go away at the end of the script's execution. You can remove it with the `unsetvar!` command.
 
 !!! example
 
@@ -701,6 +701,39 @@ Types: `heal, cure, refresh, nightsight, ns, explosion, strength, str, agility`
         overhead 'daemon sound'
         wait 500
         sound '0x166'
+        ```
+
+## unsetvar
+
+**Syntax**: `unsetvar ('variable')`
+
+**Description**: This command will remove the variable from the variable list.
+
+!!! tip "Temp variables"
+    If you use `unsetvar!` (note the `!`) with `setvar!` the variable will be removed from the list of variables just available for the script's execution.
+
+!!! example
+
+    === "Set variable, use it, unset"
+
+        ```vim
+        setvar 'dummy'
+
+        cast 'magic arrow'
+        waitfortarget
+        target 'dummy'
+
+        unsetvar 'dummy'
+        ```
+    
+    === "Set temp variable with serial, unset"
+
+        ```vim
+        setvar! 'tempvar' '0x40000D'
+
+        dclick 'tempvar'       
+
+        unsetvar! 'tempvar'
         ```
 
 ## virtue
@@ -1144,7 +1177,6 @@ Types: `heal, cure, refresh, nightsight, ns, explosion, strength, str, agility`
         promptresponse 'to home'
         ```
 
-
 # Ignore Commands
 
 ## clearignore
@@ -1175,7 +1207,7 @@ Types: `heal, cure, refresh, nightsight, ns, explosion, strength, str, agility`
 
 ## ignore
 
-**Syntax**: `ignore ('serial')`
+**Syntax**: `ignore ('serial')` or `ignore ('list name')`
 
 **Description**: Adds a specific serial to the script engine's ignore list to avoid finding items when using commands like `findtype`
 
@@ -1206,7 +1238,7 @@ Types: `heal, cure, refresh, nightsight, ns, explosion, strength, str, agility`
 
 ## unignore
 
-**Syntax**: `unignore ('serial')`
+**Syntax**: `unignore ('serial')` or `unignore ('list name')`
 
 **Description**: Removes a specific serial to the script engine's ignore list
 
@@ -1236,7 +1268,6 @@ Types: `heal, cure, refresh, nightsight, ns, explosion, strength, str, agility`
             overhead 'not found' 33
         endif
         ```
-
 
 # List Commands
 

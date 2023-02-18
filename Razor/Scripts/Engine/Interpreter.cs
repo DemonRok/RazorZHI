@@ -1265,6 +1265,23 @@ namespace Assistant.Scripts.EngineZHI171223
             scope.ClearIgnore();
         }
 
+        public static void AddIgnoreRange(List<Serial> serials, bool global = true)
+        {
+            Scope scope = global ? _scope : _currentScope;
+            scope.AddIgnoreRange(serials);
+        }
+
+        public static void RemoveIgnore(Serial serial, bool global = true)
+        {
+            Scope scope = global ? _scope : _currentScope;
+            scope.RemoveIgnore(serial);
+        }
+
+        public static void RemoveIgnoreRange(List<Serial> serials, bool global = true)
+        {
+            Scope scope = global ? _scope : _currentScope;
+            scope.RemoveIgnoreRange(serials);
+        }
 
         public static bool CheckIgnored(Serial serial, bool global = true)
         {
