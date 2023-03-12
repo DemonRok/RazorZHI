@@ -490,10 +490,20 @@ namespace Assistant.Core
         private const ushort BUFF_ICON_START_NEW = 0x466;
         public static ushort GetGraphicId(string name)
         {
-            if (Enum.TryParse(name, true, out BuffIconType result))
+            try
+                            {
+                if (Enum.TryParse(name, true, out BuffIconType result))
+                {
+                    ushort iconId = (ushort)result >= BUFF_ICON_START_NEW
+                        ? (ushort)(result - (BUFF_ICON_START_NEW - 125))
+                        : (ushort)((ushort)result - BUFF_ICON_START);
+
+                    return BuffTable[iconId];
+                }
+            }
+            catch (Exception ex)
             {
-                ushort iconId = (ushort)result >= BUFF_ICON_START_NEW ? (ushort)(result - (BUFF_ICON_START_NEW - 125)) : (ushort)((ushort)result - BUFF_ICON_START);
-                return BuffTable[iconId];
+                // ignored
             }
             return 0;
         }
