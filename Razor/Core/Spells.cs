@@ -491,6 +491,17 @@ namespace Assistant
             }
         }
 
+        public static void Interrupt(Layer layer)
+        {
+            Item item = World.Player.GetItemOnLayer(layer);
+
+            if (item != null)
+            {
+                Client.Instance.SendToServer(new LiftRequest(item, 1)); // unequip
+                Client.Instance.SendToServer(new EquipRequest(item.Serial, World.Player, item.Layer)); // Equip
+            }
+        }
+
         public static void Interrupt()
         {
             Item item = FindUsedLayer();
