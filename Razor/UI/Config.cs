@@ -337,6 +337,7 @@ namespace Assistant
             AddProperty("ShowBuffDebuffTimeType", 0);
 
             AddProperty("DefaultScriptDelay", true);
+            AddProperty("EnableHighlight", false);
 
             Counter.Default();
             Filter.DisableAll();
