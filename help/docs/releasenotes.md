@@ -14,6 +14,9 @@ This version includes more updates to the scripting engine, including the abilit
 * Fixed missing syntax highlight for `maxweight`
 * Running a script will show the name in the system message
 * Fixed the `ignore` and `unignore` commands
+* Fixed the `varexists` expression
+* Added the `unsetvar` command
+* Updated the `interrupt` command to let you pass a specific layer
 
 ## 1.8.61.0 (12/07/2022)
 

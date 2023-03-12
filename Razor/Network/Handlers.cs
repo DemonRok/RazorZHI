@@ -2515,8 +2515,8 @@ namespace Assistant
             if (MacroManager.AcceptActions && MacroManager.Action(new WaitForMenuAction(World.Player.CurrentMenuI)))
                 args.Block = true;
 
-            //if (ScriptManager.AddToScript($"replymenu {World.Player.CurrentMenuI}"))
-                //args.Block = true;
+            if (ScriptManager.AddToScript($"waitformenu {World.Player.CurrentMenuI}"))
+                args.Block = true;
         }
 
         private static void HueResponse(PacketReader p, PacketHandlerEventArgs args)
