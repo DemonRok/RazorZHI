@@ -24,17 +24,17 @@ namespace Assistant.Scripts.Helpers
 
             if (backpack && World.Player.Backpack != null) // search backpack only
             {
-                items = World.Player.Backpack.FindItemsByName(name, true);
+                items.AddRange(World.Player.Backpack.FindItemsByName(name, true).Where(item => !Interpreter.CheckIgnored(item.Serial)));
             }
             else if (inRange) // inrange includes both backpack and within 2 tiles
             {
                 items.AddRange(World.FindItemsByName(name).Where(item =>
                     !item.IsInBank && !Interpreter.CheckIgnored(item.Serial) && (Utility.InRange(World.Player.Position, item.Position, 2) ||
-                                       item.RootContainer == World.Player)).ToList());
+                                       item.RootContainer == World.Player)));
             }
             else
             {
-                items.AddRange(World.FindItemsByName(name).Where(item => !item.IsInBank && !Interpreter.CheckIgnored(item.Serial)).ToList());
+                items.AddRange(World.FindItemsByName(name).Where(item => !item.IsInBank && !Interpreter.CheckIgnored(item.Serial)));
             }
 
             if (hue > -1)
@@ -59,17 +59,17 @@ namespace Assistant.Scripts.Helpers
 
             if (backpack && World.Player.Backpack != null)
             {
-                items = World.Player.Backpack.FindItemsById(id, true).Where(item => !Interpreter.CheckIgnored(item.Serial)).ToList();
+                items.AddRange(World.Player.Backpack.FindItemsById(id, true).Where(item => !Interpreter.CheckIgnored(item.Serial)));
             } 
             else if (inRange)
             {
                 items.AddRange(World.FindItemsById(id).Where(item =>
                     !item.IsInBank && !Interpreter.CheckIgnored(item.Serial) && (Utility.InRange(World.Player.Position, item.Position, 2) ||
-                                       item.RootContainer == World.Player)).ToList());
+                                       item.RootContainer == World.Player)));
             }
             else
             {
-                items.AddRange(World.FindItemsById(id).Where(item => !item.IsInBank && !Interpreter.CheckIgnored(item.Serial)).ToList());
+                items.AddRange(World.FindItemsById(id).Where(item => !item.IsInBank && !Interpreter.CheckIgnored(item.Serial)));
             }
 
             if (hue > -1)
@@ -88,17 +88,11 @@ namespace Assistant.Scripts.Helpers
         /// <returns></returns>
         public static List<Mobile> GetMobilesByName(string name, bool inRange)
         {
-            List<Mobile> mobiles;
+            List<Mobile> mobiles = new List<Mobile>();
 
-            if (inRange)
-            {
-                mobiles = World.FindMobilesByName(name)
-                    .Where(m => Utility.InRange(World.Player.Position, m.Position, 2) && !Interpreter.CheckIgnored(m.Serial)).ToList();
-            }
-            else
-            {
-                mobiles = World.FindMobilesByName(name).Where(m => !Interpreter.CheckIgnored(m.Serial)).ToList();
-            }
+            mobiles.AddRange(inRange
+                ? World.FindMobilesByName(name).Where(m => !Interpreter.CheckIgnored(m.Serial) && Utility.InRange(World.Player.Position, m.Position, 2))
+                : World.FindMobilesByName(name).Where(m => !Interpreter.CheckIgnored(m.Serial)));
 
             return mobiles;
         }
@@ -111,17 +105,13 @@ namespace Assistant.Scripts.Helpers
         /// <returns></returns>
         public static List<Mobile> GetMobilesById(ushort id, bool inRange)
         {
-            List<Mobile> mobiles;
+            List<Mobile> mobiles = new List<Mobile>();
 
-            if (inRange)
-            {
-                mobiles = World.MobilesInRange()
-                    .Where(m => Utility.InRange(World.Player.Position, m.Position, 2) && m.Body == id && !Interpreter.CheckIgnored(m.Serial)).ToList();
-            }
-            else
-            {
-                mobiles = World.MobilesInRange().Where(m => m.Body == id && !Interpreter.CheckIgnored(m.Serial)).ToList();
-            }
+            mobiles.AddRange(inRange
+                ? World.MobilesInRange().Where(m =>
+                    Utility.InRange(World.Player.Position, m.Position, 2) && m.Body == id &&
+                    !Interpreter.CheckIgnored(m.Serial))
+                : World.MobilesInRange().Where(m => m.Body == id && !Interpreter.CheckIgnored(m.Serial)));
 
             return mobiles;
         }
