@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -89,6 +90,8 @@ namespace Assistant.Scripts
 
         public static RazorScript SelectedScript { get; set; }
 
+        private static Stopwatch Stopwatch { get; } = new Stopwatch();
+
         private class ScriptTimer : Timer
         {
             // Only run scripts once every 25ms to avoid spamming.
@@ -139,7 +142,10 @@ namespace Assistant.Scripts
                         if (ScriptManager.Running == false)
                         {
                             if (!Config.GetBool("ScriptDisablePlayFinish"))
+                            {
+                                Stopwatch.Start(); 
                                 World.Player?.SendMessage(LocString.ScriptPlaying, _queuedScriptName);
+                            }
 
                             Assistant.EngineZHI171223.MainWindow.LockScriptUI(true);
                             ScriptRunning = true;
@@ -150,7 +156,13 @@ namespace Assistant.Scripts
                         if (ScriptManager.Running)
                         {
                             if (!Config.GetBool("ScriptDisablePlayFinish"))
-                                World.Player?.SendMessage(LocString.ScriptFinished, _queuedScriptName);
+                            {
+                                Stopwatch.Stop();
+                                TimeSpan elapsed = Stopwatch.Elapsed;
+                                Stopwatch.Reset();
+
+                                World.Player?.SendMessage(LocString.ScriptFinished, _queuedScriptName, elapsed.TotalMilliseconds);
+                            }
 
                             Assistant.EngineZHI171223.MainWindow.LockScriptUI(false);
                             ScriptRunning = false;
