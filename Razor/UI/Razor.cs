@@ -961,6 +961,10 @@ namespace Assistant
                     Skill sk = World.Player.Skills[i];
                     Total += sk.Base;
                     items[0] = Skills.GetSkillDisplayName(i);
+                    if (items[0] == string.Empty)
+                    {
+                        continue;
+                    }
                     items[1] = $"{sk.Value:F1}";
                     items[2] = $"{sk.Base:F1}";
                     items[3] = $"{(sk.Delta > 0 ? "+" : "")}{sk.Delta:F1}";
