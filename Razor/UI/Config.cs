@@ -70,7 +70,7 @@ namespace Assistant
             AddProperty("CounterWarnAmount", (int) 5);
             AddProperty("CounterWarn", false);
             AddProperty("ObjectDelay", (int) 600);
-            AddProperty("ObjectDelayEnabled", true);
+            AddProperty("ObjectDelayEnabled", false);
             AddProperty("AlwaysOnTop", false);
             AddProperty("SortCounters", true);
             AddProperty("QueueActions", false);
@@ -338,6 +338,7 @@ namespace Assistant
 
             AddProperty("DefaultScriptDelay", true);
             AddProperty("EnableHighlight", false);
+            AddProperty("DisableScriptStopwatch", false);
 
             Counter.Default();
             Filter.DisableAll();
