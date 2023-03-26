@@ -1108,9 +1108,9 @@ namespace Assistant
             // moreOptTab
             // 
             this.moreOptTab.Controls.Add(this.optionsTabCtrl);
-            this.moreOptTab.Location = new System.Drawing.Point(4, 44);
+            this.moreOptTab.Location = new System.Drawing.Point(4, 24);
             this.moreOptTab.Name = "moreOptTab";
-            this.moreOptTab.Size = new System.Drawing.Size(519, 322);
+            this.moreOptTab.Size = new System.Drawing.Size(519, 342);
             this.moreOptTab.TabIndex = 5;
             this.moreOptTab.Text = "Options";
             // 
@@ -1125,7 +1125,7 @@ namespace Assistant
             this.optionsTabCtrl.Location = new System.Drawing.Point(6, 3);
             this.optionsTabCtrl.Name = "optionsTabCtrl";
             this.optionsTabCtrl.SelectedIndex = 0;
-            this.optionsTabCtrl.Size = new System.Drawing.Size(510, 314);
+            this.optionsTabCtrl.Size = new System.Drawing.Size(510, 334);
             this.optionsTabCtrl.TabIndex = 93;
             // 
             // subOptionsSpeechTab
@@ -1164,7 +1164,7 @@ namespace Assistant
             this.subOptionsSpeechTab.Location = new System.Drawing.Point(4, 24);
             this.subOptionsSpeechTab.Name = "subOptionsSpeechTab";
             this.subOptionsSpeechTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subOptionsSpeechTab.Size = new System.Drawing.Size(502, 286);
+            this.subOptionsSpeechTab.Size = new System.Drawing.Size(502, 306);
             this.subOptionsSpeechTab.TabIndex = 0;
             this.subOptionsSpeechTab.Text = "Speech & Messages  ";
             // 
@@ -1475,7 +1475,7 @@ namespace Assistant
             this.subOptionsTargetTab.Location = new System.Drawing.Point(4, 22);
             this.subOptionsTargetTab.Name = "subOptionsTargetTab";
             this.subOptionsTargetTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subOptionsTargetTab.Size = new System.Drawing.Size(502, 288);
+            this.subOptionsTargetTab.Size = new System.Drawing.Size(502, 308);
             this.subOptionsTargetTab.TabIndex = 1;
             this.subOptionsTargetTab.Text = "Targeting & Queues  ";
             // 
@@ -1724,7 +1724,7 @@ namespace Assistant
             this.subOptionsMiscTab.Controls.Add(this.blockDis);
             this.subOptionsMiscTab.Location = new System.Drawing.Point(4, 22);
             this.subOptionsMiscTab.Name = "subOptionsMiscTab";
-            this.subOptionsMiscTab.Size = new System.Drawing.Size(502, 288);
+            this.subOptionsMiscTab.Size = new System.Drawing.Size(502, 308);
             this.subOptionsMiscTab.TabIndex = 2;
             this.subOptionsMiscTab.Text = "Additional Options  ";
             // 
@@ -1907,9 +1907,9 @@ namespace Assistant
             // displayTab
             // 
             this.displayTab.Controls.Add(this.displayCountersTabCtrl);
-            this.displayTab.Location = new System.Drawing.Point(4, 44);
+            this.displayTab.Location = new System.Drawing.Point(4, 24);
             this.displayTab.Name = "displayTab";
-            this.displayTab.Size = new System.Drawing.Size(519, 322);
+            this.displayTab.Size = new System.Drawing.Size(519, 342);
             this.displayTab.TabIndex = 1;
             this.displayTab.Text = "Display/Counters";
             // 
@@ -1926,7 +1926,7 @@ namespace Assistant
             this.displayCountersTabCtrl.Location = new System.Drawing.Point(6, 3);
             this.displayCountersTabCtrl.Name = "displayCountersTabCtrl";
             this.displayCountersTabCtrl.SelectedIndex = 0;
-            this.displayCountersTabCtrl.Size = new System.Drawing.Size(510, 314);
+            this.displayCountersTabCtrl.Size = new System.Drawing.Size(510, 334);
             this.displayCountersTabCtrl.TabIndex = 51;
             this.displayCountersTabCtrl.SelectedIndexChanged += new System.EventHandler(this.displayCountersTabCtrl_SelectedIndexChanged);
             // 
@@ -1942,7 +1942,7 @@ namespace Assistant
             this.subDisplayTab.Location = new System.Drawing.Point(4, 24);
             this.subDisplayTab.Name = "subDisplayTab";
             this.subDisplayTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subDisplayTab.Size = new System.Drawing.Size(502, 286);
+            this.subDisplayTab.Size = new System.Drawing.Size(502, 306);
             this.subDisplayTab.TabIndex = 0;
             this.subDisplayTab.Text = "Display";
             // 
@@ -1953,7 +1953,7 @@ namespace Assistant
             this.groupBox11.Controls.Add(this.razorTitleBarKey);
             this.groupBox11.Controls.Add(this.showInRazorTitleBar);
             this.groupBox11.Controls.Add(this.razorTitleBar);
-            this.groupBox11.Location = new System.Drawing.Point(6, 183);
+            this.groupBox11.Location = new System.Drawing.Point(6, 199);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(490, 71);
             this.groupBox11.TabIndex = 51;
@@ -1998,7 +1998,7 @@ namespace Assistant
             // 
             this.trackDps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackDps.AutoSize = true;
-            this.trackDps.Location = new System.Drawing.Point(273, 154);
+            this.trackDps.Location = new System.Drawing.Point(273, 170);
             this.trackDps.Name = "trackDps";
             this.trackDps.Size = new System.Drawing.Size(146, 19);
             this.trackDps.TabIndex = 53;
@@ -2010,7 +2010,7 @@ namespace Assistant
             // 
             this.trackIncomingGold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackIncomingGold.AutoSize = true;
-            this.trackIncomingGold.Location = new System.Drawing.Point(273, 128);
+            this.trackIncomingGold.Location = new System.Drawing.Point(273, 144);
             this.trackIncomingGold.Name = "trackIncomingGold";
             this.trackIncomingGold.Size = new System.Drawing.Size(223, 19);
             this.trackIncomingGold.TabIndex = 52;
@@ -2021,7 +2021,7 @@ namespace Assistant
             // showNotoHue
             // 
             this.showNotoHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.showNotoHue.Location = new System.Drawing.Point(6, 153);
+            this.showNotoHue.Location = new System.Drawing.Point(6, 169);
             this.showNotoHue.Name = "showNotoHue";
             this.showNotoHue.Size = new System.Drawing.Size(221, 20);
             this.showNotoHue.TabIndex = 51;
@@ -2031,7 +2031,7 @@ namespace Assistant
             // highlightSpellReags
             // 
             this.highlightSpellReags.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.highlightSpellReags.Location = new System.Drawing.Point(6, 127);
+            this.highlightSpellReags.Location = new System.Drawing.Point(6, 143);
             this.highlightSpellReags.Name = "highlightSpellReags";
             this.highlightSpellReags.Size = new System.Drawing.Size(205, 20);
             this.highlightSpellReags.TabIndex = 50;
@@ -2048,7 +2048,7 @@ namespace Assistant
             this.groupBox3.Controls.Add(this.showInBar);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(490, 115);
+            this.groupBox3.Size = new System.Drawing.Size(490, 131);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Title Bar Display";
@@ -2126,7 +2126,7 @@ namespace Assistant
             this.titleStr.Multiline = true;
             this.titleStr.Name = "titleStr";
             this.titleStr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.titleStr.Size = new System.Drawing.Size(478, 61);
+            this.titleStr.Size = new System.Drawing.Size(478, 77);
             this.titleStr.TabIndex = 4;
             this.titleStr.TextChanged += new System.EventHandler(this.titleStr_TextChanged);
             // 
@@ -2151,7 +2151,7 @@ namespace Assistant
             this.subCountersTab.Location = new System.Drawing.Point(4, 22);
             this.subCountersTab.Name = "subCountersTab";
             this.subCountersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subCountersTab.Size = new System.Drawing.Size(502, 288);
+            this.subCountersTab.Size = new System.Drawing.Size(502, 308);
             this.subCountersTab.TabIndex = 1;
             this.subCountersTab.Text = "Counters";
             // 
@@ -2298,7 +2298,7 @@ namespace Assistant
             this.subOverheadTab.Controls.Add(this.showOverheadMessages);
             this.subOverheadTab.Location = new System.Drawing.Point(4, 22);
             this.subOverheadTab.Name = "subOverheadTab";
-            this.subOverheadTab.Size = new System.Drawing.Size(502, 288);
+            this.subOverheadTab.Size = new System.Drawing.Size(502, 308);
             this.subOverheadTab.TabIndex = 3;
             this.subOverheadTab.Text = "Overhead Messages";
             // 
@@ -2529,7 +2529,7 @@ namespace Assistant
             this.subWaypoints.Controls.Add(this.waypointList);
             this.subWaypoints.Location = new System.Drawing.Point(4, 22);
             this.subWaypoints.Name = "subWaypoints";
-            this.subWaypoints.Size = new System.Drawing.Size(502, 288);
+            this.subWaypoints.Size = new System.Drawing.Size(502, 308);
             this.subWaypoints.TabIndex = 4;
             this.subWaypoints.Text = "Waypoints";
             // 
@@ -2720,7 +2720,7 @@ namespace Assistant
             this.subBuffsDebuffs.Controls.Add(this.showBuffDebuffOverhead);
             this.subBuffsDebuffs.Location = new System.Drawing.Point(4, 22);
             this.subBuffsDebuffs.Name = "subBuffsDebuffs";
-            this.subBuffsDebuffs.Size = new System.Drawing.Size(502, 288);
+            this.subBuffsDebuffs.Size = new System.Drawing.Size(502, 308);
             this.subBuffsDebuffs.TabIndex = 5;
             this.subBuffsDebuffs.Text = "Buffs / Debuffs";
             // 
@@ -3335,7 +3335,7 @@ namespace Assistant
             this.filters.IntegralHeight = false;
             this.filters.Location = new System.Drawing.Point(6, 6);
             this.filters.Name = "filters";
-            this.filters.Size = new System.Drawing.Size(197, 269);
+            this.filters.Size = new System.Drawing.Size(197, 265);
             this.filters.TabIndex = 114;
             this.filters.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.OnFilterCheck);
             // 
@@ -3346,7 +3346,7 @@ namespace Assistant
             this.subFilterText.Controls.Add(this.gbFilterMessages);
             this.subFilterText.Location = new System.Drawing.Point(4, 22);
             this.subFilterText.Name = "subFilterText";
-            this.subFilterText.Size = new System.Drawing.Size(498, 287);
+            this.subFilterText.Size = new System.Drawing.Size(498, 307);
             this.subFilterText.TabIndex = 4;
             this.subFilterText.Text = "Text && Messages  ";
             // 
@@ -3395,7 +3395,7 @@ namespace Assistant
             this.textFilterList.ItemHeight = 15;
             this.textFilterList.Location = new System.Drawing.Point(6, 48);
             this.textFilterList.Name = "textFilterList";
-            this.textFilterList.Size = new System.Drawing.Size(217, 49);
+            this.textFilterList.Size = new System.Drawing.Size(217, 34);
             this.textFilterList.TabIndex = 0;
             // 
             // enableTextFilter
@@ -3505,7 +3505,7 @@ namespace Assistant
             this.subFilterSoundMusic.Controls.Add(this.soundFilterList);
             this.subFilterSoundMusic.Location = new System.Drawing.Point(4, 22);
             this.subFilterSoundMusic.Name = "subFilterSoundMusic";
-            this.subFilterSoundMusic.Size = new System.Drawing.Size(498, 287);
+            this.subFilterSoundMusic.Size = new System.Drawing.Size(498, 307);
             this.subFilterSoundMusic.TabIndex = 3;
             this.subFilterSoundMusic.Text = "Sound & Music  ";
             // 
@@ -3599,7 +3599,7 @@ namespace Assistant
             this.soundFilterList.FormattingEnabled = true;
             this.soundFilterList.Location = new System.Drawing.Point(8, 14);
             this.soundFilterList.Name = "soundFilterList";
-            this.soundFilterList.Size = new System.Drawing.Size(201, 112);
+            this.soundFilterList.Size = new System.Drawing.Size(201, 94);
             this.soundFilterList.TabIndex = 0;
             this.soundFilterList.SelectedIndexChanged += new System.EventHandler(this.soundFilterList_SelectedIndexChanged);
             // 
@@ -3615,7 +3615,7 @@ namespace Assistant
             this.subFilterTargets.Location = new System.Drawing.Point(4, 22);
             this.subFilterTargets.Name = "subFilterTargets";
             this.subFilterTargets.Padding = new System.Windows.Forms.Padding(3);
-            this.subFilterTargets.Size = new System.Drawing.Size(498, 287);
+            this.subFilterTargets.Size = new System.Drawing.Size(498, 307);
             this.subFilterTargets.TabIndex = 1;
             this.subFilterTargets.Text = "Target Filter";
             // 
@@ -3669,7 +3669,7 @@ namespace Assistant
             this.targetFilter.ItemHeight = 15;
             this.targetFilter.Location = new System.Drawing.Point(247, 6);
             this.targetFilter.Name = "targetFilter";
-            this.targetFilter.Size = new System.Drawing.Size(245, 124);
+            this.targetFilter.Size = new System.Drawing.Size(245, 109);
             this.targetFilter.TabIndex = 14;
             // 
             // targetFilterEnabled
@@ -3857,9 +3857,9 @@ namespace Assistant
             // macrosTab
             // 
             this.macrosTab.Controls.Add(this.tabControl2);
-            this.macrosTab.Location = new System.Drawing.Point(4, 24);
+            this.macrosTab.Location = new System.Drawing.Point(4, 44);
             this.macrosTab.Name = "macrosTab";
-            this.macrosTab.Size = new System.Drawing.Size(519, 342);
+            this.macrosTab.Size = new System.Drawing.Size(519, 322);
             this.macrosTab.TabIndex = 7;
             this.macrosTab.Text = "Macros";
             // 
@@ -3873,7 +3873,7 @@ namespace Assistant
             this.tabControl2.Location = new System.Drawing.Point(6, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(510, 334);
+            this.tabControl2.Size = new System.Drawing.Size(510, 314);
             this.tabControl2.TabIndex = 13;
             // 
             // subMacrosTab
@@ -3888,7 +3888,7 @@ namespace Assistant
             this.subMacrosTab.Location = new System.Drawing.Point(4, 24);
             this.subMacrosTab.Name = "subMacrosTab";
             this.subMacrosTab.Padding = new System.Windows.Forms.Padding(3);
-            this.subMacrosTab.Size = new System.Drawing.Size(502, 306);
+            this.subMacrosTab.Size = new System.Drawing.Size(502, 286);
             this.subMacrosTab.TabIndex = 0;
             this.subMacrosTab.Text = "Macros";
             // 
@@ -3905,7 +3905,7 @@ namespace Assistant
             this.macroActGroup.Controls.Add(this.actionList);
             this.macroActGroup.Location = new System.Drawing.Point(200, 3);
             this.macroActGroup.Name = "macroActGroup";
-            this.macroActGroup.Size = new System.Drawing.Size(296, 248);
+            this.macroActGroup.Size = new System.Drawing.Size(296, 224);
             this.macroActGroup.TabIndex = 18;
             this.macroActGroup.TabStop = false;
             this.macroActGroup.Text = "Actions";
@@ -3936,16 +3936,16 @@ namespace Assistant
             this.waitDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.waitDisp.Location = new System.Drawing.Point(230, 132);
             this.waitDisp.Name = "waitDisp";
-            this.waitDisp.Size = new System.Drawing.Size(60, 89);
+            this.waitDisp.Size = new System.Drawing.Size(60, 69);
             this.waitDisp.TabIndex = 5;
             this.waitDisp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loopMacro
             // 
             this.loopMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.loopMacro.Location = new System.Drawing.Point(233, 238);
+            this.loopMacro.Location = new System.Drawing.Point(233, 201);
             this.loopMacro.Name = "loopMacro";
-            this.loopMacro.Size = new System.Drawing.Size(57, 44);
+            this.loopMacro.Size = new System.Drawing.Size(57, 24);
             this.loopMacro.TabIndex = 4;
             this.loopMacro.Text = "Loop";
             this.loopMacro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3972,7 +3972,7 @@ namespace Assistant
             this.actionList.ItemHeight = 15;
             this.actionList.Location = new System.Drawing.Point(6, 17);
             this.actionList.Name = "actionList";
-            this.actionList.Size = new System.Drawing.Size(218, 245);
+            this.actionList.Size = new System.Drawing.Size(218, 221);
             this.actionList.TabIndex = 0;
             this.actionList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.actionList_KeyDown);
             this.actionList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.actionList_MouseDown);
@@ -4002,7 +4002,7 @@ namespace Assistant
             this.macroTree.HideSelection = false;
             this.macroTree.Location = new System.Drawing.Point(6, 36);
             this.macroTree.Name = "macroTree";
-            this.macroTree.Size = new System.Drawing.Size(188, 199);
+            this.macroTree.Size = new System.Drawing.Size(188, 175);
             this.macroTree.Sorted = true;
             this.macroTree.TabIndex = 15;
             this.macroTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.macroTree_AfterSelect);
@@ -4011,7 +4011,7 @@ namespace Assistant
             // delMacro
             // 
             this.delMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.delMacro.Location = new System.Drawing.Point(120, 241);
+            this.delMacro.Location = new System.Drawing.Point(120, 217);
             this.delMacro.Name = "delMacro";
             this.delMacro.Size = new System.Drawing.Size(74, 30);
             this.delMacro.TabIndex = 14;
@@ -4021,7 +4021,7 @@ namespace Assistant
             // newMacro
             // 
             this.newMacro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.newMacro.Location = new System.Drawing.Point(8, 241);
+            this.newMacro.Location = new System.Drawing.Point(8, 217);
             this.newMacro.Name = "newMacro";
             this.newMacro.Size = new System.Drawing.Size(74, 30);
             this.newMacro.TabIndex = 13;
@@ -4207,9 +4207,9 @@ namespace Assistant
             // 
             this.scriptsTab.BackColor = System.Drawing.SystemColors.Control;
             this.scriptsTab.Controls.Add(this.subTabScripts);
-            this.scriptsTab.Location = new System.Drawing.Point(4, 44);
+            this.scriptsTab.Location = new System.Drawing.Point(4, 24);
             this.scriptsTab.Name = "scriptsTab";
-            this.scriptsTab.Size = new System.Drawing.Size(519, 322);
+            this.scriptsTab.Size = new System.Drawing.Size(519, 342);
             this.scriptsTab.TabIndex = 13;
             this.scriptsTab.Text = "Scripts";
             // 
@@ -4223,7 +4223,7 @@ namespace Assistant
             this.subTabScripts.Location = new System.Drawing.Point(6, 3);
             this.subTabScripts.Name = "subTabScripts";
             this.subTabScripts.SelectedIndex = 0;
-            this.subTabScripts.Size = new System.Drawing.Size(506, 313);
+            this.subTabScripts.Size = new System.Drawing.Size(506, 333);
             this.subTabScripts.TabIndex = 14;
             // 
             // subScripts
@@ -4240,7 +4240,7 @@ namespace Assistant
             this.subScripts.Location = new System.Drawing.Point(4, 24);
             this.subScripts.Name = "subScripts";
             this.subScripts.Padding = new System.Windows.Forms.Padding(3);
-            this.subScripts.Size = new System.Drawing.Size(498, 285);
+            this.subScripts.Size = new System.Drawing.Size(498, 305);
             this.subScripts.TabIndex = 0;
             this.subScripts.Text = "Scripts";
             // 
@@ -4273,7 +4273,7 @@ namespace Assistant
             // 
             this.scriptSplitContainer.Panel2.Controls.Add(this.scriptDocMap);
             this.scriptSplitContainer.Panel2.Controls.Add(this.scriptEditor);
-            this.scriptSplitContainer.Size = new System.Drawing.Size(419, 270);
+            this.scriptSplitContainer.Size = new System.Drawing.Size(419, 286);
             this.scriptSplitContainer.SplitterDistance = 110;
             this.scriptSplitContainer.SplitterWidth = 10;
             this.scriptSplitContainer.TabIndex = 28;
@@ -4285,7 +4285,7 @@ namespace Assistant
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptTree.Location = new System.Drawing.Point(0, 31);
             this.scriptTree.Name = "scriptTree";
-            this.scriptTree.Size = new System.Drawing.Size(110, 259);
+            this.scriptTree.Size = new System.Drawing.Size(110, 275);
             this.scriptTree.Sorted = true;
             this.scriptTree.TabIndex = 29;
             this.scriptTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.scriptTree_AfterSelect);
@@ -4308,9 +4308,9 @@ namespace Assistant
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptDocMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(56)))));
             this.scriptDocMap.ForeColor = System.Drawing.Color.Maroon;
-            this.scriptDocMap.Location = new System.Drawing.Point(176, -4);
+            this.scriptDocMap.Location = new System.Drawing.Point(164, -4);
             this.scriptDocMap.Name = "scriptDocMap";
-            this.scriptDocMap.Size = new System.Drawing.Size(108, 274);
+            this.scriptDocMap.Size = new System.Drawing.Size(108, 290);
             this.scriptDocMap.TabIndex = 22;
             this.scriptDocMap.Target = null;
             // 
@@ -4352,7 +4352,7 @@ namespace Assistant
             this.scriptEditor.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.scriptEditor.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptEditor.ServiceColors")));
             this.scriptEditor.ShowCaretWhenInactive = false;
-            this.scriptEditor.Size = new System.Drawing.Size(174, 270);
+            this.scriptEditor.Size = new System.Drawing.Size(162, 286);
             this.scriptEditor.TabIndex = 21;
             this.scriptEditor.Zoom = 100;
             this.scriptEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scriptEditor_KeyDown);
@@ -4363,7 +4363,7 @@ namespace Assistant
             // 
             this.scriptGuide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.scriptGuide.AutoSize = true;
-            this.scriptGuide.Location = new System.Drawing.Point(432, 245);
+            this.scriptGuide.Location = new System.Drawing.Point(432, 261);
             this.scriptGuide.Name = "scriptGuide";
             this.scriptGuide.Size = new System.Drawing.Size(60, 26);
             this.scriptGuide.TabIndex = 26;
@@ -4442,10 +4442,10 @@ namespace Assistant
             this.subScriptOptions.Controls.Add(this.autoSaveScriptPlay);
             this.subScriptOptions.Controls.Add(this.autoSaveScript);
             this.subScriptOptions.Controls.Add(this.scriptVariablesBox);
-            this.subScriptOptions.Location = new System.Drawing.Point(4, 24);
+            this.subScriptOptions.Location = new System.Drawing.Point(4, 22);
             this.subScriptOptions.Name = "subScriptOptions";
             this.subScriptOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.subScriptOptions.Size = new System.Drawing.Size(498, 285);
+            this.subScriptOptions.Size = new System.Drawing.Size(498, 307);
             this.subScriptOptions.TabIndex = 1;
             this.subScriptOptions.Text = "Options";
             // 
@@ -5177,7 +5177,7 @@ namespace Assistant
             this.features.Name = "features";
             this.features.ReadOnly = true;
             this.features.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.features.Size = new System.Drawing.Size(255, 93);
+            this.features.Size = new System.Drawing.Size(255, 89);
             this.features.TabIndex = 83;
             this.features.Visible = false;
             // 
