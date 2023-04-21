@@ -1548,7 +1548,7 @@ namespace Assistant.Macros
 
         public override bool PerformWait()
         {
-            return !Targeting.LTWasSet;
+            return !Targeting.LastTargetWasSet;
         }
 
         public override string ToString()
