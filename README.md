@@ -1,4 +1,4 @@
-# Razor: An Ultima Online Assistant
+# RazorZHI: An Ultima Online Assistant for https://www.zhi.it based on original Razor CE https://www.razorce.com
 
 ![Razor Logo](https://imgur.com/jTtHLVF.png)
 
