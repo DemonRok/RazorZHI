@@ -1,5 +1,4 @@
 #region license
-
 // Razor: An Ultima Online Assistant
 // Copyright (c) 2022 Razor Development Community on GitHub <https://github.com/markdwags/Razor>
 // 
@@ -15,7 +14,6 @@
 // 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 #endregion
 
 using System;
@@ -64,11 +62,11 @@ namespace Assistant
             else
                 AddProperty("TitleBarText", @"UO - {char}");
 
-            AddProperty("TitleBarDisplay", false);
-            AddProperty("AutoSearch", false);
-            AddProperty("NoSearchPouches", false);
+            AddProperty("TitleBarDisplay", true);
+            AddProperty("AutoSearch", true);
+            AddProperty("NoSearchPouches", true);
             AddProperty("CounterWarnAmount", (int) 5);
-            AddProperty("CounterWarn", false);
+            AddProperty("CounterWarn", true);
             AddProperty("ObjectDelay", (int) 600);
             AddProperty("ObjectDelayEnabled", false);
             AddProperty("AlwaysOnTop", false);
@@ -77,7 +75,7 @@ namespace Assistant
             AddProperty("QueueTargets", false);
             AddProperty("WindowX", (int) 400);
             AddProperty("WindowY", (int) 400);
-            AddProperty("CountStealthSteps", false);
+            AddProperty("CountStealthSteps", true);
 
             AddProperty("SysColor", (int) 0x0044);
             AddProperty("WarningColor", (int) 0x0025);
@@ -87,7 +85,7 @@ namespace Assistant
             AddProperty("HarmfulSpellHue", (int) 0x0058);
             AddProperty("NeutralSpellHue", (int) 0x03B1);
             AddProperty("ForceSpeechHue", false);
-            AddProperty("ForceSpellHue", false);
+            AddProperty("ForceSpellHue", true);
             AddProperty("SpellFormat", @"{power} [{spell}]");
 
             AddProperty("ShowNotoHue", true);
@@ -105,7 +103,7 @@ namespace Assistant
             AddProperty("ImageFormat", "jpg");
 
             AddProperty("UndressConflicts", true);
-            AddProperty("HighlightReagents", false);
+            AddProperty("HighlightReagents", true);
             AddProperty("Systray", false);
             AddProperty("TitlebarImages", true);
 
@@ -114,24 +112,24 @@ namespace Assistant
             AddProperty("SkillListAsc", false);
 
             AddProperty("AutoStack", false);
-            AddProperty("ActionStatusMsg", false);
+            AddProperty("ActionStatusMsg", true);
             AddProperty("RememberPwds", false);
 
-            AddProperty("SpellUnequip", false);
-            AddProperty("RangeCheckLT", false);
+            AddProperty("SpellUnequip", true);
+            AddProperty("RangeCheckLT", true);
             AddProperty("LTRange", (int) 12);
 
-            AddProperty("FilterSnoopMsg", false);
+            AddProperty("FilterSnoopMsg", true);
             AddProperty("OldStatBar", false);
 
             AddProperty("SmartLastTarget", false);
-            AddProperty("LastTargTextFlags", false);
+            AddProperty("LastTargTextFlags", true);
             //AddProperty("SmartCPU", false);
             AddProperty("LTHilight", (int) 0);
 
             AddProperty("AutoFriend", false);
 
-            AddProperty("AutoOpenDoors", false);
+            AddProperty("AutoOpenDoors", true);
 
             AddProperty("MessageLevel", 0);
 
@@ -143,11 +141,11 @@ namespace Assistant
             AddProperty("ForceSizeY", 800);
 
             AddProperty("PotionEquip", false);
-            AddProperty("BlockHealPoison", false);
+            AddProperty("BlockHealPoison", true);
 
             AddProperty("SmoothWalk", false);
 
-            AddProperty("Negotiate", false);
+            AddProperty("Negotiate", true);
 
             AddProperty("MapX", 200);
             AddProperty("MapY", 200);
@@ -156,16 +154,16 @@ namespace Assistant
 
             AddProperty("LogPacketsByDefault", false);
 
-            AddProperty("ShowHealth", false);
+            AddProperty("ShowHealth", true);
             AddProperty("HealthFmt", "[{0}%]");
-            AddProperty("ShowPartyStats", false);
+            AddProperty("ShowPartyStats", true);
             AddProperty("PartyStatFmt", "[{0}% / {1}%]");
 
             AddProperty("HotKeyStop", false);
             AddProperty("DiffTargetByType", false);
             AddProperty("StepThroughMacro", false);
 
-            AddProperty("ShowTargetSelfLastClearOverhead", false);
+            AddProperty("ShowTargetSelfLastClearOverhead", true);
             AddProperty("ShowOverheadMessages", false);
             AddProperty("CaptureMibs", false);
 
@@ -175,16 +173,16 @@ namespace Assistant
 
             AddProperty("GoldPerDisplay", false);
 
-            //AddProperty("LightLevel", 31);
+            AddProperty("LightLevel", 31);
             AddProperty("LogSkillChanges", false);
             AddProperty("StealthOverhead", false);
 
-            AddProperty("ShowBuffDebuffOverhead", false);
+            AddProperty("ShowBuffDebuffOverhead", true);
             AddProperty("BuffDebuffFormat", "[{action}{name} {duration}]");
 
             AddProperty("BlockOpenCorpsesTwice", false);
 
-            AddProperty("ShowAttackTargetOverhead", false);
+            AddProperty("ShowAttackTargetOverhead", true);
 
             AddProperty("RangeCheckTargetByType", false);
             AddProperty("RangeCheckDoubleClick", false);
@@ -200,14 +198,14 @@ namespace Assistant
             AddProperty("BlockPartyInvites", false);
             AddProperty("AutoAcceptParty", false);
 
-            //AddProperty("MaxLightLevel", 31);
-            //AddProperty("MinLightLevel", 0);
-            //AddProperty("MinMaxLightLevelEnabled", false);
+            AddProperty("MaxLightLevel", 31);
+            AddProperty("MinLightLevel", 0);
+            AddProperty("MinMaxLightLevelEnabled", false);
             AddProperty("ShowStaticWalls", false);
             AddProperty("ShowStaticWallLabels", false);
 
             AddProperty("ShowTextTargetIndicator", false);
-            AddProperty("ShowAttackTargetNewOnly", false);
+            AddProperty("ShowAttackTargetNewOnly", true);
 
             AddProperty("FilterDragonGraphics", false);
             AddProperty("FilterDrakeGraphics", false);
@@ -220,9 +218,9 @@ namespace Assistant
             AddProperty("ShowDamageTakenOverhead", false);
 
             AddProperty("ShowInRazorTitleBar", false);
-            AddProperty("RazorTitleBarText", "{name} on {account} ({profile} - {shard}) - RazorZHI v{version}");
+            AddProperty("RazorTitleBarText", "{name} on {account} ({profile} - {shard}) - Razor v{version}");
 
-            AddProperty("EnableUOAAPI", false);
+            AddProperty("EnableUOAAPI", true);
 
             AddProperty("TargetIndicatorFormat", "* Target *");
 
@@ -295,8 +293,8 @@ namespace Assistant
             
             AddProperty("ScriptDisablePlayFinish", false);
 
-            AddProperty("ShowWaypointOverhead", false);
-            AddProperty("ShowWaypointDistance", false);
+            AddProperty("ShowWaypointOverhead", true);
+            AddProperty("ShowWaypointDistance", true);
             AddProperty("ShowWaypointSeconds", 10);
 
             AddProperty("ClearWaypoint", false);
@@ -306,9 +304,9 @@ namespace Assistant
 
             AddProperty("ShowPartyFriendOverhead", false);
 
-            AddProperty("OverrideSpellFormat", false);
+            AddProperty("OverrideSpellFormat", true);
 
-            AddProperty("PotionReequip", false);
+            AddProperty("PotionReequip", true);
 
             AddProperty("EnableTextFilter", false);
 
@@ -325,9 +323,9 @@ namespace Assistant
 
             AddProperty("WindowSizeX", 546);
             AddProperty("WindowSizeY", 411);
-            
+
             AddProperty("PlayEmoteSound", false);
-            
+
             AddProperty("ShowBuffDebuffGump", false);
             AddProperty("ShowBuffDebuffIcons", true);
             AddProperty("ShowBuffDebuffWidth", 100);
@@ -335,10 +333,13 @@ namespace Assistant
             AddProperty("ShowBuffDebuffSort", 2);
             AddProperty("UseBlackBuffDebuffBg", false);
             AddProperty("ShowBuffDebuffTimeType", 0);
-
+            
             AddProperty("DefaultScriptDelay", true);
             AddProperty("EnableHighlight", false);
             AddProperty("DisableScriptStopwatch", false);
+
+            AddProperty("CooldownHeight", 28);
+            AddProperty("CooldownWidth", 110);
 
             Counter.Default();
             Filter.DisableAll();
