@@ -1,5 +1,4 @@
 ﻿#region license
-
 // Razor: An Ultima Online Assistant
 // Copyright (c) 2022 Razor Development Community on GitHub <https://github.com/markdwags/Razor>
 // 
@@ -15,7 +14,6 @@
 // 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 #endregion
 
 using System;
@@ -156,9 +154,9 @@ namespace Assistant
 
             opacityLabel.SafeAction(s => { s.Text = Language.Format(LocString.OpacityA1, opacity.Value); });
 
-            //spellUnequip.SafeAction(s => { });
+            spellUnequip.SafeAction(s => { });
 
-            //spellUnequip.SafeAction(s => { s.Checked = Config.GetBool("SpellUnequip"); });
+            spellUnequip.SafeAction(s => { s.Checked = Config.GetBool("SpellUnequip"); });
 
             ltRange.SafeAction(s =>
             {
@@ -244,7 +242,7 @@ namespace Assistant
 
             blockDis.SafeAction(s => { s.Checked = Config.GetBool("BlockDismount"); });
 
-            //autoOpenDoors.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoors"); });
+            autoOpenDoors.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoors"); });
 
             objectDelay.SafeAction(s => { s.Checked = Config.GetBool("ObjectDelayEnabled"); });
 
@@ -279,7 +277,7 @@ namespace Assistant
 
             lblNeuHue.SafeAction(s => { InitPreviewHue(s, "NeutralSpellHue"); });
 
-            //undressConflicts.SafeAction(s => { s.Checked = Config.GetBool("UndressConflicts"); });
+            undressConflicts.SafeAction(s => { s.Checked = Config.GetBool("UndressConflicts"); });
 
             taskbar.SafeAction(s => { s.Checked = !(systray.Checked = Config.GetBool("Systray")); });
 
@@ -297,17 +295,17 @@ namespace Assistant
 
             showNotoHue.SafeAction(s => { s.Checked = Config.GetBool("ShowNotoHue"); });
 
-            /*corpseRange.SafeAction(s =>
+            corpseRange.SafeAction(s =>
             {
                 s.Enabled = openCorpses.Checked = Config.GetBool("AutoOpenCorpses");
                 s.Text = Config.GetInt("CorpseRange").ToString();
-            });*/
+            });
 
             actionStatusMsg.SafeAction(s => { s.Checked = Config.GetBool("ActionStatusMsg"); });
 
             autoStackRes.SafeAction(s => { s.Checked = Config.GetBool("AutoStack"); });
 
-            //rememberPwds.SafeAction(s => { s.Checked = Config.GetBool("RememberPwds"); });
+            rememberPwds.SafeAction(s => { s.Checked = Config.GetBool("RememberPwds"); });
 
             filterSnoop.SafeAction(s => { s.Checked = Config.GetBool("FilterSnoopMsg"); });
 
@@ -325,13 +323,19 @@ namespace Assistant
 
             gameSize.SafeAction(s => { s.Checked = Config.GetBool("ForceSizeEnabled"); });
 
-            //potionEquip.SafeAction(s => { s.Checked = Config.GetBool("PotionEquip"); });
+            potionEquip.SafeAction(s => { s.Checked = Config.GetBool("PotionEquip"); });
 
             blockHealPoison.SafeAction(s => { s.Checked = Config.GetBool("BlockHealPoison"); });
 
-            //negotiate.SafeAction(s => { s.Checked = Config.GetBool("Negotiate"); });
+            negotiate.SafeAction(s => { s.Checked = Config.GetBool("Negotiate"); });
 
-            //logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
+            logPackets.SafeAction(s => { s.Checked = Config.GetBool("LogPacketsByDefault"); });
+
+            healthFmt.SafeAction(s =>
+            {
+                s.Enabled = showHealthOH.Checked = Config.GetBool("ShowHealth");
+                s.Text = Config.GetString("HealthFmt");
+            });
 
             chkPartyOverhead.SafeAction(s => { s.Checked = Config.GetBool("ShowPartyStats"); });
 
@@ -374,7 +378,7 @@ namespace Assistant
 
             stealthOverhead.SafeAction(s => { s.Checked = Config.GetBool("StealthOverhead"); });
 
-            //blockOpenCorpsesTwice.SafeAction(s => { s.Checked = Config.GetBool("BlockOpenCorpsesTwice"); });
+            blockOpenCorpsesTwice.SafeAction(s => { s.Checked = Config.GetBool("BlockOpenCorpsesTwice"); });
 
             showContainerLabels.SafeAction(s => { s.Checked = Config.GetBool("ShowContainerLabels"); });
 
@@ -387,7 +391,7 @@ namespace Assistant
             showAttackTarget.SafeAction(s => { s.Checked = Config.GetBool("ShowAttackTargetOverhead"); });
 
             showBuffDebuffOverhead.SafeAction(s => { s.Checked = Config.GetBool("ShowBuffDebuffOverhead"); });
-
+            
             BuffDebuffManager.ReloadFilter();
 
             rangeCheckTargetByType.SafeAction(s => { s.Checked = Config.GetBool("RangeCheckTargetByType"); });
@@ -400,7 +404,7 @@ namespace Assistant
 
             autoAcceptParty.SafeAction(s => { s.Checked = Config.GetBool("AutoAcceptParty"); });
 
-            //minMaxLightLevel.SafeAction(s => { s.Checked = Config.GetBool("MinMaxLightLevelEnabled"); });
+            minMaxLightLevel.SafeAction(s => { s.Checked = Config.GetBool("MinMaxLightLevelEnabled"); });
 
             showTextTargetIndicator.SafeAction(s => { s.Checked = Config.GetBool("ShowTextTargetIndicator"); });
 
@@ -426,7 +430,7 @@ namespace Assistant
 
             showInRazorTitleBar.SafeAction(s => { s.Checked = Config.GetBool("ShowInRazorTitleBar"); });
 
-            //enableUOAAPI.SafeAction(s => { s.Checked = Config.GetBool("EnableUOAAPI"); });
+            enableUOAAPI.SafeAction(s => { s.Checked = Config.GetBool("EnableUOAAPI"); });
 
             lastBackup.SafeAction(s => { s.Text = $"Last Backup: {Config.GetAppSetting<string>("BackupTime")}"; });
 
@@ -446,10 +450,17 @@ namespace Assistant
 
             macroActionDelay.SafeAction(s => { s.Checked = Config.GetBool("MacroActionDelay"); });
 
-            //autoOpenDoorWhenHidden.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoorWhenHidden"); });
+            autoOpenDoorWhenHidden.SafeAction(s => { s.Checked = Config.GetBool("AutoOpenDoorWhenHidden"); });
 
             disableMacroPlayFinish.SafeAction(s => { s.Checked = Config.GetBool("DisableMacroPlayFinish"); });
 
+
+            showBandageTimer.SafeAction(s => { s.Checked = Config.GetBool("ShowBandageTimer"); });
+            bandageTimerLocation.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBandageTimerLocation"); });
+            onlyShowBandageTimerSeconds.SafeAction(s => { s.Checked = Config.GetBool("OnlyShowBandageTimerEvery"); });
+            bandageTimerSeconds.SafeAction(s => { s.Text = Config.GetInt("OnlyShowBandageTimerSeconds").ToString(); });
+            bandageTimerFormat.SafeAction(s => { s.Text = Config.GetString("ShowBandageTimerFormat"); });
+            lblBandageCountFormat.SafeAction(s => { InitPreviewHue(s, "ShowBandageTimerHue"); });
 
             lblTargetFormat.SafeAction(s => { InitPreviewHue(s, "TargetIndicatorHue"); });
 
@@ -461,6 +472,11 @@ namespace Assistant
             onlyNextPrevBeneficial.SafeAction(s => { s.Checked = Config.GetBool("OnlyNextPrevBeneficial"); });
             friendBeneficialOnly.SafeAction(s => { s.Checked = Config.GetBool("FriendlyBeneficialOnly"); });
             nonFriendlyHarmfulOnly.SafeAction(s => { s.Checked = Config.GetBool("NonFriendlyHarmfulOnly"); });
+
+            showBandageStart.SafeAction(s => { s.Checked = Config.GetBool("ShowBandageStart"); });
+            showBandageEnd.SafeAction(s => { s.Checked = Config.GetBool("ShowBandageEnd"); });
+            bandageStartMessage.SafeAction(s => { s.Text = Config.GetString("BandageStartMessage"); });
+            bandageEndMessage.SafeAction(s => { s.Text = Config.GetString("BandageEndMessage"); });
 
             captureOthersDeathDelay.SafeAction(
                 s => { s.Text = Config.GetDouble("CaptureOthersDeathDelay").ToString(); });
@@ -498,13 +514,13 @@ namespace Assistant
 
             overrideSpellFormat.SafeAction(s => { s.Checked = Config.GetBool("OverrideSpellFormat"); });
 
-            //reequipHandsPotion.SafeAction(s => { s.Checked = Config.GetBool("PotionReequip"); });
+            reequipHandsPotion.SafeAction(s => { s.Checked = Config.GetBool("PotionReequip"); });
 
             enableTextFilter.SafeAction(s => { s.Checked = Config.GetBool("EnableTextFilter"); });
 
             disableScriptTooltips.SafeAction(s => { s.Checked = Config.GetBool("DisableScriptTooltips"); });
 
-            //buyAgentIgnoreGold.SafeAction(s => { s.Checked = Config.GetBool("BuyAgentsIgnoreGold"); });
+            buyAgentIgnoreGold.SafeAction(s => { s.Checked = Config.GetBool("BuyAgentsIgnoreGold"); });
 
             nextPrevAbcOrder.SafeAction(s => { s.Checked = Config.GetBool("NextPrevAlphabetical"); });
 
@@ -517,9 +533,13 @@ namespace Assistant
             useBlackBuffDebuffBg.SafeAction(s => { s.Checked = Config.GetBool("UseBlackBuffDebuffBg"); });
             buffBarSort.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBuffDebuffSort"); });
             showBuffDebuffTimeType.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBuffDebuffTimeType"); });
+            
             defaultScriptDelay.SafeAction(s => { s.Checked = Config.GetBool("DefaultScriptDelay"); });
             enableHighlight.SafeAction(s => { s.Checked = Config.GetBool("EnableHighlight"); });
             disableScriptStopwatch.SafeAction(s => { s.Checked = Config.GetBool("DisableScriptStopwatch"); });
+
+            cooldownWidth.SafeAction(s => { s.Text = Config.GetInt("CooldownWidth").ToString(); });
+            cooldownHeight.SafeAction(s => { s.Text = Config.GetInt("CooldownHeight").ToString(); });
 
             EngineZHI171223.MainWindow.Size = new Size(Config.GetInt("WindowSizeX"), Config.GetInt("WindowSizeY"));
 
@@ -666,14 +686,14 @@ namespace Assistant
 
                 titleBarParams.SelectedIndex = 0;
             }
-            /*else if (tabs.SelectedTab == dressTab)
+            else if (tabs.SelectedTab == dressTab)
             {
                 int sel = dressList.SelectedIndex;
                 dressItems.Items.Clear();
                 DressList.Redraw();
                 if (sel >= 0 && sel < dressList.Items.Count)
                     dressList.SelectedIndex = sel;
-            }*/
+            }
             else if (tabs.SelectedTab == hotkeysTab)
             {
                 filterHotkeys.Text = string.Empty;
@@ -771,7 +791,7 @@ namespace Assistant
                 _itemTreeCache.Nodes.Add((TreeNode)node.Clone());
             }
         }
-        
+
         private Version m_Ver = System.Reflection.Assembly.GetCallingAssembly().GetName().Version;
 
         private uint m_OutPrev;
@@ -961,10 +981,6 @@ namespace Assistant
                     Skill sk = World.Player.Skills[i];
                     Total += sk.Base;
                     items[0] = Skills.GetSkillDisplayName(i);
-                    if (items[0] == string.Empty)
-                    {
-                        continue;
-                    }
                     items[1] = $"{sk.Value:F1}";
                     items[2] = $"{sk.Base:F1}";
                     items[3] = $"{(sk.Delta > 0 ? "+" : "")}{sk.Delta:F1}";
@@ -1322,7 +1338,7 @@ namespace Assistant
                 return;
             }
 
-            string remove = (string)profiles.Items[profiles.SelectedIndex];
+            string remove = (string) profiles.Items[profiles.SelectedIndex];
 
             if (remove == "default")
             {
@@ -1338,7 +1354,7 @@ namespace Assistant
             }
 
             profiles.Items.Remove(remove);
-            
+
             if (!Config.LoadProfile("default"))
             {
                 Config.CurrentProfile.MakeDefault();
@@ -2288,7 +2304,7 @@ namespace Assistant
              }
         }*/
 
-        /*private void logPackets_CheckedChanged(object sender, System.EventArgs e)
+        private void logPackets_CheckedChanged(object sender, System.EventArgs e)
         {
             if (logPackets.Checked)
             {
@@ -2302,7 +2318,7 @@ namespace Assistant
             {
                 Packet.Logging = false;
             }
-        }*/
+        }
 
         private void showNotoHue_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -2316,16 +2332,16 @@ namespace Assistant
             Counter.FullRecount();
         }
 
-        /*private void openCorpses_CheckedChanged(object sender, System.EventArgs e)
+        private void openCorpses_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("AutoOpenCorpses", openCorpses.Checked);
             corpseRange.Enabled = openCorpses.Checked;
-        }*/
+        }
 
-        /*private void corpseRange_TextChanged(object sender, System.EventArgs e)
+        private void corpseRange_TextChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("CorpseRange", Utility.ToInt32(corpseRange.Text, 2));
-        }*/
+        }
 
         private void showWelcome_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -2948,7 +2964,7 @@ namespace Assistant
 
             RebuildItemCache();
         }
-        
+
         public Macro LastSelectedMacro { get; set; }
 
         private void macroTree_AfterSelect(object sender, System.Windows.Forms.TreeViewEventArgs e)
@@ -3879,7 +3895,7 @@ namespace Assistant
             string str = Language.GetControlText(this.Name);
             if (string.IsNullOrEmpty(str))
             {
-                str = "RazorZHI v{0}";
+                str = "Razor v{0}";
             }
 
             str = string.Format(str, EngineZHI171223.Version);
@@ -3923,10 +3939,10 @@ namespace Assistant
                     }
                     else
                     {
-                        m_NotifyIcon.Text = $"RazorZHI - {World.Player.Name} ({World.ShardName})";
+                        m_NotifyIcon.Text = $"Razor - {World.Player.Name} ({World.ShardName})";
                     }
                 else
-                    m_NotifyIcon.Text = "RazorZHI";
+                    m_NotifyIcon.Text = "Razor";
             }
         }
 
@@ -4019,7 +4035,7 @@ namespace Assistant
             Config.SetProperty("CapPath", screenPath.Text);
         }
 
-        /*private void rememberPwds_CheckedChanged(object sender, System.EventArgs e)
+        private void rememberPwds_CheckedChanged(object sender, System.EventArgs e)
         {
             if (rememberPwds.Checked && !Config.GetBool("RememberPwds"))
             {
@@ -4032,7 +4048,7 @@ namespace Assistant
             }
 
             Config.SetProperty("RememberPwds", rememberPwds.Checked);
-        }*/
+        }
 
         private void langSel_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -4064,10 +4080,10 @@ namespace Assistant
             //HotKey.KeyDown(e.KeyData);
         }
 
-        /*private void spellUnequip_CheckedChanged(object sender, System.EventArgs e)
+        private void spellUnequip_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("SpellUnequip", spellUnequip.Checked);
-        }*/
+        }
 
         private void rangeCheckLT_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -4153,10 +4169,10 @@ namespace Assistant
             Config.SetProperty("AutoFriend", autoFriend.Checked);
         }
 
-        /*private void autoOpenDoors_CheckedChanged(object sender, System.EventArgs e)
+        private void autoOpenDoors_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("AutoOpenDoors", autoOpenDoors.Checked);
-        }*/
+        }
 
         private void msglvl_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -4247,10 +4263,10 @@ namespace Assistant
             }
         }
 
-        /*private void potionEquip_CheckedChanged(object sender, System.EventArgs e)
+        private void potionEquip_CheckedChanged(object sender, System.EventArgs e)
         {
             Config.SetProperty("PotionEquip", potionEquip.Checked);
-        }*/
+        }
 
         private void blockHealPoison_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -4261,8 +4277,8 @@ namespace Assistant
         {
             if (!m_Initializing)
             {
-                //Config.SetProperty("Negotiate", negotiate.Checked);
-                //Client.Instance.SetNegotiate(negotiate.Checked);
+                Config.SetProperty("Negotiate", negotiate.Checked);
+                Client.Instance.SetNegotiate(negotiate.Checked);
             }
         }
 
@@ -4404,14 +4420,14 @@ namespace Assistant
             if (!Client.Instance.AllowBit(FeatureBit.RangeCheckLT))
                 LockControl(this.rangeCheckLT);
 
-            //if (!Client.Instance.AllowBit(FeatureBit.AutoOpenDoors))
-                //LockControl(this.autoOpenDoors);
+            if (!Client.Instance.AllowBit(FeatureBit.AutoOpenDoors))
+                LockControl(this.autoOpenDoors);
 
-            //if (!Client.Instance.AllowBit(FeatureBit.UnequipBeforeCast))
-                //LockControl(this.spellUnequip);
+            if (!Client.Instance.AllowBit(FeatureBit.UnequipBeforeCast))
+                LockControl(this.spellUnequip);
 
-            //if (!Client.Instance.AllowBit(FeatureBit.AutoPotionEquip))
-                //LockControl(this.potionEquip);
+            if (!Client.Instance.AllowBit(FeatureBit.AutoPotionEquip))
+                LockControl(this.potionEquip);
 
             if (!Client.Instance.AllowBit(FeatureBit.BlockHealPoisoned))
                 LockControl(this.blockHealPoison);
@@ -4419,12 +4435,12 @@ namespace Assistant
             if (!Client.Instance.AllowBit(FeatureBit.LoopingMacros))
                 LockControl(this.loopMacro);
 
-            /*if (!Client.Instance.AllowBit(FeatureBit.OverheadHealth))
+            if (!Client.Instance.AllowBit(FeatureBit.OverheadHealth))
             {
                 LockControl(this.showHealthOH);
                 LockControl(this.healthFmt);
                 LockControl(this.chkPartyOverhead);
-            }*/
+            }
         }
 
         public Assistant.MapUO.MapWindow MapWindow;
@@ -4445,6 +4461,16 @@ namespace Assistant
                     s.BringToFront();
                 });
             }
+        }
+
+        private void showHealthOH_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Config.SetProperty("ShowHealth", healthFmt.Enabled = showHealthOH.Checked);
+        }
+
+        private void healthFmt_TextChanged(object sender, System.EventArgs e)
+        {
+            Config.SetProperty("HealthFmt", healthFmt.Text);
         }
 
         private void chkPartyOverhead_CheckedChanged(object sender, System.EventArgs e)
@@ -4650,7 +4676,7 @@ namespace Assistant
                             Path.Combine(backupDir, "Profiles")), true);
                 }
 
-                MessageBox.Show(this, $"Backup created: {backupDir}", "RazorZHI Backup", MessageBoxButtons.OK,
+                MessageBox.Show(this, $"Backup created: {backupDir}", "Razor Backup", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
                 Config.SetAppSetting("BackupTime", DateTime.Now.ToString());
@@ -4875,7 +4901,7 @@ namespace Assistant
             Config.SetProperty("ShowBuffDebuffOverhead", showBuffDebuffOverhead.Checked);
         }
 
-        /*private void blockOpenCorpsesTwice_CheckedChanged(object sender, EventArgs e)
+        private void blockOpenCorpsesTwice_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("BlockOpenCorpsesTwice", blockOpenCorpsesTwice.Checked);
 
@@ -4886,7 +4912,7 @@ namespace Assistant
 
                 World.Player.OpenedCorpses.Clear();
             }
-        }*/
+        }
 
         private void showAttackTarget_CheckedChanged(object sender, EventArgs e)
         {
@@ -5542,7 +5568,7 @@ namespace Assistant
             sb.AppendLine("{profile} - Selected profile name");
             sb.AppendLine("{account} - Account name");
 
-            MessageBox.Show(this, sb.ToString(), "RazorZHI Title Bar Variables", MessageBoxButtons.OK,
+            MessageBox.Show(this, sb.ToString(), "Razor Title Bar Variables", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
 
@@ -5553,7 +5579,7 @@ namespace Assistant
 
         private void enableUOAAPI_CheckedChanged(object sender, EventArgs e)
         {
-            //Config.SetProperty("EnableUOAAPI", enableUOAAPI.Checked);
+            Config.SetProperty("EnableUOAAPI", enableUOAAPI.Checked);
         }
 
         private void setBackupFolder_Click(object sender, EventArgs e)
@@ -5645,11 +5671,11 @@ namespace Assistant
                 s.Checked = false;
             });
 
-            /*rememberPwds.SafeAction(s =>
+            rememberPwds.SafeAction(s =>
             {
                 s.Enabled = false;
                 s.Checked = false;
-            });*/
+            });
 
             highlightSpellReags.SafeAction(s =>
             {
@@ -5675,13 +5701,13 @@ namespace Assistant
                 s.Checked = false;
             });
 
-            /*showHealthOH.SafeAction(s =>
+            showHealthOH.SafeAction(s =>
             {
                 s.Enabled = false;
                 s.Checked = false;
-            });*/
+            });
 
-            //healthFmt.SafeAction(s => { s.Enabled = false; });
+            healthFmt.SafeAction(s => { s.Enabled = false; });
         }
 
         private void macroActionDelay_CheckedChanged(object sender, EventArgs e)
@@ -5695,14 +5721,52 @@ namespace Assistant
                 MessageBoxIcon.Information);
         }
 
-        /*private void autoDoorWhenHidden_CheckedChanged(object sender, EventArgs e)
+        private void autoDoorWhenHidden_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("AutoOpenDoorWhenHidden", autoOpenDoorWhenHidden.Checked);
-        }*/
+        }
 
         private void disableMacroPlayFinish_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("DisableMacroPlayFinish", disableMacroPlayFinish.Checked);
+        }
+
+        private void showBandageTimer_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBandageTimer", showBandageTimer.Checked);
+        }
+
+        private void bandageTimerLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBandageTimerLocation", bandageTimerLocation.SelectedIndex);
+        }
+
+        private void onlyShowBandageTimerSeconds_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("OnlyShowBandageTimerEvery", onlyShowBandageTimerSeconds.Checked);
+        }
+
+        private void bandageTimerSeconds_TextChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("OnlyShowBandageTimerSeconds", Utility.ToInt32(bandageTimerSeconds.Text.Trim(), 1));
+        }
+
+        private void bandageTimerFormat_TextChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBandageTimerFormat", bandageTimerFormat.Text);
+
+            if (string.IsNullOrEmpty(bandageTimerFormat.Text))
+            {
+                Config.SetProperty("ShowBandageTimerFormat", "Bandage: {count}s");
+                bandageTimerFormat.Text = "Bandage: {count}s";
+            }
+
+            Config.SetProperty("ShowBandageTimerFormat", bandageTimerFormat.Text);
+        }
+
+        private void setBandageHue_Click(object sender, EventArgs e)
+        {
+            lblBandageCountFormat.SafeAction(s => { SetHue(s, "ShowBandageTimerHue"); });
         }
 
         private void friendRemoveSelected_Click(object sender, EventArgs e)
@@ -6026,6 +6090,38 @@ namespace Assistant
             Config.SetProperty("NonFriendlyHarmfulOnly", nonFriendlyHarmfulOnly.Checked);
         }
 
+        private void ShowBandageStart_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBandageStart", showBandageStart.Checked);
+        }
+
+        private void ShowBandageEnd_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBandageEnd", showBandageEnd.Checked);
+        }
+
+        private void BandageStartMessage_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(bandageStartMessage.Text))
+            {
+                Config.SetProperty("BandageStartMessage", "Bandage: Starting");
+                bandageStartMessage.SafeAction(s => s.Text = "Bandage: Starting");
+            }
+
+            Config.SetProperty("BandageStartMessage", bandageStartMessage.Text);
+        }
+
+        private void BandageEndMessage_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(bandageEndMessage.Text))
+            {
+                Config.SetProperty("BandageEndMessage", "Bandage: Ending");
+                bandageEndMessage.SafeAction(s => s.Text = "Bandage: Ending");
+            }
+
+            Config.SetProperty("BandageEndMessage", bandageEndMessage.Text);
+        }
+
         private BuffDebuffOptions _buffDebuffOptions = null;
 
         private void buffDebuffOptions_Click(object sender, EventArgs e)
@@ -6305,7 +6401,7 @@ namespace Assistant
             }
             
             RazorScript selScript = GetScriptSel();
-
+            
             // We want to play the contents of the script editor
 
             ScriptManager.PlayScriptFromUI(scriptEditor.Lines.ToArray(), selScript != null ? selScript.ToString() : "N/A", Config.GetBool("EnableHighlight"));
@@ -6532,7 +6628,6 @@ namespace Assistant
 
             World.Player.SendMessage(MsgLevel.Force, LocString.SelTargAct);
         }
-
         private void changeScriptVariable_Click(object sender, EventArgs e)
         {
             if (ScriptManager.Running || ScriptManager.Recording || World.Player == null)
@@ -6566,7 +6661,6 @@ namespace Assistant
             name = name.Split('(')[0].Trim();
 
             ScriptVariables.UnregisterVariable(name);
-
             ScriptManager.RedrawScripts();
         }
 
@@ -6668,6 +6762,7 @@ namespace Assistant
                 menu.Items.Add(scriptSplitContainer.Panel1Collapsed ? "Show script tree" : "Hide script tree",
                     null,
                     OnScriptHideTreeView);
+
 
                 menu.Show(scriptEditor, new Point(e.X, e.Y));
             }
@@ -6801,8 +6896,9 @@ namespace Assistant
 
             string[] lines = scriptEditor.SelectedText.Split(new[] {"\r\n", "\r", "\n"}, StringSplitOptions.None);
 
+            
             RazorScript selScript = GetScriptSel();
-
+            
             // We want to play the contents of the script editor
             ScriptManager.PlayScriptFromUI(lines, selScript != null ? selScript.ToString() : "N/A", Config.GetBool("EnableHighlight"));
         }
@@ -7109,8 +7205,8 @@ namespace Assistant
                 item.SubItems.Add(new ListViewItem.ListViewSubItem(item, "None"));
 
                 item.SubItems[1].BackColor = hueIdx > 0 && hueIdx < 3000
-                                    ? Hues.GetHue(hueIdx - 1).GetColor(HueEntry.TextHueIDX)
-                                    : SystemColors.Control;
+                    ? Hues.GetHue(hueIdx - 1).GetColor(HueEntry.TextHueIDX)
+                    : SystemColors.Control;
 
                 item.SubItems[1].ForeColor = (item.SubItems[1].BackColor.GetBrightness() < 0.35 ? Color.White : Color.Black);
                 item.UseItemStyleForSubItems = false;
@@ -7223,10 +7319,10 @@ namespace Assistant
             Config.SetProperty("OverrideSpellFormat", overrideSpellFormat.Checked);            
         }
 
-        /*private void reequipHandsPotion_CheckedChanged(object sender, EventArgs e)
+        private void reequipHandsPotion_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("PotionReequip", reequipHandsPotion.Checked);
-        }*/
+        }
 
         private void agentSetHotKey_Click(object sender, EventArgs e)
         {
@@ -7328,7 +7424,7 @@ namespace Assistant
                     HotKey.RebuildList(hotkeyTree);
                     RebuildHotKeyCache();
                 }
-
+                
                 TreeNode resultNode = SearchTreeView($"{Language.Format(LocString.PlayScript, _selectedScript.ToString())}", hotkeyTree.Nodes);
 
                 if (resultNode != null)
@@ -7377,7 +7473,7 @@ namespace Assistant
                     m_ScriptContextMenu.Items.Add($"Open '{selScript.Name}' externally", null, OpenScriptExternally);
                     m_ScriptContextMenu.Items.Add("Copy to clipboard", null, CopyScriptToClipboard);
                 }
-
+                
                 m_ScriptContextMenu.Items.Add("-");
                 m_ScriptContextMenu.Items.Add("Reload all scripts", null, ReloadScripts);
                 m_ScriptContextMenu.Items.Add("Hide script tree", null, HideScriptTreeView);
@@ -7398,7 +7494,7 @@ namespace Assistant
                 }
                 else
                 {
-                    append = $"RazorZHI v{EngineZHI171223.Version}";
+                    append = $"Razor v{EngineZHI171223.Version}";
                 }
 
                 Text = saved ? $"[{_selectedScript.Name}] - {append}" : $"[*{_selectedScript.Name}] - {append}";
@@ -7597,10 +7693,10 @@ namespace Assistant
             }
         }
 
-        /*private void buyAgentIgnoreGold_CheckedChanged(object sender, EventArgs e)
+        private void buyAgentIgnoreGold_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("BuyAgentsIgnoreGold", buyAgentIgnoreGold.Checked);
-        }*/
+        }
 
         private ContextMenuStrip m_AgentsMenu = null;
 
@@ -7717,6 +7813,7 @@ namespace Assistant
             }
         }
 
+        
 
         private void subAdvancedTab_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -7770,11 +7867,11 @@ namespace Assistant
 
         private void ItemAddCommand(object sender, EventArgs e)
         {
-
+            
             if (itemTree.SelectedNode != null)
             {
                 TreeNode selectedNode = itemTree.SelectedNode;
-                
+
                 if (selectedNode.Tag == null)
                 {
                     return;
@@ -7788,7 +7885,7 @@ namespace Assistant
                 {
                     command = $"[m {command.Substring(1)}";
                 }
-                
+
                 if (sender == null)
                 {
                     World.Player.SendMessage(MsgLevel.Info, $"Command: {command}");
@@ -7829,13 +7926,15 @@ namespace Assistant
                     World.Player.SendMessage(MsgLevel.Info, $"Command: {command}");
                     World.Player.Say(command);
                 }
-                
+
+
                 if (itemCopyToClipboard.Checked)
                 {
                     Clipboard.SetDataObject(command, true);
                 }
             }
         }
+        
         private void itemTree_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (World.Player == null)
@@ -7882,7 +7981,7 @@ namespace Assistant
 
         private void doorWestCW_Click(object sender, EventArgs e)
         {
-            if ((DoorInfo)doorTree.SelectedNode?.Tag != null)
+            if ((DoorInfo) doorTree.SelectedNode?.Tag != null)
             {
                 StaffToolsManager.AddDoor((DoorInfo)doorTree.SelectedNode.Tag, "WestCW");
             }
@@ -8001,7 +8100,7 @@ namespace Assistant
             {
                 if (currentNode.Text.Contains(search))
                 {
-                    filteredNodes.Add((TreeNode)currentNode.Clone());
+                    filteredNodes.Add((TreeNode) currentNode.Clone());
                 }
 
                 if (currentNode.Nodes.Count > 0)
@@ -8016,7 +8115,6 @@ namespace Assistant
             }
 
             return filteredNodes.ToArray();
-
         }
 
         private void playEmoteSound_CheckedChanged(object sender, EventArgs e)
@@ -8068,7 +8166,7 @@ namespace Assistant
         private void defaultScriptDelay_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("DefaultScriptDelay", defaultScriptDelay.Checked);
-
+            
             ScriptManager.ResetTimer();
         }
 
@@ -8080,6 +8178,30 @@ namespace Assistant
         private void disableScriptStopwatch_CheckedChanged(object sender, EventArgs e)
         {
             Config.SetProperty("DisableScriptStopwatch", disableScriptStopwatch.Checked);
+        }
+
+        private void cooldownHeight_TextChanged(object sender, EventArgs e)
+        {
+            int height = Utility.ToInt32(cooldownHeight.Text, 28);
+
+            if (height < 1)
+            {
+                height = 28;
+            }
+
+            Config.SetProperty("CooldownHeight", height);
+        }
+
+        private void cooldownWidth_TextChanged(object sender, EventArgs e)
+        {
+            int width = Utility.ToInt32(cooldownWidth.Text, 110);
+
+            if (width < 1)
+            {
+                width = 110;
+            }
+
+            Config.SetProperty("CooldownWidth", width);
         }
     }
 }
