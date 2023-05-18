@@ -1817,7 +1817,7 @@ namespace Assistant
             this.subOptionsMiscTab.Controls.Add(this.blockHealPoison);
             //this.subOptionsMiscTab.Controls.Add(this.potionEquip);
             this.subOptionsMiscTab.Controls.Add(this.spellUnequip);
-            this.subOptionsMiscTab.Controls.Add(this.autoOpenDoors);
+            //this.subOptionsMiscTab.Controls.Add(this.autoOpenDoors);
             this.subOptionsMiscTab.Controls.Add(this.chkStealth);
             this.subOptionsMiscTab.Controls.Add(this.label18);
             this.subOptionsMiscTab.Controls.Add(this.gameSize);
@@ -1830,12 +1830,12 @@ namespace Assistant
             //this.subOptionsMiscTab.Controls.Add(this.minMaxLightLevel);
             this.subOptionsMiscTab.Controls.Add(this.blockPartyInvites);
             this.subOptionsMiscTab.Controls.Add(this.blockTradeRequests);
-            this.subOptionsMiscTab.Controls.Add(this.blockOpenCorpsesTwice);
+            //this.subOptionsMiscTab.Controls.Add(this.blockOpenCorpsesTwice);
             this.subOptionsMiscTab.Controls.Add(this.preAOSstatbar);
-            this.subOptionsMiscTab.Controls.Add(this.corpseRange);
+            //this.subOptionsMiscTab.Controls.Add(this.corpseRange);
             this.subOptionsMiscTab.Controls.Add(this.autoStackRes);
-            this.subOptionsMiscTab.Controls.Add(this.label4);
-            this.subOptionsMiscTab.Controls.Add(this.openCorpses);
+            //this.subOptionsMiscTab.Controls.Add(this.label4);
+            //this.subOptionsMiscTab.Controls.Add(this.openCorpses);
             this.subOptionsMiscTab.Controls.Add(this.blockDis);
             this.subOptionsMiscTab.Location = new System.Drawing.Point(4, 22);
             this.subOptionsMiscTab.Name = "subOptionsMiscTab";
@@ -1980,12 +1980,12 @@ namespace Assistant
             // 
             // autoOpenDoors
             // 
-            this.autoOpenDoors.Location = new System.Drawing.Point(260, 88);
-            this.autoOpenDoors.Name = "autoOpenDoors";
-            this.autoOpenDoors.Size = new System.Drawing.Size(118, 20);
-            this.autoOpenDoors.TabIndex = 110;
-            this.autoOpenDoors.Text = "Auto-open doors";
-            this.autoOpenDoors.CheckedChanged += new System.EventHandler(this.autoOpenDoors_CheckedChanged);
+            //this.autoOpenDoors.Location = new System.Drawing.Point(260, 88);
+            //this.autoOpenDoors.Name = "autoOpenDoors";
+            //this.autoOpenDoors.Size = new System.Drawing.Size(118, 20);
+            //this.autoOpenDoors.TabIndex = 110;
+            //this.autoOpenDoors.Text = "Auto-open doors";
+            //this.autoOpenDoors.CheckedChanged += new System.EventHandler(this.autoOpenDoors_CheckedChanged);
             // 
             // chkStealth
             // 
@@ -5606,8 +5606,8 @@ namespace Assistant
             this.advancedInfoTab.Controls.Add(this.fontDecrease);
             this.advancedInfoTab.Controls.Add(this.fontIncrease);
             this.advancedInfoTab.Controls.Add(this.groupBox16);
-            //this.advancedInfoTab.Controls.Add(this.enableUOAAPI);
-            //this.advancedInfoTab.Controls.Add(this.disableSmartCPU);
+            this.advancedInfoTab.Controls.Add(this.enableUOAAPI);
+            this.advancedInfoTab.Controls.Add(this.disableSmartCPU);
             this.advancedInfoTab.Controls.Add(this.negotiate);
             this.advancedInfoTab.Controls.Add(this.openRazorDataDir);
             this.advancedInfoTab.Controls.Add(this.msglvl);
