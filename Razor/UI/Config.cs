@@ -67,7 +67,7 @@ namespace Assistant
             AddProperty("NoSearchPouches", true);
             AddProperty("CounterWarnAmount", (int) 5);
             AddProperty("CounterWarn", true);
-            AddProperty("ObjectDelay", (int) 600);
+            AddProperty("ObjectDelay", (int) 30);
             AddProperty("ObjectDelayEnabled", false);
             AddProperty("AlwaysOnTop", false);
             AddProperty("SortCounters", true);
@@ -129,7 +129,7 @@ namespace Assistant
 
             AddProperty("AutoFriend", false);
 
-            AddProperty("AutoOpenDoors", true);
+            AddProperty("AutoOpenDoors", false);
 
             AddProperty("MessageLevel", 0);
 
