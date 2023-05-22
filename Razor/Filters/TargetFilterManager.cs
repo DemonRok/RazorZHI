@@ -46,7 +46,7 @@ namespace Assistant.Filters
 
         public static void OnAddFriendTargetFilter(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI171223.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI221523.MainWindow.SafeAction(s => s.ShowMe());
 
             if (!location && serial.IsMobile && serial != World.Player.Serial)
             {

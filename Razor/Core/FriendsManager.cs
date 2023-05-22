@@ -75,7 +75,7 @@ namespace Assistant.Core
 
             public void AddHotKeys()
             {
-                if (EngineZHI171223.MainWindow == null)
+                if (EngineZHI221523.MainWindow == null)
                 {
                     HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Add Target To: {GroupName}", AddFriendToGroup);
                     HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Toggle Group: {GroupName}", ToggleFriendGroup);
@@ -86,7 +86,7 @@ namespace Assistant.Core
                 }
                 else
                 {
-                    EngineZHI171223.MainWindow.SafeAction(s =>
+                    EngineZHI221523.MainWindow.SafeAction(s =>
                     {
                         HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Add Target To: {GroupName}", AddFriendToGroup);
                         HotKey.Add(HKCategory.Friends, HKSubCat.None, $"Toggle Group: {GroupName}", ToggleFriendGroup);
@@ -100,7 +100,7 @@ namespace Assistant.Core
 
             public void RemoveHotKeys()
             {
-                if (EngineZHI171223.MainWindow == null)
+                if (EngineZHI221523.MainWindow == null)
                 {
                     HotKey.Remove($"Add Target To: {GroupName}");
                     HotKey.Remove($"Toggle Group: {GroupName}");
@@ -109,7 +109,7 @@ namespace Assistant.Core
                 }
                 else
                 {
-                    EngineZHI171223.MainWindow.SafeAction(s =>
+                    EngineZHI221523.MainWindow.SafeAction(s =>
                     {
                         HotKey.Remove($"Add Target To: {GroupName}");
                         HotKey.Remove($"Toggle Group: {GroupName}");
@@ -148,7 +148,7 @@ namespace Assistant.Core
 
             public void OnAddFriendTarget(bool location, Serial serial, Point3D loc, ushort gfx)
             {
-                EngineZHI171223.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI221523.MainWindow.SafeAction(s => s.ShowMe());
 
                 if (!location && serial.IsMobile && serial != World.Player.Serial)
                 {

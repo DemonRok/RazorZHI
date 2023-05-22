@@ -25,7 +25,7 @@ using System.Linq;
 using System.Text;
 using Assistant.Core;
 using Assistant.HotKeys;
-using Assistant.Scripts.EngineZHI171223;
+using Assistant.Scripts.EngineZHI221523;
 using Assistant.Scripts.Helpers;
 using Ultima;
 
@@ -654,7 +654,7 @@ namespace Assistant.Scripts
                 }
                 ScriptVariables.RegisterVariable(name, serial);
                 CommandHelper.SendMessage($"'{name}' script variable updated to '{serial}'", quiet);
-                Assistant.EngineZHI171223.MainWindow.SaveScriptVariables();
+                Assistant.EngineZHI221523.MainWindow.SaveScriptVariables();
                 return true;
             }
             Interpreter.Timeout(vars.Length == 2 ? vars[1].AsUInt() : 30000, () => { _setVarState = SetVarState.INITIAL_PROMPT; return true; });
@@ -671,7 +671,7 @@ namespace Assistant.Scripts
                     {
                         ScriptVariables.RegisterVariable(name, serial);
                         CommandHelper.SendMessage($"'{name}' script variable updated to '{serial}'", quiet);
-                        Assistant.EngineZHI171223.MainWindow.SaveScriptVariables();
+                        Assistant.EngineZHI221523.MainWindow.SaveScriptVariables();
                         _setVarState = SetVarState.COMPLETE;
                     },
                     () =>

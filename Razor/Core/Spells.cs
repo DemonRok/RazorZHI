@@ -296,7 +296,7 @@ namespace Assistant
 
             if (!File.Exists(filename))
             {
-                MessageBox.Show(EngineZHI171223.ActiveWindow, Language.GetString(LocString.NoSpells), "Spells.def",
+                MessageBox.Show(EngineZHI221523.ActiveWindow, Language.GetString(LocString.NoSpells), "Spells.def",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

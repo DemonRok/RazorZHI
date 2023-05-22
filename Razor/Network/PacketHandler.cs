@@ -209,7 +209,7 @@ namespace Assistant
                     }
                     catch (Exception e)
                     {
-                        EngineZHI171223.LogCrash(e);
+                        EngineZHI221523.LogCrash(e);
                         new MessageDialog("WARNING: Packet viewer exception!", true, e.ToString()).Show();
                     }
                 }
@@ -234,7 +234,7 @@ namespace Assistant
                     }
                     catch (Exception e)
                     {
-                        EngineZHI171223.LogCrash(e);
+                        EngineZHI221523.LogCrash(e);
                         new MessageDialog("WARNING: Packet filter exception!", true, e.ToString()).Show();
                     }
                 }

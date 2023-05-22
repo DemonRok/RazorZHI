@@ -133,11 +133,11 @@ namespace Assistant.MapUO
 
         public static void ToggleMap()
         {
-            if (World.Player != null && EngineZHI171223.MainWindow != null)
+            if (World.Player != null && EngineZHI221523.MainWindow != null)
             {
-                if (EngineZHI171223.MainWindow.MapWindow == null)
+                if (EngineZHI221523.MainWindow.MapWindow == null)
                 {
-                    EngineZHI171223.MainWindow.SafeAction(s =>
+                    EngineZHI221523.MainWindow.SafeAction(s =>
                     {
                         s.MapWindow = new Assistant.MapUO.MapWindow();
                         s.MapWindow.Show();
@@ -146,9 +146,9 @@ namespace Assistant.MapUO
                 }
                 else
                 {
-                    if (EngineZHI171223.MainWindow.MapWindow.Visible)
+                    if (EngineZHI221523.MainWindow.MapWindow.Visible)
                     {
-                        EngineZHI171223.MainWindow.SafeAction(s =>
+                        EngineZHI221523.MainWindow.SafeAction(s =>
                         {
                             s.MapWindow.Hide();
                             s.BringToFront();
@@ -157,10 +157,10 @@ namespace Assistant.MapUO
                     }
                     else
                     {
-                        EngineZHI171223.MainWindow.MapWindow.Show();
-                        EngineZHI171223.MainWindow.MapWindow.BringToFront();
-                        EngineZHI171223.MainWindow.MapWindow.TopMost = true;
-                        Client.Instance.SetMapWndHandle(EngineZHI171223.MainWindow.MapWindow);
+                        EngineZHI221523.MainWindow.MapWindow.Show();
+                        EngineZHI221523.MainWindow.MapWindow.BringToFront();
+                        EngineZHI221523.MainWindow.MapWindow.TopMost = true;
+                        Client.Instance.SetMapWndHandle(EngineZHI221523.MainWindow.MapWindow);
                     }
                 }
             }
@@ -302,8 +302,8 @@ namespace Assistant.MapUO
                     return;
                 }
 
-                if (EngineZHI171223.MainWindow == null || EngineZHI171223.MainWindow.MapWindow == null ||
-                    !EngineZHI171223.MainWindow.MapWindow.Visible)
+                if (EngineZHI221523.MainWindow == null || EngineZHI221523.MainWindow.MapWindow == null ||
+                    !EngineZHI221523.MainWindow.MapWindow.Visible)
                     return; // don't bother when the map window isnt visible
 
                 if (World.Player != null && PacketHandlers.Party.Count > 0)
@@ -364,9 +364,9 @@ namespace Assistant.MapUO
 
         private void MapWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (EngineZHI171223.Running)
+            if (EngineZHI221523.Running)
             {
-                EngineZHI171223.MainWindow.MapWindow.SafeAction(s =>
+                EngineZHI221523.MainWindow.MapWindow.SafeAction(s =>
                 {
                     e.Cancel = true;
                     s.Hide();
