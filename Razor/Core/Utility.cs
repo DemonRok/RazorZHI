@@ -417,6 +417,23 @@ namespace Assistant
             return def;
         }
 
+        public static long ToLong(string str, ushort def)
+        {
+            if (str == null)
+                return def;
+
+            long val;
+            if (str.StartsWith("0x"))
+            {
+                if (long.TryParse(str.Substring(2), NumberStyles.HexNumber, EngineZHI221523.Culture, out val))
+                    return val;
+            }
+            else if (long.TryParse(str, out val))
+                return val;
+
+            return def;
+        }
+
         public static void LaunchBrowser(string url)
         {
             try
