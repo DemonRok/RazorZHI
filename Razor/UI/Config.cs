@@ -115,7 +115,7 @@ namespace Assistant
             AddProperty("ActionStatusMsg", true);
             AddProperty("RememberPwds", false);
 
-            AddProperty("SpellUnequip", true);
+            AddProperty("SpellUnequip", false);
             AddProperty("RangeCheckLT", true);
             AddProperty("LTRange", (int) 12);
 
