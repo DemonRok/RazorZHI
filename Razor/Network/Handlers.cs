@@ -1032,6 +1032,8 @@ namespace Assistant
 
             if (World.Player != null)
                 World.Player.SetSeason();
+
+            ScriptManager.OnLogin();
         }
 
         private static void CompleteLogin(PacketReader p, PacketHandlerEventArgs args)
@@ -2482,8 +2484,6 @@ namespace Assistant
                 p.WriteAsciiFixed(m_LastPW, 30);
                 m_LastPW = "";
             }
-
-            ScriptManager.OnLogin();
         }
 
         private static void MenuResponse(PacketReader pvSrc, PacketHandlerEventArgs args)
