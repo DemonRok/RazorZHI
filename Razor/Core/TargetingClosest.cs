@@ -114,7 +114,7 @@ namespace Assistant
 
         public static void TargetCloseFriendlyMonster()
         {
-            ClosestTarget((int) TargetType.Invalid, (int) TargetType.Innocent, (int) TargetType.GuildAlly);
+            ClosestMonsterTarget((int)TargetType.Invalid, (int)TargetType.Innocent, (int)TargetType.GuildAlly);
         }
 
         public static void TargetCloseEnemy()
