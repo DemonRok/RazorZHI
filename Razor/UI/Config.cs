@@ -75,7 +75,7 @@ namespace Assistant
             AddProperty("QueueTargets", false);
             AddProperty("WindowX", (int) 400);
             AddProperty("WindowY", (int) 400);
-            AddProperty("CountStealthSteps", true);
+            AddProperty("CountStealthSteps", false);
 
             AddProperty("SysColor", (int) 0x0044);
             AddProperty("WarningColor", (int) 0x0025);
@@ -141,7 +141,7 @@ namespace Assistant
             AddProperty("ForceSizeY", 800);
 
             AddProperty("PotionEquip", false);
-            AddProperty("BlockHealPoison", true);
+            AddProperty("BlockHealPoison", false);
 
             AddProperty("SmoothWalk", false);
 
