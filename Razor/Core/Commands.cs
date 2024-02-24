@@ -69,7 +69,7 @@ namespace Assistant
 
             Command.Register("Restock", ShowRestockGump);
             Command.Register("Org", ShowOrgGump);
-            //Command.Register("Buy", ShowBuyGump);
+            Command.Register("Buy", ShowBuyGump);
 
             Command.Register("CUO", ClassicUoProfile);
 
