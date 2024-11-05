@@ -1,27 +1,26 @@
 #region license
-
 // Razor: An Ultima Online Assistant
 // Copyright (c) 2022 Razor Development Community on GitHub <https://github.com/markdwags/Razor>
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 #endregion
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Assistant;
 
 namespace Ultima
 {
@@ -56,10 +55,23 @@ namespace Ultima
         public StringList(string language, string path)
         {
             Language = language;
+
             LoadEntry(path);
         }
 
         private void LoadEntry(string path)
+        {
+            if (EngineZHI221523.ClientVersion.Major >= 7 && EngineZHI221523.ClientVersion.Build >= 105)
+            {
+                LoadNewEntryFormat(path);
+            }
+            else
+            {
+                LoadOldEntryFormat(path);
+            }
+        }
+
+        private void LoadOldEntryFormat(string path)
         {
             if (path == null)
             {
@@ -93,6 +105,48 @@ namespace Ultima
                     Entries.Add(se);
 
                     m_StringTable[number] = text;
+                    m_EntryTable[number] = se;
+                }
+            }
+        }
+
+        // Based on the implementation from Karasho @ ClassicUO
+        private void LoadNewEntryFormat(string path)
+        {
+            if (path == null)
+            {
+                Entries = new List<StringEntry>(0);
+                return;
+            }
+
+            Entries = new List<StringEntry>();
+            m_StringTable = new Dictionary<int, string>();
+            m_EntryTable = new Dictionary<int, StringEntry>();
+
+            using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read))
+            {
+                int bytesRead;
+                var totalRead = 0;
+                var buf = new byte[fileStream.Length];
+                while ((bytesRead = fileStream.Read(buf, totalRead, Math.Min(4096, buf.Length - totalRead))) > 0)
+                    totalRead += bytesRead;
+
+                var output = buf[3] == 0x8E ? BwtDecompress.Decompress(buf) : buf;
+
+                var reader = new StackDataReader(output);
+                m_Header1 = reader.ReadInt32LE();
+                m_Header2 = reader.ReadInt16LE();
+
+                while (reader.Remaining > 0)
+                {
+                    var number = reader.ReadInt32LE();
+                    var flag = reader.ReadUInt8();
+                    var length = reader.ReadInt16LE();
+                    var text = string.Intern(reader.ReadUTF8(length));
+
+                    m_StringTable[number] = text;
+                    StringEntry se = new StringEntry(number, text, flag);
+                    Entries.Add(se);
                     m_EntryTable[number] = se;
                 }
             }
