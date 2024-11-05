@@ -61,7 +61,7 @@ namespace Ultima
 
         private void LoadEntry(string path)
         {
-            if (EngineZHI221523.ClientVersion.Major >= 7 && EngineZHI221523.ClientVersion.Build >= 105)
+            if (EngineZHI151124.ClientVersion.Major >= 7 && EngineZHI151124.ClientVersion.Build >= 105)
             {
                 LoadNewEntryFormat(path);
             }

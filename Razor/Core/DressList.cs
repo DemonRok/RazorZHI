@@ -168,7 +168,7 @@ namespace Assistant
 
         public static void Add(DressList list)
         {
-            if (EngineZHI221523.MainWindow == null)
+            if (EngineZHI151124.MainWindow == null)
             {
                 //m_List.Add(list);
                 //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Dress: {list.Name}",
@@ -180,7 +180,7 @@ namespace Assistant
             }
             else
             {
-                EngineZHI221523.MainWindow.SafeAction(s =>
+                EngineZHI151124.MainWindow.SafeAction(s =>
                 {
                     //m_List.Add(list);
                     //HotKey.Add(HKCategory.Dress, HKSubCat.None, $"Dress: {list.Name}",
@@ -195,7 +195,7 @@ namespace Assistant
 
         public static void Remove(DressList list)
         {
-            if (EngineZHI221523.MainWindow == null)
+            if (EngineZHI151124.MainWindow == null)
             {
                 m_List.Remove(list);
                 HotKey.Remove($"Dress: {list.Name}");
@@ -204,7 +204,7 @@ namespace Assistant
             }
             else
             {
-                EngineZHI221523.MainWindow.SafeAction(s =>
+                EngineZHI151124.MainWindow.SafeAction(s =>
                 {
                     m_List.Remove(list);
                     HotKey.Remove($"Dress: {list.Name}");

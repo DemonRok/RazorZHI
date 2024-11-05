@@ -16,7 +16,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Assistant</RootNamespace>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
-    <StartupObject>Assistant.EngineZHI221523</StartupObject>
+    <StartupObject>Assistant.EngineZHI151124</StartupObject>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkProfile>

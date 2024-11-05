@@ -286,9 +286,9 @@ namespace Assistant.Agents
                 AgentsGump agent = new AgentsGump(this);
                 agent.SendGump();
             } 
-            else if (EngineZHI221523.MainWindow != null)
+            else if (EngineZHI151124.MainWindow != null)
             {
-                EngineZHI221523.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
             }
         }
         public void AddItemTarget(bool fromGump = false)
@@ -330,9 +330,9 @@ namespace Assistant.Agents
 
         private void OnTargetBag(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            if (EngineZHI221523.MainWindow != null && !ScriptManager.Running)
+            if (EngineZHI151124.MainWindow != null && !ScriptManager.Running)
             {
-                EngineZHI221523.MainWindow.SafeAction(s => s.ShowMe());
+                EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
             }
 
             if (!location && serial > 0 && serial <= 0x7FFFFF00)

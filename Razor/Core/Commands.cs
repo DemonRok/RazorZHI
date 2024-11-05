@@ -405,7 +405,7 @@ namespace Assistant
             }
 
             // Save and reload the macros and vars
-            EngineZHI221523.MainWindow.SaveMacroVariables();
+            EngineZHI151124.MainWindow.SaveMacroVariables();
         }
 
         private static void SetWeather(string[] param)
@@ -478,7 +478,7 @@ namespace Assistant
         private static void Time(string[] param)
         {
             World.Player.SendMessage(MsgLevel.Force, LocString.CurTime,
-                EngineZHI221523.MistedDateTime.ToString("MM/dd/yy HH:mm:ss.f"));
+                EngineZHI151124.MistedDateTime.ToString("MM/dd/yy HH:mm:ss.f"));
         }
 
         private static void Where(string[] param)

@@ -459,7 +459,7 @@ namespace Assistant
                     if (m_Count < 0)
                         m_Count = 0;
 
-                    //EngineZHI221523.MainWindow.RefreshCounters();
+                    //EngineZHI151124.MainWindow.RefreshCounters();
                     Client.Instance.RequestTitlebarUpdate();
                 }
 
@@ -574,7 +574,7 @@ namespace Assistant
             }
             catch
             {
-                MessageBox.Show(EngineZHI221523.ActiveWindow, Language.GetString(LocString.CounterFux),
+                MessageBox.Show(EngineZHI151124.ActiveWindow, Language.GetString(LocString.CounterFux),
                     "Counters.xml Load Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
 
@@ -725,7 +725,7 @@ namespace Assistant
         {
             m_List.Add(c);
             m_NeedXMLSave = true;
-            EngineZHI221523.MainWindow.SafeAction(s => s.RedrawCounters());
+            EngineZHI151124.MainWindow.SafeAction(s => s.RedrawCounters());
         }
 
         private static void OnCountsChanged(CounterChangeSet changes)

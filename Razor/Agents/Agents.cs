@@ -129,12 +129,12 @@ namespace Assistant.Agents
             {
                 buttons[i].Visible = false;
                 buttons[i].Text = "";
-                EngineZHI221523.MainWindow.SafeAction(s => s.UnlockControl(buttons[i]));
+                EngineZHI151124.MainWindow.SafeAction(s => s.UnlockControl(buttons[i]));
             }
 
             grp.Visible = false;
             subList.Visible = false;
-            EngineZHI221523.MainWindow.SafeAction(s => s.UnlockControl(subList));
+            EngineZHI151124.MainWindow.SafeAction(s => s.UnlockControl(subList));
 
             Agent a = null;
             if (idx >= 0 && idx < List.Count)
