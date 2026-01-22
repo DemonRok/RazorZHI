@@ -88,7 +88,7 @@ namespace Assistant.Gumps.Internal
             if (buttonId > SystemMessages.Messages.Count)
                 return;
 
-            Clipboard.SetText(SystemMessages.Messages[buttonId]);
+            ClipboardHelper.SetText(SystemMessages.Messages[buttonId]);
             World.Player.SendMessage(MsgLevel.Force, Language.Format(LocString.ScriptCopied, SystemMessages.Messages[buttonId]), false);
         }
     }
