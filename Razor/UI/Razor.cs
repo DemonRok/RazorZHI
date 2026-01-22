@@ -973,14 +973,24 @@ namespace Assistant
             skillList.BeginUpdate();
             skillList.Items.Clear();
             double Total = 0;
+            int displayedCount = 0;
+
             if (World.Player != null && World.Player.SkillsSent)
             {
                 string[] items = new string[6];
                 for (int i = 0; i < Skills.TotalSkills(); i++)
                 {
                     Skill sk = World.Player.Skills[i];
+                    string displayName = Skills.GetSkillDisplayName(i);
+
+                    // Salta le skill senza nome
+                    if (string.IsNullOrEmpty(displayName))
+                        continue;
+
                     Total += sk.Base;
-                    items[0] = Skills.GetSkillDisplayName(i);
+                    displayedCount++;
+
+                    items[0] = displayName;
                     items[1] = $"{sk.Value:F1}";
                     items[2] = $"{sk.Base:F1}";
                     items[3] = $"{(sk.Delta > 0 ? "+" : "")}{sk.Delta:F1}";
@@ -991,8 +1001,6 @@ namespace Assistant
                     lvi.Tag = sk;
                     skillList.Items.Add(lvi);
                 }
-
-                //Config.SetProperty( "SkillListAsc", false );
                 SortSkills();
             }
 
