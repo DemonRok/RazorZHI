@@ -281,6 +281,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Gumps\Internal\BuffGump.cs" />
+    <Compile Include="Gumps\Internal\ClipboardHelper.cs" />
     <Compile Include="Gumps\Internal\CooldownGump.cs" />
     <Compile Include="Gumps\Internal\DamageTrackerListGump.cs" />
     <Compile Include="Gumps\Internal\InputDialogGump.cs" />
