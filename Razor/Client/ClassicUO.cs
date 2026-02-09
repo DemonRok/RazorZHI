@@ -86,16 +86,25 @@ namespace Assistant
 
 
             /* Load localization files */
-            if (!Language.Load("ENU"))
-            {
-                SplashScreen.End();
-                MessageBox.Show(
-                    "WARNING: Razor was unable to load the file Language/Razor_lang.ENU\n.",
-                    "Language Load Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            // bootstrap minimo per evitare problemi
+            Language.Load("ENU");
+
+            SplashScreen.Message = LocString.Initializing;
+            Initialize(typeof(EngineZHI151124).Assembly);
 
             m_Running = true;
+
+            SplashScreen.Message = LocString.LoadingLastProfile;
+            Config.LoadCharList();
+            Overrides.Load();
+            Config.LoadLastProfile();
+
+            string lang = Config.GetAppSetting<string>("DefaultLanguage");
+            if (string.IsNullOrWhiteSpace(lang))
+                lang = "ENU";
+
+            if (!lang.Equals("ENU", StringComparison.OrdinalIgnoreCase))
+                Language.Load(lang);
 
             Language.LoadCliLoc();
 
