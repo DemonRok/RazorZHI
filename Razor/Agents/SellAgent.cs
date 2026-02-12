@@ -201,14 +201,14 @@ namespace Assistant.Agents
 
             m_SubList.EndUpdate();
 
-            if (!Client.Instance.AllowBit(FeatureBit.SellAgent) && EngineZHI151124.MainWindow != null)
+            if (!Client.Instance.AllowBit(FeatureBit.SellAgent) && EngineZHI120226.MainWindow != null)
             {
                 for (int i = 0; i < buttons.Length; i++)
                 {
-                    EngineZHI151124.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
+                    EngineZHI120226.MainWindow.SafeAction(s => s.LockControl(buttons[i]));
                 }
 
-                EngineZHI151124.MainWindow.SafeAction(s => s.LockControl(subList));
+                EngineZHI120226.MainWindow.SafeAction(s => s.LockControl(subList));
             }
         }
 
@@ -296,7 +296,7 @@ namespace Assistant.Agents
 
         private void OnTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI120226.MainWindow.SafeAction(s => s.ShowMe());
             if (!location && serial.IsItem)
             {
                 Add(gfx);
@@ -313,7 +313,7 @@ namespace Assistant.Agents
 
         private void OnHBTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI120226.MainWindow.SafeAction(s => s.ShowMe());
             if (!location && serial.IsItem)
             {
                 m_HotBag = serial;
@@ -336,7 +336,7 @@ namespace Assistant.Agents
 
         /*private void OnHBTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe(););
+            EngineZHI120226.MainWindow.SafeAction(s => s.ShowMe(););
 
             Item hb = World.FindItem(m_HotBag);
             if (hb != null)

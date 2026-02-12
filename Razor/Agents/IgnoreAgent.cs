@@ -223,7 +223,7 @@ namespace Assistant.Agents
 
         private void OnAddTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI120226.MainWindow.SafeAction(s => s.ShowMe());
 
             if (!location && serial.IsMobile && serial != World.Player.Serial)
             {
@@ -274,7 +274,7 @@ namespace Assistant.Agents
 
         private void OnRemoveTarget(bool location, Serial serial, Point3D loc, ushort gfx)
         {
-            EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI120226.MainWindow.SafeAction(s => s.ShowMe());
 
             if (!location && serial.IsMobile && serial != World.Player.Serial)
             {

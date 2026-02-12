@@ -402,7 +402,7 @@ namespace Assistant
             }
             catch
             {
-                MessageBox.Show(EngineZHI151124.ActiveWindow, Language.Format(LocString.ProfileCorrupt, file),
+                MessageBox.Show(EngineZHI120226.ActiveWindow, Language.Format(LocString.ProfileCorrupt, file),
                     "Profile Load Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return false;
             }
@@ -446,7 +446,7 @@ namespace Assistant
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(EngineZHI151124.ActiveWindow, Language.Format(LocString.ProfileLoadEx, e.ToString()),
+                    MessageBox.Show(EngineZHI120226.ActiveWindow, Language.Format(LocString.ProfileLoadEx, e.ToString()),
                         "Profile Load Exception", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -538,7 +538,7 @@ namespace Assistant
             }
 
             //if ( !Language.Load( GetString( "Language" ) ) )
-            //	MessageBox.Show( EngineZHI151124.ActiveWindow, "Warning: Could not load language from profile, using current language instead.", "Language Error", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            //	MessageBox.Show( EngineZHI120226.ActiveWindow, "Warning: Could not load language from profile, using current language instead.", "Language Error", MessageBoxButtons.OK, MessageBoxIcon.Warning );
 
             return true;
         }
@@ -575,7 +575,7 @@ namespace Assistant
                 }
                 catch
                 {
-                    //MessageBox.Show( EngineZHI151124.ActiveWindow, Language.Format( LocString.ProfileInUse, m_Name ), "Profile In Use", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                    //MessageBox.Show( EngineZHI120226.ActiveWindow, Language.Format( LocString.ProfileInUse, m_Name ), "Profile In Use", MessageBoxButtons.OK, MessageBoxIcon.Warning );
                     //m_Warned = true;
                     return; // refuse to overwrite profiles that we don't own.
                 }
@@ -733,7 +733,7 @@ namespace Assistant
 
         static Config()
         {
-            var path = Path.Combine(EngineZHI151124.RootPath, "settings.csv");
+            var path = Path.Combine(EngineZHI120226.RootPath, "settings.csv");
 
             // Set defaults
             m_AppSettings["UODataDir"] = @"D:\Games\UO";
@@ -895,14 +895,14 @@ namespace Assistant
                     }
                 }
 
-                EngineZHI151124.MainWindow.InitConfig();
+                EngineZHI120226.MainWindow.InitConfig();
             }
             else
             {
                 m_Chars[player.Serial] = (m_Current != null ? m_Current.Name : "default");
             }
 
-            EngineZHI151124.MainWindow.SafeAction(s => s.SelectProfile(m_Current != null ? m_Current.Name : "default"));
+            EngineZHI120226.MainWindow.SafeAction(s => s.SelectProfile(m_Current != null ? m_Current.Name : "default"));
         }
 
         public static void SetProfileFor(PlayerData player)
@@ -983,9 +983,9 @@ namespace Assistant
 
         private static void SaveAppSettings()
         {
-            var path = Path.Combine(EngineZHI151124.RootPath, "settings.csv");
+            var path = Path.Combine(EngineZHI120226.RootPath, "settings.csv");
 
-            EngineZHI151124.EnsureDirectory(EngineZHI151124.RootPath);
+            EngineZHI120226.EnsureDirectory(EngineZHI120226.RootPath);
 
             if (!File.Exists(path))
             {
@@ -1073,7 +1073,7 @@ namespace Assistant
 
         public static void RecursiveCopy(string oldDir, string newDir, bool overWrite = false)
         {
-            EngineZHI151124.EnsureDirectory(newDir);
+            EngineZHI120226.EnsureDirectory(newDir);
 
             if (!Directory.Exists(oldDir))
                 return;
@@ -1126,7 +1126,7 @@ namespace Assistant
 
             name = name.Length > 0 ? Path.Combine(appDir, name) : appDir;
 
-            EngineZHI151124.EnsureDirectory(name);
+            EngineZHI120226.EnsureDirectory(name);
 
             return name;
         }
@@ -1138,14 +1138,14 @@ namespace Assistant
 
         public static string GetInstallDirectory(string name)
         {
-            string dir = EngineZHI151124.RootPath;
+            string dir = EngineZHI120226.RootPath;
 
             if (name.Length > 0)
             {
                 dir = Path.Combine(dir, name);
             }
 
-            EngineZHI151124.EnsureDirectory(dir);
+            EngineZHI120226.EnsureDirectory(dir);
 
             return dir;
         }

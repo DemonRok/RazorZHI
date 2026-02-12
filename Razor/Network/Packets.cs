@@ -114,7 +114,7 @@ namespace Assistant
 
     public sealed class ContainerContent : Packet
     {
-        public ContainerContent(List<Item> items) : this(items, EngineZHI151124.UsePostKRPackets)
+        public ContainerContent(List<Item> items) : this(items, EngineZHI120226.UsePostKRPackets)
         {
         }
 
@@ -145,7 +145,7 @@ namespace Assistant
 
     public sealed class ContainerItem : Packet
     {
-        public ContainerItem(Item item) : this(item, EngineZHI151124.UsePostKRPackets)
+        public ContainerItem(Item item) : this(item, EngineZHI120226.UsePostKRPackets)
         {
         }
 
@@ -577,14 +577,14 @@ namespace Assistant
     {
         public DropRequest(Item item, Serial destSer) : base(0x08, 14)
         {
-            if (EngineZHI151124.UsePostKRPackets)
+            if (EngineZHI120226.UsePostKRPackets)
                 EnsureCapacity(15);
 
             Write(item.Serial);
             Write((short) (-1));
             Write((short) (-1));
             Write((sbyte) 0);
-            if (EngineZHI151124.UsePostKRPackets)
+            if (EngineZHI120226.UsePostKRPackets)
                 Write((byte) 0);
             Write(destSer);
         }
@@ -595,14 +595,14 @@ namespace Assistant
 
         public DropRequest(Serial item, Point3D pt, Serial dest) : base(0x08, 14)
         {
-            if (EngineZHI151124.UsePostKRPackets)
+            if (EngineZHI120226.UsePostKRPackets)
                 EnsureCapacity(15);
 
             Write(item);
             Write((ushort) pt.X);
             Write((ushort) pt.Y);
             Write((sbyte) pt.Z);
-            if (EngineZHI151124.UsePostKRPackets)
+            if (EngineZHI120226.UsePostKRPackets)
                 Write((byte) 0);
             Write(dest);
         }

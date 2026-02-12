@@ -66,16 +66,16 @@ namespace Assistant
                 LastMobileDeathName = "Unknown";
 
             string imageTimestampTag = Config.GetBool("CapTimeStamp")
-                ? $"{playerName} ({World.ShardName}) - {EngineZHI151124.MistedDateTime:M/dd/yy - HH:mm:ss}"
+                ? $"{playerName} ({World.ShardName}) - {EngineZHI120226.MistedDateTime:M/dd/yy - HH:mm:ss}"
                 : "";
 
             playerName = !string.IsNullOrEmpty(LastMobileDeathName)
-                ? $"{playerName}_{LastMobileDeathName}_{EngineZHI151124.MistedDateTime:M-d_HH.mm}"
-                : $"{playerName}_{EngineZHI151124.MistedDateTime:M-d_HH.mm}";
+                ? $"{playerName}_{LastMobileDeathName}_{EngineZHI120226.MistedDateTime:M-d_HH.mm}"
+                : $"{playerName}_{EngineZHI120226.MistedDateTime:M-d_HH.mm}";
 
             try
             {
-                EngineZHI151124.EnsureDirectory(path);
+                EngineZHI120226.EnsureDirectory(path);
             }
             catch
             {
@@ -113,7 +113,7 @@ namespace Assistant
 
             LastMobileDeathName = string.Empty;
 
-            EngineZHI151124.MainWindow.SafeAction(s => s.ReloadScreenShotsList());
+            EngineZHI120226.MainWindow.SafeAction(s => s.ReloadScreenShotsList());
         }
 
         private static ImageFormat GetFormat(string fmt)
@@ -142,7 +142,7 @@ namespace Assistant
         public static void DisplayTo(ListBox list)
         {
             string path = Config.GetString("CapPath");
-            EngineZHI151124.EnsureDirectory(path);
+            EngineZHI120226.EnsureDirectory(path);
 
             //list.BeginUpdate();
             list.Items.Clear();

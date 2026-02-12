@@ -407,8 +407,8 @@ namespace Assistant.Macros
                     {
                         if (Loop)
                         {
-                            if (EngineZHI151124.MainWindow.WaitDisplay != null)
-                                EngineZHI151124.MainWindow.WaitDisplay.SafeAction(s => s.Text = string.Empty);
+                            if (EngineZHI120226.MainWindow.WaitDisplay != null)
+                                EngineZHI120226.MainWindow.WaitDisplay.SafeAction(s => s.Text = string.Empty);
                             m_CurrentAction = -1;
                             m_IfStatus.Clear();
                             PauseB4Loop.Perform();
@@ -427,12 +427,12 @@ namespace Assistant.Macros
                         if (!m_Wait.PerformWait())
                         {
                             m_Wait = null; // done waiting
-                            if (EngineZHI151124.MainWindow.WaitDisplay != null)
-                                EngineZHI151124.MainWindow.WaitDisplay.SafeAction(s => s.Text = string.Empty);
+                            if (EngineZHI120226.MainWindow.WaitDisplay != null)
+                                EngineZHI120226.MainWindow.WaitDisplay.SafeAction(s => s.Text = string.Empty);
                         }
                         else
                         {
-                            if (waitLen >= TimeSpan.FromSeconds(4.0) && EngineZHI151124.MainWindow.WaitDisplay != null)
+                            if (waitLen >= TimeSpan.FromSeconds(4.0) && EngineZHI120226.MainWindow.WaitDisplay != null)
                             {
                                 StringBuilder sb = new StringBuilder(Language.GetString(LocString.WaitingTimeout));
 
@@ -454,7 +454,7 @@ namespace Assistant.Macros
 
                                 sb.AppendFormat("{0:00}:{1:00}", m, s);
 
-                                EngineZHI151124.MainWindow.WaitDisplay.SafeAction(w => w.Text = sb.ToString());
+                                EngineZHI120226.MainWindow.WaitDisplay.SafeAction(w => w.Text = sb.ToString());
                             }
 
                             return true; // keep waiting
@@ -692,8 +692,8 @@ namespace Assistant.Macros
                 }
                 else
                 {
-                    if (EngineZHI151124.MainWindow.WaitDisplay != null)
-                        EngineZHI151124.MainWindow.WaitDisplay.SafeAction(s => s.Text = string.Empty);
+                    if (EngineZHI120226.MainWindow.WaitDisplay != null)
+                        EngineZHI120226.MainWindow.WaitDisplay.SafeAction(s => s.Text = string.Empty);
 
                     if (Loop)
                     {

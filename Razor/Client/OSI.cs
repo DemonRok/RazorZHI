@@ -416,7 +416,7 @@ namespace Assistant
             sb.AppendFormat("{0}\n", error);
             sb.Append(Language.GetString((int) (LocString.InitError + (int) error)));
 
-            MessageBox.Show(EngineZHI151124.ActiveWindow, sb.ToString(), "Init Error", MessageBoxButtons.OK,
+            MessageBox.Show(EngineZHI120226.ActiveWindow, sb.ToString(), "Init Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Stop);
         }
 
@@ -427,7 +427,7 @@ namespace Assistant
                 PacketHandlers.Party.Clear();
 
                 SetTitleStr("");
-                EngineZHI151124.MainWindow.UpdateTitle();
+                EngineZHI120226.MainWindow.UpdateTitle();
                 UOAssist.PostLogout();
                 m_ConnStart = DateTime.MinValue;
             }
@@ -447,9 +447,9 @@ namespace Assistant
             BuffDebuffManager.Stop();
             CooldownManager.Stop();
             StealthSteps.Unhide();
-            EngineZHI151124.MainWindow.OnLogout();
-            if (EngineZHI151124.MainWindow.MapWindow != null)
-                EngineZHI151124.MainWindow.MapWindow.Close();
+            EngineZHI120226.MainWindow.OnLogout();
+            if (EngineZHI120226.MainWindow.MapWindow != null)
+                EngineZHI120226.MainWindow.MapWindow.Close();
             PacketHandlers.Party.Clear();
             PacketHandlers.IgnoreGumps.Clear();
             Agents.BuyAgent.OnDisconnected();
@@ -468,14 +468,14 @@ namespace Assistant
                 case UONetMessage.Ready: //Patch status
                     if (lParam == (int) InitError.NO_MEMCOPY)
                     {
-                        if (MessageBox.Show(EngineZHI151124.ActiveWindow, Language.GetString(LocString.NoMemCpy),
+                        if (MessageBox.Show(EngineZHI120226.ActiveWindow, Language.GetString(LocString.NoMemCpy),
                                 "No Client MemCopy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
                             DialogResult.No)
                         {
                             m_Ready = false;
                             ClientProc = null;
-                            EngineZHI151124.MainWindow.CanClose = true;
-                            EngineZHI151124.MainWindow.Close();
+                            EngineZHI120226.MainWindow.CanClose = true;
+                            EngineZHI120226.MainWindow.Close();
                             break;
                         }
                     }
@@ -512,15 +512,15 @@ namespace Assistant
                         RequestStatbarPatch(true);
 
                     m_Ready = true;
-                    EngineZHI151124.MainWindow.MainForm_EndLoad();
+                    EngineZHI120226.MainWindow.MainForm_EndLoad();
                     break;
 
                 case UONetMessage.NotReady:
                     m_Ready = false;
                     FatalInit((InitError) lParam);
                     ClientProc = null;
-                    EngineZHI151124.MainWindow.CanClose = true;
-                    EngineZHI151124.MainWindow.Close();
+                    EngineZHI120226.MainWindow.CanClose = true;
+                    EngineZHI120226.MainWindow.Close();
                     break;
 
                 // Network events
@@ -547,8 +547,8 @@ namespace Assistant
                 case UONetMessage.Close:
                     OnLogout(true);
                     ClientProc = null;
-                    EngineZHI151124.MainWindow.CanClose = true;
-                    EngineZHI151124.MainWindow.Close();
+                    EngineZHI120226.MainWindow.CanClose = true;
+                    EngineZHI120226.MainWindow.Close();
                     break;
 
                 // Hot Keys
@@ -626,19 +626,19 @@ namespace Assistant
                             break;
                     }
 
-                    MessageBox.Show(EngineZHI151124.ActiveWindow, "An Error has occured : \n" + error, "Error Reported",
+                    MessageBox.Show(EngineZHI120226.ActiveWindow, "An Error has occured : \n" + error, "Error Reported",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 }
 
                 case UONetMessage.OnTick:
-                    // Game EngineZHI151124 tick
+                    // Game EngineZHI120226 tick
                     Timer.Slice();
                     break;
 
                 // Unknown
                 default:
-                    MessageBox.Show(EngineZHI151124.ActiveWindow, "Unknown message from uo client\n" + ((int) wParam).ToString(),
+                    MessageBox.Show(EngineZHI120226.ActiveWindow, "Unknown message from uo client\n" + ((int) wParam).ToString(),
                         "Error?");
                     break;
             }

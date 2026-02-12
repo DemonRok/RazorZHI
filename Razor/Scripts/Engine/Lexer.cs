@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Assistant.Scripts.EngineZHI151124
+namespace Assistant.Scripts.EngineZHI120226
 {
     public class SyntaxError : Exception
     {

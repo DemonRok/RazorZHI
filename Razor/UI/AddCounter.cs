@@ -323,7 +323,7 @@ namespace Assistant
 
         private void OnTarget(bool loc, Serial serial, Point3D p, ushort graphic)
         {
-            EngineZHI151124.MainWindow.SafeAction(s => s.ShowMe());
+            EngineZHI120226.MainWindow.SafeAction(s => s.ShowMe());
             this.BringToFront();
             this.Show();
             this.Focus();

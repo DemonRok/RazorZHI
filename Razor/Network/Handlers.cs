@@ -375,7 +375,7 @@ namespace Assistant
                     }
 
                     //using ( StreamWriter w = new StreamWriter( "bf24.txt", true ) )
-                    //	w.WriteLine( "{0} : 0x{1:X2}", EngineZHI151124.MistedDateTime.ToString( "HH:mm:ss.ffff" ), b );
+                    //	w.WriteLine( "{0} : 0x{1:X2}", EngineZHI120226.MistedDateTime.ToString( "HH:mm:ss.ffff" ), b );
                     break;
                 }
             }
@@ -482,8 +482,8 @@ namespace Assistant
 
             PlayCharTime = DateTime.UtcNow;
 
-            if (EngineZHI151124.MainWindow != null)
-                EngineZHI151124.MainWindow.SafeAction(s => s.UpdateControlLocks());
+            if (EngineZHI120226.MainWindow != null)
+                EngineZHI120226.MainWindow.SafeAction(s => s.UpdateControlLocks());
         }
 
         private static void PlayCharacter(PacketReader p, PacketHandlerEventArgs args)
@@ -493,8 +493,8 @@ namespace Assistant
 
             PlayCharTime = DateTime.UtcNow;
 
-            if (EngineZHI151124.MainWindow != null)
-                EngineZHI151124.MainWindow.SafeAction(s => s.UpdateControlLocks());
+            if (EngineZHI120226.MainWindow != null)
+                EngineZHI120226.MainWindow.SafeAction(s => s.UpdateControlLocks());
 
             //Client.TranslateLogin( World.OrigPlayerName, World.ShardName );
         }
@@ -616,7 +616,7 @@ namespace Assistant
             int x = p.ReadInt16();
             int y = p.ReadInt16();
             int z = p.ReadSByte();
-            if (EngineZHI151124.UsePostKRPackets)
+            if (EngineZHI120226.UsePostKRPackets)
                 ///* grid num 
                 p.ReadByte();
             Point3D newPos = new Point3D(x, y, z);
@@ -670,7 +670,7 @@ namespace Assistant
                 amount = 1;
             Point3D pos = new Point3D(p.ReadUInt16(), p.ReadUInt16(), 0);
             byte gridPos = 0;
-            if (EngineZHI151124.UsePostKRPackets)
+            if (EngineZHI120226.UsePostKRPackets)
                 gridPos = p.ReadByte();
             Serial cser = p.ReadUInt32();
             ushort hue = p.ReadUInt16();
@@ -765,7 +765,7 @@ namespace Assistant
                 if (item.Amount == 0)
                     item.Amount = 1;
                 item.Position = new Point3D(p.ReadUInt16(), p.ReadUInt16(), 0);
-                if (EngineZHI151124.UsePostKRPackets)
+                if (EngineZHI120226.UsePostKRPackets)
                     item.GridNum = p.ReadByte();
                 Serial cont = p.ReadUInt32();
                 item.Hue = p.ReadUInt16();
@@ -835,13 +835,13 @@ namespace Assistant
                 Skill skill = World.Player.Skills[i];
 
                 skill.Lock = (LockType) p.ReadByte();
-                EngineZHI151124.MainWindow.SafeAction(s => s.UpdateSkill(skill));
+                EngineZHI120226.MainWindow.SafeAction(s => s.UpdateSkill(skill));
             }
         }
 
         private static void PlayerSkills(PacketReader p, PacketHandlerEventArgs args)
         {
-            if (World.Player == null || World.Player.Skills == null || EngineZHI151124.MainWindow == null)
+            if (World.Player == null || World.Player.Skills == null || EngineZHI120226.MainWindow == null)
                 return;
             byte type = p.ReadByte();
 
@@ -875,7 +875,7 @@ namespace Assistant
                     }
 
                     World.Player.SkillsSent = true;
-                    EngineZHI151124.MainWindow.SafeAction(s => s.RedrawSkills());
+                    EngineZHI120226.MainWindow.SafeAction(s => s.RedrawSkills());
                     break;
                 }
 
@@ -907,7 +907,7 @@ namespace Assistant
                     }
 
                     World.Player.SkillsSent = true;
-                    EngineZHI151124.MainWindow.SafeAction(s => s.RedrawSkills());
+                    EngineZHI120226.MainWindow.SafeAction(s => s.RedrawSkills());
                     break;
                 }
 
@@ -927,7 +927,7 @@ namespace Assistant
                         skill.FixedBase = p.ReadUInt16();
                         skill.Lock = (LockType) p.ReadByte();
                         skill.FixedCap = p.ReadUInt16();
-                        EngineZHI151124.MainWindow.SafeAction(s => s.UpdateSkill(skill));
+                        EngineZHI120226.MainWindow.SafeAction(s => s.UpdateSkill(skill));
 
                         //Your skill in {0} has changed by {4}{5:F1}, it is now {3:F1} ({1}{2:F1}).
                         if (Config.GetBool("DisplaySkillChanges") && skill.FixedBase != old)
@@ -971,7 +971,7 @@ namespace Assistant
                         skill.FixedBase = p.ReadUInt16();
                         skill.Lock = (LockType) p.ReadByte();
                         skill.FixedCap = 100;
-                        EngineZHI151124.MainWindow.SafeAction(s => s.UpdateSkill(skill));
+                        EngineZHI120226.MainWindow.SafeAction(s => s.UpdateSkill(skill));
                         if (Config.GetBool("DisplaySkillChanges") && skill.FixedBase != old)
                         {
                             if (Config.GetBool("DisplaySkillChangesOverhead"))
@@ -1025,7 +1025,7 @@ namespace Assistant
 
             Client.Instance.RequestTitlebarUpdate();
             UOAssist.PostLogin((int) serial.Value);
-            EngineZHI151124.MainWindow.SafeAction(s => s.UpdateTitle()); // update player name & shard name
+            EngineZHI120226.MainWindow.SafeAction(s => s.UpdateTitle()); // update player name & shard name
 
             Client.Instance.SetPosition((uint) m.Position.X, (uint) m.Position.Y, (uint) m.Position.Z,
                 (byte) m.Direction);
@@ -1437,7 +1437,7 @@ namespace Assistant
                 UOAssist.PostStamUpdate();
                 UOAssist.PostManaUpdate();
 
-                EngineZHI151124.MainWindow.SafeAction(s => s.UpdateTitle()); // update player name
+                EngineZHI120226.MainWindow.SafeAction(s => s.UpdateTitle()); // update player name
             }
         }
 
@@ -1580,16 +1580,16 @@ namespace Assistant
 
                 ushort id = p.ReadUInt16();
 
-                if (EngineZHI151124.UseNewMobileIncoming)
+                if (EngineZHI120226.UseNewMobileIncoming)
                     item.ItemID = (ushort) (id & 0xFFFF);
-                else if (EngineZHI151124.UsePostSAChanges)
+                else if (EngineZHI120226.UsePostSAChanges)
                     item.ItemID = (ushort) (id & 0x7FFF);
                 else
                     item.ItemID = (ushort) (id & 0x3FFF);
 
                 item.Layer = (Layer) p.ReadByte();
 
-                if (EngineZHI151124.UseNewMobileIncoming)
+                if (EngineZHI120226.UseNewMobileIncoming)
                 {
                     item.Hue = p.ReadUInt16();
                     if (isLT)
@@ -1876,7 +1876,7 @@ namespace Assistant
 
             item.ProcessPacketFlags(flags);
 
-            if (EngineZHI151124.UsePostHSChanges)
+            if (EngineZHI120226.UsePostHSChanges)
             {
                 p.ReadUInt16();
             }
@@ -1987,7 +1987,7 @@ namespace Assistant
             }
             catch (Exception e)
             {
-                EngineZHI151124.LogCrash(new Exception($"Exception in Ultima.dll cliloc: {num}, {ext_str}",
+                EngineZHI120226.LogCrash(new Exception($"Exception in Ultima.dll cliloc: {num}, {ext_str}",
                     e));
             }
         }
@@ -2290,8 +2290,8 @@ namespace Assistant
                             mobile.Position = Point3D.Zero;
                     }
 
-                    if (EngineZHI151124.MainWindow.MapWindow != null)
-                        EngineZHI151124.MainWindow.SafeAction(s => s.MapWindow.UpdateMap());
+                    if (EngineZHI120226.MainWindow.MapWindow != null)
+                        EngineZHI120226.MainWindow.SafeAction(s => s.MapWindow.UpdateMap());
 
                     break;
                 }
@@ -2302,7 +2302,7 @@ namespace Assistant
 
                     Client.Instance.SetFeatures(features);
                     Client.Instance.SendToServer(new RazorNegotiateResponse());
-                    EngineZHI151124.MainWindow.SafeAction(s => s.UpdateControlLocks());
+                    EngineZHI120226.MainWindow.SafeAction(s => s.UpdateControlLocks());
 
                     break;
                 }
@@ -2407,8 +2407,8 @@ namespace Assistant
             }
 
 
-            if (EngineZHI151124.MainWindow.MapWindow != null)
-                EngineZHI151124.MainWindow.SafeAction(s => s.MapWindow.UpdateMap());
+            if (EngineZHI120226.MainWindow.MapWindow != null)
+                EngineZHI120226.MainWindow.SafeAction(s => s.MapWindow.UpdateMap());
         }
 
         private static void PartyAutoDecline()
@@ -2550,7 +2550,7 @@ namespace Assistant
                 }
                 catch
                 {
-                    System.Windows.Forms.MessageBox.Show(EngineZHI151124.MainWindow, "Error parsing Proxy Settings.",
+                    System.Windows.Forms.MessageBox.Show(EngineZHI120226.MainWindow, "Error parsing Proxy Settings.",
                         "Force Proxy Error.");
                 }
             }

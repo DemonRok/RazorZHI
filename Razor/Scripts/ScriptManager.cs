@@ -27,7 +27,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Assistant.Gumps.Internal;
 using Assistant.Macros;
-using Assistant.Scripts.EngineZHI151124;
+using Assistant.Scripts.EngineZHI120226;
 using Assistant.UI;
 using FastColoredTextBoxNS;
 
@@ -149,7 +149,7 @@ namespace Assistant.Scripts
                                 World.Player?.SendMessage(LocString.ScriptPlaying, _queuedScriptName);
                             }
 
-                            Assistant.EngineZHI151124.MainWindow.LockScriptUI(true);
+                            Assistant.EngineZHI120226.MainWindow.LockScriptUI(true);
                             ScriptRunning = true;
                         }
                     }
@@ -174,7 +174,7 @@ namespace Assistant.Scripts
                                 }
                             }
 
-                            Assistant.EngineZHI151124.MainWindow.LockScriptUI(false);
+                            Assistant.EngineZHI120226.MainWindow.LockScriptUI(false);
                             ScriptRunning = false;
 
                             ClearHighlightLine(HighlightType.Execution);
@@ -541,7 +541,7 @@ namespace Assistant.Scripts
         {
             StopScript();
             Timer.Stop();
-            Assistant.EngineZHI151124.MainWindow.LockScriptUI(false);
+            Assistant.EngineZHI120226.MainWindow.LockScriptUI(false);
         }
 
         public static void StartEngine()

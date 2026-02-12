@@ -32,7 +32,7 @@ using Assistant.UI;
 
 namespace Assistant
 {
-    public partial class EngineZHI151124
+    public partial class EngineZHI120226
     {
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
@@ -42,7 +42,7 @@ namespace Assistant
                 m_Running = false;
 
                 new MessageDialog("Unhandled Exception", !e.IsTerminating, e.ExceptionObject.ToString()).ShowDialog(
-                    EngineZHI151124.ActiveWindow);
+                    EngineZHI120226.ActiveWindow);
             }
 
             LogCrash(e.ExceptionObject as Exception);
@@ -56,7 +56,7 @@ namespace Assistant
             using (StreamWriter txt = new StreamWriter("Crash.log", true))
             {
                 txt.AutoFlush = true;
-                txt.WriteLine("Exception @ {0}", EngineZHI151124.MistedDateTime.ToString("MM-dd-yy HH:mm:ss.ffff"));
+                txt.WriteLine("Exception @ {0}", EngineZHI120226.MistedDateTime.ToString("MM-dd-yy HH:mm:ss.ffff"));
                 txt.WriteLine(exception.ToString());
                 txt.WriteLine("");
                 txt.WriteLine("");
@@ -286,9 +286,9 @@ namespace Assistant
 
             Language.LoadCliLoc();
 
-            /* Initialize EngineZHI151124 */
+            /* Initialize EngineZHI120226 */
             SplashScreen.Message = LocString.Initializing;
-            Initialize(typeof(EngineZHI151124).Assembly);
+            Initialize(typeof(EngineZHI120226).Assembly);
 
             /* Load Profile */
             SplashScreen.Message = LocString.LoadingLastProfile;
@@ -414,7 +414,7 @@ namespace Assistant
         private static string _rootPath = null;
 
         public static string RootPath =>
-            _rootPath ?? (_rootPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(EngineZHI151124)).Location));
+            _rootPath ?? (_rootPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(EngineZHI120226)).Location));
 
         /*public static string GetDirectory( string relPath )
         {

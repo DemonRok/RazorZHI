@@ -862,7 +862,7 @@ namespace Assistant
             }
             catch // ( Exception e )
             {
-                //EngineZHI151124.LogCrash( e );
+                //EngineZHI120226.LogCrash( e );
             }
         }
     }
