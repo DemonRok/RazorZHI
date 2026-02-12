@@ -35,61 +35,105 @@ namespace Assistant.Scripts.EngineZHI151124
     {
         public static int ToInt(string token)
         {
+            if (string.IsNullOrWhiteSpace(token))
+                throw new RunTimeError("Cannot convert argument to int");
+
             int val;
 
-            if (token.StartsWith("0x"))
+            if (token.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
             {
-                if (int.TryParse(token.Substring(2), NumberStyles.HexNumber, Interpreter.Culture, out val))
+                if (int.TryParse(token.Substring(2),
+                                 NumberStyles.HexNumber,
+                                 Interpreter.Culture,
+                                 out val))
                     return val;
             }
-            else if (int.TryParse(token, out val))
+            else if (int.TryParse(token,
+                                  NumberStyles.Integer,
+                                  Interpreter.Culture,
+                                  out val))
+            {
                 return val;
+            }
 
             throw new RunTimeError("Cannot convert argument to int");
         }
 
         public static uint ToUInt(string token)
         {
+            if (string.IsNullOrWhiteSpace(token))
+                throw new RunTimeError("Cannot convert argument to uint");
+
             uint val;
 
-            if (token.StartsWith("0x"))
+            if (token.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
             {
-                if (uint.TryParse(token.Substring(2), NumberStyles.HexNumber, Interpreter.Culture, out val))
+                if (uint.TryParse(token.Substring(2),
+                                  NumberStyles.HexNumber,
+                                  Interpreter.Culture,
+                                  out val))
                     return val;
             }
-            else if (uint.TryParse(token, out val))
+            else if (uint.TryParse(token,
+                                   NumberStyles.Integer,
+                                   Interpreter.Culture,
+                                   out val))
+            {
                 return val;
+            }
 
             throw new RunTimeError("Cannot convert argument to uint");
         }
 
         public static ushort ToUShort(string token)
         {
+            if (string.IsNullOrWhiteSpace(token))
+                throw new RunTimeError("Cannot convert argument to ushort");
+
             ushort val;
 
-            if (token.StartsWith("0x"))
+            if (token.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
             {
-                if (ushort.TryParse(token.Substring(2), NumberStyles.HexNumber, Interpreter.Culture, out val))
+                if (ushort.TryParse(token.Substring(2),
+                                    NumberStyles.HexNumber,
+                                    Interpreter.Culture,
+                                    out val))
                     return val;
             }
-            else if (ushort.TryParse(token, out val))
+            else if (ushort.TryParse(token,
+                                     NumberStyles.Integer,
+                                     Interpreter.Culture,
+                                     out val))
+            {
                 return val;
+            }
 
             throw new RunTimeError("Cannot convert argument to ushort");
         }
 
         public static double ToDouble(string token)
         {
+            if (string.IsNullOrWhiteSpace(token))
+                throw new RunTimeError("Cannot convert argument to double");
+
             double val;
 
-            if (double.TryParse(token, out val))
+            if (double.TryParse(token,
+                                NumberStyles.Float | NumberStyles.AllowThousands,
+                                Interpreter.Culture,
+                                out val))
+            {
                 return val;
+            }
 
             throw new RunTimeError("Cannot convert argument to double");
         }
 
         public static bool ToBool(string token)
         {
+            if (string.IsNullOrWhiteSpace(token))
+                throw new RunTimeError("Cannot convert argument to bool");
+
             bool val;
 
             if (bool.TryParse(token, out val))
@@ -1187,7 +1231,7 @@ namespace Assistant.Scripts.EngineZHI151124
 
         static Interpreter()
         {
-            Culture = new CultureInfo(CultureInfo.CurrentCulture.LCID, false);
+            Culture = (CultureInfo)CultureInfo.InvariantCulture.Clone();
             Culture.NumberFormat.NumberDecimalSeparator = ".";
             Culture.NumberFormat.NumberGroupSeparator = ",";
         }
