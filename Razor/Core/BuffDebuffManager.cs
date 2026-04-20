@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 using Assistant.Agents;
 using Assistant.Gumps.Internal;
 
@@ -626,6 +627,9 @@ namespace Assistant.Core
                     return;
                 }
                 Client.Instance.RequestTitlebarUpdate();
+
+                if (_gump != null && (Control.MouseButtons & MouseButtons.Left) == MouseButtons.Left)
+                    return;
 
                 _gump?.CloseGump();
 
