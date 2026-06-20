@@ -598,6 +598,7 @@ namespace Assistant
         AllGo,
         HuntingPet,
         TrackingPet,
+        AddTargetFilter,
         __End
     }
 

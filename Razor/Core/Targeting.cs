@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using Assistant.Agents;
 using Assistant.Core;
+using Assistant.Filters;
 using Assistant.Macros;
 using Assistant.Scripts;
 
@@ -150,6 +151,7 @@ namespace Assistant
             HotKey.Add(HKCategory.Targets, LocString.AttackLastComb, AttackLastComb);
             HotKey.Add(HKCategory.Targets, LocString.AttackLastTarg, AttackLastTarg);
             HotKey.Add(HKCategory.Targets, LocString.CancelTarget, CancelTarget);
+            HotKey.Add(HKCategory.Targets, LocString.AddTargetFilter, TargetFilterManager.OnTargetAddTargetFilter);
 
             InitRandomTarget();
             InitNextPrevTargets();
