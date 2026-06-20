@@ -551,6 +551,11 @@ namespace Assistant
             this.lblCooldownHeight = new System.Windows.Forms.Label();
             this.cooldownWidth = new System.Windows.Forms.TextBox();
             this.lblCooldownWidth = new System.Windows.Forms.Label();
+            this.buffDebuffPositionBox = new System.Windows.Forms.GroupBox();
+            this.buffDebuffGumpY = new System.Windows.Forms.TextBox();
+            this.lblBuffDebuffGumpY = new System.Windows.Forms.Label();
+            this.buffDebuffGumpX = new System.Windows.Forms.TextBox();
+            this.lblBuffDebuffGumpX = new System.Windows.Forms.Label();
             this.buffBarGroupBox = new System.Windows.Forms.GroupBox();
             this.showBuffDebuffTimeType = new System.Windows.Forms.ComboBox();
             this.lblShowBuffTime = new System.Windows.Forms.Label();
@@ -855,6 +860,7 @@ namespace Assistant
             this.subWaypoints.SuspendLayout();
             this.subBuffsDebuffs.SuspendLayout();
             this.cooldownGumpBox.SuspendLayout();
+            this.buffDebuffPositionBox.SuspendLayout();
             this.buffBarGroupBox.SuspendLayout();
             this.skillsTab.SuspendLayout();
             this.agentsTab.SuspendLayout();
@@ -2959,6 +2965,7 @@ namespace Assistant
             // subBuffsDebuffs
             // 
             this.subBuffsDebuffs.BackColor = System.Drawing.SystemColors.Control;
+            this.subBuffsDebuffs.Controls.Add(this.buffDebuffPositionBox);
             this.subBuffsDebuffs.Controls.Add(this.cooldownGumpBox);
             this.subBuffsDebuffs.Controls.Add(this.buffBarGroupBox);
             this.subBuffsDebuffs.Controls.Add(this.buffDebuffOptions);
@@ -2975,9 +2982,9 @@ namespace Assistant
             this.cooldownGumpBox.Controls.Add(this.lblCooldownHeight);
             this.cooldownGumpBox.Controls.Add(this.cooldownWidth);
             this.cooldownGumpBox.Controls.Add(this.lblCooldownWidth);
-            this.cooldownGumpBox.Location = new System.Drawing.Point(14, 124);
+            this.cooldownGumpBox.Location = new System.Drawing.Point(14, 82);
             this.cooldownGumpBox.Name = "cooldownGumpBox";
-            this.cooldownGumpBox.Size = new System.Drawing.Size(232, 151);
+            this.cooldownGumpBox.Size = new System.Drawing.Size(232, 84);
             this.cooldownGumpBox.TabIndex = 133;
             this.cooldownGumpBox.TabStop = false;
             this.cooldownGumpBox.Text = "Cooldowns:";
@@ -3015,6 +3022,53 @@ namespace Assistant
             this.lblCooldownWidth.Size = new System.Drawing.Size(60, 15);
             this.lblCooldownWidth.TabIndex = 9;
             this.lblCooldownWidth.Text = "Bar width:";
+            //
+            // buffDebuffPositionBox
+            //
+            this.buffDebuffPositionBox.Controls.Add(this.buffDebuffGumpY);
+            this.buffDebuffPositionBox.Controls.Add(this.lblBuffDebuffGumpY);
+            this.buffDebuffPositionBox.Controls.Add(this.buffDebuffGumpX);
+            this.buffDebuffPositionBox.Controls.Add(this.lblBuffDebuffGumpX);
+            this.buffDebuffPositionBox.Location = new System.Drawing.Point(14, 172);
+            this.buffDebuffPositionBox.Name = "buffDebuffPositionBox";
+            this.buffDebuffPositionBox.Size = new System.Drawing.Size(232, 103);
+            this.buffDebuffPositionBox.TabIndex = 134;
+            this.buffDebuffPositionBox.TabStop = false;
+            this.buffDebuffPositionBox.Text = "Buff/Debuff Gump Position:";
+            //
+            // buffDebuffGumpY
+            //
+            this.buffDebuffGumpY.Location = new System.Drawing.Point(35, 60);
+            this.buffDebuffGumpY.Name = "buffDebuffGumpY";
+            this.buffDebuffGumpY.Size = new System.Drawing.Size(55, 23);
+            this.buffDebuffGumpY.TabIndex = 3;
+            this.buffDebuffGumpY.TextChanged += new System.EventHandler(this.buffDebuffGumpY_TextChanged);
+            //
+            // lblBuffDebuffGumpY
+            //
+            this.lblBuffDebuffGumpY.AutoSize = true;
+            this.lblBuffDebuffGumpY.Location = new System.Drawing.Point(9, 63);
+            this.lblBuffDebuffGumpY.Name = "lblBuffDebuffGumpY";
+            this.lblBuffDebuffGumpY.Size = new System.Drawing.Size(17, 15);
+            this.lblBuffDebuffGumpY.TabIndex = 2;
+            this.lblBuffDebuffGumpY.Text = "Y:";
+            //
+            // buffDebuffGumpX
+            //
+            this.buffDebuffGumpX.Location = new System.Drawing.Point(35, 26);
+            this.buffDebuffGumpX.Name = "buffDebuffGumpX";
+            this.buffDebuffGumpX.Size = new System.Drawing.Size(55, 23);
+            this.buffDebuffGumpX.TabIndex = 1;
+            this.buffDebuffGumpX.TextChanged += new System.EventHandler(this.buffDebuffGumpX_TextChanged);
+            //
+            // lblBuffDebuffGumpX
+            //
+            this.lblBuffDebuffGumpX.AutoSize = true;
+            this.lblBuffDebuffGumpX.Location = new System.Drawing.Point(9, 29);
+            this.lblBuffDebuffGumpX.Name = "lblBuffDebuffGumpX";
+            this.lblBuffDebuffGumpX.Size = new System.Drawing.Size(17, 15);
+            this.lblBuffDebuffGumpX.TabIndex = 0;
+            this.lblBuffDebuffGumpX.Text = "X:";
             // 
             // buffBarGroupBox
             // 
@@ -6201,6 +6255,8 @@ namespace Assistant
             this.subBuffsDebuffs.PerformLayout();
             this.cooldownGumpBox.ResumeLayout(false);
             this.cooldownGumpBox.PerformLayout();
+            this.buffDebuffPositionBox.ResumeLayout(false);
+            this.buffDebuffPositionBox.PerformLayout();
             this.buffBarGroupBox.ResumeLayout(false);
             this.buffBarGroupBox.PerformLayout();
             this.skillsTab.ResumeLayout(false);
@@ -6464,5 +6520,10 @@ namespace Assistant
         private Label lblCooldownHeight;
         private TextBox cooldownWidth;
         private Label lblCooldownWidth;
+        private GroupBox buffDebuffPositionBox;
+        private TextBox buffDebuffGumpY;
+        private Label lblBuffDebuffGumpY;
+        private TextBox buffDebuffGumpX;
+        private Label lblBuffDebuffGumpX;
     }
 }

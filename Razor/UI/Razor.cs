@@ -530,6 +530,8 @@ namespace Assistant
             showBuffIcons.SafeAction(s => { s.Checked = Config.GetBool("ShowBuffDebuffIcons"); });
             buffBarWidth.SafeAction(s => { s.Text = Config.GetInt("ShowBuffDebuffWidth").ToString(); });
             buffBarHeight.SafeAction(s => { s.Text = Config.GetInt("ShowBuffDebuffHeight").ToString(); });
+            buffDebuffGumpX.SafeAction(s => { s.Text = Config.GetInt("ShowBuffDebuffX").ToString(); });
+            buffDebuffGumpY.SafeAction(s => { s.Text = Config.GetInt("ShowBuffDebuffY").ToString(); });
             useBlackBuffDebuffBg.SafeAction(s => { s.Checked = Config.GetBool("UseBlackBuffDebuffBg"); });
             buffBarSort.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBuffDebuffSort"); });
             showBuffDebuffTimeType.SafeAction(s => { s.SelectedIndex = Config.GetInt("ShowBuffDebuffTimeType"); });
@@ -8156,6 +8158,18 @@ namespace Assistant
         private void buffBarHeight_TextChanged(object sender, EventArgs e)
         {
             Config.SetProperty("ShowBuffDebuffHeight", Utility.ToInt32(buffBarHeight.Text, 28));
+        }
+
+        private void buffDebuffGumpX_TextChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBuffDebuffX", Utility.ToInt32(buffDebuffGumpX.Text, 50));
+            BuffDebuffManager.RefreshGump();
+        }
+
+        private void buffDebuffGumpY_TextChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("ShowBuffDebuffY", Utility.ToInt32(buffDebuffGumpY.Text, 50));
+            BuffDebuffManager.RefreshGump();
         }
 
         private void useBlackBuffDebuffBg_CheckedChanged(object sender, EventArgs e)

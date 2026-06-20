@@ -28,7 +28,7 @@ namespace Assistant.Gumps.Internal
 {
     public sealed class BuffGump : Gump
     {
-        public BuffGump() : base(50, 50, -1)
+        public BuffGump() : base(Config.GetInt("ShowBuffDebuffX"), Config.GetInt("ShowBuffDebuffY"), -1, GetPositionId())
         {
             Closable = true;
             Disposable = true;
@@ -153,6 +153,11 @@ namespace Assistant.Gumps.Internal
                     currentY += 32;
                 }
             }
+        }
+
+        private static uint GetPositionId()
+        {
+            return 0x42554646u ^ (uint)Config.GetInt("ShowBuffDebuffX") ^ ((uint)Config.GetInt("ShowBuffDebuffY") << 16);
         }
 
         public override void OnResponse(int buttonId, int[] switches, GumpTextEntry[] textEntries = null)

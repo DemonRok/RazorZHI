@@ -330,6 +330,8 @@ namespace Assistant
             AddProperty("ShowBuffDebuffIcons", true);
             AddProperty("ShowBuffDebuffWidth", 100);
             AddProperty("ShowBuffDebuffHeight", 18);
+            AddProperty("ShowBuffDebuffX", 50);
+            AddProperty("ShowBuffDebuffY", 50);
             AddProperty("ShowBuffDebuffSort", 2);
             AddProperty("UseBlackBuffDebuffBg", false);
             AddProperty("ShowBuffDebuffTimeType", 0);

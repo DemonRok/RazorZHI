@@ -614,6 +614,18 @@ namespace Assistant.Core
 
             Client.Instance.RequestTitlebarUpdate();
         }
+
+        public static void RefreshGump()
+        {
+            _gump?.CloseGump();
+
+            if (World.Player == null || !Config.GetBool("ShowBuffDebuffGump") || World.Player.BuffsDebuffs.Count == 0)
+                return;
+
+            _gump = new BuffGump();
+            _gump.SendGump();
+        }
+
         private class InternalTimer : Timer
         {
             public InternalTimer() : base(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1))
