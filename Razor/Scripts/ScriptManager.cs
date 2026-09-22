@@ -492,9 +492,15 @@ namespace Assistant.Scripts
             if (EnableHighlight)
             {
                 SetHighlightLine(lineNum, HighlightType.Execution);
-                // Scrolls to relevant line, per this suggestion: https://github.com/PavelTorgashov/FastColoredTextBox/issues/115
-                ScriptEditor.Selection.Start = new Place(0, lineNum);
-                ScriptEditor.DoSelectionVisible();
+                ScriptEditor.SafeAction(editor =>
+                {
+                    // Scrolls to relevant line, per this suggestion: https://github.com/PavelTorgashov/FastColoredTextBox/issues/115
+                    if (lineNum >= 0 && lineNum < editor.LinesCount)
+                    {
+                        editor.Selection.Start = new Place(0, lineNum);
+                        editor.DoSelectionVisible();
+                    }
+                });
             }
         }
 
@@ -654,20 +660,26 @@ namespace Assistant.Scripts
 
         private static void RefreshHighlightLines()
         {
-            for (int i = 0; i < ScriptEditor.LinesCount; i++)
+            ScriptEditor?.SafeAction(editor =>
             {
-                ScriptEditor[i].BackgroundBrush = ScriptEditor.BackBrush;
-            }
-
-            foreach (HighlightType type in GetHighlightTypes())
-            {
-                foreach (int lineNum in HighlightLines[type])
+                for (int i = 0; i < editor.LinesCount; i++)
                 {
-                    ScriptEditor[lineNum].BackgroundBrush = HighlightLineColors[type];
+                    editor[i].BackgroundBrush = editor.BackBrush;
                 }
-            }
 
-            ScriptEditor.Invalidate();
+                foreach (HighlightType type in GetHighlightTypes())
+                {
+                    foreach (int lineNum in HighlightLines[type])
+                    {
+                        if (lineNum >= 0 && lineNum < editor.LinesCount)
+                        {
+                            editor[lineNum].BackgroundBrush = HighlightLineColors[type];
+                        }
+                    }
+                }
+
+                editor.Invalidate();
+            });
         }
 
         private static FastColoredTextBoxNS.AutocompleteMenu _autoCompleteMenu;
