@@ -27,7 +27,7 @@ namespace Assistant.Gumps.Internal
 {
     public sealed class CooldownGump : Gump
     {
-        public CooldownGump() : base(100, 100, -1)
+        public CooldownGump() : base(Config.GetInt("CooldownX"), Config.GetInt("CooldownY"), -1, GetPositionId())
         {
             Closable = true;
             Disposable = true;
@@ -91,6 +91,11 @@ namespace Assistant.Gumps.Internal
 
                 currentY += 2 + Config.GetInt("CooldownHeight");
             }
+        }
+
+        private static uint GetPositionId()
+        {
+            return 0x434F4F4Cu ^ (uint)Config.GetInt("CooldownX") ^ ((uint)Config.GetInt("CooldownY") << 16);
         }
 
         public override void OnResponse(int buttonId, int[] switches, GumpTextEntry[] textEntries = null)

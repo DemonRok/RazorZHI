@@ -542,6 +542,8 @@ namespace Assistant
 
             cooldownWidth.SafeAction(s => { s.Text = Config.GetInt("CooldownWidth").ToString(); });
             cooldownHeight.SafeAction(s => { s.Text = Config.GetInt("CooldownHeight").ToString(); });
+            cooldownX.SafeAction(s => { s.Text = Config.GetInt("CooldownX").ToString(); });
+            cooldownY.SafeAction(s => { s.Text = Config.GetInt("CooldownY").ToString(); });
 
             EngineZHI120226.MainWindow.Size = new Size(Config.GetInt("WindowSizeX"), Config.GetInt("WindowSizeY"));
 
@@ -8224,6 +8226,16 @@ namespace Assistant
             }
 
             Config.SetProperty("CooldownWidth", width);
+        }
+
+        private void cooldownX_TextChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("CooldownX", Utility.ToInt32(cooldownX.Text, 100));
+        }
+
+        private void cooldownY_TextChanged(object sender, EventArgs e)
+        {
+            Config.SetProperty("CooldownY", Utility.ToInt32(cooldownY.Text, 100));
         }
     }
 }

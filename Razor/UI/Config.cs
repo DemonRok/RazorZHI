@@ -342,6 +342,8 @@ namespace Assistant
 
             AddProperty("CooldownHeight", 28);
             AddProperty("CooldownWidth", 110);
+            AddProperty("CooldownX", 100);
+            AddProperty("CooldownY", 100);
 
             Counter.Default();
             Filter.DisableAll();

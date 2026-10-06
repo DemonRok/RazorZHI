@@ -551,6 +551,10 @@ namespace Assistant
             this.lblCooldownHeight = new System.Windows.Forms.Label();
             this.cooldownWidth = new System.Windows.Forms.TextBox();
             this.lblCooldownWidth = new System.Windows.Forms.Label();
+            this.cooldownX = new System.Windows.Forms.TextBox();
+            this.lblCooldownX = new System.Windows.Forms.Label();
+            this.cooldownY = new System.Windows.Forms.TextBox();
+            this.lblCooldownY = new System.Windows.Forms.Label();
             this.buffDebuffPositionBox = new System.Windows.Forms.GroupBox();
             this.buffDebuffGumpY = new System.Windows.Forms.TextBox();
             this.lblBuffDebuffGumpY = new System.Windows.Forms.Label();
@@ -2982,7 +2986,11 @@ namespace Assistant
             this.cooldownGumpBox.Controls.Add(this.lblCooldownHeight);
             this.cooldownGumpBox.Controls.Add(this.cooldownWidth);
             this.cooldownGumpBox.Controls.Add(this.lblCooldownWidth);
-            this.cooldownGumpBox.Location = new System.Drawing.Point(14, 82);
+            this.cooldownGumpBox.Controls.Add(this.cooldownX);
+            this.cooldownGumpBox.Controls.Add(this.lblCooldownX);
+            this.cooldownGumpBox.Controls.Add(this.cooldownY);
+            this.cooldownGumpBox.Controls.Add(this.lblCooldownY);
+            this.cooldownGumpBox.Location = new System.Drawing.Point(14, 191);
             this.cooldownGumpBox.Name = "cooldownGumpBox";
             this.cooldownGumpBox.Size = new System.Drawing.Size(232, 84);
             this.cooldownGumpBox.TabIndex = 133;
@@ -3023,13 +3031,47 @@ namespace Assistant
             this.lblCooldownWidth.TabIndex = 9;
             this.lblCooldownWidth.Text = "Bar width:";
             //
+            // cooldownX
+            //
+            this.cooldownX.Location = new System.Drawing.Point(140, 26);
+            this.cooldownX.Name = "cooldownX";
+            this.cooldownX.Size = new System.Drawing.Size(55, 23);
+            this.cooldownX.TabIndex = 14;
+            this.cooldownX.TextChanged += new System.EventHandler(this.cooldownX_TextChanged);
+            //
+            // lblCooldownX
+            //
+            this.lblCooldownX.AutoSize = true;
+            this.lblCooldownX.Location = new System.Drawing.Point(120, 29);
+            this.lblCooldownX.Name = "lblCooldownX";
+            this.lblCooldownX.Size = new System.Drawing.Size(17, 15);
+            this.lblCooldownX.TabIndex = 13;
+            this.lblCooldownX.Text = "X:";
+            //
+            // cooldownY
+            //
+            this.cooldownY.Location = new System.Drawing.Point(140, 54);
+            this.cooldownY.Name = "cooldownY";
+            this.cooldownY.Size = new System.Drawing.Size(55, 23);
+            this.cooldownY.TabIndex = 16;
+            this.cooldownY.TextChanged += new System.EventHandler(this.cooldownY_TextChanged);
+            //
+            // lblCooldownY
+            //
+            this.lblCooldownY.AutoSize = true;
+            this.lblCooldownY.Location = new System.Drawing.Point(120, 57);
+            this.lblCooldownY.Name = "lblCooldownY";
+            this.lblCooldownY.Size = new System.Drawing.Size(17, 15);
+            this.lblCooldownY.TabIndex = 15;
+            this.lblCooldownY.Text = "Y:";
+            //
             // buffDebuffPositionBox
             //
             this.buffDebuffPositionBox.Controls.Add(this.buffDebuffGumpY);
             this.buffDebuffPositionBox.Controls.Add(this.lblBuffDebuffGumpY);
             this.buffDebuffPositionBox.Controls.Add(this.buffDebuffGumpX);
             this.buffDebuffPositionBox.Controls.Add(this.lblBuffDebuffGumpX);
-            this.buffDebuffPositionBox.Location = new System.Drawing.Point(14, 172);
+            this.buffDebuffPositionBox.Location = new System.Drawing.Point(14, 82);
             this.buffDebuffPositionBox.Name = "buffDebuffPositionBox";
             this.buffDebuffPositionBox.Size = new System.Drawing.Size(232, 103);
             this.buffDebuffPositionBox.TabIndex = 134;
@@ -6520,6 +6562,10 @@ namespace Assistant
         private Label lblCooldownHeight;
         private TextBox cooldownWidth;
         private Label lblCooldownWidth;
+        private TextBox cooldownX;
+        private Label lblCooldownX;
+        private TextBox cooldownY;
+        private Label lblCooldownY;
         private GroupBox buffDebuffPositionBox;
         private TextBox buffDebuffGumpY;
         private Label lblBuffDebuffGumpY;
